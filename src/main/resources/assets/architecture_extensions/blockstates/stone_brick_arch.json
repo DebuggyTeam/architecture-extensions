@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "architecture_extensions:block/stone_brick_arch"}
+  }
+}

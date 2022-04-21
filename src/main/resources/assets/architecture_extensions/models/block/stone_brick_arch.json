@@ -1,9 +1,10 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "stone_bricks",
-		"particle": "stone_bricks"
+		"0": "minecraft:block/stone_bricks",
+		"particle": "minecraft:block/stone_bricks"
 	},
+
 	"elements": [
 		{
 			"from": [0, 0, 0],
@@ -17,6 +18,7 @@
 				"down": {"uv": [0, 0, 16, 16], "texture": "#0", "cullface": "down"}
 			}
 		},
+
 		{
 			"from": [0, 4, 8],
 			"to": [16, 8, 12],
@@ -27,6 +29,7 @@
 				"up": {"uv": [0, 4, 16, 8], "texture": "#0"}
 			}
 		},
+
 		{
 			"from": [0, 4, 4],
 			"to": [16, 6, 8],
@@ -37,6 +40,7 @@
 				"up": {"uv": [0, 8, 16, 12], "texture": "#0"}
 			}
 		},
+
 		{
 			"from": [0, 8, 10],
 			"to": [16, 12, 12],
@@ -47,6 +51,7 @@
 				"up": {"uv": [0, 2, 16, 4], "texture": "#0"}
 			}
 		},
+
 		{
 			"from": [0, 4, 12],
 			"to": [16, 16, 16],
