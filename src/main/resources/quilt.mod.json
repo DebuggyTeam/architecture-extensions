@@ -1,20 +1,19 @@
 {
 	"schema_version": 1,
 	"quilt_loader": {
-		"group": "com.example",
-		"id": "example_mod",
+		"group": "io.github.woodiertexas",
+		"id": "architecture_extensions",
 		"version": "${version}",
 		"metadata": {
-			"name": "Mod Name",
+			"name": "Architecture Extensions",
 			"description": "A short description of your mod.",
 			"contributors": {
-				"Me!": "Owner"
-			},
-			"icon": "assets/example_mod/icon.png"
+				"Me!": "woodiertexas"
+			}
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "com.example.example_mod.ExampleMod"
+			"init": "io.github.woodiertexas.architecture_extensions.ArchitectureExtensions"
 		},
 		"depends": [
 			{
@@ -31,5 +30,5 @@
 			}
 		]
 	},
-	"mixin": "example_mod.mixins.json"
+	"mixin": "architecture_extensions.mixins.json"
 }
