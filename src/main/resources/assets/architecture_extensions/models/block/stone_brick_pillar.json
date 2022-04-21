@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/orientable",
 	"textures": {
 		"0": "minecraft:block/stone_bricks",
 		"particle": "minecraft:block/stone_bricks"

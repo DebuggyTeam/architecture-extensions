@@ -20,7 +20,7 @@ public class ArchitectureExtensions implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("Architecture Extensions");
 
 	public static final Block STONE_BRICK_ARCH = new Block(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
-	public static final StoneBrickPillar STONE_BRICK_PILLAR = new StoneBrickPillar(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
+	public static final Block STONE_BRICK_PILLAR = new Block(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
 
 	@Override
 	public void onInitialize(ModContainer mod) {
