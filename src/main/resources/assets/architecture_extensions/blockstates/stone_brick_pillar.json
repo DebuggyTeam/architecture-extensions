@@ -1,32 +1,23 @@
 {
 	"variants": {
-		"facing=up": {
-			"model": "architecture_extensions:block/stone_brick_pillar"
-		},
-
-		"facing=down": {
-			"model": "architecture_extensions:block/stone_brick_pillar",
-			"x": 180
-		},
-
-		"facing=north": {
+		"face=wall, facing=north": {
 			"model": "architecture_extensions:block/stone_brick_pillar",
 			"x": 90
 		},
 
-		"facing=south": {
+		"face=wall, facing=south": {
 			"model": "architecture_extensions:block/stone_brick_pillar",
 			"x": 90,
 			"y": 180
 		},
 
-		"facing=east": {
+		"face=wall, facing=east": {
 			"model": "architecture_extensions:block/stone_brick_pillar",
 			"x": 90,
 			"y": 90
 		},
 
-		"facing=west": {
+		"face=wall, facing=west": {
 			"model": "architecture_extensions:block/stone_brick_pillar",
 			"x": 90,
 			"y": 270
