@@ -14,6 +14,9 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
 public class StoneBrickHalfPillar extends HorizontalFacingBlock {
+	/*
+    This is a super class of settings.
+     */
 	protected StoneBrickHalfPillar(Settings settings) {
 		super(settings);
 		setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
@@ -24,6 +27,9 @@ public class StoneBrickHalfPillar extends HorizontalFacingBlock {
 		stateManager.add(Properties.HORIZONTAL_FACING);
 	}
 
+	/*
+    Both of the following blocks of code below deals with block collision.
+     */
 	public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
 		Direction cardinal_dir = state.get(FACING);
 		return switch (cardinal_dir) {
@@ -46,6 +52,9 @@ public class StoneBrickHalfPillar extends HorizontalFacingBlock {
 		};
 	}
 
+	/*
+	Deals with placing the block properly in accordance to direction.
+	 */
 	public BlockState getPlacementState(ItemPlacementContext context) {
 		return this.getDefaultState().with(Properties.HORIZONTAL_FACING, context.getPlayerFacing());
 	}

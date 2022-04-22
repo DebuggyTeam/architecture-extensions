@@ -27,6 +27,9 @@ public class ArchitectureExtensions implements ModInitializer {
 	public void onInitialize(ModContainer mod) {
 		LOGGER.info("Hello Quilt world from {} v{}!", mod.metadata().name(), mod.metadata().version().raw());
 
+		/*
+    	Creating items/blocks/etc and defining their properties
+    	*/
 		Registry.register(Registry.BLOCK, new Identifier("architecture_extensions", "stone_brick_arch"), STONE_BRICK_ARCH);
 		Registry.register(Registry.ITEM, new Identifier("architecture_extensions", "stone_brick_arch"),
 				new BlockItem(STONE_BRICK_ARCH, new QuiltItemSettings().group(ItemGroup.DECORATIONS)));
