@@ -1,34 +1,24 @@
 {
 	"variants": {
-		"facing=down": {
+		"facing=north": {
 			"model": "architecture_extensions:block/stone_brick_circle_corner",
-			"x": 180,
 			"uvlock": true
 		},
+
 		"facing=east": {
 			"model": "architecture_extensions:block/stone_brick_circle_corner",
-			"x": 90,
 			"y": 90,
 			"uvlock": true
 		},
-		"facing=north": {
-			"model": "architecture_extensions:block/stone_brick_circle_corner",
-			"x": 90,
-			"uvlock": true
-		},
+
 		"facing=south": {
 			"model": "architecture_extensions:block/stone_brick_circle_corner",
-			"x": 90,
 			"y": 180,
 			"uvlock": true
 		},
-		"facing=up": {
-			"model": "architecture_extensions:block/stone_brick_circle_corner",
-			"uvlock": true
-		},
+
 		"facing=west": {
 			"model": "architecture_extensions:block/stone_brick_circle_corner",
-			"x": 90,
 			"y": 270,
 			"uvlock": true
 		}
