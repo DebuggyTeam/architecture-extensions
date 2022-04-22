@@ -1,0 +1,26 @@
+{
+	"variants": {
+		"facing=north": {
+			"model": "architecture_extensions:block/stone_brick_circle_corner",
+			"uvlock": true
+		},
+
+		"facing=east": {
+			"model": "architecture_extensions:block/stone_brick_circle_corner",
+			"y": 90,
+			"uvlock": true
+		},
+
+		"facing=south": {
+			"model": "architecture_extensions:block/stone_brick_circle_corner",
+			"y": 180,
+			"uvlock": true
+		},
+
+		"facing=west": {
+			"model": "architecture_extensions:block/stone_brick_circle_corner",
+			"y": 270,
+			"uvlock": true
+		}
+	}
+}

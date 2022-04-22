@@ -1,5 +1,26 @@
 {
   "variants": {
-    "": { "model": "architecture_extensions:block/stone_brick_arch"}
+    "facing=north": {
+      "model": "architecture_extensions:block/stone_brick_arch",
+      "uvlock": true
+    },
+
+    "facing=east": {
+      "model": "architecture_extensions:block/stone_brick_arch",
+      "y": 90,
+      "uvlock": true
+    },
+
+    "facing=south": {
+      "model": "architecture_extensions:block/stone_brick_arch",
+      "y": 180,
+      "uvlock": true
+    },
+
+    "facing=west": {
+      "model": "architecture_extensions:block/stone_brick_arch",
+      "y": 270,
+      "uvlock": true
+    }
   }
 }

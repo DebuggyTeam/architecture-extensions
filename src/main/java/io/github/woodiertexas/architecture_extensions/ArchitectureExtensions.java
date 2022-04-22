@@ -22,6 +22,7 @@ public class ArchitectureExtensions implements ModInitializer {
 	public static final Block STONE_BRICK_ARCH = new Block(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
 	public static final StoneBrickHalfPillar STONE_BRICK_HALF_PILLAR = new StoneBrickHalfPillar(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
 	public static final StoneBrickHalfPillarCap STONE_BRICK_HALF_PILLAR_CAP = new StoneBrickHalfPillarCap(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
+	public static final StoneBrickCircleCorner STONE_BRICK_CIRCLE_CORNER = new StoneBrickCircleCorner(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
 
 	@Override
 	public void onInitialize(ModContainer mod) {
@@ -41,5 +42,9 @@ public class ArchitectureExtensions implements ModInitializer {
 		Registry.register(Registry.BLOCK, new Identifier("architecture_extensions", "stone_brick_half_pillar_cap"), STONE_BRICK_HALF_PILLAR_CAP);
 		Registry.register(Registry.ITEM, new Identifier("architecture_extensions", "stone_brick_half_pillar_cap"),
 				new BlockItem(STONE_BRICK_HALF_PILLAR_CAP, new QuiltItemSettings().group(ItemGroup.DECORATIONS)));
+
+		Registry.register(Registry.BLOCK, new Identifier("architecture_extensions", "stone_brick_circle_corner"), STONE_BRICK_CIRCLE_CORNER);
+		Registry.register(Registry.ITEM, new Identifier("architecture_extensions", "stone_brick_circle_corner"),
+				new BlockItem(STONE_BRICK_CIRCLE_CORNER, new QuiltItemSettings().group(ItemGroup.DECORATIONS)));
 	}
 }
