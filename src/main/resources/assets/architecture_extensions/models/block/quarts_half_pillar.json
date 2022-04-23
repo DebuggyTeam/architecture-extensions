@@ -1,0 +1,8 @@
+{
+	"parent": "architecture_extensions:block/half_pillar",
+	"textures": {
+		"texture_up": "minecraft:block/quartz_block_bottom",
+		"texture_down": "minecraft:block/quartz_block_bottom",
+		"texture_side": "minecraft:block/quartz_pillar"
+	}
+}

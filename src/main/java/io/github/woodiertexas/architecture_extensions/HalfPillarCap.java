@@ -13,11 +13,11 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
-public class StoneBrickCircleCorner extends HorizontalFacingBlock {
+public class HalfPillarCap extends HorizontalFacingBlock {
     /*
     This is a super class of settings.
      */
-    protected StoneBrickCircleCorner(Settings settings) {
+    protected HalfPillarCap(Settings settings) {
         super(settings);
         setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
     }
@@ -31,16 +31,30 @@ public class StoneBrickCircleCorner extends HorizontalFacingBlock {
     Both of the following blocks of code below deals with block collision.
      */
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.fullCube();
+        Direction cardinal_dir = state.get(FACING);
+        return switch (cardinal_dir) {
+            case NORTH -> VoxelShapes.cuboid(0.125f, 0f, 0f, 0.875f, 1f, 0.254f);
+            case SOUTH -> VoxelShapes.cuboid(0.125f, 0f, 0.746f, 0.875f, 1f, 1f);
+            case EAST -> VoxelShapes.cuboid(0.746f, 0f, 0.125f, 1f, 1f, 0.875f);
+            case WEST -> VoxelShapes.cuboid(0f, 0f, 0.125f, 0.254f, 1f, 0.875f);
+            default -> VoxelShapes.fullCube();
+        };
     }
 
     public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.fullCube();
+        Direction cardinal_dir = state.get(FACING);
+        return switch (cardinal_dir) {
+            case NORTH -> VoxelShapes.cuboid(0.125f, 0f, 0f, 0.875f, 1f, 0.254f);
+            case SOUTH -> VoxelShapes.cuboid(0.125f, 0f, 0.746f, 0.875f, 1f, 1f);
+            case EAST -> VoxelShapes.cuboid(0.746f, 0f, 0.125f, 1f, 1f, 0.875f);
+            case WEST -> VoxelShapes.cuboid(0f, 0f, 0.125f, 0.254f, 1f, 0.875f);
+            default -> VoxelShapes.fullCube();
+        };
     }
 
     /*
-    Deals with placing the block properly in accordance to direction.
-     */
+	Deals with placing the block properly in accordance to direction.
+	 */
     public BlockState getPlacementState(ItemPlacementContext context) {
         return this.getDefaultState().with(Properties.HORIZONTAL_FACING, context.getPlayerFacing());
     }

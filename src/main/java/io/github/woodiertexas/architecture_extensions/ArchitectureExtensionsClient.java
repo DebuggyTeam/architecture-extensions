@@ -8,6 +8,6 @@ import org.quiltmc.qsl.block.extensions.api.client.BlockRenderLayerMap;
 public class ArchitectureExtensionsClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient(ModContainer mod) {
-		BlockRenderLayerMap.put(RenderLayer.getCutout(), ArchitectureExtensions.STONE_BRICK_ARCH);
+		BlockRenderLayerMap.put(RenderLayer.getCutout(), ArchitectureExtensionsBlocks.STONE_BRICK_ARCH);
 	}
 }

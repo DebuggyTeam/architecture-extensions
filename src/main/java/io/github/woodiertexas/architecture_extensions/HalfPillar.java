@@ -13,11 +13,11 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
-public class StoneBrickHalfPillar extends HorizontalFacingBlock {
+public class HalfPillar extends HorizontalFacingBlock {
 	/*
     This is a super class of settings.
      */
-	protected StoneBrickHalfPillar(Settings settings) {
+	protected HalfPillar(Settings settings) {
 		super(settings);
 		setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
 	}
