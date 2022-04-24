@@ -1,0 +1,8 @@
+{
+	"parent": "architecture_extensions:block/half_pillar",
+	"textures": {
+		"texture_up": "architecture_extensions:block/smooth_rose_quartz",
+		"texture_down": "architecture_extensions:block/smooth_rose_quartz",
+		"texture_side": "architecture_extensions:block/rose_quartz_pillar"
+	}
+}

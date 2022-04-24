@@ -20,15 +20,19 @@ public class ArchitectureExtensionsBlocks {
     public static final HalfPillarCap SANDSTONE_HALF_PILLAR_CAP = new HalfPillarCap(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final HalfPillar QUARTS_HALF_PILLAR = new HalfPillar(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final HalfPillarCap QUARTS_HALF_PILLAR_CAP = new HalfPillarCap(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final HalfPillar ROSE_QUARTZ_HALF_PILLAR = new HalfPillar(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final HalfPillarCap ROSE_QUARTZ_HALF_PILLAR_CAP = new HalfPillarCap(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
 
     static {
 
         String[] blocksArray = {"stone_brick_arch", "stone_brick_circle_corner", "stone_brick_half_pillar", "stone_brick_half_pillar_cap",
-                "sandstone_half_pillar", "sandstone_half_pillar_cap", "quarts_half_pillar", "quarts_half_pillar_cap"
+                "sandstone_half_pillar", "sandstone_half_pillar_cap", "quarts_half_pillar", "quarts_half_pillar_cap", "rose_quartz_half_pillar",
+                "rose_quartz_half_pillar_cap"
         };
 
         Block[] anotherBlocksArray = {STONE_BRICK_ARCH, STONE_BRICK_CIRCLE_CORNER, STONE_BRICK_HALF_PILLAR, STONE_BRICK_HALF_PILLAR_CAP,
-                SANDSTONE_HALF_PILLAR, SANDSTONE_HALF_PILLAR_CAP, QUARTS_HALF_PILLAR, QUARTS_HALF_PILLAR_CAP
+                SANDSTONE_HALF_PILLAR, SANDSTONE_HALF_PILLAR_CAP, QUARTS_HALF_PILLAR, QUARTS_HALF_PILLAR_CAP, ROSE_QUARTZ_HALF_PILLAR,
+                ROSE_QUARTZ_HALF_PILLAR_CAP
         };
 
         // Checks to see if the arrays are of the same length. If not, stop the Minecraft process.

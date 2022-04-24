@@ -1,0 +1,26 @@
+{
+	"variants": {
+		"facing=north": {
+			"model": "architecture_extensions:block/rose_quartz_half_pillar",
+			"uvlock": true
+		},
+
+		"facing=east": {
+			"model": "architecture_extensions:block/rose_quartz_half_pillar",
+			"y": 90,
+			"uvlock": true
+		},
+
+		"facing=south": {
+			"model": "architecture_extensions:block/rose_quartz_half_pillar",
+			"y": 180,
+			"uvlock": true
+		},
+
+		"facing=west": {
+			"model": "architecture_extensions:block/rose_quartz_half_pillar",
+			"y": 270,
+			"uvlock": true
+		}
+	}
+}
