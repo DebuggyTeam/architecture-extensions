@@ -42,6 +42,6 @@ public class ArchBlock extends HorizontalFacingBlock {
     Deals with placing the block properly in accordance to direction.
      */
     public BlockState getPlacementState(ItemPlacementContext context) {
-        return this.getDefaultState().with(Properties.HORIZONTAL_FACING, context.getPlayerFacing());
+        return this.getDefaultState().with(Properties.HORIZONTAL_FACING, context.getPlayerFacing().getOpposite());
     }
 }

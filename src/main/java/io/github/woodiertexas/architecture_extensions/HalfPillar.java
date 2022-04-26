@@ -6,25 +6,30 @@ import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 
 public class HalfPillar extends HorizontalFacingBlock {
+	public static final BooleanProperty CAPPED = BooleanProperty.of("cap");
 	/*
     This is a super class of settings.
      */
 	protected HalfPillar(Settings settings) {
 		super(settings);
-		setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
+		setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(CAPPED, false));
 	}
 
 	@Override
-	protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-		stateManager.add(Properties.HORIZONTAL_FACING);
+	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+		builder.add(Properties.HORIZONTAL_FACING);
+		builder.add(CAPPED);
 	}
 
 	/*
@@ -56,6 +61,13 @@ public class HalfPillar extends HorizontalFacingBlock {
 	Deals with placing the block properly in accordance to direction.
 	 */
 	public BlockState getPlacementState(ItemPlacementContext context) {
-		return this.getDefaultState().with(Properties.HORIZONTAL_FACING, context.getPlayerFacing());
+		World world = context.getWorld();
+		BlockPos pos = context.getBlockPos();
+		return this.getDefaultState().with(Properties.HORIZONTAL_FACING, context.getPlayerFacing()).with(CAPPED, world.getBlockState(pos.up()).getBlock() != this);
+	}
+	
+
+	public BlockState getStateForNeighborUpdate(BlockState state, Direction dir, BlockState adjacentState, WorldAccess world, BlockPos pos, BlockPos adjacentPos) {
+		return state.with(CAPPED, world.getBlockState(pos.up()).getBlock() != this);
 	}
 }

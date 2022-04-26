@@ -14,27 +14,22 @@ public class ArchitectureExtensionsBlocks {
     // Creating items/blocks/etc and defining their properties
     public static final ArchBlock STONE_BRICK_ARCH = new ArchBlock(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
     public static final CircleCorner STONE_BRICK_CIRCLE_CORNER = new CircleCorner(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
-    public static final HalfPillar STONE_BRICK_HALF_PILLAR = new HalfPillar(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
-    public static final HalfPillarCap STONE_BRICK_HALF_PILLAR_CAP = new HalfPillarCap(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
-    public static final HalfPillar SANDSTONE_HALF_PILLAR = new HalfPillar(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final HalfPillarCap SANDSTONE_HALF_PILLAR_CAP = new HalfPillarCap(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final HalfPillar QUARTS_HALF_PILLAR = new HalfPillar(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final HalfPillarCap QUARTS_HALF_PILLAR_CAP = new HalfPillarCap(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final HalfPillar ROSE_QUARTZ_HALF_PILLAR = new HalfPillar(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final HalfPillarCap ROSE_QUARTZ_HALF_PILLAR_CAP = new HalfPillarCap(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final PostBlock STONE_BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
 
-        public static final PostBlock STONE_BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
+    // Half Pillars
+    public static final HalfPillar STONE_BRICK_HALF_PILLAR = new HalfPillar(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
+    public static final HalfPillar SANDSTONE_HALF_PILLAR = new HalfPillar(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final HalfPillar QUARTS_HALF_PILLAR = new HalfPillar(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final HalfPillar ROSE_QUARTZ_HALF_PILLAR = new HalfPillar(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
 
     static {
 
-        String[] blocksArray = {"stone_brick_arch", "stone_brick_circle_corner", "stone_brick_half_pillar", "stone_brick_half_pillar_cap",
-                "sandstone_half_pillar", "sandstone_half_pillar_cap", "quarts_half_pillar", "quarts_half_pillar_cap", "rose_quartz_half_pillar",
-                "rose_quartz_half_pillar_cap", "stone_brick_post"
+        String[] blocksArray = {"stone_brick_arch", "stone_brick_circle_corner", "stone_brick_half_pillar", "sandstone_half_pillar",
+                "quarts_half_pillar", "rose_quartz_half_pillar", "stone_brick_post"
         };
 
-        Block[] anotherBlocksArray = {STONE_BRICK_ARCH, STONE_BRICK_CIRCLE_CORNER, STONE_BRICK_HALF_PILLAR, STONE_BRICK_HALF_PILLAR_CAP,
-                SANDSTONE_HALF_PILLAR, SANDSTONE_HALF_PILLAR_CAP, QUARTS_HALF_PILLAR, QUARTS_HALF_PILLAR_CAP, ROSE_QUARTZ_HALF_PILLAR,
-                ROSE_QUARTZ_HALF_PILLAR_CAP, STONE_BRICK_POST
+        Block[] anotherBlocksArray = {STONE_BRICK_ARCH, STONE_BRICK_CIRCLE_CORNER, STONE_BRICK_HALF_PILLAR, SANDSTONE_HALF_PILLAR,
+                QUARTS_HALF_PILLAR, ROSE_QUARTZ_HALF_PILLAR, STONE_BRICK_POST
         };
 
         // Checks to see if the arrays are of the same length. If not, stop the Minecraft process.
