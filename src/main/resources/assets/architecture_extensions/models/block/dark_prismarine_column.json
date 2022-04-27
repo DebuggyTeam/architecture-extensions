@@ -1,0 +1,8 @@
+{
+	"parent": "architecture_extensions:block/column_block",
+	"textures": {
+		"texture_up": "minecraft:block/dark_prismarine",
+		"texture_down": "minecraft:block/dark_prismarine",
+		"texture_side": "minecraft:block/dark_prismarine"
+	}
+}

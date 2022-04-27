@@ -21,15 +21,29 @@ public class ArchitectureExtensionsBlocks {
     public static final ColumnBlock SANDSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final ColumnBlock QUARTZ_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final ColumnBlock ROSE_QUARTZ_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final ColumnBlock NETHER_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final ColumnBlock RED_NETHER_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final ColumnBlock PRISMARINE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final ColumnBlock END_STONE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final ColumnBlock DEEPSLATE_TILE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final ColumnBlock POLISHED_BLACKSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final ColumnBlock POLISHED_BLACKSTONE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final ColumnBlock DEEPSLATE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final ColumnBlock DARK_PRISMARINE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final ColumnBlock RED_SANDSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
 
     static {
 
         String[] blocksArray = {"stone_brick_arch", "stone_brick_circle_corner", "stone_brick_column", "sandstone_column",
-                "quartz_column", "rose_quartz_column", "stone_brick_post"
+                "quartz_column", "rose_quartz_column", "nether_brick_column", "red_nether_brick_column", "prismarine_brick_column",
+                "end_stone_brick_column", "deepslate_tile_column", "polished_blackstone_column", "polished_blackstone_brick_column",
+                "deepslate_brick_column", "dark_prismarine_column", "red_sandstone_column","stone_brick_post"
         };
 
         Block[] anotherBlocksArray = {STONE_BRICK_ARCH, STONE_BRICK_CIRCLE_CORNER, STONE_BRICK_COLUMN, SANDSTONE_COLUMN,
-                QUARTZ_COLUMN, ROSE_QUARTZ_COLUMN, STONE_BRICK_POST
+                QUARTZ_COLUMN, ROSE_QUARTZ_COLUMN, NETHER_BRICK_COLUMN, RED_NETHER_BRICK_COLUMN, PRISMARINE_BRICK_COLUMN,
+                END_STONE_BRICK_COLUMN, DEEPSLATE_TILE_COLUMN, POLISHED_BLACKSTONE_COLUMN, POLISHED_BLACKSTONE_BRICK_COLUMN,
+                DEEPSLATE_BRICK_COLUMN, DARK_PRISMARINE_COLUMN, RED_SANDSTONE_COLUMN, STONE_BRICK_POST
         };
 
         // Checks to see if the arrays are of the same length. If not, stop the Minecraft process.
