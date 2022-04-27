@@ -1,8 +1,9 @@
 {
-	"parent": "architecture_extensions:block/half_pillar_cap",
+	"parent": "architecture_extensions:block/column_block",
 	"textures": {
 		"texture_up": "minecraft:block/stone_bricks",
 		"texture_down": "minecraft:block/stone_bricks",
 		"texture_side": "minecraft:block/stone_bricks"
 	}
 }
+

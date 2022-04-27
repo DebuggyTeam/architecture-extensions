@@ -1,8 +1,9 @@
 {
 	"block.architecture_extensions.stone_brick_arch": "Stone Brick Arch",
 	"block.architecture_extensions.stone_brick_circle_corner": "Stone Brick Circle Corner",
-	"block.architecture_extensions.stone_brick_half_pillar": "Stone Brick Half Pillar",
-	"block.architecture_extensions.sandstone_half_pillar": "Sandstone Half Pillar",
-	"block.architecture_extensions.quarts_half_pillar": "Quartz Half Pillar",
-	"block.architecture_extensions.rose_quartz_half_pillar": "Rose Quartz Half Pillar"
+	"block.architecture_extensions.stone_brick_post": "Stone Brick Post",
+	"block.architecture_extensions.stone_brick_column": "Stone Brick Column",
+	"block.architecture_extensions.sandstone_column": "Sandstone Column",
+	"block.architecture_extensions.quartz_column": "Quartz Column",
+	"block.architecture_extensions.rose_quartz_column": "Rose Quartz Column"
 }

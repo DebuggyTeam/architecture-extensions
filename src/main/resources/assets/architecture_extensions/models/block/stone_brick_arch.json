@@ -1,5 +1,5 @@
 {
-	"parent": "architecture_extensions:block/arch",
+	"parent": "architecture_extensions:block/arch_block",
 	"textures": {
 		"texture_up": "minecraft:block/stone_bricks",
 		"texture_down": "minecraft:block/stone_bricks",

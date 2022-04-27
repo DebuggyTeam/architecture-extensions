@@ -2,8 +2,8 @@ package io.github.woodiertexas.architecture_extensions;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
@@ -13,10 +13,9 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
-public class CircleCorner extends HorizontalFacingBlock {
-    // This is a super class of settings.
-    protected CircleCorner(Settings settings) {
-        super(settings);
+public class RoofBlock extends StairsBlock {
+    public RoofBlock(BlockState blockState, Settings settings) {
+        super(blockState, settings);
         setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
     }
 
@@ -36,6 +35,6 @@ public class CircleCorner extends HorizontalFacingBlock {
 
     // Deals with placing the block properly in accordance to direction.
     public BlockState getPlacementState(ItemPlacementContext context) {
-        return this.getDefaultState().with(Properties.HORIZONTAL_FACING, context.getPlayerFacing());
+        return this.getDefaultState().with(Properties.HORIZONTAL_FACING, context.getPlayerFacing().getOpposite());
     }
 }

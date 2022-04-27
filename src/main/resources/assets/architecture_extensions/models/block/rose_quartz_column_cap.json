@@ -1,5 +1,5 @@
 {
-	"parent": "architecture_extensions:block/half_pillar",
+	"parent": "architecture_extensions:block/column_cap_block",
 	"textures": {
 		"texture_up": "architecture_extensions:block/smooth_rose_quartz",
 		"texture_down": "architecture_extensions:block/smooth_rose_quartz",

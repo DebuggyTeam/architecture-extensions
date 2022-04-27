@@ -1,5 +1,5 @@
 {
-	"parent": "architecture_extensions:block/half_pillar_cap",
+	"parent": "architecture_extensions:block/column_cap_block",
 	"textures": {
 		"texture_up": "minecraft:block/sandstone",
 		"texture_down": "minecraft:block/sandstone",

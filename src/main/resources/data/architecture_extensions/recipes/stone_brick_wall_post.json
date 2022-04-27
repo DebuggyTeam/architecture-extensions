@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "minecraft:stone_brick_wall"
+		}
+	],
+	"result": {
+		"item": "architecture_extensions:stone_brick_post"
+	}
+}

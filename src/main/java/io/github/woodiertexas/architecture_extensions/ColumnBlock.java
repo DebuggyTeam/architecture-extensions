@@ -16,12 +16,11 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
-public class HalfPillar extends HorizontalFacingBlock {
+public class ColumnBlock extends HorizontalFacingBlock {
 	public static final BooleanProperty CAPPED = BooleanProperty.of("cap");
-	/*
-    This is a super class of settings.
-     */
-	protected HalfPillar(Settings settings) {
+
+    // This is a super class of settings.
+	protected ColumnBlock(Settings settings) {
 		super(settings);
 		setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(CAPPED, false));
 	}
@@ -32,9 +31,7 @@ public class HalfPillar extends HorizontalFacingBlock {
 		builder.add(CAPPED);
 	}
 
-	/*
-    Both of the following blocks of code below deals with block collision.
-     */
+    // Both of the following blocks of code below deals with block collision.
 	public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
 		Direction cardinal_dir = state.get(FACING);
 		return switch (cardinal_dir) {
@@ -57,9 +54,7 @@ public class HalfPillar extends HorizontalFacingBlock {
 		};
 	}
 
-	/*
-	Deals with placing the block properly in accordance to direction.
-	 */
+	// Deals with placing the block properly in accordance to direction.
 	public BlockState getPlacementState(ItemPlacementContext context) {
 		World world = context.getWorld();
 		BlockPos pos = context.getBlockPos();
