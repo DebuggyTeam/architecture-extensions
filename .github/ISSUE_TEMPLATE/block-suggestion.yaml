@@ -1,0 +1,35 @@
+**List the blocks you want added.**
+- Cobblestone Half Pillar
+- Crown molding blocks
+
+**Describe how these blocks will work if applicable.**
+The crown molding blocks can be placed on ceilings to add extra detail to a space.
+
+**Additional context**
+Add any other context or screenshots about the block suggestion here.
+
+
+name: Block Suggestion
+description: Create a block suggestion to help expand the blocks Architecture Extensions has to offer.
+labels: [suggestion]
+body:
+  - type: markdown
+    attributes:
+      value: "## Welcome!"
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking your time to create your suggestion! If you want to discuss your suggestion, join us on Discord.
+        Make sure you are running the latest version of Architecture Extensions before making the suggestion.
+  - type: textarea
+    id: description
+    attributes:
+      label: Describe the suggestion.
+      description: "Describe the suggestiong as clearly as possible. More info means the suggestion is more likely to be accepted."
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: "Add any other context about the problem here, such as the modpack you're playing or other mods that might be causing this bug."
