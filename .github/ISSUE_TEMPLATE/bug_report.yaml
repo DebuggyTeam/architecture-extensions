@@ -3,7 +3,7 @@ description: "Use this form to report a bug in Architecture Extensions."
 title: "[BUG] "
 labels: [bug]
 body:
-  -	type: textarea
+  - type: textarea
 	id: what-happened
 	attributes:
 		label: Describe the bug you encountered.
