@@ -1,0 +1,30 @@
+name: "Bug Report"
+description: "Use this form to report a bug in Architecture Extensions."
+title: "[BUG] "
+labels: [bug]
+body:
+	type: textarea
+	id: what-happened
+	attributes:
+		label: Describe the bug you encountered.
+		description: Be as detailed as you can here.
+		validations:
+			required: true
+	type: textarea
+	id: to-reproduce
+	attributes:
+		label: Tell us how to reproduce the bug you encountered
+		description: Be as detailed as you can here.
+		value: |
+		  1.
+		  2.
+		  3.
+		  ...
+		validations:
+			required: true
+	type: textarea
+	id: crash-logs
+	attributes:
+		label: Paste your full crashlog here.
+		description: If you are reporting a crash. A crashlog is required, if there is no crashlog; the issue will be marked as invalid.
+		render: shell
