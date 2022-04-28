@@ -3,14 +3,14 @@ description: "Use this form to report a bug in Architecture Extensions."
 title: "[BUG] "
 labels: [bug]
 body:
-	type: textarea
+	- type: textarea
 	id: what-happened
 	attributes:
 		label: Describe the bug you encountered.
 		description: Be as detailed as you can here.
 		validations:
 			required: true
-	type: textarea
+	- type: textarea
 	id: to-reproduce
 	attributes:
 		label: Tell us how to reproduce the bug you encountered
@@ -22,7 +22,7 @@ body:
 		  ...
 		validations:
 			required: true
-	type: textarea
+	- type: textarea
 	id: crash-logs
 	attributes:
 		label: Paste your full crashlog here.
