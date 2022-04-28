@@ -1,3 +1,3 @@
 {
-	"parent": "architecture_extensions:block/nether_brick_column_cap"
+	"parent": "architecture_extensions:block/columns/nether_brick_column_cap"
 }

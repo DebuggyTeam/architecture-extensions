@@ -1,40 +1,40 @@
 {
 	"variants": {
 		"facing=north,cap=false": {
-			"model": "architecture_extensions:block/sandstone_column",
+			"model": "architecture_extensions:block/columns/sandstone_column",
 			"uvlock": true
 		},
 		"facing=north,cap=true": {
-			"model": "architecture_extensions:block/sandstone_column_cap",
+			"model": "architecture_extensions:block/columns/sandstone_column_cap",
 			"uvlock": true
 		},
 		"facing=east,cap=false": {
-			"model": "architecture_extensions:block/sandstone_column",
+			"model": "architecture_extensions:block/columns/sandstone_column",
 			"y": 90,
 			"uvlock": true
 		},
 		"facing=east,cap=true": {
-			"model": "architecture_extensions:block/sandstone_column_cap",
+			"model": "architecture_extensions:block/columns/sandstone_column_cap",
 			"y": 90,
 			"uvlock": true
 		},
 		"facing=south,cap=false": {
-			"model": "architecture_extensions:block/sandstone_column",
+			"model": "architecture_extensions:block/columns/sandstone_column",
 			"y": 180,
 			"uvlock": true
 		},
 		"facing=south,cap=true": {
-			"model": "architecture_extensions:block/sandstone_column_cap",
+			"model": "architecture_extensions:block/columns/sandstone_column_cap",
 			"y": 180,
 			"uvlock": true
 		},
 		"facing=west,cap=false": {
-			"model": "architecture_extensions:block/sandstone_column",
+			"model": "architecture_extensions:block/columns/sandstone_column",
 			"y": 270,
 			"uvlock": true
 		},
 		"facing=west,cap=true": {
-			"model": "architecture_extensions:block/sandstone_column_cap",
+			"model": "architecture_extensions:block/columns/sandstone_column_cap",
 			"y": 270,
 			"uvlock": true
 		}

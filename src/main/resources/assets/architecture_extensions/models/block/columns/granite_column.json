@@ -1,0 +1,8 @@
+{
+	"parent": "architecture_extensions:block/column_block",
+	"textures": {
+		"texture_up": "minecraft:block/granite",
+		"texture_down": "minecraft:block/granite",
+		"texture_side": "minecraft:block/granite"
+	}
+}

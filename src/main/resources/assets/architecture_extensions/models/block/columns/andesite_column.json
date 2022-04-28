@@ -1,0 +1,8 @@
+{
+	"parent": "architecture_extensions:block/column_block",
+	"textures": {
+		"texture_up": "minecraft:block/andesite",
+		"texture_down": "minecraft:block/andesite",
+		"texture_side": "minecraft:block/andesite"
+	}
+}
