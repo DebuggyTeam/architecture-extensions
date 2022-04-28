@@ -13,8 +13,7 @@ body:
   - type: textarea
     id: block-list
     attributes:
-      label: Describe how these blocks will work if applicable..
-      description: "List the blocks you want added to AE."
+      label: List the blocks you want added to AE.
       value: |
         - Crown Molding blocks
         - Cobblestone columns
