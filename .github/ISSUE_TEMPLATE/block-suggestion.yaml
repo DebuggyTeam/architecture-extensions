@@ -14,10 +14,9 @@ body:
     id: block-list
     attributes:
       label: List the blocks you want added to AE.
+      description: If you are suggesting new blocktype(s), go to the next input field.
       value: |
         - Cobblestone columns
-    validations:
-      required: true
 
   - type: textarea
     id: new-blocktype
@@ -40,7 +39,7 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: Describe how these blocks will work if applicable.
+      label: Describe how your blocktype(s) will work if applicable.
       description: "Describe the suggestion as clearly as possible. More info means the suggestion is more likely to be accepted."
       value: |
         The crown molding blocks can be placed on ceilings to add extra detail to a space.
