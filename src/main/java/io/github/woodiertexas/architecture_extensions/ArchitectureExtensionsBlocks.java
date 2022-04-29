@@ -44,6 +44,7 @@ public class ArchitectureExtensionsBlocks {
 
     static {
 
+        // Block string names
         String[] blocksArray = {"stone_brick_arch", "stone_brick_circle_corner", "stone_brick_column", "sandstone_column",
                 "quartz_column", "rose_quartz_column", "nether_brick_column", "red_nether_brick_column", "prismarine_brick_column",
                 "end_stone_brick_column", "deepslate_tile_column", "polished_blackstone_column", "polished_blackstone_brick_column",
@@ -52,6 +53,7 @@ public class ArchitectureExtensionsBlocks {
                 "brick_column", "mossy_cobblestone_column", "cobblestone_column", "stone_brick_post"
         };
 
+        // Block literal names
         Block[] anotherBlocksArray = {STONE_BRICK_ARCH, STONE_BRICK_CIRCLE_CORNER, STONE_BRICK_COLUMN, SANDSTONE_COLUMN,
                 QUARTZ_COLUMN, ROSE_QUARTZ_COLUMN, NETHER_BRICK_COLUMN, RED_NETHER_BRICK_COLUMN, PRISMARINE_BRICK_COLUMN,
                 END_STONE_BRICK_COLUMN, DEEPSLATE_TILE_COLUMN, POLISHED_BLACKSTONE_COLUMN, POLISHED_BLACKSTONE_BRICK_COLUMN,
