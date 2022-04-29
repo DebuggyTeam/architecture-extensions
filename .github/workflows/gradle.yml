@@ -8,10 +8,6 @@ on:
   push:
     paths-ignore:
       - '.github/**'
-    tags-ignore:
-      - '*.*'
-    branches:
-      - '*.*'
 
 jobs:
   build:
