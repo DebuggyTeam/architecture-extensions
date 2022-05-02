@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "minecraft:polished_blackstone_bricks"
+	},
+	"result": "architecture_extensions:polished_blackstone_brick_column",
+	"count": 4
+}

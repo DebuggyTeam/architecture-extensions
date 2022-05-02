@@ -1,0 +1,6 @@
+{
+	"parent": "architecture_extensions:block/post_block",
+	"textures": {
+		"texture": "minecraft:block/end_stone_bricks"
+	}
+}

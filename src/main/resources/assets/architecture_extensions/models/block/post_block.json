@@ -1,7 +1,7 @@
 {
 	"parent": "minecraft:block/template_wall_post",
 	"textures": {
-		"wall": "minecraft:block/stone_bricks"
+		"wall": "#texture"
 	},
 	"display": {
 		"thirdperson_righthand": {

@@ -1,0 +1,16 @@
+{
+	"variants": {
+		"axis=x": {
+			"model": "architecture_extensions:block/posts/polished_deepslate_post",
+			"x": 90,
+			"y": 90
+		},
+		"axis=y": {
+			"model": "architecture_extensions:block/posts/polished_deepslate_post"
+		},
+		"axis=z": {
+			"model": "architecture_extensions:block/posts/polished_deepslate_post",
+			"x": 90
+		}
+	}
+}
