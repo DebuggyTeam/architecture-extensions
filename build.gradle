@@ -13,7 +13,11 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
-}
+	maven {
+		name = "Modrinth"
+		url = "https://api.modrinth.com/maven"
+		content {includeGroup "maven.modrinth"}
+	}}
 
 // All the dependencies are declared at gradle/libs.version.toml and referenced with "libs.<id>"
 // See https://docs.gradle.org/current/userguide/platforms.html for information on how version catalogs work.
@@ -31,6 +35,10 @@ dependencies {
 
 	// Manual fix for QSL dependency problem
 	modImplementation libs.quilt.standard.libraries
+
+	// Stone Cutter Recipe Tags
+	//modImplementation "maven.modrinth:stonecutter_recipe_tags:3.0.1"
+	//include "maven.modrinth:stonecutter_recipe_tags:3.0.1"
 }
 
 processResources {
