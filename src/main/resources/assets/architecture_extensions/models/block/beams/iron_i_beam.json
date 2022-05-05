@@ -1,0 +1,6 @@
+{
+	"parent": "architecture_extensions:block/i_beam_block",
+	"textures": {
+		"texture": "minecraft:block/anvil"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "architecture_extensions:block/beam_block",
+	"textures": {
+		"texture_side": "minecraft:block/birch_log",
+		"texture_up": "minecraft:block/birch_log_top"
+	}
+}

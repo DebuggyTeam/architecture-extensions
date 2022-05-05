@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
@@ -19,23 +20,23 @@ public class ArchitectureExtensionsBlocks {
     public static final ColumnBlock ANDESITE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final ColumnBlock BLACKSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final ColumnBlock BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final ColumnBlock COBBLED_DEEPSLATE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final ColumnBlock COBBLED_DEEPSLATE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque().sounds(BlockSoundGroup.DEEPSLATE));
     public static final ColumnBlock COBBLESTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final ColumnBlock DARK_PRISMARINE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final ColumnBlock DEEPSLATE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final ColumnBlock DEEPSLATE_TILE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final ColumnBlock DEEPSLATE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque().sounds(BlockSoundGroup.DEEPSLATE_BRICKS));
+    public static final ColumnBlock DEEPSLATE_TILE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque().sounds(BlockSoundGroup.DEEPSLATE_TILES));
     public static final ColumnBlock DIORITE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final ColumnBlock END_STONE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final ColumnBlock GRANITE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final ColumnBlock MOSSY_COBBLESTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final ColumnBlock MOSSY_STONE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final ColumnBlock NETHER_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final ColumnBlock NETHER_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque().sounds(BlockSoundGroup.NETHER_BRICKS));
     public static final ColumnBlock POLISHED_BLACKSTONE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final ColumnBlock POLISHED_BLACKSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final ColumnBlock POLISHED_DEEPSLATE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final ColumnBlock POLISHED_DEEPSLATE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque().sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
     public static final ColumnBlock PRISMARINE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final ColumnBlock QUARTZ_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final ColumnBlock RED_NETHER_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final ColumnBlock RED_NETHER_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque().sounds(BlockSoundGroup.NETHER_BRICKS));
     public static final ColumnBlock RED_SANDSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final ColumnBlock ROSE_QUARTZ_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final ColumnBlock SANDSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
@@ -45,24 +46,36 @@ public class ArchitectureExtensionsBlocks {
     public static final PostBlock ANDESITE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final PostBlock BLACKSTONE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final PostBlock BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final PostBlock COBBLED_DEEPSLATE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final PostBlock COBBLED_DEEPSLATE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque().sounds(BlockSoundGroup.DEEPSLATE));
     public static final PostBlock COBBLESTONE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final PostBlock DEEPSLATE_BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final PostBlock DEEPSLATE_TILE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final PostBlock DEEPSLATE_BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque().sounds(BlockSoundGroup.DEEPSLATE_BRICKS));
+    public static final PostBlock DEEPSLATE_TILE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque().sounds(BlockSoundGroup.DEEPSLATE_TILES));
     public static final PostBlock DIORITE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final PostBlock END_STONE_BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final PostBlock GRANITE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final PostBlock MOSSY_COBBLESTONE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final PostBlock MOSSY_STONE_BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final PostBlock NETHER_BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final PostBlock NETHER_BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque().sounds(BlockSoundGroup.NETHER_BRICKS));
     public static final PostBlock POLISHED_BLACKSTONE_BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final PostBlock POLISHED_BLACKSTONE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final PostBlock POLISHED_DEEPSLATE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final PostBlock POLISHED_DEEPSLATE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque().sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
     public static final PostBlock PRISMARINE_BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final PostBlock RED_NETHER_BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
+    public static final PostBlock RED_NETHER_BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque().sounds(BlockSoundGroup.NETHER_BRICKS));
     public static final PostBlock RED_SANDSTONE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final PostBlock SANDSTONE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
     public static final PostBlock STONE_BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
+
+
+
+    // Beam Blocks
+    public static final BeamBlock ACACIA_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).nonOpaque().sounds(BlockSoundGroup.WOOD));
+    public static final BeamBlock BIRCH_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).nonOpaque().sounds(BlockSoundGroup.WOOD));
+    public static final BeamBlock DARK_OAK_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).nonOpaque().sounds(BlockSoundGroup.WOOD));
+    public static final BeamBlock JUNGLE_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).nonOpaque().sounds(BlockSoundGroup.WOOD));
+    public static final BeamBlock OAK_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).nonOpaque().sounds(BlockSoundGroup.WOOD));
+    public static final BeamBlock SPRUCE_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).nonOpaque().sounds(BlockSoundGroup.WOOD));
+    public static final BeamBlock IRON_I_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.METAL).strength(8f).nonOpaque().sounds(BlockSoundGroup.ANVIL));
+
     static {
 
         // Block string names
@@ -75,7 +88,8 @@ public class ArchitectureExtensionsBlocks {
                 "deepslate_brick_post", "deepslate_tile_post", "diorite_post", "end_stone_brick_post", "granite_post",
                 "mossy_cobblestone_post", "mossy_stone_brick_post", "nether_brick_post", "polished_blackstone_brick_post",
                 "polished_blackstone_post", "polished_deepslate_post", "prismarine_brick_post", "red_nether_brick_post",
-                "red_sandstone_post", "sandstone_post", "stone_brick_post", "stone_brick_arch", "stone_brick_circle_corner"
+                "red_sandstone_post", "sandstone_post", "stone_brick_post", "stone_brick_arch", "stone_brick_circle_corner",
+                "acacia_beam", "birch_beam", "dark_oak_beam", "jungle_beam", "oak_beam", "spruce_beam", "iron_i_beam"
         };
 
         // Block literal names
@@ -89,7 +103,8 @@ public class ArchitectureExtensionsBlocks {
                 DEEPSLATE_BRICK_POST, DEEPSLATE_TILE_POST, DIORITE_POST, END_STONE_BRICK_POST, GRANITE_POST,
                 MOSSY_COBBLESTONE_POST, MOSSY_STONE_BRICK_POST, NETHER_BRICK_POST, POLISHED_BLACKSTONE_BRICK_POST,
                 POLISHED_BLACKSTONE_POST, POLISHED_DEEPSLATE_POST, PRISMARINE_BRICK_POST, RED_NETHER_BRICK_POST,
-                RED_SANDSTONE_POST, SANDSTONE_POST, STONE_BRICK_POST, STONE_BRICK_ARCH, STONE_BRICK_CIRCLE_CORNER
+                RED_SANDSTONE_POST, SANDSTONE_POST, STONE_BRICK_POST, STONE_BRICK_ARCH, STONE_BRICK_CIRCLE_CORNER,
+                ACACIA_BEAM, BIRCH_BEAM, DARK_OAK_BEAM, JUNGLE_BEAM, OAK_BEAM, SPRUCE_BEAM, IRON_I_BEAM
 
         };
 
