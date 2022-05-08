@@ -40,6 +40,7 @@
 	"block.architecture_extensions.polished_blackstone_brick_post": "Polished Blackstone Brick Post",
 	"block.architecture_extensions.polished_blackstone_post": "Polished Blackstone Post",
 	"block.architecture_extensions.polished_deepslate_post": "Polished Deepslate Post",
+	"block.architecture_extensions.prismarine_brick_post": "Prismarine Brick Post",
 	"block.architecture_extensions.red_nether_brick_post": "Red Nether Brick Post",
 	"block.architecture_extensions.red_sandstone_post": "Red Sandstone Post",
 	"block.architecture_extensions.sandstone_post": "Sandstone Post",
@@ -54,7 +55,9 @@
 	"block.architecture_extensions.jungle_beam": "Jungle Beam",
 	"block.architecture_extensions.oak_beam": "Oak Beam",
 	"block.architecture_extensions.spruce_beam": "Spruce Beam",
+	"block.architecture_extensions.iron_h_beam": "Iron H-Beam",
 
-	"block.architecture_extensions.iron_i_beam": "Iron I-Beam"
+	"block.architecture_extensions.debuggy_block": "Oddly Colored Block",
+	"block.architecture_extensions.fake_end_portal_block": "Starry Night Sky Block"
 
 }
