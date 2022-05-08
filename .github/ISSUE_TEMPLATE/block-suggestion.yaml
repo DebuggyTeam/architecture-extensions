@@ -35,6 +35,7 @@ body:
         - label: Column Block
         - label: Arch Block
         - label: Post Block
+        - label: Beam Block
 
   - type: textarea
     id: description
