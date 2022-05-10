@@ -1,0 +1,6 @@
+{
+	"parent": "architecture_extensions:block/roof_inner",
+	"textures": {
+		"texture": "minecraft:block/red_nether_bricks"
+	}
+}

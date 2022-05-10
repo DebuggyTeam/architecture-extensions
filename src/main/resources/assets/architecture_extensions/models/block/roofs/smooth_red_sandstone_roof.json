@@ -1,0 +1,6 @@
+{
+	"parent": "architecture_extensions:block/roof_block",
+	"textures": {
+		"texture": "minecraft:block/red_sandstone_top"
+	}
+}

@@ -57,6 +57,14 @@
 	"block.architecture_extensions.spruce_beam": "Spruce Beam",
 	"block.architecture_extensions.iron_h_beam": "Iron H-Beam",
 
+	"block.architecture_extensions.cobblestone_roof": "Cobblestone Roof",
+	"block.architecture_extensions.nether_brick_roof": "Nether Brick Roof",
+	"block.architecture_extensions.red_nether_brick_roof": "Red Nether Brick Roof",
+	"block.architecture_extensions.smooth_quartz_roof": "Smooth Quartz Roof",
+	"block.architecture_extensions.smooth_red_sandstone_roof": "Smooth Red Sandstone Roof",
+	"block.architecture_extensions.smooth_sandstone_roof": "Smooth Sandstone Roof",
+	"block.architecture_extensions.stone_brick_roof": "Stone Brick Roof",
+
 	"block.architecture_extensions.debuggy_block": "Oddly Colored Block",
 	"block.architecture_extensions.fake_end_portal_block": "Starry Night Sky Block"
 

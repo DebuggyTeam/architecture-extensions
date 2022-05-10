@@ -75,6 +75,12 @@ public class ArchitectureExtensionsBlocks {
     public static final BeamBlock IRON_H_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.METAL).strength(8f).nonOpaque().sounds(BlockSoundGroup.ANVIL));
 
     // Roof Blocks
+    public static final RoofBlock COBBLESTONE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
+    public static final RoofBlock NETHER_BRICK_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
+    public static final RoofBlock RED_NETHER_BRICK_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
+    public static final RoofBlock SMOOTH_QUARTZ_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
+    public static final RoofBlock SMOOTH_RED_SANDSTONE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
+    public static final RoofBlock SMOOTH_SANDSTONE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
     public static final RoofBlock STONE_BRICK_ROOF = new RoofBlock(Blocks.STONE_BRICKS.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
 
     // Arch Blocks
@@ -98,7 +104,8 @@ public class ArchitectureExtensionsBlocks {
                 "polished_blackstone_post", "polished_deepslate_post", "prismarine_brick_post", "red_nether_brick_post",
                 "red_sandstone_post", "sandstone_post", "stone_brick_post", "stone_brick_arch", "stone_brick_circle_corner",
                 "acacia_beam", "birch_beam", "dark_oak_beam", "jungle_beam", "oak_beam", "spruce_beam", "iron_h_beam",
-                "stone_brick_roof", "debuggy_block", "fake_end_portal_block"
+                "cobblestone_roof", "nether_brick_roof", "red_nether_brick_roof", "smooth_quartz_roof", "smooth_red_sandstone_roof",
+                "smooth_sandstone_roof", "stone_brick_roof", "debuggy_block", "fake_end_portal_block"
         };
 
         // Block literal names
@@ -113,8 +120,9 @@ public class ArchitectureExtensionsBlocks {
                 MOSSY_COBBLESTONE_POST, MOSSY_STONE_BRICK_POST, NETHER_BRICK_POST, POLISHED_BLACKSTONE_BRICK_POST,
                 POLISHED_BLACKSTONE_POST, POLISHED_DEEPSLATE_POST, PRISMARINE_BRICK_POST, RED_NETHER_BRICK_POST,
                 RED_SANDSTONE_POST, SANDSTONE_POST, STONE_BRICK_POST, STONE_BRICK_ARCH, STONE_BRICK_CIRCLE_CORNER,
-                ACACIA_BEAM, BIRCH_BEAM, DARK_OAK_BEAM, JUNGLE_BEAM, OAK_BEAM, SPRUCE_BEAM, IRON_H_BEAM, STONE_BRICK_ROOF,
-                DEBUGGY_BLOCK, FAKE_END_PORTAL_BLOCK
+                ACACIA_BEAM, BIRCH_BEAM, DARK_OAK_BEAM, JUNGLE_BEAM, OAK_BEAM, SPRUCE_BEAM, IRON_H_BEAM, COBBLESTONE_ROOF,
+                NETHER_BRICK_ROOF, RED_NETHER_BRICK_ROOF, SMOOTH_QUARTZ_ROOF, SMOOTH_RED_SANDSTONE_ROOF, SMOOTH_SANDSTONE_ROOF,
+                STONE_BRICK_ROOF, DEBUGGY_BLOCK, FAKE_END_PORTAL_BLOCK
 
         };
 
