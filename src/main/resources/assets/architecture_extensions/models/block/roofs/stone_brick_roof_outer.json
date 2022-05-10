@@ -1,0 +1,6 @@
+{
+	"parent": "architecture_extensions:block/roof_outer",
+	"textures": {
+		"texture": "minecraft:block/stone_bricks"
+	}
+}

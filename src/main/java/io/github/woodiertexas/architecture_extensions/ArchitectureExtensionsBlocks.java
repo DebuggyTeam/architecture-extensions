@@ -1,6 +1,7 @@
 package io.github.woodiertexas.architecture_extensions;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
@@ -13,7 +14,6 @@ import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 public class ArchitectureExtensionsBlocks {
 
     // Creating items/blocks/etc and defining their properties
-    public static final ArchBlock STONE_BRICK_ARCH = new ArchBlock(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
     public static final CircleCorner STONE_BRICK_CIRCLE_CORNER = new CircleCorner(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
 
     // Columns
@@ -74,9 +74,15 @@ public class ArchitectureExtensionsBlocks {
     public static final BeamBlock SPRUCE_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).nonOpaque().sounds(BlockSoundGroup.WOOD));
     public static final BeamBlock IRON_H_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.METAL).strength(8f).nonOpaque().sounds(BlockSoundGroup.ANVIL));
 
+    // Roof Blocks
+    public static final RoofBlock STONE_BRICK_ROOF = new RoofBlock(Blocks.STONE_BRICKS.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
+
+    // Arch Blocks
+    public static final ArchBlock STONE_BRICK_ARCH = new ArchBlock(Blocks.STONE_BRICKS.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
+
     //Peculiar Blocks
-    public static final Block DEBUGGY_BLOCK = new Block(QuiltBlockSettings.of(Material.STONE).strength(1f).nonOpaque());
-    public static final Block FAKE_END_PORTAL_BLOCK = new Block(QuiltBlockSettings.of(Material.STONE).strength(1f).nonOpaque());
+    public static final Block DEBUGGY_BLOCK = new Block(QuiltBlockSettings.of(Material.WOOL).strength(1f).nonOpaque().sounds(BlockSoundGroup.WOOL));
+    public static final Block FAKE_END_PORTAL_BLOCK = new Block(QuiltBlockSettings.of(Material.WOOL).strength(1f).nonOpaque().sounds(BlockSoundGroup.WOOL));
 
     static {
 
@@ -92,7 +98,7 @@ public class ArchitectureExtensionsBlocks {
                 "polished_blackstone_post", "polished_deepslate_post", "prismarine_brick_post", "red_nether_brick_post",
                 "red_sandstone_post", "sandstone_post", "stone_brick_post", "stone_brick_arch", "stone_brick_circle_corner",
                 "acacia_beam", "birch_beam", "dark_oak_beam", "jungle_beam", "oak_beam", "spruce_beam", "iron_h_beam",
-                "debuggy_block", "fake_end_portal_block"
+                "stone_brick_roof", "debuggy_block", "fake_end_portal_block"
         };
 
         // Block literal names
@@ -107,8 +113,8 @@ public class ArchitectureExtensionsBlocks {
                 MOSSY_COBBLESTONE_POST, MOSSY_STONE_BRICK_POST, NETHER_BRICK_POST, POLISHED_BLACKSTONE_BRICK_POST,
                 POLISHED_BLACKSTONE_POST, POLISHED_DEEPSLATE_POST, PRISMARINE_BRICK_POST, RED_NETHER_BRICK_POST,
                 RED_SANDSTONE_POST, SANDSTONE_POST, STONE_BRICK_POST, STONE_BRICK_ARCH, STONE_BRICK_CIRCLE_CORNER,
-                ACACIA_BEAM, BIRCH_BEAM, DARK_OAK_BEAM, JUNGLE_BEAM, OAK_BEAM, SPRUCE_BEAM, IRON_H_BEAM, DEBUGGY_BLOCK,
-                FAKE_END_PORTAL_BLOCK
+                ACACIA_BEAM, BIRCH_BEAM, DARK_OAK_BEAM, JUNGLE_BEAM, OAK_BEAM, SPRUCE_BEAM, IRON_H_BEAM, STONE_BRICK_ROOF,
+                DEBUGGY_BLOCK, FAKE_END_PORTAL_BLOCK
 
         };
 
