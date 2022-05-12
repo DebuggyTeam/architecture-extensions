@@ -28,6 +28,17 @@ public class MoldingBlock extends StairsBlock {
     private static final VoxelShape northEast = VoxelShapes.union(NE_CORNER_FIRST, NE_CORNER_SECOND);
     private static final VoxelShape southEast = VoxelShapes.union(SE_CORNER_FIRST, SE_CORNER_SECOND);
 
+
+    protected static final VoxelShape NORTH_BOX_TOP = Block.createCuboidShape(0.0, 8.0, 0.0, 16.0, 16.0, 8.0);
+    protected static final VoxelShape SOUTH_BOX_TOP = Block.createCuboidShape(0.0, 8.0, 8.0, 16.0, 16.0, 16.0);
+    protected static final VoxelShape EAST_BOX_TOP = Block.createCuboidShape(8.0, 8.0, 0.0, 16.0, 16.0, 16.0);
+    protected static final VoxelShape WEST_BOX_TOP = Block.createCuboidShape(0.0, 8.0, 0.0, 8.0, 16.0, 16.0);
+
+    protected static final VoxelShape NORTH_BOX_BOTTOM = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 8.0, 8.0);
+    protected static final VoxelShape SOUTH_BOX_BOTTOM = Block.createCuboidShape(0.0, 0.0, 8.0, 16.0, 8.0, 16.0);
+    protected static final VoxelShape EAST_BOX_BOTTOM = Block.createCuboidShape(8.0, 0.0, 0.0, 16.0, 8.0, 16.0);
+    protected static final VoxelShape WEST_BOX_BOTTOM = Block.createCuboidShape(0.0, 0.0, 0.0, 8.0, 8.0, 16.0);
+
     public MoldingBlock(BlockState blockState, Settings settings) {
         super(blockState, settings);
     }
@@ -40,17 +51,17 @@ public class MoldingBlock extends StairsBlock {
         StairShape whichCorner = state.get(SHAPE);
         return switch (upOrDown) {
             case TOP -> switch (cardinalDir) {
-                case NORTH -> northEast; //VoxelShapes.cuboid(0f, 0.5f, 0f, 1f, 1f, 0.5f);
-                case SOUTH -> southEast; //VoxelShapes.cuboid(0f, 0.5f, 0.5f, 1f, 1f, 1f);
-                case EAST -> VoxelShapes.cuboid(0.5f, 0.5f, 0f, 1f, 1f, 1f);
-                case WEST -> VoxelShapes.cuboid(0f, 0.5f, 0f, 0.5f, 1f, 1f);
+                case NORTH -> NORTH_BOX_TOP;
+                case SOUTH -> SOUTH_BOX_TOP;
+                case EAST -> EAST_BOX_TOP;
+                case WEST -> WEST_BOX_TOP;
                 default -> VoxelShapes.fullCube();
             };
             case BOTTOM -> switch (cardinalDir) {
-                case NORTH -> VoxelShapes.cuboid(0f, 0f, 0f, 1f, 0.5f, 0.5f);
-                case SOUTH -> VoxelShapes.cuboid(0f, 0f, 0.5f, 1f, 0.5f, 1f);
-                case EAST -> VoxelShapes.cuboid(0.5f, 0f, 0f, 1f, 0.5f, 1f);
-                case WEST -> VoxelShapes.cuboid(0f, 0f, 0f, 0.5f, 0.5f, 1f);
+                case NORTH -> NORTH_BOX_BOTTOM;
+                case SOUTH -> SOUTH_BOX_BOTTOM;
+                case EAST -> EAST_BOX_BOTTOM;
+                case WEST -> WEST_BOX_BOTTOM;
                 default -> VoxelShapes.fullCube();
             };
             //throw new IllegalStateException("Unexpected value: " + upOrDown);
@@ -59,21 +70,21 @@ public class MoldingBlock extends StairsBlock {
 
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        Direction cardinal_dir = state.get(FACING);
+        Direction cardinalDir = state.get(FACING);
         BlockHalf upOrDown = state.get(HALF);
         return switch (upOrDown) {
-            case TOP -> switch (cardinal_dir) {
-                case NORTH -> VoxelShapes.cuboid(0f, 0.5f, 0f, 1f, 1f, 0.5f);
-                case SOUTH -> VoxelShapes.cuboid(0f, 0.5f, 0.5f, 1f, 1f, 1f);
-                case EAST -> VoxelShapes.cuboid(0.5f, 0.5f, 0f, 1f, 1f, 1f);
-                case WEST -> VoxelShapes.cuboid(0f, 0.5f, 0f, 0.5f, 1f, 1f);
+            case TOP -> switch (cardinalDir) {
+                case NORTH -> NORTH_BOX_TOP;
+                case SOUTH -> SOUTH_BOX_TOP;
+                case EAST -> EAST_BOX_TOP;
+                case WEST -> WEST_BOX_TOP;
                 default -> VoxelShapes.fullCube();
             };
-            case BOTTOM -> switch (cardinal_dir) {
-                case NORTH -> VoxelShapes.cuboid(0f, 0f, 0f, 1f, 0.5f, 0.5f);
-                case SOUTH -> VoxelShapes.cuboid(0f, 0f, 0.5f, 1f, 0.5f, 1f);
-                case EAST -> VoxelShapes.cuboid(0.5f, 0f, 0f, 1f, 0.5f, 1f);
-                case WEST -> VoxelShapes.cuboid(0f, 0f, 0f, 0.5f, 0.5f, 1f);
+            case BOTTOM -> switch (cardinalDir) {
+                case NORTH -> NORTH_BOX_BOTTOM;
+                case SOUTH -> SOUTH_BOX_BOTTOM;
+                case EAST -> EAST_BOX_BOTTOM;
+                case WEST -> WEST_BOX_BOTTOM;
                 default -> VoxelShapes.fullCube();
             };
             //throw new IllegalStateException("Unexpected value: " + upOrDown);

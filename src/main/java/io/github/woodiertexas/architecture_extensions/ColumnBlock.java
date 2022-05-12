@@ -19,6 +19,11 @@ import net.minecraft.world.WorldAccess;
 public class ColumnBlock extends HorizontalFacingBlock {
 	public static final BooleanProperty CAPPED = BooleanProperty.of("cap");
 
+	protected static final VoxelShape NORTH_BOX = Block.createCuboidShape(2.0, 0.0, 0.0, 14.0, 16.0, 4.0);
+	protected static final VoxelShape SOUTH_BOX = Block.createCuboidShape(2.0, 0.0, 12.0, 14.0, 16.0, 16.0);
+	protected static final VoxelShape EAST_BOX = Block.createCuboidShape(12.0, 0.0, 2.0, 16.0, 16.0, 14.0);
+	protected static final VoxelShape WEST_BOX = Block.createCuboidShape(0.0, 0.0, 2.0, 4.0, 16.0, 14.0);
+
     // This is a super class of settings.
 	protected ColumnBlock(Settings settings) {
 		super(settings);
@@ -34,24 +39,24 @@ public class ColumnBlock extends HorizontalFacingBlock {
     // Both of the following blocks of code below deals with block collision.
 	@Override
 	public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-		Direction cardinal_dir = state.get(FACING);
-		return switch (cardinal_dir) {
-			case NORTH -> VoxelShapes.cuboid(0.125f, 0f, 0f, 0.875f, 1f, 0.254f);
-			case SOUTH -> VoxelShapes.cuboid(0.125f, 0f, 0.746f, 0.875f, 1f, 1f);
-			case EAST -> VoxelShapes.cuboid(0.746f, 0f, 0.125f, 1f, 1f, 0.875f);
-			case WEST -> VoxelShapes.cuboid(0f, 0f, 0.125f, 0.254f, 1f, 0.875f);
+		Direction cardinalDir = state.get(FACING);
+		return switch (cardinalDir) {
+			case NORTH -> NORTH_BOX;
+			case SOUTH -> SOUTH_BOX;
+			case EAST -> EAST_BOX;
+			case WEST -> WEST_BOX;
 			default -> VoxelShapes.fullCube();
 		};
 	}
 
 	@Override
 	public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-		Direction cardinal_dir = state.get(FACING);
-		return switch (cardinal_dir) {
-			case NORTH -> VoxelShapes.cuboid(0.125f, 0f, 0f, 0.875f, 1f, 0.254f);
-			case SOUTH -> VoxelShapes.cuboid(0.125f, 0f, 0.746f, 0.875f, 1f, 1f);
-			case EAST -> VoxelShapes.cuboid(0.746f, 0f, 0.125f, 1f, 1f, 0.875f);
-			case WEST -> VoxelShapes.cuboid(0f, 0f, 0.125f, 0.254f, 1f, 0.875f);
+		Direction cardinalDir = state.get(FACING);
+		return switch (cardinalDir) {
+			case NORTH -> NORTH_BOX;
+			case SOUTH -> SOUTH_BOX;
+			case EAST -> EAST_BOX;
+			case WEST -> WEST_BOX;
 			default -> VoxelShapes.fullCube();
 		};
 	}

@@ -11,10 +11,13 @@ import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
 public class BeamBlock extends PillarBlock {
+    protected static final VoxelShape X_AXIS_BOX = Block.createCuboidShape(0.0, 2.0, 2.0, 16.0, 14.0, 14.0);
+    protected static final VoxelShape Y_AXIS_BOX = Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
+    protected static final VoxelShape Z_AXIS_BOX = Block.createCuboidShape(2.0, 2.0, 0.0, 14.0, 14.0, 16.0);
+
     public BeamBlock(Settings settings) {
         super(settings);
         setDefaultState(this.stateManager.getDefaultState().with(AXIS, Direction.Axis.Y));
@@ -45,21 +48,21 @@ public class BeamBlock extends PillarBlock {
     // Both of the following blocks of code below deals with block collision.
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        Direction.Axis cardinal_dir = state.get(AXIS);
-        return switch (cardinal_dir) {
-            case X -> VoxelShapes.cuboid(0f, 0.125f, 0.125f, 1f, 0.875f, 0.875f);
-            case Y -> VoxelShapes.cuboid(0.125f, 0f, 0.125f, 0.875f, 1f, 0.875f);
-            case Z -> VoxelShapes.cuboid(0.125f, 0.125f, 0f, 0.875f, 0.875f, 1f);
+        Direction.Axis cardinalDir = state.get(AXIS);
+        return switch (cardinalDir) {
+            case X -> X_AXIS_BOX;
+            case Y -> Y_AXIS_BOX;
+            case Z -> Z_AXIS_BOX;
         };
     }
 
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        Direction.Axis cardinal_dir = state.get(AXIS);
-        return switch (cardinal_dir) {
-            case X -> VoxelShapes.cuboid(0f, 0.125f, 0.125f, 1f, 0.875f, 0.875f);
-            case Y -> VoxelShapes.cuboid(0.125f, 0f, 0.125f, 0.875f, 1f, 0.875f);
-            case Z -> VoxelShapes.cuboid(0.125f, 0.125f, 0f, 0.875f, 0.875f, 1f);
+        Direction.Axis cardinalDir = state.get(AXIS);
+        return switch (cardinalDir) {
+            case X -> X_AXIS_BOX;
+            case Y -> Y_AXIS_BOX;
+            case Z -> Z_AXIS_BOX;
         };
     }
 
