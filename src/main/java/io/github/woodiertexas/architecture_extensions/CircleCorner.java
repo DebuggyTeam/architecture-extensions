@@ -26,15 +26,18 @@ public class CircleCorner extends HorizontalFacingBlock {
     }
 
     // Both of the following blocks of code below deals with block collision.
+    @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
         return VoxelShapes.fullCube();
     }
 
+    @Override
     public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
         return VoxelShapes.fullCube();
     }
 
     // Deals with placing the block properly in accordance to direction.
+    @Override
     public BlockState getPlacementState(ItemPlacementContext context) {
         return this.getDefaultState().with(Properties.HORIZONTAL_FACING, context.getPlayerFacing());
     }

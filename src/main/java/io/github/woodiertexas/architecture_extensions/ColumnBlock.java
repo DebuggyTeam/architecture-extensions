@@ -32,6 +32,7 @@ public class ColumnBlock extends HorizontalFacingBlock {
 	}
 
     // Both of the following blocks of code below deals with block collision.
+	@Override
 	public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
 		Direction cardinal_dir = state.get(FACING);
 		return switch (cardinal_dir) {
@@ -43,6 +44,7 @@ public class ColumnBlock extends HorizontalFacingBlock {
 		};
 	}
 
+	@Override
 	public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
 		Direction cardinal_dir = state.get(FACING);
 		return switch (cardinal_dir) {
@@ -55,13 +57,14 @@ public class ColumnBlock extends HorizontalFacingBlock {
 	}
 
 	// Deals with placing the block properly in accordance to direction.
+	@Override
 	public BlockState getPlacementState(ItemPlacementContext context) {
 		World world = context.getWorld();
 		BlockPos pos = context.getBlockPos();
 		return this.getDefaultState().with(Properties.HORIZONTAL_FACING, context.getPlayerFacing()).with(CAPPED, world.getBlockState(pos.up()).getBlock() != this);
 	}
-	
 
+	@Override
 	public BlockState getStateForNeighborUpdate(BlockState state, Direction dir, BlockState adjacentState, WorldAccess world, BlockPos pos, BlockPos adjacentPos) {
 		return state.with(CAPPED, world.getBlockState(pos.up()).getBlock() != this);
 	}

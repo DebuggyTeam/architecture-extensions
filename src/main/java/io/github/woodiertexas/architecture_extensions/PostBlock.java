@@ -30,6 +30,7 @@ public class PostBlock extends PillarBlock {
     }
 
     // The following deals with block rotation
+    @Override
     public BlockState rotate(BlockState state, BlockRotation rotation)  {
         return changeRotation(state, rotation);
     }
@@ -46,6 +47,7 @@ public class PostBlock extends PillarBlock {
     }
 
     // Both of the following blocks of code below deals with block collision.
+    @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
         Direction.Axis cardinal_dir = state.get(AXIS);
         return switch (cardinal_dir) {
@@ -55,6 +57,7 @@ public class PostBlock extends PillarBlock {
         };
     }
 
+    @Override
     public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
         Direction.Axis cardinal_dir = state.get(AXIS);
         return switch (cardinal_dir) {
@@ -65,6 +68,7 @@ public class PostBlock extends PillarBlock {
     }
 
     // Deals with placing the block properly in accordance to direction.
+    @Override
     public BlockState getPlacementState(ItemPlacementContext context) {
         return this.getDefaultState().with(AXIS, context.getSide().getAxis());
     }
