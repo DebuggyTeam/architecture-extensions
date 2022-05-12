@@ -9,7 +9,7 @@ public class ArchExModelProvider extends FabricBlockStateDefinitionProvider {
     /*
     The end goal is to have every JSON file in ../resources/.. automatically generated.
     That includes "../resources/assets/blockstates", "../resources/assets/models/..", and "../resources/data/architecture_extensions/recipes"
-    Also the code should be well-documented so it can be referenced in the future as needed.
+    Also the code should be well-documented so it can be updated as new blocktypes are added to arch-ex over time or referenced as needed for other project.
 
     Thanks, woodiertexas
      */
