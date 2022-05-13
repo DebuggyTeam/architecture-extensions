@@ -1,5 +1,5 @@
 {
-	"parent": "architecture_extensions:block/roof_straight",
+	"parent": "architecture_extensions:block/roof_block",
 	"textures": {
 		"texture": "minecraft:block/cobblestone"
 	}
