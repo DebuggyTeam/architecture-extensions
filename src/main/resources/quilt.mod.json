@@ -29,6 +29,5 @@
 				"versions": ">=1.18.2"
 			}
 		]
-	},
-	"mixin": "architecture_extensions.mixins.json"
+	}
 }
