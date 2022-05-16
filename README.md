@@ -4,6 +4,6 @@ The mod idea for Architecture Extensions is technically based off the old ![Arch
 To discuss this mod or give suggestions/feedback, join my Discord server: https://discord.gg/SN89y7EQTN
 
 ## Credits
-Carter for the Rose Quartz texture for the Rose Quartz Column.
-Everyone in the Quilt Community discord for helping me with this mod.
-Crackers0106 for mod icon.
+- Carter for the Rose Quartz texture for the Rose Quartz Column.
+- Everyone in the Quilt Community discord for helping me with this mod.
+- Crackers0106 for mod icon.
