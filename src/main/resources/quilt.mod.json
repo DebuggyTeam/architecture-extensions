@@ -6,9 +6,11 @@
 		"version": "${version}",
 		"metadata": {
 			"name": "Architecture Extensions",
-			"description": "A short description of your mod.",
+			"description": "A mod that extends one's creativity by implementing new blocks to Minecraft.",
 			"contributors": {
-				"Me!": "woodiertexas"
+				"General Mod Dev": "woodiertexas",
+				"Datagen": "KJP12",
+				"Mod Icon": "Crackers0106"
 			}
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
