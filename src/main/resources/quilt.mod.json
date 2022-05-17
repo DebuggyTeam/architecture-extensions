@@ -10,7 +10,9 @@
 			"contributors": {
 				"General Mod Dev": "woodiertexas",
 				"Datagen": "KJP12",
-				"Mod Icon": "Crackers0106"
+				"Mod Icon": "Crackers0106",
+				"Textures": "Cart3r",
+				"Block Models": "Azagwen"
 			}
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
