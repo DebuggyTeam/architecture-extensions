@@ -1,4 +1,4 @@
-package io.github.woodiertexas.architecture_extensions;
+package io.github.woodiertexas.architecture_extensions.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -25,7 +25,7 @@ public class ColumnBlock extends HorizontalFacingBlock {
 	protected static final VoxelShape WEST_BOX = Block.createCuboidShape(0.0, 0.0, 2.0, 4.0, 16.0, 14.0);
 
     // This is a super class of settings.
-	protected ColumnBlock(Settings settings) {
+	public ColumnBlock(Settings settings) {
 		super(settings);
 		setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(CAPPED, false));
 	}

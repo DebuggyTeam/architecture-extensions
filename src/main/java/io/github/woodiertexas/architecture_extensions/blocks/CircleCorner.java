@@ -1,4 +1,4 @@
-package io.github.woodiertexas.architecture_extensions;
+package io.github.woodiertexas.architecture_extensions.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -10,7 +10,7 @@ import net.minecraft.util.math.Direction;
 
 public class CircleCorner extends HorizontalFacingBlock {
     // This is a super class of settings.
-    protected CircleCorner(Settings settings) {
+    public CircleCorner(Settings settings) {
         super(settings);
         setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
     }

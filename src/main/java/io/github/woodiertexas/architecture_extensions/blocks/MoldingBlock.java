@@ -1,4 +1,4 @@
-package io.github.woodiertexas.architecture_extensions;
+package io.github.woodiertexas.architecture_extensions.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
