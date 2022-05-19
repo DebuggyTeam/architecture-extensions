@@ -65,7 +65,28 @@
 	"block.architecture_extensions.smooth_sandstone_roof": "Smooth Sandstone Roof",
 	"block.architecture_extensions.stone_brick_roof": "Stone Brick Roof",
 
-	"block.architecture_extensions.debuggy_block": "Oddly Colored Block",
-	"block.architecture_extensions.fake_end_portal_block": "Starry Night Sky Block"
+	"block.architecture_extensions.oak_crown_molding": "Oak Crown Molding",
 
+	"block.architecture_extensions.end_rod_nubless": "Continuous End Rod",
+	"block.architecture_extensions.bamboo_rod": "Bamboo Rod",
+	"block.architecture_extensions.copper_rod": "Copper Rod",
+
+	"block.architecture_extensions.debuggy_block": "Oddly Colored Block",
+	"block.architecture_extensions.fake_end_portal_block": "Starry Night Sky Block",
+
+
+	"block.architecture_extensions.hardened_lightstone_column": "Hardened Lightstone Column",
+	"block.architecture_extensions.lightstone_column": "Lightstone Column",
+	"block.architecture_extensions.lightstone_brick_column": "Lightstone Brick Column",
+	"block.architecture_extensions.polished_lightstone_column": "Polished Lightstone Column",
+	"block.architecture_extensions.hardened_lightstone_post": "Hardened Lightstone Post",
+	"block.architecture_extensions.lightstone_post": "Lightstone Post",
+	"block.architecture_extensions.lightstone_brick_post": "Lightstone Brick Post",
+	"block.architecture_extensions.polished_lightstone_post": "Polished Lightstone Post",
+	"block.architecture_extensions.soul_ice_column": "Soul Ice Column",
+	"block.architecture_extensions.soul_ice_brick_column": "Soul Ice Brick Column",
+	"block.architecture_extensions.polished_soul_ice_column": "Polished Soul Ice Column",
+	"block.architecture_extensions.soul_ice_post": "Soul Ice Post",
+	"block.architecture_extensions.soul_ice_brick_post": "Soul Ice Brick Post",
+	"block.architecture_extensions.polished_soul_ice_post": "Polished Soul Ice Post"
 }

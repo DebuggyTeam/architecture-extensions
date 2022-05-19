@@ -1,40 +1,40 @@
 {
 	"variants": {
 		"facing=north,cap=false": {
-			"model": "soul_ice:block/columns/soul_ice_brick_column",
+			"model": "architecture_extensions:block/columns/soul_ice_brick_column",
 			"uvlock": true
 		},
 		"facing=north,cap=true": {
-			"model": "soul_ice:block/columns/soul_ice_brick_column_cap",
+			"model": "architecture_extensions:block/columns/soul_ice_brick_column_cap",
 			"uvlock": true
 		},
 		"facing=east,cap=false": {
-			"model": "soul_ice:block/columns/soul_ice_brick_column",
+			"model": "architecture_extensions:block/columns/soul_ice_brick_column",
 			"y": 90,
 			"uvlock": true
 		},
 		"facing=east,cap=true": {
-			"model": "soul_ice:block/columns/soul_ice_brick_column_cap",
+			"model": "architecture_extensions:block/columns/soul_ice_brick_column_cap",
 			"y": 90,
 			"uvlock": true
 		},
 		"facing=south,cap=false": {
-			"model": "soul_ice:block/columns/soul_ice_brick_column",
+			"model": "architecture_extensions:block/columns/soul_ice_brick_column",
 			"y": 180,
 			"uvlock": true
 		},
 		"facing=south,cap=true": {
-			"model": "soul_ice:block/columns/soul_ice_brick_column_cap",
+			"model": "architecture_extensions:block/columns/soul_ice_brick_column_cap",
 			"y": 180,
 			"uvlock": true
 		},
 		"facing=west,cap=false": {
-			"model": "soul_ice:block/columns/soul_ice_brick_column",
+			"model": "architecture_extensions:block/columns/soul_ice_brick_column",
 			"y": 270,
 			"uvlock": true
 		},
 		"facing=west,cap=true": {
-			"model": "soul_ice:block/columns/soul_ice_brick_column_cap",
+			"model": "architecture_extensions:block/columns/soul_ice_brick_column_cap",
 			"y": 270,
 			"uvlock": true
 		}

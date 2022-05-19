@@ -1,6 +1,7 @@
 package io.github.woodiertexas.architecture_extensions;
 
 import org.quiltmc.loader.api.ModContainer;
+import org.quiltmc.loader.api.QuiltLoader;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +17,9 @@ public class ArchitectureExtensions implements ModInitializer {
 		LOGGER.info("Hello Quilt world from {} v{}!", mod.metadata().name(), mod.metadata().version().raw());
 
 		ArchitectureExtensionsBlocks.init();
-		ArchitectureExtensionsSoulIceCompat.init();
+
+		if (QuiltLoader.isModLoaded("soul_ice")) {
+			ArchExSoul_IceCompat.init();
+		}
 	}
 }
