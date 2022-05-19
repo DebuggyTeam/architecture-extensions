@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
@@ -13,22 +14,22 @@ import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
 public class ArchExSoul_IceCompat {
     // Columns
-    public static final ColumnBlock HARDENED_LIGHTSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque());
-    public static final ColumnBlock LIGHTSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque());
-    public static final ColumnBlock LIGHTSTONE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque());
-    public static final ColumnBlock POLISHED_LIGHTSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque());
-    public static final ColumnBlock SOUL_ICE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque());
-    public static final ColumnBlock SOUL_ICE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque());
-    public static final ColumnBlock POLISHED_SOUL_ICE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque());
+    public static final ColumnBlock HARDENED_LIGHTSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque().sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
+    public static final ColumnBlock LIGHTSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque().sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
+    public static final ColumnBlock LIGHTSTONE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque().sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
+    public static final ColumnBlock POLISHED_LIGHTSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque().sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
+    public static final ColumnBlock SOUL_ICE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque().sounds(BlockSoundGroup.GLASS));
+    public static final ColumnBlock SOUL_ICE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque().sounds(BlockSoundGroup.GLASS));
+    public static final ColumnBlock POLISHED_SOUL_ICE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque().sounds(BlockSoundGroup.GLASS));
 
     // Post Blocks
-    public static final PostBlock HARDENED_LIGHTSTONE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final PostBlock LIGHTSTONE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final PostBlock LIGHTSTONE_BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final PostBlock POLISHED_LIGHTSTONE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque());
-    public static final PostBlock SOUL_ICE_POST = new PostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque());
-    public static final PostBlock SOUL_ICE_BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque());
-    public static final PostBlock POLISHED_SOUL_ICE_POST = new PostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque());
+    public static final PostBlock HARDENED_LIGHTSTONE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque().sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
+    public static final PostBlock LIGHTSTONE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque().sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
+    public static final PostBlock LIGHTSTONE_BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque().sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
+    public static final PostBlock POLISHED_LIGHTSTONE_POST = new PostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).nonOpaque().sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
+    public static final PostBlock SOUL_ICE_POST = new PostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque().sounds(BlockSoundGroup.GLASS));
+    public static final PostBlock SOUL_ICE_BRICK_POST = new PostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque().sounds(BlockSoundGroup.GLASS));
+    public static final PostBlock POLISHED_SOUL_ICE_POST = new PostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).nonOpaque().sounds(BlockSoundGroup.GLASS));
 
     // Roof Blocks
 
