@@ -1,0 +1,30 @@
+{
+	"variants": {
+		"facing=down": {
+			"model": "architecture_extensions:block/end_rod_nubless",
+			"x": 180
+		},
+		"facing=east": {
+			"model": "architecture_extensions:block/end_rod_nubless",
+			"x": 90,
+			"y": 90
+		},
+		"facing=north": {
+			"model": "architecture_extensions:block/end_rod_nubless",
+			"x": 90
+		},
+		"facing=south": {
+			"model": "architecture_extensions:block/end_rod_nubless",
+			"x": 90,
+			"y": 180
+		},
+		"facing=up": {
+			"model": "architecture_extensions:block/end_rod_nubless"
+		},
+		"facing=west": {
+			"model": "architecture_extensions:block/end_rod_nubless",
+			"x": 90,
+			"y": 270
+		}
+	}
+}

@@ -16,5 +16,6 @@ public class ArchitectureExtensions implements ModInitializer {
 		LOGGER.info("Hello Quilt world from {} v{}!", mod.metadata().name(), mod.metadata().version().raw());
 
 		ArchitectureExtensionsBlocks.init();
+		ArchitectureExtensionsSoulIceCompat.init();
 	}
 }

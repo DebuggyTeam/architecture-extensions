@@ -90,6 +90,11 @@ public class ArchitectureExtensionsBlocks {
     // Crown Molding Blocks
     public static final MoldingBlock OAK_CROWN_MOLDING = new MoldingBlock(Blocks.STONE_BRICKS.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
 
+    //Rod Blocks
+    public static final RodBlockTwo BAMBOO_ROD = new RodBlockTwo(QuiltBlockSettings.of(Material.BAMBOO).strength(1f).nonOpaque().sounds(BlockSoundGroup.BAMBOO));
+    public static final RodBlockTwo COPPER_ROD = new RodBlockTwo(QuiltBlockSettings.of(Material.METAL).strength(1f).nonOpaque().sounds(BlockSoundGroup.COPPER));
+    public static final RodBlockTwo END_ROD_NUBLESS = new RodBlockTwo(QuiltBlockSettings.of(Material.STONE).strength(1f).nonOpaque().luminance(14));
+
     //Peculiar Blocks
     public static final Block DEBUGGY_BLOCK = new Block(QuiltBlockSettings.of(Material.WOOL).strength(1f).nonOpaque().sounds(BlockSoundGroup.WOOL));
     public static final Block FAKE_END_PORTAL_BLOCK = new Block(QuiltBlockSettings.of(Material.WOOL).strength(1f).nonOpaque().sounds(BlockSoundGroup.WOOL));
@@ -109,7 +114,8 @@ public class ArchitectureExtensionsBlocks {
                 "red_sandstone_post", "sandstone_post", "stone_brick_post", "stone_brick_arch", "stone_brick_circle_corner",
                 "acacia_beam", "birch_beam", "dark_oak_beam", "jungle_beam", "oak_beam", "spruce_beam", "iron_h_beam",
                 "cobblestone_roof", "nether_brick_roof", "red_nether_brick_roof", "smooth_quartz_roof", "smooth_red_sandstone_roof",
-                "smooth_sandstone_roof", "stone_brick_roof", "oak_crown_molding", "debuggy_block", "fake_end_portal_block"
+                "smooth_sandstone_roof", "stone_brick_roof", "oak_crown_molding", "debuggy_block", "fake_end_portal_block",
+                "bamboo_rod", "copper_rod", "end_rod_nubless"
         };
 
         // Block literal names
@@ -126,7 +132,8 @@ public class ArchitectureExtensionsBlocks {
                 RED_SANDSTONE_POST, SANDSTONE_POST, STONE_BRICK_POST, STONE_BRICK_ARCH, STONE_BRICK_CIRCLE_CORNER,
                 ACACIA_BEAM, BIRCH_BEAM, DARK_OAK_BEAM, JUNGLE_BEAM, OAK_BEAM, SPRUCE_BEAM, IRON_H_BEAM, COBBLESTONE_ROOF,
                 NETHER_BRICK_ROOF, RED_NETHER_BRICK_ROOF, SMOOTH_QUARTZ_ROOF, SMOOTH_RED_SANDSTONE_ROOF, SMOOTH_SANDSTONE_ROOF,
-                STONE_BRICK_ROOF, OAK_CROWN_MOLDING, DEBUGGY_BLOCK, FAKE_END_PORTAL_BLOCK
+                STONE_BRICK_ROOF, OAK_CROWN_MOLDING, DEBUGGY_BLOCK, FAKE_END_PORTAL_BLOCK, BAMBOO_ROD, COPPER_ROD,
+                END_ROD_NUBLESS
 
         };
 

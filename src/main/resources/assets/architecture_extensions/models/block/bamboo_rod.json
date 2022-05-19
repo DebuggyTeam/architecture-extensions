@@ -1,0 +1,6 @@
+{
+	"parent": "architecture_extensions:block/rod_block",
+	"textures": {
+		"texture": "minecraft:block/bamboo_stalk"
+	}
+}

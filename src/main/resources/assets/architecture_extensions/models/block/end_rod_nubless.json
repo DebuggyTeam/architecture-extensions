@@ -1,0 +1,6 @@
+{
+	"parent": "architecture_extensions:block/rod_block",
+	"textures": {
+		"texture": "architecture_extensions:block/end_rod_nubless"
+	}
+}
