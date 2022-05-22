@@ -1,6 +1,7 @@
 {
-	"parent": "architecture_extensions:block/roof_block",
+	"parent": "architecture_extensions:block/roofs/template_roof_straight",
 	"textures": {
-		"texture": "minecraft:block/red_sandstone_top"
+		"tiles": "minecraft:block/red_sandstone_top",
+		"sides": "minecraft:block/red_sandstone_top"
 	}
 }

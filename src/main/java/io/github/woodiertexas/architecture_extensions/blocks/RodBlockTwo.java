@@ -41,15 +41,6 @@ public class RodBlockTwo extends RodBlock {
     }
 
     @Override
-    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return switch (state.get(FACING).getAxis()) {
-            case X -> X_AXIS_BOX;
-            case Y -> Y_AXIS_BOX;
-            case Z -> Z_AXIS_BOX;
-        };
-    }
-
-    @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(FACING);
     }

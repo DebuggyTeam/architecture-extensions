@@ -49,18 +49,6 @@ public class ColumnBlock extends HorizontalFacingBlock {
 		};
 	}
 
-	@Override
-	public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-		Direction cardinalDir = state.get(FACING);
-		return switch (cardinalDir) {
-			case NORTH -> NORTH_BOX;
-			case SOUTH -> SOUTH_BOX;
-			case EAST -> EAST_BOX;
-			case WEST -> WEST_BOX;
-			default -> VoxelShapes.fullCube();
-		};
-	}
-
 	// Deals with placing the block properly in accordance to direction.
 	@Override
 	public BlockState getPlacementState(ItemPlacementContext context) {

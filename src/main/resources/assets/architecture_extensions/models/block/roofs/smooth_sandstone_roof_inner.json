@@ -1,6 +1,7 @@
 {
-	"parent": "architecture_extensions:block/roof_inner",
+	"parent": "architecture_extensions:block/roofs/template_roof_inner",
 	"textures": {
-		"texture": "minecraft:block/sandstone_top"
+		"tiles": "minecraft:block/sandstone_top",
+		"sides": "minecraft:block/sandstone_top"
 	}
 }

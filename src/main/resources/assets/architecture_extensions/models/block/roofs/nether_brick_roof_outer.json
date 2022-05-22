@@ -1,6 +1,7 @@
 {
-	"parent": "architecture_extensions:block/roof_outer",
+	"parent": "architecture_extensions:block/roofs/template_roof_outer",
 	"textures": {
-		"texture": "minecraft:block/nether_bricks"
+		"tiles": "minecraft:block/nether_bricks",
+		"sides": "minecraft:block/nether_bricks"
 	}
 }

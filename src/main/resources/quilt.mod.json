@@ -7,12 +7,13 @@
 		"metadata": {
 			"name": "Architecture Extensions",
 			"description": "A mod that extends one's creativity by implementing new blocks to Minecraft.",
+			"icon": "assets/architecture_extensions/icon.png",
 			"contributors": {
-				"General Mod Dev": "woodiertexas",
-				"Datagen": "KJP12",
-				"Mod Icon": "Crackers0106",
-				"Textures": "Cart3r",
-				"Block Models": "Azagwen"
+				"woodiertexas": "General Mod Dev",
+				"KJP12": "Datagen",
+				"Crackers0106": "Mod Icon",
+				"Carter": "Textures",
+				"Azagwen": "Block Models"
 			}
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",

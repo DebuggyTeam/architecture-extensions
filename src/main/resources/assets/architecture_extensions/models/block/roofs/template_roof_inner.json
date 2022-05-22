@@ -1,5 +1,6 @@
 {
-	"parent": "minecraft:block",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/cube",
 	"textures": {
 		"particle": "#tiles"
 	},
@@ -68,11 +69,11 @@
 			"to": [15.9, 13.5, 18],
 			"rotation": {"angle": -22.5, "axis": "x", "origin": [8, 10.5, 8]},
 			"faces": {
-				"north": {"uv": [0, 0, 16, 4], "texture": "#tiles", "cullface": "west"},
-				"east": {"uv": [0, 0, 11, 4], "texture": "#tiles", "cullface": "west"},
-				"south": {"uv": [0, 0, 16, 4], "texture": "#tiles", "cullface": "west"},
+				"north": {"uv": [0, 0, 16, 4], "texture": "#tiles"},
+				"east": {"uv": [0, 0, 11, 4], "texture": "#tiles"},
+				"south": {"uv": [0, 0, 16, 4], "texture": "#tiles"},
 				"up": {"uv": [0, 0, 16, 11], "texture": "#tiles"},
-				"down": {"uv": [0, 5, 16, 16], "texture": "#tiles", "cullface": "west"}
+				"down": {"uv": [0, 5, 16, 16], "texture": "#tiles"}
 			}
 		},
 		{

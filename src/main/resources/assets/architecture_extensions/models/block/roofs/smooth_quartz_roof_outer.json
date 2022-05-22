@@ -1,6 +1,7 @@
 {
-	"parent": "architecture_extensions:block/roof_outer",
+	"parent": "architecture_extensions:block/roofs/template_roof_outer",
 	"textures": {
-		"texture": "minecraft:block/quartz_block_bottom"
+		"tiles": "minecraft:block/quartz_block_bottom",
+		"sides": "minecraft:block/quartz_block_bottom"
 	}
 }

@@ -1,6 +1,7 @@
 {
-	"parent": "architecture_extensions:block/roof_inner",
+	"parent": "architecture_extensions:block/roofs/template_roof_inner",
 	"textures": {
-		"texture": "minecraft:block/cobblestone"
+		"tiles": "minecraft:block/cobblestone",
+		"sides": "minecraft:block/cobblestone"
 	}
 }

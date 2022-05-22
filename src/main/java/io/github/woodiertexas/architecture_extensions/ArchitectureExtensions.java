@@ -1,5 +1,7 @@
 package io.github.woodiertexas.architecture_extensions;
 
+import io.github.woodiertexas.architecture_extensions.compat.ArchExAurorasDecoCompat;
+import io.github.woodiertexas.architecture_extensions.compat.ArchExSoul_IceCompat;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.loader.api.QuiltLoader;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
@@ -20,6 +22,9 @@ public class ArchitectureExtensions implements ModInitializer {
 
 		if (QuiltLoader.isModLoaded("soul_ice")) {
 			ArchExSoul_IceCompat.init();
+		}
+		if (QuiltLoader.isModLoaded("aurorasdeco")) {
+			ArchExAurorasDecoCompat.init();
 		}
 	}
 }

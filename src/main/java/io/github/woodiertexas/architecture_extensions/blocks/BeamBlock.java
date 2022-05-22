@@ -56,16 +56,6 @@ public class BeamBlock extends PillarBlock {
         };
     }
 
-    @Override
-    public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        Direction.Axis cardinalDir = state.get(AXIS);
-        return switch (cardinalDir) {
-            case X -> X_AXIS_BOX;
-            case Y -> Y_AXIS_BOX;
-            case Z -> Z_AXIS_BOX;
-        };
-    }
-
     // Deals with placing the block properly in accordance to direction.
     @Override
     public BlockState getPlacementState(ItemPlacementContext context) {
