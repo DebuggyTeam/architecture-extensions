@@ -88,5 +88,9 @@
 	"block.architecture_extensions.polished_soul_ice_column": "Polished Soul Ice Column",
 	"block.architecture_extensions.soul_ice_post": "Soul Ice Post",
 	"block.architecture_extensions.soul_ice_brick_post": "Soul Ice Brick Post",
-	"block.architecture_extensions.polished_soul_ice_post": "Polished Soul Ice Post"
+	"block.architecture_extensions.polished_soul_ice_post": "Polished Soul Ice Post",
+
+
+	"block.architecture_extensions.azalea_beam": "Azalea Beam",
+	"block.architecture_extensions.jacaranda_beam": "Jacaranda Beam"
 }
