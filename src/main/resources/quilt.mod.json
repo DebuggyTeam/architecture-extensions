@@ -7,14 +7,19 @@
 		"metadata": {
 			"name": "Architecture Extensions",
 			"description": "A mod that extends one's creativity by implementing new blocks to Minecraft.",
-			"icon": "assets/architecture_extensions/icon.png",
 			"contributors": {
 				"woodiertexas": "General Mod Dev",
 				"KJP12": "Datagen",
 				"Crackers0106": "Mod Icon",
 				"Carter": "Textures",
 				"Azagwen": "Block Models"
-			}
+			},
+			"contact": {
+				"homepage": "https://modrinth.com/mod/arch-ex",
+				"issues": "https://github.com/woodiertexas/architecture-extensions/issues",
+				"sources": "https://github.com/woodiertexas/architecture-extensions"
+			},
+			"icon": "assets/architecture_extensions/icon.png"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {

@@ -102,7 +102,8 @@ public class ArchitectureExtensionsBlocks {
     static {
 
         // Block string names
-        String[] blocksArray = {"andesite_column", "blackstone_column", "brick_column", "cobbled_deepslate_column",
+        String[] blocksArray = {
+                "andesite_column", "blackstone_column", "brick_column", "cobbled_deepslate_column",
                 "cobblestone_column", "dark_prismarine_column", "deepslate_brick_column", "deepslate_tile_column", "diorite_column",
                 "end_stone_brick_column", "granite_column", "mossy_cobblestone_column", "mossy_stone_brick_column", "nether_brick_column",
                 "polished_blackstone_brick_column", "polished_blackstone_column", "polished_deepslate_column", "prismarine_brick_column",
@@ -134,7 +135,6 @@ public class ArchitectureExtensionsBlocks {
                 NETHER_BRICK_ROOF, RED_NETHER_BRICK_ROOF, SMOOTH_QUARTZ_ROOF, SMOOTH_RED_SANDSTONE_ROOF, SMOOTH_SANDSTONE_ROOF,
                 STONE_BRICK_ROOF, OAK_CROWN_MOLDING, DEBUGGY_BLOCK, FAKE_END_PORTAL_BLOCK, BAMBOO_ROD, COPPER_ROD,
                 END_ROD_NUBLESS
-
         };
 
         // Checks to see if the arrays are of the same length. If not, stop the Minecraft process.

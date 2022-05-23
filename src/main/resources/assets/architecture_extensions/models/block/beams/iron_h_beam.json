@@ -1,6 +1,7 @@
 {
 	"parent": "architecture_extensions:block/h_beam_block",
 	"textures": {
-		"texture": "minecraft:block/anvil"
+		"beam": "architecture_extensions:block/h_beam",
+		"beam_side": "architecture_extensions:block/h_beam_side"
 	}
 }

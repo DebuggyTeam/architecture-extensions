@@ -12,6 +12,9 @@ import net.minecraft.util.registry.Registry;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class ArchExSoul_IceCompat {
     // Columns
     public static final ColumnBlock HARDENED_LIGHTSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
@@ -35,34 +38,33 @@ public class ArchExSoul_IceCompat {
 
 
     static {
+        /*
+        List of blocks to be registered in key, value pairs.
+        For example, "cobblestone_column, COBBLESTONE_COLUMN"
+         */
+        Map<String, Block> blocks = new LinkedHashMap<>();
+        blocks.put("hardened_lightstone_column", HARDENED_LIGHTSTONE_COLUMN);
+        blocks.put("lightstone_column", LIGHTSTONE_COLUMN);
+        blocks.put("lightstone_brick_column", LIGHTSTONE_BRICK_COLUMN);
+        blocks.put("polished_lightstone_column", POLISHED_LIGHTSTONE_COLUMN);
+        blocks.put("polished_soul_ice_column", POLISHED_SOUL_ICE_COLUMN);
+        blocks.put("soul_ice_column", SOUL_ICE_COLUMN);
+        blocks.put("soul_ice_brick_column", SOUL_ICE_BRICK_COLUMN);
+        blocks.put("hardened_lightstone_post", HARDENED_LIGHTSTONE_POST);
+        blocks.put("lightstone_post", LIGHTSTONE_POST);
+        blocks.put("lightstone_brick_post", LIGHTSTONE_BRICK_POST);
+        blocks.put("polished_lightstone_post", POLISHED_LIGHTSTONE_POST);
+        blocks.put("polished_soul_ice_post", POLISHED_SOUL_ICE_POST);
+        blocks.put("soul_ice_post", SOUL_ICE_POST);
+        blocks.put("soul_ice_brick_post", SOUL_ICE_BRICK_POST);
 
-        // Block string names
-        String[] blocksArray = {
-                "hardened_lightstone_column", "lightstone_column", "lightstone_brick_column", "polished_lightstone_column",
-                "polished_soul_ice_column", "soul_ice_column", "soul_ice_brick_column", "hardened_lightstone_post",
-                "lightstone_post", "lightstone_brick_post", "polished_lightstone_post", "soul_ice_post", "soul_ice_brick_post",
-                "polished_soul_ice_post"
-        };
-
-        // Block literal names
-        Block[] anotherBlocksArray = {
-                HARDENED_LIGHTSTONE_COLUMN, LIGHTSTONE_COLUMN, LIGHTSTONE_BRICK_COLUMN, POLISHED_LIGHTSTONE_COLUMN,
-                POLISHED_SOUL_ICE_COLUMN, SOUL_ICE_COLUMN, SOUL_ICE_BRICK_COLUMN, HARDENED_LIGHTSTONE_POST, LIGHTSTONE_POST,
-                LIGHTSTONE_BRICK_POST, POLISHED_LIGHTSTONE_POST, SOUL_ICE_POST, SOUL_ICE_BRICK_POST, POLISHED_SOUL_ICE_POST
-        };
-
-        // Checks to see if the arrays are of the same length. If not, stop the Minecraft process.
-        if (blocksArray.length != anotherBlocksArray.length) {
-            throw new RuntimeException("Mismatched array lengths.\nLength of blocksArray: " + blocksArray.length +
-                    "\nLength of anotherBlocksArray: " + anotherBlocksArray.length);
+        // Registering the blocks and corresponding block items.
+        for (Map.Entry<String, Block> entry : blocks.entrySet()) {
+            Registry.register(Registry.BLOCK, new Identifier("architecture_extensions", entry.getKey()), entry.getValue());
+            Registry.register(Registry.ITEM, new Identifier("architecture_extensions", entry.getKey()),
+                    new BlockItem(entry.getValue(), new QuiltItemSettings().group(ItemGroup.DECORATIONS)));
         }
 
-        // Loops through the length of both arrays and registers the blocks found in said arrays.
-        for (int i = 0; i < blocksArray.length; i++) {
-            Registry.register(Registry.BLOCK, new Identifier("architecture_extensions", blocksArray[i]), anotherBlocksArray[i]);
-            Registry.register(Registry.ITEM, new Identifier("architecture_extensions", blocksArray[i]),
-                    new BlockItem(anotherBlocksArray[i], new QuiltItemSettings().group(ItemGroup.DECORATIONS)));
-        }
     }
 
     public static void init() {}
