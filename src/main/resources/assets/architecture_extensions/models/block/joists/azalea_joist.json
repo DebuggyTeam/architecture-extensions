@@ -1,0 +1,6 @@
+{
+	"parent": "architecture_extensions:block/joists/template_joist",
+	"textures": {
+		"texture": "aurorasdeco:block/stripped_azalea_log"
+	}
+}

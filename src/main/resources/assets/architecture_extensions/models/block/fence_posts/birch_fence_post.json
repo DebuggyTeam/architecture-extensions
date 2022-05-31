@@ -1,0 +1,6 @@
+{
+	"parent": "architecture_extensions:block/fence_post_two",
+	"textures": {
+		"texture": "minecraft:block/birch_planks"
+	}
+}

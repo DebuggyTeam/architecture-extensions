@@ -15,14 +15,14 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 
-public class PostBlock extends PillarBlock {
+public class WallPostBlock extends PillarBlock {
     public static final EnumProperty<Direction.Axis> AXIS = Properties.AXIS;
 
     protected static final VoxelShape X_AXIS_BOX = Block.createCuboidShape(0.0, 4.0, 4.0, 16.0, 12.0, 12.0);
     protected static final VoxelShape Y_AXIS_BOX = Block.createCuboidShape(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
     protected static final VoxelShape Z_AXIS_BOX = Block.createCuboidShape(4.0, 4.0, 0.0, 12.0, 12.0, 16.0);
 
-    public PostBlock(Settings settings) {
+    public WallPostBlock(Settings settings) {
         super(settings);
         setDefaultState(this.stateManager.getDefaultState().with(AXIS, Direction.Axis.Y));
     }

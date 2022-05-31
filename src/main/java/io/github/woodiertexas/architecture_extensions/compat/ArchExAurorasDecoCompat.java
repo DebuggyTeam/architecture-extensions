@@ -1,7 +1,11 @@
 package io.github.woodiertexas.architecture_extensions.compat;
 
 import io.github.woodiertexas.architecture_extensions.blocks.BeamBlock;
+import io.github.woodiertexas.architecture_extensions.blocks.FencePostBlock;
+import io.github.woodiertexas.architecture_extensions.blocks.JoistBlock;
+import io.github.woodiertexas.architecture_extensions.blocks.MoldingBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
@@ -19,6 +23,18 @@ public class ArchExAurorasDecoCompat {
     public static final BeamBlock AZALEA_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final BeamBlock JACARANDA_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
 
+    // Fence Post Blocks
+    public static final FencePostBlock AZALEA_FENCE_POST = new FencePostBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+    public static final FencePostBlock JACARANDA_FENCE_POST = new FencePostBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+
+    // Joist Blocks
+    public static final JoistBlock AZALEA_JOIST = new JoistBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+    public static final JoistBlock JACARANDA_JOIST = new JoistBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+    
+    // Molding Blocks
+    public static final MoldingBlock AZALEA_CROWN_MOLDING = new MoldingBlock(Blocks.ACACIA_PLANKS.getDefaultState(), QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+    public static final MoldingBlock JACARANDA_CROWN_MOLDING = new MoldingBlock(Blocks.ACACIA_PLANKS.getDefaultState(), QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+
 
     static {
         /*
@@ -28,6 +44,12 @@ public class ArchExAurorasDecoCompat {
         Map<String, Block> blocks = new LinkedHashMap<>();
             blocks.put("azalea_beam", AZALEA_BEAM);
             blocks.put("jacaranda_beam", JACARANDA_BEAM);
+            blocks.put("azalea_fence_post", AZALEA_FENCE_POST);
+            blocks.put("jacaranda_fence_post", JACARANDA_FENCE_POST);
+            blocks.put("azalea_joist", AZALEA_JOIST);
+            blocks.put("jacaranda_joist", JACARANDA_JOIST);
+            blocks.put("azalea_crown_molding", AZALEA_CROWN_MOLDING);
+            blocks.put("jacaranda_crown_molding", JACARANDA_CROWN_MOLDING);
 
         // Registering the blocks and corresponding block items.
         for (Map.Entry<String, Block> entry : blocks.entrySet()) {

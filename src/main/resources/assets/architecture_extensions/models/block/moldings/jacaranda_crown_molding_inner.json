@@ -1,0 +1,6 @@
+{
+	"parent": "architecture_extensions:block/crown_molding_inner",
+	"textures": {
+		"texture": "aurorasdeco:block/jacaranda_planks"
+	}
+}

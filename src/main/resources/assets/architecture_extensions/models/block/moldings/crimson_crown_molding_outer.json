@@ -1,0 +1,6 @@
+{
+	"parent": "architecture_extensions:block/crown_molding_outer",
+	"textures": {
+		"texture": "minecraft:block/crimson_planks"
+	}
+}

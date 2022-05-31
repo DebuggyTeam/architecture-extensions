@@ -1,0 +1,6 @@
+{
+	"parent": "architecture_extensions:block/crown_molding",
+	"textures": {
+		"texture": "minecraft:block/spruce_planks"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "architecture_extensions:block/beam_block",
+	"textures": {
+		"texture_side": "minecraft:block/stripped_warped_stem",
+		"texture_up": "minecraft:block/stripped_warped_stem_top"
+	}
+}

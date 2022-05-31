@@ -1,0 +1,6 @@
+{
+	"parent": "architecture_extensions:block/joists/template_joist",
+	"textures": {
+		"texture": "minecraft:block/stripped_oak_log"
+	}
+}
