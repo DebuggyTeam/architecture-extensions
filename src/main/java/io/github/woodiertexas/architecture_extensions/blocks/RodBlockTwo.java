@@ -17,9 +17,9 @@ public class RodBlockTwo extends RodBlock {
     protected static final VoxelShape Y_AXIS_BOX = Block.createCuboidShape(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
     protected static final VoxelShape Z_AXIS_BOX = Block.createCuboidShape(6.0, 6.0, 0.0, 10.0, 10.0, 16.0);
 
-    protected static final VoxelShape X_AXIS_BOX_COLLISION = Block.createCuboidShape(0.0, 8.0, 8.0, 14.0, 10.0, 10.0);
-    protected static final VoxelShape Y_AXIS_BOX_COLLISION = Block.createCuboidShape(8.0, 0.0, 8.0, 10.0, 14.0, 10.0);
-    protected static final VoxelShape Z_AXIS_BOX_COLLISION = Block.createCuboidShape(8.0, 8.0, 0.0, 10.0, 10.0, 1.0);
+    //protected static final VoxelShape X_AXIS_BOX_COLLISION = Block.createCuboidShape(0.0, 8.0, 8.0, 14.0, 10.0, 10.0);
+    //protected static final VoxelShape Y_AXIS_BOX_COLLISION = Block.createCuboidShape(8.0, 0.0, 8.0, 10.0, 14.0, 10.0);
+    //protected static final VoxelShape Z_AXIS_BOX_COLLISION = Block.createCuboidShape(8.0, 8.0, 0.0, 10.0, 10.0, 1.0);
 
     public RodBlockTwo(Settings settings) {
         super(settings);
