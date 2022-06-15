@@ -1,5 +1,5 @@
 {
-	"parent": "architecture_extensions:block/beam_block",
+	"parent": "architecture_extensions:block/templates/template_beam_block",
 	"textures": {
 		"texture_side": "aurorasdeco:block/stripped_jacaranda_log",
 		"texture_up": "aurorasdeco:block/stripped_jacaranda_log_top"

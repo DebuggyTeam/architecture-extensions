@@ -1,5 +1,5 @@
 {
-	"parent": "architecture_extensions:block/roofs/template_roof_straight",
+	"parent": "architecture_extensions:block/templates/template_roof_straight",
 	"textures": {
 		"tiles": "minecraft:block/cobblestone",
 		"sides": "minecraft:block/cobblestone"

@@ -1,5 +1,5 @@
 {
-	"parent": "architecture_extensions:block/fence_post_two",
+	"parent": "architecture_extensions:block/templates/template_fence_post_two",
 	"textures": {
 		"texture": "minecraft:block/warped_planks"
 	}

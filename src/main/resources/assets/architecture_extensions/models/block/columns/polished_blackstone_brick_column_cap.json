@@ -1,5 +1,5 @@
 {
-	"parent": "architecture_extensions:block/column_cap_block",
+	"parent": "architecture_extensions:block/templates/template_column_cap_block",
 	"textures": {
 		"texture_up": "minecraft:block/polished_blackstone_bricks",
 		"texture_down": "minecraft:block/polished_blackstone_bricks",

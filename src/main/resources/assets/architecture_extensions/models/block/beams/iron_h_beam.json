@@ -1,5 +1,5 @@
 {
-	"parent": "architecture_extensions:block/h_beam_block",
+	"parent": "architecture_extensions:block/templates/template_h_beam_block",
 	"textures": {
 		"beam": "architecture_extensions:block/h_beam",
 		"beam_side": "architecture_extensions:block/h_beam_side"
