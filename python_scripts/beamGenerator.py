@@ -1,6 +1,8 @@
 import json
 import os
 
+ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
+
 #block_category = input("Input category name: ")
 arch_ex_block = input("Input Arch-Ex block name: ")
 minecraft_block = input("Input Minecraft block name: ")
@@ -45,14 +47,14 @@ recipe_dict = {
 
 files = [blockstate_dict, model_dict, item_dict, recipe_dict]
 directories = [
-	"assets/architecture_extensions/blockstates", 
-	"assets/architecture_extensions/models/block/beams", 
-	"assets/architecture_extensions/models/item", 
-	"data/architecture_extensions/recipes"
+	"assets\\architecture_extensions\\blockstates", 
+	"assets\\architecture_extensions\\models\\block\\beams", 
+	"assets\\architecture_extensions\\models\\item", 
+	"data\\architecture_extensions\\recipes"
 ]
 
 for i, j in zip(files, directories):
-    os.chdir(f"{os.path.dirname(__file__)}/{j}")
+    os.chdir(f"{ROOT_DIR}\\src\\main\\resources\\{j}")
     with open(f"{arch_ex_block}_beam.json", "w") as file:
         json.dump(i, file, indent = 4)
         file.close()
