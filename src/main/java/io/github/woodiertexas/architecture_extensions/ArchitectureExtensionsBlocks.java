@@ -105,6 +105,7 @@ public class ArchitectureExtensionsBlocks {
     public static final RoofBlock SMOOTH_RED_SANDSTONE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
     public static final RoofBlock SMOOTH_SANDSTONE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
     public static final RoofBlock STONE_BRICK_ROOF = new RoofBlock(Blocks.STONE_BRICKS.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
+    public static final RoofBlock DEEPSLATE_BRICK_ROOF = new RoofBlock(Blocks.STONE_BRICKS.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
 
     // Arch Blocks
     public static final ArchBlock STONE_BRICK_ARCH = new ArchBlock(Blocks.STONE_BRICKS.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
@@ -149,7 +150,7 @@ public class ArchitectureExtensionsBlocks {
                 "jungle_fence_post", "oak_fence_post", "spruce_fence_post", "crimson_fence_post", "warped_fence_post",
                 "acacia_joist", "birch_joist", "dark_oak_joist", "jungle_joist", "oak_joist", "spruce_joist", "crimson_joist",
                 "warped_joist", "acacia_crown_molding", "birch_crown_molding", "dark_oak_crown_molding", "jungle_crown_molding",
-                "oak_crown_molding", "spruce_crown_molding", "crimson_crown_molding", "warped_crown_molding"
+                "oak_crown_molding", "spruce_crown_molding", "crimson_crown_molding", "warped_crown_molding", "deepslate_brick_roof"
         };
 
         // Block literal names
@@ -170,7 +171,8 @@ public class ArchitectureExtensionsBlocks {
                 ACACIA_FENCE_POST, BIRCH_FENCE_POST, DARK_OAK_FENCE_POST, JUNGLE_FENCE_POST, OAK_FENCE_POST, SPRUCE_FENCE_POST,
                 CRIMSON_FENCE_POST, WARPED_FENCE_POST, ACACIA_JOIST, BIRCH_JOIST, DARK_OAK_JOIST, JUNGLE_JOIST, OAK_JOIST,
                 SPRUCE_JOIST, CRIMSON_JOIST, WARPED_JOIST, ACACIA_CROWN_MOLDING, BIRCH_CROWN_MOLDING, DARK_OAK_CROWN_MOLDING,
-                JUNGLE_CROWN_MOLDING, OAK_CROWN_MOLDING, SPRUCE_CROWN_MOLDING, CRIMSON_CROWN_MOLDING, WARPED_CROWN_MOLDING
+                JUNGLE_CROWN_MOLDING, OAK_CROWN_MOLDING, SPRUCE_CROWN_MOLDING, CRIMSON_CROWN_MOLDING, WARPED_CROWN_MOLDING,
+                DEEPSLATE_BRICK_ROOF
         };
 
         // Checks to see if the arrays are of the same length. If not, stop the Minecraft process.

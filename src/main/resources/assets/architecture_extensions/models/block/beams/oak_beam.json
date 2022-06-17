@@ -1,7 +1,7 @@
 {
-	"parent": "architecture_extensions:block/templates/template_beam_block",
-	"textures": {
-		"texture_side": "minecraft:block/stripped_oak_log",
-		"texture_up": "minecraft:block/stripped_oak_log_top"
-	}
+    "parent": "architecture_extensions:block/templates/template_beam_block",
+    "textures": {
+        "texture_side": "minecraft:block/stripped_oak_log",
+        "texture_up": "minecraft:block/stripped_oak_log_top"
+    }
 }

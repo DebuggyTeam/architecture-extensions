@@ -1,0 +1,7 @@
+{
+    "parent": "architecture_extensions:block/templates/template_roof_inner",
+    "textures": {
+        "tiles": "minecraft:block/deepslate_bricks",
+        "sides": "minecraft:block/deepslate_bricks"
+    }
+}

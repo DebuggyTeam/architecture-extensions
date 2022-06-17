@@ -20,9 +20,6 @@ public class MoldingBlock extends StairsBlock {
     SE -> Southeast
     SW -> Southwest
      */
-    protected static final VoxelShape CORNER_FIRST = Block.createCuboidShape(0.0, 8.0, 0.0, 16.0, 16.0, 8.0);
-    protected static final VoxelShape CORNER_SECOND = Block.createCuboidShape(8.0, 8.0, 8.0, 16.0, 16.0, 16.0);
-
     protected static final VoxelShape NORTH_BOX_TOP = Block.createCuboidShape(0.0, 8.0, 0.0, 16.0, 16.0, 8.0);
     protected static final VoxelShape SOUTH_BOX_TOP = Block.createCuboidShape(0.0, 8.0, 8.0, 16.0, 16.0, 16.0);
     protected static final VoxelShape EAST_BOX_TOP = Block.createCuboidShape(8.0, 8.0, 0.0, 16.0, 16.0, 16.0);
@@ -65,11 +62,16 @@ public class MoldingBlock extends StairsBlock {
         StairShape moldingShape = state.get(SHAPE);
 
         var straightShape = this.getStraightShapeFor(upOrDown, cardinalDir);
+
+        final VoxelShape INNER_CORNER = VoxelShapes.union(straightShape, this.getStraightShapeFor(upOrDown, cardinalDir.rotateYCounterclockwise()));
+        final VoxelShape OUTER_CORNER = VoxelShapes.combineAndSimplify(straightShape, this.getStraightShapeFor(upOrDown, cardinalDir.rotateYCounterclockwise()), BooleanBiFunction.AND);
+        final VoxelShape A_DEFAULT_CORNER = VoxelShapes.combineAndSimplify(straightShape, this.getStraightShapeFor(upOrDown, cardinalDir.rotateYClockwise()), BooleanBiFunction.AND);
+
         return switch (moldingShape) {
             case STRAIGHT -> straightShape;
-            case INNER_LEFT -> VoxelShapes.union(straightShape, this.getStraightShapeFor(upOrDown, cardinalDir.rotateYCounterclockwise()));
-            case OUTER_LEFT -> VoxelShapes.combineAndSimplify(straightShape, this.getStraightShapeFor(upOrDown, cardinalDir.rotateYCounterclockwise()), BooleanBiFunction.AND);
-            default -> VoxelShapes.combineAndSimplify(straightShape, this.getStraightShapeFor(upOrDown, cardinalDir.rotateYClockwise()), BooleanBiFunction.AND);
+            case INNER_LEFT -> INNER_CORNER;
+            case OUTER_LEFT -> OUTER_CORNER;
+            default -> A_DEFAULT_CORNER;
         };
     }
 }
