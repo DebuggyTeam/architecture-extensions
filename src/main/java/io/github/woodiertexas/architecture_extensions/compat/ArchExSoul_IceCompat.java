@@ -34,8 +34,6 @@ public class ArchExSoul_IceCompat {
     public static final WallPostBlock SOUL_ICE_BRICK_POST = new WallPostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.GLASS));
     public static final WallPostBlock POLISHED_SOUL_ICE_POST = new WallPostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.GLASS));
 
-    // Roof Blocks
-
 
     static {
         /*
