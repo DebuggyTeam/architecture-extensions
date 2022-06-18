@@ -1,0 +1,20 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "aurorasdeco"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "aurorasdeco:jacaranda_fence"
+        }
+    ],
+    "result": {
+        "item": "architecture_extensions:jacaranda_fence_post",
+        "count": 1
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:quartz_block"
+    },
+    "result": "architecture_extensions:smooth_quartz_roof",
+    "count": 1
+}

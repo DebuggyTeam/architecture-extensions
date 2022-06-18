@@ -1,8 +1,8 @@
 {
-	"parent": "architecture_extensions:block/templates/template_column_cap_block",
-	"textures": {
-		"texture_up": "soul_ice:block/soul_ice_bricks",
-		"texture_down": "soul_ice:block/soul_ice_bricks",
-		"texture_side": "soul_ice:block/soul_ice_bricks"
-	}
+    "parent": "architecture_extensions:block/templates/template_column_cap_block",
+    "textures": {
+        "texture_up": "soul_ice:block/soul_ice_bricks",
+        "texture_down": "soul_ice:block/soul_ice_bricks",
+        "texture_side": "soul_ice:block/soul_ice_bricks"
+    }
 }
