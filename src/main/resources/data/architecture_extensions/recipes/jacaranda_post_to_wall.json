@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "architecture_extensions:jacaranda_fence_post"
+        }
+    ],
+    "result": {
+        "item": "aurorasdeco:jacaranda_fence",
+        "count": 1
+    }
+}

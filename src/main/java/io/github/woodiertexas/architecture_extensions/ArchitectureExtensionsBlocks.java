@@ -61,6 +61,7 @@ public class ArchitectureExtensionsBlocks {
     public static final WallPostBlock NETHER_BRICK_POST = new WallPostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).sounds(BlockSoundGroup.NETHER_BRICKS));
     public static final WallPostBlock RED_NETHER_BRICK_POST = new WallPostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f).sounds(BlockSoundGroup.NETHER_BRICKS));
     public static final WallPostBlock END_STONE_BRICK_POST = new WallPostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f));
+    public static final WallPostBlock PRISMARINE_POST = new WallPostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f));
     public static final WallPostBlock PRISMARINE_BRICK_POST = new WallPostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f));
     public static final WallPostBlock BLACKSTONE_POST = new WallPostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f));
     public static final WallPostBlock POLISHED_BLACKSTONE_BRICK_POST = new WallPostBlock(QuiltBlockSettings.of(Material.STONE).strength(3f));
@@ -178,7 +179,7 @@ public class ArchitectureExtensionsBlocks {
                 "granite_post", "diorite_post", "andesite_post", "cobbled_deepslate_post", "polished_deepslate_post", "cobblestone_post",
                 "sandstone_post", "red_sandstone_post", "brick_post", "mossy_cobblestone_post", "stone_brick_post", "mossy_stone_brick_post",
                 "deepslate_brick_post", "deepslate_tile_post", "nether_brick_post", "red_nether_brick_post", "end_stone_brick_post",
-                "prismarine_brick_post", "blackstone_post", "polished_blackstone_brick_post", "polished_blackstone_post",
+                "prismarine_post", "prismarine_brick_post", "blackstone_post", "polished_blackstone_brick_post", "polished_blackstone_post",
 
                 "granite_roof", "diorite_roof", "andesite_roof", "cobbled_deepslate_roof", "polished_deepslate_roof", "cobblestone_roof",
                 "sandstone_roof", "red_sandstone_roof", "brick_roof", "mossy_cobblestone_roof", "stone_brick_roof", "mossy_stone_brick_roof",
@@ -212,8 +213,8 @@ public class ArchitectureExtensionsBlocks {
 
                 GRANITE_POST, DIORITE_POST, ANDESITE_POST, COBBLED_DEEPSLATE_POST, POLISHED_DEEPSLATE_POST, COBBLESTONE_POST, SANDSTONE_POST,
                 RED_SANDSTONE_POST, BRICK_POST, MOSSY_COBBLESTONE_POST, STONE_BRICK_POST, MOSSY_STONE_BRICK_POST, DEEPSLATE_BRICK_POST,
-                DEEPSLATE_TILE_POST, NETHER_BRICK_POST, RED_NETHER_BRICK_POST, END_STONE_BRICK_POST, PRISMARINE_BRICK_POST, BLACKSTONE_POST,
-                POLISHED_BLACKSTONE_BRICK_POST, POLISHED_BLACKSTONE_POST,
+                DEEPSLATE_TILE_POST, NETHER_BRICK_POST, RED_NETHER_BRICK_POST, END_STONE_BRICK_POST, PRISMARINE_POST, PRISMARINE_BRICK_POST,
+                BLACKSTONE_POST, POLISHED_BLACKSTONE_BRICK_POST, POLISHED_BLACKSTONE_POST,
 
                 GRANITE_ROOF, DIORITE_ROOF, ANDESITE_ROOF, COBBLED_DEEPSLATE_ROOF, POLISHED_DEEPSLATE_ROOF, COBBLESTONE_ROOF, SANDSTONE_ROOF,
                 RED_SANDSTONE_ROOF, BRICK_ROOF, MOSSY_COBBLESTONE_ROOF, STONE_BRICK_ROOF, MOSSY_STONE_BRICK_ROOF, DEEPSLATE_BRICK_ROOF,

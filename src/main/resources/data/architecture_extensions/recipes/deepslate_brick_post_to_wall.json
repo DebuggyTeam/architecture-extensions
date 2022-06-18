@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "architecture_extensions:deepslate_brick_post"
+        }
+    ],
+    "result": {
+        "item": "minecraft:deepslate_brick_wall",
+        "count": 1
+    }
+}

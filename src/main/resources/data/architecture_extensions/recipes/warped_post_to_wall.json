@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "architecture_extensions:warped_fence_post"
+        }
+    ],
+    "result": {
+        "item": "minecraft:warped_fence",
+        "count": 1
+    }
+}

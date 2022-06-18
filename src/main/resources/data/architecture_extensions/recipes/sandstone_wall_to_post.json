@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:sandstone_wall"
+        }
+    ],
+    "result": {
+        "item": "architecture_extensions:sandstone_post",
+        "count": 1
+    }
+}

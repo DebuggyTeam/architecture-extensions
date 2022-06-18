@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "soul_ice:hardened_lightstone_wall"
+        }
+    ],
+    "result": {
+        "item": "architecture_extensions:hardened_lightstone_post",
+        "count": 1
+    }
+}

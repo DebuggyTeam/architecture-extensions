@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "architecture_extensions:diorite_post"
+        }
+    ],
+    "result": {
+        "item": "minecraft:diorite_wall",
+        "count": 1
+    }
+}

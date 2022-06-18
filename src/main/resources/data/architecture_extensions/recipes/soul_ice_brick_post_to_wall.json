@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "architecture_extensions:soul_ice_brick_post"
+        }
+    ],
+    "result": {
+        "item": "soul_ice:soul_ice_brick_wall",
+        "count": 1
+    }
+}

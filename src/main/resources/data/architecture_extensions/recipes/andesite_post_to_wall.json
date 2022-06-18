@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "architecture_extensions:andesite_post"
+        }
+    ],
+    "result": {
+        "item": "minecraft:andesite_wall",
+        "count": 1
+    }
+}

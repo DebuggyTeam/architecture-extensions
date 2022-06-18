@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "architecture_extensions:blackstone_post"
+        }
+    ],
+    "result": {
+        "item": "minecraft:blackstone_wall",
+        "count": 1
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "architecture_extensions:prismarine_post"
+        }
+    ],
+    "result": {
+        "item": "minecraft:prismarine_wall",
+        "count": 1
+    }
+}

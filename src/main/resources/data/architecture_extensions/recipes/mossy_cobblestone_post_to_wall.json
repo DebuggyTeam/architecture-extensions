@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "architecture_extensions:mossy_cobblestone_post"
+        }
+    ],
+    "result": {
+        "item": "minecraft:mossy_cobblestone_wall",
+        "count": 1
+    }
+}

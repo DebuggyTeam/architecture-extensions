@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "architecture_extensions:end_stone_brick_post"
+        }
+    ],
+    "result": {
+        "item": "minecraft:end_stone_brick_wall",
+        "count": 1
+    }
+}

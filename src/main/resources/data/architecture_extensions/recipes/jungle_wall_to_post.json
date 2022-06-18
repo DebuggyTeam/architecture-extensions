@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:jungle_fence"
+        }
+    ],
+    "result": {
+        "item": "architecture_extensions:jungle_fence_post",
+        "count": 1
+    }
+}

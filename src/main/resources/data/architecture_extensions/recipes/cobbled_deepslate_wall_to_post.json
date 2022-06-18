@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:cobbled_deepslate_wall"
+        }
+    ],
+    "result": {
+        "item": "architecture_extensions:cobbled_deepslate_post",
+        "count": 1
+    }
+}

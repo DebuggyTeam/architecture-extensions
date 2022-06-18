@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "architecture_extensions:mossy_stone_brick_post"
+        }
+    ],
+    "result": {
+        "item": "minecraft:mossy_stone_brick_wall",
+        "count": 1
+    }
+}

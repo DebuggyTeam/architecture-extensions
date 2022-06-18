@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "architecture_extensions:birch_fence_post"
+        }
+    ],
+    "result": {
+        "item": "minecraft:birch_fence",
+        "count": 1
+    }
+}
