@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "aurorasdeco:azalea_log"
+    },
+    "result": "architecture_extensions:azalea_beam",
+    "count": 1
+}

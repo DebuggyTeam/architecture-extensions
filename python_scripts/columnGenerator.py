@@ -106,4 +106,4 @@ with open(f"{arch_ex_block}_column.json", "w") as file:
 with open(f"{arch_ex_block}_column_cap.json", "w") as file:
     json.dump(column_cap, file, indent=4)
     file.close()
-print(f"Files for {arch_ex_block.title()} Beam have been generated")
+print(f"Files for {arch_ex_block.title()} Column have been generated")

@@ -1,7 +1,7 @@
 {
-	"parent": "architecture_extensions:block/templates/template_beam_block",
-	"textures": {
-		"texture_side": "aurorasdeco:block/stripped_azalea_log",
-		"texture_up": "aurorasdeco:block/stripped_azalea_log_top"
-	}
+    "parent": "architecture_extensions:block/templates/template_beam_block",
+    "textures": {
+        "texture_side": "aurorasdeco:block/stripped_azalea_log",
+        "texture_up": "aurorasdeco:block/stripped_azalea_log_top"
+    }
 }

@@ -94,7 +94,7 @@ block_names = [
     "Bamboo Rod", "Copper Rod", "End Rod Nubless", "Oddly Colored Block", "Starry Night Sky Block",
 
     # Soul Ice Blocks
-    "Soul Ice Column", "Polished Soul Ice Column", "soul Ice Brick Column", "Lightstone Column",
+    "Soul Ice Column", "Polished Soul Ice Column", "Soul Ice Brick Column", "Lightstone Column",
     "Polished Lightstone Column", "Lightstone Brick Column", "Hardened Lightstone Column",
 
     "Soul Ice Post", "Polished Soul Ice Post", "Soul Ice Brick Post", "Lightstone Post", "Polished Lightstone Post",
