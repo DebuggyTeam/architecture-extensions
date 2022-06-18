@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "architecture_extensions:acacia_fence_post"
+        }
+    ],
+    "result": {
+        "item": "minecraft:acacia_planks_fence",
+        "count": 1
+    }
+}

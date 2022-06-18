@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "aurorasdeco:stripped_jacaranda_log"
-    },
-    "result": "architecture_extensions:jacaranda_joist",
-    "count": 3
-}

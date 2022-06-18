@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "architecture_extensions:spruce_fence_post"
+        }
+    ],
+    "result": {
+        "item": "minecraft:spruce_planks_fence",
+        "count": 1
+    }
+}

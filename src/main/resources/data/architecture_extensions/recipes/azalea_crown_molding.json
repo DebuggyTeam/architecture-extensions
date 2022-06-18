@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "aurorasdeco:azalea_planks"
-    },
-    "result": "architecture_extensions:azalea_crown_molding",
-    "count": 6
-}

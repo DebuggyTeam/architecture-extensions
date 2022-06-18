@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "soul_ice:soul_ice"
-    },
-    "result": "architecture_extensions:soul_ice_arch",
-    "count": 1
-}

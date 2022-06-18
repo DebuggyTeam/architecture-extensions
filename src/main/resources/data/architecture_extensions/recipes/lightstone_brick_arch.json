@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "soul_ice:lightstone_bricks"
-    },
-    "result": "architecture_extensions:lightstone_brick_arch",
-    "count": 1
-}

@@ -28,15 +28,17 @@ block_ids = [
     "deepslate_brick_arch", "deepslate_tile_arch", "nether_brick_arch", "red_nether_brick_arch", "end_stone_brick_arch",
     "smooth_quartz_arch", "prismarine_brick_arch", "blackstone_arch", "polished_blackstone_brick_arch", "polished_blackstone_arch",
 
-    "oak_beam", "spruce_beam", "birch_beam", "jungle_beam", "acacia_beam", "dark_oak_beam", "crimson_beam", "warped_beam",
-    "iron_h_beam",
+    "oak_beam", "spruce_beam", "birch_beam", "jungle_beam", "acacia_beam", "dark_oak_beam", "mangrove_beam", "crimson_beam",
+    "warped_beam", "iron_h_beam",
 
     "oak_fence_post", "spruce_fence_post", "birch_fence_post", "jungle_fence_post", "acacia_fence_post", "dark_oak_fence_post",
     "crimson_fence_post", "warped_fence_post",
-    "oak_joist", "spruce_joist", "birch_joist", "jungle_joist", "acacia_joist", "dark_oak_joist", "crimson_joist", "warped_joist",
+
+    "oak_joist", "spruce_joist", "birch_joist", "jungle_joist", "acacia_joist", "dark_oak_joist", "mangrove_joist", "crimson_joist",
+    "warped_joist",
 
     "oak_crown_molding", "spruce_crown_molding", "birch_crown_molding", "jungle_crown_molding", "acacia_crown_molding",
-    "dark_oak_crown_molding", "crimson_crown_molding", "warped_crown_molding",
+    "dark_oak_crown_molding", "mangrove_crown_molding", "crimson_crown_molding", "warped_crown_molding",
 
     "bamboo_rod", "copper_rod", "end_rod_nubless", "debuggy_block", "fake_end_portal_block",
 
@@ -79,17 +81,17 @@ block_names = [
     "Smooth Quartz Arch", "Prismarine Brick Arch", "Blackstone Arch", "Polished Blackstone Brick Arch",
     "Polished Blackstone Arch",
 
-    "Oak Beam", "Spruce Beam", "Birch Beam", "Jungle Beam", "Acacia Beam", "Dark Oak Beam", "Crimson Beam", "Warped Beam",
-    "Iron H Beam",
+    "Oak Beam", "Spruce Beam", "Birch Beam", "Jungle Beam", "Acacia Beam", "Dark Oak Beam", "Mangrove Beam", "Crimson Beam",
+    "Warped Beam", "Iron H Beam",
 
     "Oak Fence Post", "Spruce Fence Post", "Birch Fence Post", "Jungle Fence Post", "Acacia Fence Post", "Dark Oak Fence Post",
     "Crimson Fence Post", "Warped Fence Post",
 
-    "Oak Joist", "Spruce Joist", "Birch Joist", "Jungle Joist", "Acacia Joist", "Dark Oak Joist", "Crimson Joist",
-    "Warped Joist",
+    "Oak Joist", "Spruce Joist", "Birch Joist", "Jungle Joist", "Acacia Joist", "Dark Oak Joist", "Mangrove Joist",
+    "Crimson Joist", "Warped Joist",
 
     "Oak Crown Molding", "Spruce Crown Molding", "Birch Crown Molding", "Jungle Crown Molding", "Acacia Crown Molding",
-    "Dark Oak Crown Molding", "Crimson Crown Molding", "Warped Crown Molding",
+    "Dark Oak Crown Molding", "Mangrove Crown Molding", "Crimson Crown Molding", "Warped Crown Molding",
 
     "Bamboo Rod", "Copper Rod", "End Rod Nubless", "Oddly Colored Block", "Starry Night Sky Block",
 

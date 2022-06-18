@@ -122,6 +122,7 @@ public class ArchitectureExtensionsBlocks {
     public static final BeamBlock JUNGLE_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final BeamBlock ACACIA_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final BeamBlock DARK_OAK_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+    public static final BeamBlock MANGROVE_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final BeamBlock CRIMSON_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final BeamBlock WARPED_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final BeamBlock IRON_H_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.METAL).strength(8f).sounds(BlockSoundGroup.ANVIL));
@@ -143,6 +144,7 @@ public class ArchitectureExtensionsBlocks {
     public static final JoistBlock JUNGLE_JOIST = new JoistBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final JoistBlock ACACIA_JOIST = new JoistBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final JoistBlock DARK_OAK_JOIST = new JoistBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+    public static final JoistBlock MANGROVE_JOIST = new JoistBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final JoistBlock CRIMSON_JOIST = new JoistBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final JoistBlock WARPED_JOIST = new JoistBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
 
@@ -153,6 +155,7 @@ public class ArchitectureExtensionsBlocks {
     public static final MoldingBlock JUNGLE_CROWN_MOLDING = new MoldingBlock(Blocks.JUNGLE_PLANKS.getDefaultState(), QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final MoldingBlock ACACIA_CROWN_MOLDING = new MoldingBlock(Blocks.ACACIA_PLANKS.getDefaultState(), QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final MoldingBlock DARK_OAK_CROWN_MOLDING = new MoldingBlock(Blocks.DARK_OAK_PLANKS.getDefaultState(), QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+    public static final MoldingBlock MANGROVE_CROWN_MOLDING = new MoldingBlock(Blocks.DARK_OAK_PLANKS.getDefaultState(), QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final MoldingBlock CRIMSON_CROWN_MOLDING = new MoldingBlock(Blocks.CRIMSON_PLANKS.getDefaultState(), QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final MoldingBlock WARPED_CROWN_MOLDING = new MoldingBlock(Blocks.WARPED_PLANKS.getDefaultState(), QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
 
@@ -192,14 +195,16 @@ public class ArchitectureExtensionsBlocks {
                 "smooth_quartz_arch", "prismarine_brick_arch", "blackstone_arch", "polished_blackstone_brick_arch", "polished_blackstone_arch",
 
                 "oak_beam", "spruce_beam", "birch_beam", "jungle_beam", "acacia_beam", "dark_oak_beam", "crimson_beam", "warped_beam",
-                "iron_h_beam",
+                "mangrove_beam", "iron_h_beam",
 
                 "oak_fence_post", "spruce_fence_post", "birch_fence_post", "jungle_fence_post", "acacia_fence_post", "dark_oak_fence_post",
                 "crimson_fence_post", "warped_fence_post",
-                "oak_joist", "spruce_joist", "birch_joist", "jungle_joist", "acacia_joist", "dark_oak_joist", "crimson_joist", "warped_joist",
+
+                "oak_joist", "spruce_joist", "birch_joist", "jungle_joist", "acacia_joist", "dark_oak_joist", "mangrove_joist", "crimson_joist",
+                "warped_joist",
 
                 "oak_crown_molding", "spruce_crown_molding", "birch_crown_molding", "jungle_crown_molding", "acacia_crown_molding",
-                "dark_oak_crown_molding", "crimson_crown_molding", "warped_crown_molding",
+                "dark_oak_crown_molding", "mangrove_crown_molding", "crimson_crown_molding", "warped_crown_molding",
 
                 "bamboo_rod", "copper_rod", "end_rod_nubless", "debuggy_block", "fake_end_portal_block"
         };
@@ -226,15 +231,16 @@ public class ArchitectureExtensionsBlocks {
                 DEEPSLATE_TILE_ARCH, NETHER_BRICK_ARCH, RED_NETHER_BRICK_ARCH, END_STONE_BRICK_ARCH, SMOOTH_QUARTZ_ARCH, PRISMARINE_BRICK_ARCH,
                 BLACKSTONE_ARCH, POLISHED_BLACKSTONE_BRICK_ARCH, POLISHED_BLACKSTONE_ARCH,
 
-                OAK_BEAM, SPRUCE_BEAM, BIRCH_BEAM, JUNGLE_BEAM, ACACIA_BEAM, DARK_OAK_BEAM, CRIMSON_BEAM, WARPED_BEAM, IRON_H_BEAM,
+                OAK_BEAM, SPRUCE_BEAM, BIRCH_BEAM, JUNGLE_BEAM, ACACIA_BEAM, DARK_OAK_BEAM, MANGROVE_BEAM, CRIMSON_BEAM, WARPED_BEAM,
+                IRON_H_BEAM,
 
                 OAK_FENCE_POST, SPRUCE_FENCE_POST, BIRCH_FENCE_POST, JUNGLE_FENCE_POST, ACACIA_FENCE_POST, DARK_OAK_FENCE_POST,
                 CRIMSON_FENCE_POST, WARPED_FENCE_POST,
 
-                OAK_JOIST, SPRUCE_JOIST, BIRCH_JOIST, JUNGLE_JOIST, ACACIA_JOIST, DARK_OAK_JOIST, CRIMSON_JOIST, WARPED_JOIST,
+                OAK_JOIST, SPRUCE_JOIST, BIRCH_JOIST, JUNGLE_JOIST, ACACIA_JOIST, DARK_OAK_JOIST, MANGROVE_JOIST, CRIMSON_JOIST, WARPED_JOIST,
 
                 OAK_CROWN_MOLDING, SPRUCE_CROWN_MOLDING, BIRCH_CROWN_MOLDING, JUNGLE_CROWN_MOLDING, ACACIA_CROWN_MOLDING,
-                DARK_OAK_CROWN_MOLDING, CRIMSON_CROWN_MOLDING, WARPED_CROWN_MOLDING,
+                DARK_OAK_CROWN_MOLDING, MANGROVE_CROWN_MOLDING, CRIMSON_CROWN_MOLDING, WARPED_CROWN_MOLDING,
 
                 BAMBOO_ROD, COPPER_ROD, END_ROD_NUBLESS, DEBUGGY_BLOCK, FAKE_END_PORTAL_BLOCK
         };

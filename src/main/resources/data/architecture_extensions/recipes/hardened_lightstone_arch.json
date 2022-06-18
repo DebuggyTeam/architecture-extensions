@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "soul_ice:hardened_lightstone"
-    },
-    "result": "architecture_extensions:hardened_lightstone_arch",
-    "count": 1
-}

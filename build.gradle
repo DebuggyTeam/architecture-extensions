@@ -13,11 +13,7 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
-	maven {
-		name = "Modrinth"
-		url = "https://api.modrinth.com/maven"
-		content {includeGroup "maven.modrinth"}
-	}}
+}
 
 // All the dependencies are declared at gradle/libs.version.toml and referenced with "libs.<id>"
 // See https://docs.gradle.org/current/userguide/platforms.html for information on how version catalogs work.
@@ -32,13 +28,7 @@ dependencies {
 	// QSL is not a complete API; You will need Quilted Fabric API to fill in the gaps.
 	// Quilted Fabric API will automatically pull in the correct QSL version.
 	modImplementation libs.quilted.fabric.api
-
-	// Manual fix for QSL dependency problem
-	modImplementation libs.quilt.standard.libraries
-
-	// Stone Cutter Recipe Tags
-	//modImplementation "maven.modrinth:stonecutter_recipe_tags:3.0.1"
-	//include "maven.modrinth:stonecutter_recipe_tags:3.0.1"
+	// modImplementation libs.bundles.quilted.fabric.api // If you wish to use Fabric API's deprecated modules, you can replace the above line with this one
 }
 
 processResources {
