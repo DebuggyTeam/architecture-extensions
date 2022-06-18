@@ -1,3 +1,4 @@
+/*
 package io.github.woodiertexas.architecture_extensions;
 
 import net.minecraft.client.render.RenderLayer;
@@ -11,3 +12,5 @@ public class ArchitectureExtensionsClient implements ClientModInitializer {
 		BlockRenderLayerMap.put(RenderLayer.getCutout(), ArchitectureExtensionsBlocks.STONE_BRICK_ARCH);
 	}
 }
+
+ */

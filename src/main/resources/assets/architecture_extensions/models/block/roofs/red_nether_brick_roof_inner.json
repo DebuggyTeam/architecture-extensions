@@ -1,7 +1,7 @@
 {
-	"parent": "architecture_extensions:block/templates/template_roof_inner",
-	"textures": {
-		"tiles": "minecraft:block/red_nether_bricks",
-		"sides": "minecraft:block/red_nether_bricks"
-	}
+    "parent": "architecture_extensions:block/templates/template_roof_inner",
+    "textures": {
+        "tiles": "minecraft:block/red_nether_bricks",
+        "sides": "minecraft:block/red_nether_bricks"
+    }
 }

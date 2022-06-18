@@ -1,6 +1,6 @@
 {
-	"parent": "architecture_extensions:block/templates/template_crown_molding_inner",
-	"textures": {
-		"texture": "minecraft:block/warped_planks"
-	}
+    "parent": "architecture_extensions:block/templates/template_crown_molding_inner",
+    "textures": {
+        "texture": "minecraft:block/warped_planks"
+    }
 }

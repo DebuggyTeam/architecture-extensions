@@ -1,0 +1,7 @@
+{
+    "parent": "architecture_extensions:block/templates/template_roof_straight",
+    "textures": {
+        "tiles": "minecraft:block/andesite",
+        "sides": "minecraft:block/andesite"
+    }
+}

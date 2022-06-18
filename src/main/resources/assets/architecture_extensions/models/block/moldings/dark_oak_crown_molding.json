@@ -1,6 +1,6 @@
 {
-	"parent": "architecture_extensions:block/templates/template_crown_molding",
-	"textures": {
-		"texture": "minecraft:block/dark_oak_planks"
-	}
+    "parent": "architecture_extensions:block/templates/template_crown_molding",
+    "textures": {
+        "texture": "minecraft:block/dark_oak_planks"
+    }
 }

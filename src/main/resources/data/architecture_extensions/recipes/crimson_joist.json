@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:stripped_crimson_stem"
+    },
+    "result": "architecture_extensions:crimson_joist",
+    "count": 3
+}

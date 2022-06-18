@@ -1,0 +1,7 @@
+{
+    "parent": "architecture_extensions:block/templates/template_roof_inner",
+    "textures": {
+        "tiles": "minecraft:block/end_stone_bricks",
+        "sides": "minecraft:block/end_stone_bricks"
+    }
+}

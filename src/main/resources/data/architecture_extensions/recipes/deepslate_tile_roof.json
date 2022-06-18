@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:deepslate_tiles"
+    },
+    "result": "architecture_extensions:deepslate_tile_roof",
+    "count": 1
+}

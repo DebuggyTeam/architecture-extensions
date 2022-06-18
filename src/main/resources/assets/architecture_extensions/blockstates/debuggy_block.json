@@ -1,5 +1,7 @@
 {
-	"variants": {
-		"": { "model": "architecture_extensions:block/debuggy_block" }
-	}
+    "variants": {
+        "": {
+            "model": "architecture_extensions:block/full_blocks/debuggy_block"
+        }
+    }
 }

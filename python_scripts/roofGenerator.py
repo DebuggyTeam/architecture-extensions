@@ -6,7 +6,11 @@ ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
 # block_category = input("Input category name: ")
 arch_ex_block = input("Input Arch-Ex block name: ")
 minecraft_block = input("Input Minecraft block name: ")
+namespace = input("Input mod namespace or skip if you're using the \"minecraft:\" namespace: ")
 recipe_item = input("Input recipe item name: ")
+
+if len(namespace) == 0:
+    namespace = "minecraft"
 
 blockstate_dict = {
     "variants": {
@@ -221,24 +225,24 @@ blockstate_dict = {
 roof_straight = {
     "parent": "architecture_extensions:block/templates/template_roof_straight",
     "textures": {
-        "tiles": f"minecraft:block/{minecraft_block}",
-        "sides": f"minecraft:block/{minecraft_block}"
+        "tiles": f"{namespace}:block/{minecraft_block}",
+        "sides": f"{namespace}:block/{minecraft_block}"
     }
 }
 
 roof_inner = {
     "parent": "architecture_extensions:block/templates/template_roof_inner",
     "textures": {
-        "tiles": f"minecraft:block/{minecraft_block}",
-        "sides": f"minecraft:block/{minecraft_block}"
+        "tiles": f"{namespace}:block/{minecraft_block}",
+        "sides": f"{namespace}:block/{minecraft_block}"
     }
 }
 
 roof_outer = {
     "parent": "architecture_extensions:block/templates/template_roof_outer",
     "textures": {
-        "tiles": f"minecraft:block/{minecraft_block}",
-        "sides": f"minecraft:block/{minecraft_block}"
+        "tiles": f"{namespace}:block/{minecraft_block}",
+        "sides": f"{namespace}:block/{minecraft_block}"
     }
 }
 
@@ -249,7 +253,7 @@ item_model = {
 recipe_dict = {
     "type": "minecraft:stonecutting",
     "ingredient": {
-        "item": f"minecraft:{recipe_item}"
+        "item": f"{namespace}:{recipe_item}"
     },
     "result": f"architecture_extensions:{arch_ex_block}_roof",
     "count": 1

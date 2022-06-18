@@ -1,6 +1,6 @@
 {
-	"parent": "architecture_extensions:block/templates/template_arch_block",
-	"textures": {
-		"texture": "minecraft:block/stone_bricks"
-	}
+    "parent": "architecture_extensions:block/templates/template_arch_block",
+    "textures": {
+        "texture": "minecraft:block/stone_bricks"
+    }
 }

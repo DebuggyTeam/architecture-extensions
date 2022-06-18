@@ -1,6 +1,6 @@
 {
-	"parent": "architecture_extensions:block/templates/template_joist_block",
-	"textures": {
-		"texture": "aurorasdeco:block/stripped_jacaranda_log"
-	}
+    "parent": "architecture_extensions:block/templates/template_joist_block",
+    "textures": {
+        "texture": "aurorasdeco:block/stripped_jacaranda_log"
+    }
 }

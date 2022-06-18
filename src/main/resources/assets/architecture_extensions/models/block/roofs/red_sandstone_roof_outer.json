@@ -1,0 +1,7 @@
+{
+    "parent": "architecture_extensions:block/templates/template_roof_outer",
+    "textures": {
+        "tiles": "minecraft:block/red_sandstone",
+        "sides": "minecraft:block/red_sandstone"
+    }
+}

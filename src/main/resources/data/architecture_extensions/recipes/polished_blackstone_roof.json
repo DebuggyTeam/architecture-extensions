@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:polished_blackstone"
+    },
+    "result": "architecture_extensions:polished_blackstone_roof",
+    "count": 1
+}

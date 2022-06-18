@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:warped_planks"
+    },
+    "result": "architecture_extensions:warped_crown_molding",
+    "count": 6
+}

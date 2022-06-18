@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:prismarine_bricks"
+    },
+    "result": "architecture_extensions:prismarine_brick_roof",
+    "count": 1
+}

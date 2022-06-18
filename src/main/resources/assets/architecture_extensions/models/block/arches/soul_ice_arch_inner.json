@@ -1,0 +1,6 @@
+{
+    "parent": "architecture_extensions:block/templates/template_arch_inner",
+    "textures": {
+        "texture": "soul_ice:block/soul_ice"
+    }
+}

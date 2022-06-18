@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "aurorasdeco:stripped_azalea_log"
+    },
+    "result": "architecture_extensions:azalea_joist",
+    "count": 3
+}

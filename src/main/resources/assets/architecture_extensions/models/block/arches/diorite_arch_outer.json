@@ -1,0 +1,6 @@
+{
+    "parent": "architecture_extensions:block/templates/template_arch_outer",
+    "textures": {
+        "texture": "minecraft:block/diorite"
+    }
+}

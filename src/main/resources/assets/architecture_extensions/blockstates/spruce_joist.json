@@ -1,23 +1,19 @@
 {
-	"variants": {
-		"facing=north": {
-			"model": "architecture_extensions:block/joists/spruce_joist",
-			"uvlock": true
-		},
-		"facing=east": {
-			"model": "architecture_extensions:block/joists/spruce_joist",
-			"y": 90,
-			"uvlock": true
-		},
-		"facing=south": {
-			"model": "architecture_extensions:block/joists/spruce_joist",
-			"y": 180,
-			"uvlock": true
-		},
-		"facing=west": {
-			"model": "architecture_extensions:block/joists/spruce_joist",
-			"y": 270,
-			"uvlock": true
-		}
-	}
+    "variants": {
+        "facing=north": {
+            "model": "architecture_extensions:block/joists/spruce_joist"
+        },
+        "facing=east": {
+            "model": "architecture_extensions:block/joists/spruce_joist",
+            "y": 90
+        },
+        "facing=south": {
+            "model": "architecture_extensions:block/joists/spruce_joist",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "architecture_extensions:block/joists/spruce_joist",
+            "y": 270
+        }
+    }
 }

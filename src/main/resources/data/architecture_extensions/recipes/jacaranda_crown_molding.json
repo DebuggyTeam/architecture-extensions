@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "aurorasdeco:jacaranda_planks"
+    },
+    "result": "architecture_extensions:jacaranda_crown_molding",
+    "count": 6
+}

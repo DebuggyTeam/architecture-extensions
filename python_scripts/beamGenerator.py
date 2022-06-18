@@ -6,10 +6,11 @@ ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
 # block_category = input("Input category name: ")
 arch_ex_block = input("Input Arch-Ex block name: ")
 minecraft_block = input("Input Minecraft block name: ")
+namespace = input("Input mod namespace or skip if you're using the \"minecraft:\" namespace: ")
 recipe_item = input("Input recipe item name: ")
-item_dict = {
-    "parent": f"architecture_extensions:block/beams/{arch_ex_block}_beam"
-}
+
+if len(namespace) == 0:
+    namespace = "minecraft"
 
 blockstate_dict = {
     "variants": {
@@ -28,24 +29,28 @@ blockstate_dict = {
     }
 }
 
-model_dict = {
+beam_model = {
     "parent": "architecture_extensions:block/templates/template_beam_block",
     "textures": {
-        "texture_side": f"minecraft:block/{minecraft_block}",
-        "texture_up": f"minecraft:block/{minecraft_block}_top"
+        "texture_side": f"{namespace}:block/{minecraft_block}",
+        "texture_up": f"{namespace}:block/{minecraft_block}_top"
     }
+}
+
+item_dict = {
+    "parent": f"architecture_extensions:block/beams/{arch_ex_block}_beam"
 }
 
 recipe_dict = {
     "type": "minecraft:stonecutting",
     "ingredient": {
-        "item": f"minecraft:{recipe_item}"
+        "item": f"{namespace}:{recipe_item}"
     },
     "result": f"architecture_extensions:{arch_ex_block}_beam",
     "count": 1
 }
 
-files = [blockstate_dict, model_dict, item_dict, recipe_dict]
+files = [blockstate_dict, beam_model, item_dict, recipe_dict]
 directories = [
     "assets\\architecture_extensions\\blockstates",
     "assets\\architecture_extensions\\models\\block\\beams",

@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:jungle_planks"
+    },
+    "result": "architecture_extensions:jungle_crown_molding",
+    "count": 6
+}

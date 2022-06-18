@@ -1,8 +1,8 @@
 {
-	"parent": "architecture_extensions:block/templates/template_column_cap_block",
-	"textures": {
-		"texture_up": "minecraft:block/andesite",
-		"texture_down": "minecraft:block/andesite",
-		"texture_side": "minecraft:block/andesite"
-	}
+    "parent": "architecture_extensions:block/templates/template_column_cap_block",
+    "textures": {
+        "texture_up": "minecraft:block/andesite",
+        "texture_down": "minecraft:block/andesite",
+        "texture_side": "minecraft:block/andesite"
+    }
 }

@@ -1,0 +1,7 @@
+{
+    "parent": "architecture_extensions:block/templates/template_roof_outer",
+    "textures": {
+        "tiles": "minecraft:block/mossy_cobblestone",
+        "sides": "minecraft:block/mossy_cobblestone"
+    }
+}

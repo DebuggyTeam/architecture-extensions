@@ -1,5 +1,5 @@
 {
 	"variants": {
-		"": { "model": "architecture_extensions:block/fake_end_portal_block" }
+		"": { "model": "architecture_extensions:block/full_blocks/fake_end_portal_block" }
 	}
 }
