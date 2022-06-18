@@ -134,6 +134,7 @@ public class ArchitectureExtensionsBlocks {
     public static final FencePostBlock JUNGLE_FENCE_POST = new FencePostBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final FencePostBlock ACACIA_FENCE_POST = new FencePostBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final FencePostBlock DARK_OAK_FENCE_POST = new FencePostBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+    public static final FencePostBlock MANGROVE_FENCE_POST = new FencePostBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final FencePostBlock CRIMSON_FENCE_POST = new FencePostBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final FencePostBlock WARPED_FENCE_POST= new FencePostBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
 
@@ -198,7 +199,7 @@ public class ArchitectureExtensionsBlocks {
                 "mangrove_beam", "iron_h_beam",
 
                 "oak_fence_post", "spruce_fence_post", "birch_fence_post", "jungle_fence_post", "acacia_fence_post", "dark_oak_fence_post",
-                "crimson_fence_post", "warped_fence_post",
+                "mangrove_fence_post", "crimson_fence_post", "warped_fence_post",
 
                 "oak_joist", "spruce_joist", "birch_joist", "jungle_joist", "acacia_joist", "dark_oak_joist", "mangrove_joist", "crimson_joist",
                 "warped_joist",
@@ -235,7 +236,7 @@ public class ArchitectureExtensionsBlocks {
                 IRON_H_BEAM,
 
                 OAK_FENCE_POST, SPRUCE_FENCE_POST, BIRCH_FENCE_POST, JUNGLE_FENCE_POST, ACACIA_FENCE_POST, DARK_OAK_FENCE_POST,
-                CRIMSON_FENCE_POST, WARPED_FENCE_POST,
+                MANGROVE_FENCE_POST, CRIMSON_FENCE_POST, WARPED_FENCE_POST,
 
                 OAK_JOIST, SPRUCE_JOIST, BIRCH_JOIST, JUNGLE_JOIST, ACACIA_JOIST, DARK_OAK_JOIST, MANGROVE_JOIST, CRIMSON_JOIST, WARPED_JOIST,
 

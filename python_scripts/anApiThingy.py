@@ -32,7 +32,7 @@ block_ids = [
     "warped_beam", "iron_h_beam",
 
     "oak_fence_post", "spruce_fence_post", "birch_fence_post", "jungle_fence_post", "acacia_fence_post", "dark_oak_fence_post",
-    "crimson_fence_post", "warped_fence_post",
+    "mangrove_fence_post", "crimson_fence_post", "warped_fence_post",
 
     "oak_joist", "spruce_joist", "birch_joist", "jungle_joist", "acacia_joist", "dark_oak_joist", "mangrove_joist", "crimson_joist",
     "warped_joist",
@@ -85,7 +85,7 @@ block_names = [
     "Warped Beam", "Iron H Beam",
 
     "Oak Fence Post", "Spruce Fence Post", "Birch Fence Post", "Jungle Fence Post", "Acacia Fence Post", "Dark Oak Fence Post",
-    "Crimson Fence Post", "Warped Fence Post",
+    "Mangrove Fence Post", "Crimson Fence Post", "Warped Fence Post",
 
     "Oak Joist", "Spruce Joist", "Birch Joist", "Jungle Joist", "Acacia Joist", "Dark Oak Joist", "Mangrove Joist",
     "Crimson Joist", "Warped Joist",

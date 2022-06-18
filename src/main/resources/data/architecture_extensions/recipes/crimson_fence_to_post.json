@@ -2,7 +2,7 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:crimson_planks_fence"
+            "item": "minecraft:crimson_planks"
         }
     ],
     "result": {

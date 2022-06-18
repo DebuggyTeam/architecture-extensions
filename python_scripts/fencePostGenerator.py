@@ -29,7 +29,7 @@ blockstate_dict = {
 }
 
 post_model = {
-    "parent": "architecture_extensions:block/templates/template_wall_post_block",
+    "parent": "architecture_extensions:block/templates/template_fence_post_two",
     "textures": {
         "texture": f"{namespace}:block/{minecraft_block}"
     }
@@ -60,7 +60,7 @@ post_to_fence_recipe = {
         }
     ],
     "result": {
-        "item": f"{namespace}:{minecraft_block}_fence",
+        "item": f"{namespace}:{minecraft_block}",
         "count": 1
     }
 }

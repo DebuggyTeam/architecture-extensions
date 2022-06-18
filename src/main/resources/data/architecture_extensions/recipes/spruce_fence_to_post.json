@@ -2,7 +2,7 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:spruce_planks_fence"
+            "item": "minecraft:spruce_planks"
         }
     ],
     "result": {
