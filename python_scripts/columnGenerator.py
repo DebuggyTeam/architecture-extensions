@@ -1,7 +1,7 @@
 import json
 import os
 
-ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
+from python_scripts.anApiThingy import ROOT_DIR
 
 # block_category = input("Input category name: ")
 arch_ex_block = input("Input Arch-Ex block name: ")
@@ -78,7 +78,7 @@ item_dict = {
 }
 
 recipe_dict = {
-    "type": "{namespace}:stonecutting",
+    "type": "minecraft:stonecutting",
     "ingredient": {
         "item": f"{namespace}:{recipe_item}"
     },

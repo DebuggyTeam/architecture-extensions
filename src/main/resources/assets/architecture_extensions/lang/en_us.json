@@ -1,4 +1,5 @@
 {
+    "block.architecture_extensions.stone_column": "Stone Column",
     "block.architecture_extensions.granite_column": "Granite Column",
     "block.architecture_extensions.diorite_column": "Diorite Column",
     "block.architecture_extensions.andesite_column": "Andesite Column",

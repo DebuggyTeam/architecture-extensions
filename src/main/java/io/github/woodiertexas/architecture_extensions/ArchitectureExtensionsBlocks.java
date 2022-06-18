@@ -18,6 +18,7 @@ public class ArchitectureExtensionsBlocks {
     //public static final CircleCorner STONE_BRICK_CIRCLE_CORNER = new CircleCorner(QuiltBlockSettings.of(Material.STONE).strength(4f).nonOpaque());
 
     // Columns
+    public static final ColumnBlock STONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f));
     public static final ColumnBlock GRANITE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f));
     public static final ColumnBlock DIORITE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f));
     public static final ColumnBlock ANDESITE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.STONE).strength(3f));
@@ -167,11 +168,12 @@ public class ArchitectureExtensionsBlocks {
 
         // Block string names
         String[] blocksArray = {
-                "granite_column", "diorite_column", "andesite_column", "cobbled_deepslate_column", "polished_deepslate_column",
-                "cobblestone_column", "sandstone_column", "red_sandstone_column", "brick_column", "mossy_cobblestone_column",
-                "stone_brick_column", "mossy_stone_brick_column", "deepslate_brick_column", "deepslate_tile_column", "nether_brick_column",
-                "red_nether_brick_column", "end_stone_brick_column", "quartz_column", "prismarine_brick_column", "dark_prismarine_column",
-                "blackstone_column", "polished_blackstone_column", "polished_blackstone_brick_column",
+                "stone_column", "granite_column", "diorite_column", "andesite_column", "cobbled_deepslate_column",
+                "polished_deepslate_column", "cobblestone_column", "sandstone_column", "red_sandstone_column", "brick_column",
+                "mossy_cobblestone_column", "stone_brick_column", "mossy_stone_brick_column", "deepslate_brick_column",
+                "deepslate_tile_column", "nether_brick_column", "red_nether_brick_column", "end_stone_brick_column",
+                "quartz_column", "prismarine_brick_column", "dark_prismarine_column", "blackstone_column",
+                "polished_blackstone_column", "polished_blackstone_brick_column",
 
                 "granite_post", "diorite_post", "andesite_post", "cobbled_deepslate_post", "polished_deepslate_post", "cobblestone_post",
                 "sandstone_post", "red_sandstone_post", "brick_post", "mossy_cobblestone_post", "stone_brick_post", "mossy_stone_brick_post",
@@ -202,11 +204,11 @@ public class ArchitectureExtensionsBlocks {
         };
 
         Block[] anotherBlocksArray = {
-                GRANITE_COLUMN, DIORITE_COLUMN, ANDESITE_COLUMN, COBBLED_DEEPSLATE_COLUMN, POLISHED_DEEPSLATE_COLUMN, COBBLESTONE_COLUMN,
-                SANDSTONE_COLUMN, RED_SANDSTONE_COLUMN, BRICK_COLUMN, MOSSY_COBBLESTONE_COLUMN, STONE_BRICK_COLUMN, MOSSY_STONE_BRICK_COLUMN,
-                DEEPSLATE_BRICK_COLUMN, DEEPSLATE_TILE_COLUMN, NETHER_BRICK_COLUMN, RED_NETHER_BRICK_COLUMN, END_STONE_BRICK_COLUMN,
-                QUARTZ_COLUMN, PRISMARINE_BRICK_COLUMN, DARK_PRISMARINE_COLUMN, BLACKSTONE_COLUMN, POLISHED_BLACKSTONE_COLUMN,
-                POLISHED_BLACKSTONE_BRICK_COLUMN,
+                STONE_COLUMN, GRANITE_COLUMN, DIORITE_COLUMN, ANDESITE_COLUMN, COBBLED_DEEPSLATE_COLUMN, POLISHED_DEEPSLATE_COLUMN,
+                COBBLESTONE_COLUMN, SANDSTONE_COLUMN, RED_SANDSTONE_COLUMN, BRICK_COLUMN, MOSSY_COBBLESTONE_COLUMN,
+                STONE_BRICK_COLUMN, MOSSY_STONE_BRICK_COLUMN, DEEPSLATE_BRICK_COLUMN, DEEPSLATE_TILE_COLUMN, NETHER_BRICK_COLUMN,
+                RED_NETHER_BRICK_COLUMN, END_STONE_BRICK_COLUMN, QUARTZ_COLUMN, PRISMARINE_BRICK_COLUMN, DARK_PRISMARINE_COLUMN,
+                BLACKSTONE_COLUMN, POLISHED_BLACKSTONE_COLUMN, POLISHED_BLACKSTONE_BRICK_COLUMN,
 
                 GRANITE_POST, DIORITE_POST, ANDESITE_POST, COBBLED_DEEPSLATE_POST, POLISHED_DEEPSLATE_POST, COBBLESTONE_POST, SANDSTONE_POST,
                 RED_SANDSTONE_POST, BRICK_POST, MOSSY_COBBLESTONE_POST, STONE_BRICK_POST, MOSSY_STONE_BRICK_POST, DEEPSLATE_BRICK_POST,

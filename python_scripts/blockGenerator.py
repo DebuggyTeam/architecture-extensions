@@ -1,7 +1,7 @@
 import json
 import os
 
-ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
+from python_scripts.anApiThingy import ROOT_DIR
 
 arch_ex_block = input("Input Arch-Ex block name: ")
 minecraft_block = input("Input Minecraft block name: ")
