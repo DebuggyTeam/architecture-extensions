@@ -11,7 +11,7 @@ namespace = input("Input mod namespace or skip if you're using the \"minecraft:\
 if len(namespace) == 0:
     namespace = "minecraft"
 
-files = [rods_blockstate(arch_ex_block), rods_model(arch_ex_block, namespace), rods_item(arch_ex_block)]
+files = [rods_blockstate(arch_ex_block), rods_model(minecraft_block, namespace), rods_item(arch_ex_block)]
 directories = [
     "assets\\architecture_extensions\\blockstates",
     "assets\\architecture_extensions\\models\\block\\rods",
