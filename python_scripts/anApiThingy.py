@@ -2,9 +2,7 @@ import os
 
 ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '..'))
 
-
 # For en_us.json generation
-
 block_ids = [
     "stone_column", "granite_column", "diorite_column", "andesite_column", "cobbled_deepslate_column",
     "polished_deepslate_column", "cobblestone_column", "sandstone_column", "red_sandstone_column", "brick_column",
@@ -13,28 +11,40 @@ block_ids = [
     "quartz_column", "prismarine_brick_column", "dark_prismarine_column", "blackstone_column",
     "polished_blackstone_column", "polished_blackstone_brick_column",
 
-    "granite_post", "diorite_post", "andesite_post", "cobbled_deepslate_post", "polished_deepslate_post", "cobblestone_post",
-    "sandstone_post", "red_sandstone_post", "brick_post", "mossy_cobblestone_post", "stone_brick_post", "mossy_stone_brick_post",
+    "granite_post", "diorite_post", "andesite_post", "cobbled_deepslate_post", "polished_deepslate_post",
+    "cobblestone_post",
+    "sandstone_post", "red_sandstone_post", "brick_post", "mossy_cobblestone_post", "stone_brick_post",
+    "mossy_stone_brick_post",
     "deepslate_brick_post", "deepslate_tile_post", "nether_brick_post", "red_nether_brick_post", "end_stone_brick_post",
-    "prismarine_post", "prismarine_brick_post", "blackstone_post", "polished_blackstone_brick_post", "polished_blackstone_post",
+    "prismarine_post", "prismarine_brick_post", "blackstone_post", "polished_blackstone_brick_post",
+    "polished_blackstone_post",
 
-    "granite_roof", "diorite_roof", "andesite_roof", "cobbled_deepslate_roof", "polished_deepslate_roof", "cobblestone_roof",
-    "sandstone_roof", "red_sandstone_roof", "brick_roof", "mossy_cobblestone_roof", "stone_brick_roof", "mossy_stone_brick_roof",
+    "granite_roof", "diorite_roof", "andesite_roof", "cobbled_deepslate_roof", "polished_deepslate_roof",
+    "cobblestone_roof",
+    "sandstone_roof", "red_sandstone_roof", "brick_roof", "mossy_cobblestone_roof", "stone_brick_roof",
+    "mossy_stone_brick_roof",
     "deepslate_brick_roof", "deepslate_tile_roof", "nether_brick_roof", "red_nether_brick_roof", "end_stone_brick_roof",
-    "smooth_quartz_roof", "prismarine_brick_roof", "blackstone_roof", "polished_blackstone_brick_roof", "polished_blackstone_roof",
+    "smooth_quartz_roof", "prismarine_brick_roof", "blackstone_roof", "polished_blackstone_brick_roof",
+    "polished_blackstone_roof",
 
-    "granite_arch", "diorite_arch", "andesite_arch", "cobbled_deepslate_arch", "polished_deepslate_arch", "cobblestone_arch",
-    "sandstone_arch", "red_sandstone_arch", "brick_arch", "mossy_cobblestone_arch", "stone_brick_arch", "mossy_stone_brick_arch",
+    "granite_arch", "diorite_arch", "andesite_arch", "cobbled_deepslate_arch", "polished_deepslate_arch",
+    "cobblestone_arch",
+    "sandstone_arch", "red_sandstone_arch", "brick_arch", "mossy_cobblestone_arch", "stone_brick_arch",
+    "mossy_stone_brick_arch",
     "deepslate_brick_arch", "deepslate_tile_arch", "nether_brick_arch", "red_nether_brick_arch", "end_stone_brick_arch",
-    "smooth_quartz_arch", "prismarine_brick_arch", "blackstone_arch", "polished_blackstone_brick_arch", "polished_blackstone_arch",
+    "smooth_quartz_arch", "prismarine_brick_arch", "blackstone_arch", "polished_blackstone_brick_arch",
+    "polished_blackstone_arch",
 
-    "oak_beam", "spruce_beam", "birch_beam", "jungle_beam", "acacia_beam", "dark_oak_beam", "mangrove_beam", "crimson_beam",
+    "oak_beam", "spruce_beam", "birch_beam", "jungle_beam", "acacia_beam", "dark_oak_beam", "mangrove_beam",
+    "crimson_beam",
     "warped_beam", "iron_h_beam",
 
-    "oak_fence_post", "spruce_fence_post", "birch_fence_post", "jungle_fence_post", "acacia_fence_post", "dark_oak_fence_post",
+    "oak_fence_post", "spruce_fence_post", "birch_fence_post", "jungle_fence_post", "acacia_fence_post",
+    "dark_oak_fence_post",
     "mangrove_fence_post", "crimson_fence_post", "warped_fence_post",
 
-    "oak_joist", "spruce_joist", "birch_joist", "jungle_joist", "acacia_joist", "dark_oak_joist", "mangrove_joist", "crimson_joist",
+    "oak_joist", "spruce_joist", "birch_joist", "jungle_joist", "acacia_joist", "dark_oak_joist", "mangrove_joist",
+    "crimson_joist",
     "warped_joist",
 
     "oak_crown_molding", "spruce_crown_molding", "birch_crown_molding", "jungle_crown_molding", "acacia_crown_molding",
@@ -60,31 +70,42 @@ block_ids = [
 block_names = [
     "Stone Column", "Granite Column", "Diorite Column", "Andesite Column", "Cobbled Deepslate Column",
     "Polished Deepslate Column", "Cobblestone Column", "Sandstone Column", "Red Sandstone Column", "Brick Column",
-    "Mossy Cobblestone Column", "Stone Brick Column", "Mossy Stone Brick Column", "Deepslate Brick Column", "Deepslate Tile Column",
-    "Nether Brick Column", "Red Nether Brick Column", "End Stone Brick Column", "Quartz Column", "Prismarine Brick Column",
+    "Mossy Cobblestone Column", "Stone Brick Column", "Mossy Stone Brick Column", "Deepslate Brick Column",
+    "Deepslate Tile Column",
+    "Nether Brick Column", "Red Nether Brick Column", "End Stone Brick Column", "Quartz Column",
+    "Prismarine Brick Column",
     "Dark Prismarine Column", "Blackstone Column", "Polished Blackstone Column", "Polished Blackstone Brick Column",
 
-    "Granite Post", "Diorite Post", "Andesite Post", "Cobbled Deepslate Post", "Polished Deepslate Post", "Cobblestone Post",
-    "Sandstone Post", "Red Sandstone Post", "Brick Post", "Mossy Cobblestone Post", "Stone Brick Post", "Mossy Stone Brick Post",
+    "Granite Post", "Diorite Post", "Andesite Post", "Cobbled Deepslate Post", "Polished Deepslate Post",
+    "Cobblestone Post",
+    "Sandstone Post", "Red Sandstone Post", "Brick Post", "Mossy Cobblestone Post", "Stone Brick Post",
+    "Mossy Stone Brick Post",
     "Deepslate Brick Post", "Deepslate Tile Post", "Nether Brick Post", "Red Nether Brick Post", "End Stone Brick Post",
-    "Prismarine Post", "Prismarine Brick Post", "Blackstone Post", "Polished Blackstone Brick Post", "Polished Blackstone Post",
+    "Prismarine Post", "Prismarine Brick Post", "Blackstone Post", "Polished Blackstone Brick Post",
+    "Polished Blackstone Post",
 
-    "Granite Roof", "Diorite Roof", "Andesite Roof", "Cobbled Deepslate Roof", "Polished Deepslate Roof", "Cobblestone Roof",
-    "Sandstone Roof", "Red Sandstone Roof", "Brick Roof", "Mossy Cobblestone Roof", "Stone Brick Roof", "Mossy Stone Brick Roof",
+    "Granite Roof", "Diorite Roof", "Andesite Roof", "Cobbled Deepslate Roof", "Polished Deepslate Roof",
+    "Cobblestone Roof",
+    "Sandstone Roof", "Red Sandstone Roof", "Brick Roof", "Mossy Cobblestone Roof", "Stone Brick Roof",
+    "Mossy Stone Brick Roof",
     "Deepslate Brick Roof", "Deepslate Tile Roof", "Nether Brick Roof", "Red Nether Brick Roof", "End Stone Brick Roof",
     "Smooth Quartz Roof", "Prismarine Brick Roof", "Blackstone Roof", "Polished Blackstone Brick Roof",
     "Polished Blackstone Roof",
 
-    "Granite Arch", "Diorite Arch", "Andesite Arch", "Cobbled Deepslate Arch", "Polished Deepslate Arch", "Cobblestone Arch",
-    "Sandstone Arch", "Red Sandstone Arch", "Brick Arch", "Mossy Cobblestone Arch", "Stone Brick Arch", "Mossy Stone Brick Arch",
+    "Granite Arch", "Diorite Arch", "Andesite Arch", "Cobbled Deepslate Arch", "Polished Deepslate Arch",
+    "Cobblestone Arch",
+    "Sandstone Arch", "Red Sandstone Arch", "Brick Arch", "Mossy Cobblestone Arch", "Stone Brick Arch",
+    "Mossy Stone Brick Arch",
     "Deepslate Brick Arch", "Deepslate Tile Arch", "Nether Brick Arch", "Red Nether Brick Arch", "End Stone Brick Arch",
     "Smooth Quartz Arch", "Prismarine Brick Arch", "Blackstone Arch", "Polished Blackstone Brick Arch",
     "Polished Blackstone Arch",
 
-    "Oak Beam", "Spruce Beam", "Birch Beam", "Jungle Beam", "Acacia Beam", "Dark Oak Beam", "Mangrove Beam", "Crimson Beam",
+    "Oak Beam", "Spruce Beam", "Birch Beam", "Jungle Beam", "Acacia Beam", "Dark Oak Beam", "Mangrove Beam",
+    "Crimson Beam",
     "Warped Beam", "Iron H Beam",
 
-    "Oak Fence Post", "Spruce Fence Post", "Birch Fence Post", "Jungle Fence Post", "Acacia Fence Post", "Dark Oak Fence Post",
+    "Oak Fence Post", "Spruce Fence Post", "Birch Fence Post", "Jungle Fence Post", "Acacia Fence Post",
+    "Dark Oak Fence Post",
     "Mangrove Fence Post", "Crimson Fence Post", "Warped Fence Post",
 
     "Oak Joist", "Spruce Joist", "Birch Joist", "Jungle Joist", "Acacia Joist", "Dark Oak Joist", "Mangrove Joist",
@@ -109,3 +130,267 @@ block_names = [
     "Azalea Beam", "Jacaranda Beam", "Azalea Fence Post", "Jacaranda Fence Post", "Azalea Joist", "Jacaranda Joist",
     "Azalea Crown Molding", "Jacaranda Crown Molding"
 ]
+
+
+# For rod block generation
+def rods_blockstate(arch_ex_block):
+    rod_blockstate = {
+        "variants": {
+            "facing=down": {
+                "model": f"architecture_extensions:block/rods/{arch_ex_block}_rod",
+                "x": 180
+            },
+            "facing=east": {
+                "model": f"architecture_extensions:block/rods/{arch_ex_block}_rod",
+                "x": 90,
+                "y": 90
+            },
+            "facing=north": {
+                "model": f"architecture_extensions:block/rods/{arch_ex_block}_rod",
+                "x": 90
+            },
+            "facing=south": {
+                "model": f"architecture_extensions:block/rods/{arch_ex_block}_rod",
+                "x": 90,
+                "y": 180
+            },
+            "facing=up": {
+                "model": f"architecture_extensions:block/rods/{arch_ex_block}_rod"
+            },
+            "facing=west": {
+                "model": f"architecture_extensions:block/rods/{arch_ex_block}_rod",
+                "x": 90,
+                "y": 270
+            }
+        }
+    }
+    return rod_blockstate
+
+
+def rods_model(minecraft_block, namespace):
+    rod_model = {
+        "parent": "architecture_extensions:block/templates/template_rod_block",
+        "textures": {
+            "texture": f"{namespace}:/block/{minecraft_block}"
+        }
+    }
+    return rod_model
+
+
+def rods_item(arch_ex_block):
+    rod_item = {
+        "parent": f"architecture_extensions:block/rods/{arch_ex_block}_rod"
+    }
+    return rod_item
+
+
+# For generating post blocks
+def posts_blockstate(arch_ex_block):
+    post_blockstate = {
+        "variants": {
+            "axis=x": {
+                "model": f"architecture_extensions:block/posts/{arch_ex_block}_post",
+                "x": 90,
+                "y": 90
+            },
+            "axis=y": {
+                "model": f"architecture_extensions:block/posts/{arch_ex_block}_post"
+            },
+            "axis=z": {
+                "model": f"architecture_extensions:block/posts/{arch_ex_block}_post",
+                "x": 90
+            }
+        }
+    }
+    return post_blockstate
+
+
+def posts_model(minecraft_block, namespace):
+    post_model = {
+        "parent": "architecture_extensions:block/templates/template_wall_post_block",
+        "textures": {
+            "texture": f"{namespace}:block/{minecraft_block}"
+        }
+    }
+    return post_model
+
+
+def posts_item(arch_ex_block):
+    post_item = {
+        "parent": f"architecture_extensions:block/posts/{arch_ex_block}_post"
+    }
+    return post_item
+
+
+def posts_recipe_one(arch_ex_block, minecraft_block, namespace):
+    wall_to_post_recipe = {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+            {
+                "item": f"{namespace}:{minecraft_block}_wall"
+            }
+        ],
+        "result": {
+            "item": f"architecture_extensions:{arch_ex_block}_post",
+            "count": 1
+        }
+    }
+    return wall_to_post_recipe
+
+
+def posts_recipe_two(arch_ex_block, minecraft_block, namespace):
+    post_to_wall_recipe = {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+            {
+                "item": f"architecture_extensions:{arch_ex_block}_post"
+            }
+        ],
+        "result": {
+            "item": f"{namespace}:{minecraft_block}_wall",
+            "count": 1
+        }
+    }
+    return post_to_wall_recipe
+
+
+# For generating wall column blocks
+def columns_blockstate(arch_ex_block):
+    column_blockstate = {
+        "variants": {
+            "facing=north,cap=false": {
+                "model": f"architecture_extensions:block/columns/{arch_ex_block}_column",
+                "uvlock": True
+            },
+            "facing=north,cap=true": {
+                "model": f"architecture_extensions:block/columns/{arch_ex_block}_column_cap",
+                "uvlock": True
+            },
+            "facing=east,cap=false": {
+                "model": f"architecture_extensions:block/columns/{arch_ex_block}_column",
+                "y": 90,
+                "uvlock": True
+            },
+            "facing=east,cap=true": {
+                "model": f"architecture_extensions:block/columns/{arch_ex_block}_column_cap",
+                "y": 90,
+                "uvlock": True
+            },
+            "facing=south,cap=false": {
+                "model": f"architecture_extensions:block/columns/{arch_ex_block}_column",
+                "y": 180,
+                "uvlock": True
+            },
+            "facing=south,cap=true": {
+                "model": f"architecture_extensions:block/columns/{arch_ex_block}_column_cap",
+                "y": 180,
+                "uvlock": True
+            },
+            "facing=west,cap=false": {
+                "model": f"architecture_extensions:block/columns/{arch_ex_block}_column",
+                "y": 270,
+                "uvlock": True
+            },
+            "facing=west,cap=true": {
+                "model": f"architecture_extensions:block/columns/{arch_ex_block}_column_cap",
+                "y": 270,
+                "uvlock": True
+            }
+        }
+    }
+    return column_blockstate
+
+
+def columns_model_one(minecraft_block, namespace):
+    column_model = {
+        "parent": "architecture_extensions:block/templates/template_column_block",
+        "textures": {
+            "texture_up": f"{namespace}:block/{minecraft_block}",
+            "texture_down": f"{namespace}:block/{minecraft_block}",
+            "texture_side": f"{namespace}:block/{minecraft_block}"
+        }
+    }
+    return column_model
+
+
+def columns_model_two(minecraft_block, namespace):
+    column_cap_model = {
+        "parent": "architecture_extensions:block/templates/template_column_cap_block",
+        "textures": {
+            "texture_up": f"{namespace}:block/{minecraft_block}",
+            "texture_down": f"{namespace}:block/{minecraft_block}",
+            "texture_side": f"{namespace}:block/{minecraft_block}"
+        }
+    }
+    return column_cap_model
+
+
+def columns_item(arch_ex_block):
+    column_item = {
+        "parent": f"architecture_extensions:block/columns/{arch_ex_block}_column_cap"
+    }
+    return column_item
+
+
+def columns_recipe(arch_ex_block, recipe_item, namespace):
+    column_recipe = {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+            "item": f"{namespace}:{recipe_item}"
+        },
+        "result": f"architecture_extensions:{arch_ex_block}_column",
+        "count": 4
+    }
+    return column_recipe
+
+
+# For generating beam blocks
+
+def beams_blockstate(arch_ex_block):
+    beam_blockstate = {
+        "variants": {
+            "axis=x": {
+                "model": f"architecture_extensions:block/beams/{arch_ex_block}_beam",
+                "x": 90,
+                "y": 90
+            },
+            "axis=y": {
+                "model": f"architecture_extensions:block/beams/{arch_ex_block}_beam"
+            },
+            "axis=z": {
+                "model": f"architecture_extensions:block/beams/{arch_ex_block}_beam",
+                "x": 90
+            }
+        }
+    }
+    return beam_blockstate
+
+
+def beams_model(minecraft_block, namespace):
+    beam_model = {
+        "parent": "architecture_extensions:block/templates/template_beam_block",
+        "textures": {
+            "texture_side": f"{namespace}:block/{minecraft_block}",
+            "texture_up": f"{namespace}:block/{minecraft_block}_top"
+        }
+    }
+    return beam_model
+
+
+def beams_item(arch_ex_block):
+    beam_item = {
+        "parent": f"architecture_extensions:block/beams/{arch_ex_block}_beam"
+    }
+    return beam_item
+
+
+def beams_recipe(arch_ex_block, recipe_item, namespace):
+    beam_recipe = {
+        "type": "minecraft:stonecutting",
+        "ingredient": {
+            "item": f"{namespace}:{recipe_item}"
+        },
+        "result": f"architecture_extensions:{arch_ex_block}_beam",
+        "count": 1
+    }
+    return beam_recipe
