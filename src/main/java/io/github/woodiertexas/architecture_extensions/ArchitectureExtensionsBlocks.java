@@ -71,8 +71,8 @@ public class ArchitectureExtensionsBlocks {
     public static final RoofBlock GRANITE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
     public static final RoofBlock DIORITE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
     public static final RoofBlock ANDESITE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
-    public static final RoofBlock COBBLED_DEEPSLATE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
-    public static final RoofBlock POLISHED_DEEPSLATE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
+    public static final RoofBlock COBBLED_DEEPSLATE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f).sounds(BlockSoundGroup.DEEPSLATE));
+    public static final RoofBlock POLISHED_DEEPSLATE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
     public static final RoofBlock COBBLESTONE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
     public static final RoofBlock SANDSTONE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
     public static final RoofBlock RED_SANDSTONE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
@@ -80,10 +80,10 @@ public class ArchitectureExtensionsBlocks {
     public static final RoofBlock MOSSY_COBBLESTONE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
     public static final RoofBlock STONE_BRICK_ROOF = new RoofBlock(Blocks.STONE_BRICKS.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
     public static final RoofBlock MOSSY_STONE_BRICK_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
-    public static final RoofBlock DEEPSLATE_BRICK_ROOF = new RoofBlock(Blocks.STONE_BRICKS.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
-    public static final RoofBlock DEEPSLATE_TILE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
-    public static final RoofBlock NETHER_BRICK_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
-    public static final RoofBlock RED_NETHER_BRICK_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
+    public static final RoofBlock DEEPSLATE_BRICK_ROOF = new RoofBlock(Blocks.STONE_BRICKS.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f).sounds(BlockSoundGroup.DEEPSLATE_BRICKS));
+    public static final RoofBlock DEEPSLATE_TILE_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f).sounds(BlockSoundGroup.DEEPSLATE_TILES));
+    public static final RoofBlock NETHER_BRICK_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f).sounds(BlockSoundGroup.NETHER_BRICKS));
+    public static final RoofBlock RED_NETHER_BRICK_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f).sounds(BlockSoundGroup.NETHER_BRICKS));
     public static final RoofBlock END_STONE_BRICK_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
     public static final RoofBlock SMOOTH_QUARTZ_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
     public static final RoofBlock PRISMARINE_BRICK_ROOF = new RoofBlock(Blocks.COBBLESTONE.getDefaultState(), QuiltBlockSettings.of(Material.STONE).strength(4f));
@@ -164,6 +164,7 @@ public class ArchitectureExtensionsBlocks {
     public static final RodBlockTwo BAMBOO_ROD = new RodBlockTwo(QuiltBlockSettings.of(Material.BAMBOO).strength(1f).sounds(BlockSoundGroup.BAMBOO).nonOpaque());
     public static final RodBlockTwo COPPER_ROD = new RodBlockTwo(QuiltBlockSettings.of(Material.METAL).strength(1f).sounds(BlockSoundGroup.COPPER).nonOpaque());
     public static final RodBlockTwo END_ROD_NUBLESS = new RodBlockTwo(QuiltBlockSettings.of(Material.STONE).strength(1f).luminance(14).nonOpaque());
+    public static final RodBlockTwo IRON_ROD = new RodBlockTwo(QuiltBlockSettings.of(Material.METAL).strength(1f).nonOpaque());
 
     // Peculiar Blocks
     public static final Block DEBUGGY_BLOCK = new Block(QuiltBlockSettings.of(Material.WOOL).strength(1f).sounds(BlockSoundGroup.WOOL));
@@ -207,7 +208,7 @@ public class ArchitectureExtensionsBlocks {
                 "oak_crown_molding", "spruce_crown_molding", "birch_crown_molding", "jungle_crown_molding", "acacia_crown_molding",
                 "dark_oak_crown_molding", "mangrove_crown_molding", "crimson_crown_molding", "warped_crown_molding",
 
-                "bamboo_rod", "copper_rod", "end_rod_nubless", "debuggy_block", "fake_end_portal_block"
+                "bamboo_rod", "copper_rod", "end_rod_nubless", "iron_rod", "debuggy_block", "fake_end_portal_block"
         };
 
         Block[] anotherBlocksArray = {
@@ -243,7 +244,7 @@ public class ArchitectureExtensionsBlocks {
                 OAK_CROWN_MOLDING, SPRUCE_CROWN_MOLDING, BIRCH_CROWN_MOLDING, JUNGLE_CROWN_MOLDING, ACACIA_CROWN_MOLDING,
                 DARK_OAK_CROWN_MOLDING, MANGROVE_CROWN_MOLDING, CRIMSON_CROWN_MOLDING, WARPED_CROWN_MOLDING,
 
-                BAMBOO_ROD, COPPER_ROD, END_ROD_NUBLESS, DEBUGGY_BLOCK, FAKE_END_PORTAL_BLOCK
+                BAMBOO_ROD, COPPER_ROD, END_ROD_NUBLESS, IRON_ROD, DEBUGGY_BLOCK, FAKE_END_PORTAL_BLOCK
         };
 
         // Checks to see if the arrays are of the same length. If not, stop the Minecraft process.
