@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:lantern"
+        },
+        {
+            "item": "architecture_extensions:spruce_post_cap"
+        }
+    ],
+    "result": {
+        "item": "architecture_extensions:spruce_post_lantern",
+        "count": 1
+    }
+}

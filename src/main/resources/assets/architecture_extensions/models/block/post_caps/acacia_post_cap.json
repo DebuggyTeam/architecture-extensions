@@ -1,0 +1,6 @@
+{
+    "parent": "architecture_extensions:block/templates/template_post_cap",
+    "textures": {
+        "texture": "minecraft:block/acacia_planks"
+    }
+}

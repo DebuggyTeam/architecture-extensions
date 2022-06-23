@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:dark_oak_slab"
+        }
+    ],
+    "result": {
+        "item": "architecture_extensions:dark_oak_post_cap",
+        "count": 7
+    }
+}

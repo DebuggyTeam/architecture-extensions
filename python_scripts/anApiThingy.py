@@ -11,46 +11,38 @@ block_ids = [
     "quartz_column", "prismarine_brick_column", "dark_prismarine_column", "blackstone_column",
     "polished_blackstone_column", "polished_blackstone_brick_column",
 
-    "granite_post", "diorite_post", "andesite_post", "cobbled_deepslate_post", "polished_deepslate_post",
-    "cobblestone_post",
-    "sandstone_post", "red_sandstone_post", "brick_post", "mossy_cobblestone_post", "stone_brick_post",
-    "mossy_stone_brick_post",
+    "granite_post", "diorite_post", "andesite_post", "cobbled_deepslate_post", "polished_deepslate_post", "cobblestone_post",
+    "sandstone_post", "red_sandstone_post", "brick_post", "mossy_cobblestone_post", "stone_brick_post", "mossy_stone_brick_post",
     "deepslate_brick_post", "deepslate_tile_post", "nether_brick_post", "red_nether_brick_post", "end_stone_brick_post",
-    "prismarine_post", "prismarine_brick_post", "blackstone_post", "polished_blackstone_brick_post",
-    "polished_blackstone_post",
+    "prismarine_post", "prismarine_brick_post", "blackstone_post", "polished_blackstone_brick_post", "polished_blackstone_post",
 
-    "granite_roof", "diorite_roof", "andesite_roof", "cobbled_deepslate_roof", "polished_deepslate_roof",
-    "cobblestone_roof",
-    "sandstone_roof", "red_sandstone_roof", "brick_roof", "mossy_cobblestone_roof", "stone_brick_roof",
-    "mossy_stone_brick_roof",
+    "granite_roof", "diorite_roof", "andesite_roof", "cobbled_deepslate_roof", "polished_deepslate_roof", "cobblestone_roof",
+    "sandstone_roof", "red_sandstone_roof", "brick_roof", "mossy_cobblestone_roof", "stone_brick_roof", "mossy_stone_brick_roof",
     "deepslate_brick_roof", "deepslate_tile_roof", "nether_brick_roof", "red_nether_brick_roof", "end_stone_brick_roof",
-    "smooth_quartz_roof", "prismarine_brick_roof", "blackstone_roof", "polished_blackstone_brick_roof",
-    "polished_blackstone_roof",
+    "smooth_quartz_roof", "prismarine_brick_roof", "blackstone_roof", "polished_blackstone_brick_roof", "polished_blackstone_roof",
 
-    "granite_arch", "diorite_arch", "andesite_arch", "cobbled_deepslate_arch", "polished_deepslate_arch",
-    "cobblestone_arch",
-    "sandstone_arch", "red_sandstone_arch", "brick_arch", "mossy_cobblestone_arch", "stone_brick_arch",
-    "mossy_stone_brick_arch",
+    "granite_arch", "diorite_arch", "andesite_arch", "cobbled_deepslate_arch", "polished_deepslate_arch", "cobblestone_arch",
+    "sandstone_arch", "red_sandstone_arch", "brick_arch", "mossy_cobblestone_arch", "stone_brick_arch", "mossy_stone_brick_arch",
     "deepslate_brick_arch", "deepslate_tile_arch", "nether_brick_arch", "red_nether_brick_arch", "end_stone_brick_arch",
-    "smooth_quartz_arch", "prismarine_brick_arch", "blackstone_arch", "polished_blackstone_brick_arch",
-    "polished_blackstone_arch",
+    "smooth_quartz_arch", "prismarine_brick_arch", "blackstone_arch", "polished_blackstone_brick_arch", "polished_blackstone_arch",
 
-    "oak_beam", "spruce_beam", "birch_beam", "jungle_beam", "acacia_beam", "dark_oak_beam", "mangrove_beam",
-    "crimson_beam",
-    "warped_beam", "iron_h_beam",
+    "oak_beam", "spruce_beam", "birch_beam", "jungle_beam", "acacia_beam", "dark_oak_beam", "crimson_beam", "warped_beam",
+    "mangrove_beam", "iron_h_beam",
 
-    "oak_fence_post", "spruce_fence_post", "birch_fence_post", "jungle_fence_post", "acacia_fence_post",
-    "dark_oak_fence_post",
+    "oak_fence_post", "spruce_fence_post", "birch_fence_post", "jungle_fence_post", "acacia_fence_post", "dark_oak_fence_post",
     "mangrove_fence_post", "crimson_fence_post", "warped_fence_post",
 
-    "oak_joist", "spruce_joist", "birch_joist", "jungle_joist", "acacia_joist", "dark_oak_joist", "mangrove_joist",
-    "crimson_joist",
+    "oak_joist", "spruce_joist", "birch_joist", "jungle_joist", "acacia_joist", "dark_oak_joist", "mangrove_joist", "crimson_joist",
     "warped_joist",
 
     "oak_crown_molding", "spruce_crown_molding", "birch_crown_molding", "jungle_crown_molding", "acacia_crown_molding",
     "dark_oak_crown_molding", "mangrove_crown_molding", "crimson_crown_molding", "warped_crown_molding",
 
-    "bamboo_rod", "copper_rod", "end_rod_nubless", "debuggy_block", "fake_end_portal_block",
+    "bamboo_rod", "copper_rod", "end_rod_nubless", "iron_rod", "debuggy_block", "fake_end_portal_block",
+
+    "oak_post_cap", "oak_post_lantern", "spruce_post_cap", "spruce_post_lantern", "birch_post_cap", "birch_post_lantern",
+    "jungle_post_cap", "jungle_post_lantern", "acacia_post_cap", "acacia_post_lantern", "dark_oak_post_cap", "dark_oak_post_lantern",
+    "mangrove_post_cap", "mangrove_post_lantern", "crimson_post_cap", "crimson_post_lantern", "warped_post_cap", "warped_post_lantern",
 
     # Soul Ice Blocks
     "soul_ice_column", "polished_soul_ice_column", "soul_ice_brick_column", "lightstone_column",
@@ -114,7 +106,12 @@ block_names = [
     "Oak Crown Molding", "Spruce Crown Molding", "Birch Crown Molding", "Jungle Crown Molding", "Acacia Crown Molding",
     "Dark Oak Crown Molding", "Mangrove Crown Molding", "Crimson Crown Molding", "Warped Crown Molding",
 
-    "Bamboo Rod", "Copper Rod", "End Rod Nubless", "Oddly Colored Block", "Starry Night Sky Block",
+    "Bamboo Rod", "Copper Rod", "End Rod Nubless", "Iron Rod", "Oddly Colored Block", "Starry Night Sky Block",
+
+    "Oak Post Cap", "Oak Post Lantern", "Spruce Post Cap", "Spruce Post Lantern", "Birch Post Cap", "Birch Post Lantern",
+    "Jungle Post Cap", "Jungle Post Lantern", "Acacia Post Cap", "Acacia Post Lantern", "Dark Oak Post Cap",
+    "Dark Oak Post Lantern", "Mangrove Post Cap", "Mangrove Post Lantern", "Crimson Post Cap", "Crimson Post Lantern",
+    "Warped Post Cap", "Warped Post Lantern",
 
     # Soul Ice Blocks
     "Soul Ice Column", "Polished Soul Ice Column", "Soul Ice Brick Column", "Lightstone Column",
@@ -345,7 +342,6 @@ def columns_recipe(arch_ex_block, recipe_item, namespace):
 
 
 # For generating beam blocks
-
 def beams_blockstate(arch_ex_block):
     beam_blockstate = {
         "variants": {
@@ -394,3 +390,92 @@ def beams_recipe(arch_ex_block, recipe_item, namespace):
         "count": 1
     }
     return beam_recipe
+
+
+# For generating Post Caps and Post Lanterns
+def post_caps_blockstate(arch_ex_block):
+    post_cap_blockstate = {
+        "variants": {
+            "": {"model": f"architecture_extensions:block/post_caps/{arch_ex_block}_post_cap"}
+        }
+    }
+    return post_cap_blockstate
+
+
+def post_lanterns_blockstate(arch_ex_block):
+    post_lantern_blockstate = {
+        "variants": {
+            "": {"model": f"architecture_extensions:block/post_caps/{arch_ex_block}_post_lantern"}
+        }
+    }
+    return post_lantern_blockstate
+
+
+def post_caps_model(minecraft_block, namespace):
+    post_cap = {
+        "parent": "architecture_extensions:block/templates/template_post_cap",
+        "textures": {
+            "texture": f"{namespace}:block/{minecraft_block}"
+        }
+    }
+    return post_cap
+
+
+def post_lanterns_model(first_minecraft_block, second_minecraft_block, namespace):
+    post_lantern = {
+        "parent": "architecture_extensions:block/templates/template_post_lantern",
+        "textures": {
+            "wood_texture": f"minecraft:block/{first_minecraft_block}",
+            "lantern_texture": f"minecraft:block/{second_minecraft_block}"
+        }
+    }
+    return post_lantern
+
+
+def post_caps_item(arch_ex_block):
+    post_cap_item = {
+        "parent": f"architecture_extensions:block/post_caps/{arch_ex_block}_post_cap"
+    }
+    return post_cap_item
+
+
+def post_lanterns_item(arch_ex_block):
+    post_lantern_item = {
+        "parent": f"architecture_extensions:block/post_caps/{arch_ex_block}_post_lantern"
+    }
+    return post_lantern_item
+
+
+def post_caps_recipe(arch_ex_block, recipe_item, namespace):
+    post_cap_recipe = {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+            {
+                "item": f"{namespace}:{recipe_item}"
+            }
+        ],
+        "result": {
+            "item": f"architecture_extensions:{arch_ex_block}_post_cap",
+            "count": 7
+        }
+    }
+    return post_cap_recipe
+
+
+def post_lanterns_recipe(arch_ex_block, first_recipe_item, second_recipe_item, namespace):
+    post_lantern_recipe = {
+        "type": "minecraft:crafting_shapeless",
+        "ingredients": [
+            {
+                "item": f"{namespace}:{first_recipe_item}"
+            },
+            {
+                "item": f"{namespace}:{second_recipe_item}"
+            }
+        ],
+        "result": {
+            "item": f"architecture_extensions:{arch_ex_block}_post_lantern",
+            "count": 1
+        }
+    }
+    return post_lantern_recipe

@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "architecture_extensions:block/post_caps/spruce_post_cap"
+        }
+    }
+}

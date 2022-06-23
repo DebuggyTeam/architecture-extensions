@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:mangrove_slab"
+        }
+    ],
+    "result": {
+        "item": "architecture_extensions:mangrove_post_cap",
+        "count": 7
+    }
+}

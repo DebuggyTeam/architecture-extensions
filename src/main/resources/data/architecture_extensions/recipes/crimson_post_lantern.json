@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:soul_lantern"
+        },
+        {
+            "item": "architecture_extensions:crimson_post_cap"
+        }
+    ],
+    "result": {
+        "item": "architecture_extensions:crimson_post_lantern",
+        "count": 1
+    }
+}

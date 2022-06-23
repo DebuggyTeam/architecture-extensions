@@ -138,6 +138,26 @@ public class ArchitectureExtensionsBlocks {
     public static final FencePostBlock CRIMSON_FENCE_POST = new FencePostBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final FencePostBlock WARPED_FENCE_POST= new FencePostBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
 
+    // Fence Post Caps and Lanterns
+    public static final PostCapBlock OAK_POST_CAP = new PostCapBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+    public static final PostLanternBlock OAK_POST_LANTERN = new PostLanternBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD).luminance(15));
+    public static final PostCapBlock SPRUCE_POST_CAP = new PostCapBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+    public static final PostLanternBlock SPRUCE_POST_LANTERN = new PostLanternBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD).luminance(15));
+    public static final PostCapBlock BIRCH_POST_CAP = new PostCapBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+    public static final PostLanternBlock BIRCH_POST_LANTERN = new PostLanternBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD).luminance(15));
+    public static final PostCapBlock JUNGLE_POST_CAP = new PostCapBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+    public static final PostLanternBlock JUNGLE_POST_LANTERN = new PostLanternBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD).luminance(15));
+    public static final PostCapBlock ACACIA_POST_CAP = new PostCapBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+    public static final PostLanternBlock ACACIA_POST_LANTERN = new PostLanternBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD).luminance(15));
+    public static final PostCapBlock DARK_OAK_POST_CAP = new PostCapBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+    public static final PostLanternBlock DARK_OAK_POST_LANTERN = new PostLanternBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD).luminance(15));
+    public static final PostCapBlock MANGROVE_POST_CAP = new PostCapBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+    public static final PostLanternBlock MANGROVE_POST_LANTERN = new PostLanternBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD).luminance(15));
+    public static final PostCapBlock CRIMSON_POST_CAP = new PostCapBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+    public static final PostLanternBlock CRIMSON_POST_LANTERN = new PostLanternBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD).luminance(15));
+    public static final PostCapBlock WARPED_POST_CAP = new PostCapBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
+    public static final PostLanternBlock WARPED_POST_LANTERN = new PostLanternBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD).luminance(15));
+
     // Joist Blocks
     public static final JoistBlock OAK_JOIST = new JoistBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
     public static final JoistBlock SPRUCE_JOIST = new JoistBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD));
@@ -208,7 +228,11 @@ public class ArchitectureExtensionsBlocks {
                 "oak_crown_molding", "spruce_crown_molding", "birch_crown_molding", "jungle_crown_molding", "acacia_crown_molding",
                 "dark_oak_crown_molding", "mangrove_crown_molding", "crimson_crown_molding", "warped_crown_molding",
 
-                "bamboo_rod", "copper_rod", "end_rod_nubless", "iron_rod", "debuggy_block", "fake_end_portal_block"
+                "bamboo_rod", "copper_rod", "end_rod_nubless", "iron_rod", "debuggy_block", "fake_end_portal_block",
+
+                "oak_post_cap", "oak_post_lantern", "spruce_post_cap", "spruce_post_lantern", "birch_post_cap", "birch_post_lantern",
+                "jungle_post_cap", "jungle_post_lantern", "acacia_post_cap", "acacia_post_lantern", "dark_oak_post_cap", "dark_oak_post_lantern",
+                "mangrove_post_cap", "mangrove_post_lantern", "crimson_post_cap", "crimson_post_lantern", "warped_post_cap", "warped_post_lantern"
         };
 
         Block[] anotherBlocksArray = {
@@ -244,7 +268,11 @@ public class ArchitectureExtensionsBlocks {
                 OAK_CROWN_MOLDING, SPRUCE_CROWN_MOLDING, BIRCH_CROWN_MOLDING, JUNGLE_CROWN_MOLDING, ACACIA_CROWN_MOLDING,
                 DARK_OAK_CROWN_MOLDING, MANGROVE_CROWN_MOLDING, CRIMSON_CROWN_MOLDING, WARPED_CROWN_MOLDING,
 
-                BAMBOO_ROD, COPPER_ROD, END_ROD_NUBLESS, IRON_ROD, DEBUGGY_BLOCK, FAKE_END_PORTAL_BLOCK
+                BAMBOO_ROD, COPPER_ROD, END_ROD_NUBLESS, IRON_ROD, DEBUGGY_BLOCK, FAKE_END_PORTAL_BLOCK,
+
+                OAK_POST_CAP, OAK_POST_LANTERN, SPRUCE_POST_CAP, SPRUCE_POST_LANTERN, BIRCH_POST_CAP, BIRCH_POST_LANTERN, JUNGLE_POST_CAP,
+                JUNGLE_POST_LANTERN, ACACIA_POST_CAP, ACACIA_POST_LANTERN, DARK_OAK_POST_CAP, DARK_OAK_POST_LANTERN, MANGROVE_POST_CAP,
+                MANGROVE_POST_LANTERN, CRIMSON_POST_CAP, CRIMSON_POST_LANTERN, WARPED_POST_CAP, WARPED_POST_LANTERN
         };
 
         // Checks to see if the arrays are of the same length. If not, stop the Minecraft process.

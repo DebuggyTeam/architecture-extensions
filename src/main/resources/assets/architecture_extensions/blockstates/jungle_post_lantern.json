@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "architecture_extensions:block/post_caps/jungle_post_lantern"
+        }
+    }
+}
