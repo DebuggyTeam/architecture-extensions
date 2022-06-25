@@ -20,20 +20,20 @@ import java.util.Map;
 
 public class ArchExAurorasDecoCompat {
     // Beam Blocks
-    public static final BeamBlock AZALEA_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD).requiresTool());
-    public static final BeamBlock JACARANDA_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD).requiresTool());
+    public static final BeamBlock AZALEA_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(1.5f).sounds(BlockSoundGroup.WOOD).requiresTool());
+    public static final BeamBlock JACARANDA_BEAM = new BeamBlock(QuiltBlockSettings.of(Material.WOOD).strength(1.5f).sounds(BlockSoundGroup.WOOD).requiresTool());
 
     // Fence Post Blocks
-    public static final FencePostBlock AZALEA_FENCE_POST = new FencePostBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD).requiresTool());
-    public static final FencePostBlock JACARANDA_FENCE_POST = new FencePostBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD).requiresTool());
+    public static final FencePostBlock AZALEA_FENCE_POST = new FencePostBlock(QuiltBlockSettings.of(Material.WOOD).strength(1.5f).sounds(BlockSoundGroup.WOOD).requiresTool());
+    public static final FencePostBlock JACARANDA_FENCE_POST = new FencePostBlock(QuiltBlockSettings.of(Material.WOOD).strength(1.5f).sounds(BlockSoundGroup.WOOD).requiresTool());
 
     // Joist Blocks
-    public static final JoistBlock AZALEA_JOIST = new JoistBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD).requiresTool());
-    public static final JoistBlock JACARANDA_JOIST = new JoistBlock(QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD).requiresTool());
+    public static final JoistBlock AZALEA_JOIST = new JoistBlock(QuiltBlockSettings.of(Material.WOOD).strength(1.5f).sounds(BlockSoundGroup.WOOD).requiresTool());
+    public static final JoistBlock JACARANDA_JOIST = new JoistBlock(QuiltBlockSettings.of(Material.WOOD).strength(1.5f).sounds(BlockSoundGroup.WOOD).requiresTool());
     
     // Molding Blocks
-    public static final MoldingBlock AZALEA_CROWN_MOLDING = new MoldingBlock(Blocks.ACACIA_PLANKS.getDefaultState(), QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD).requiresTool());
-    public static final MoldingBlock JACARANDA_CROWN_MOLDING = new MoldingBlock(Blocks.ACACIA_PLANKS.getDefaultState(), QuiltBlockSettings.of(Material.WOOD).strength(2f).sounds(BlockSoundGroup.WOOD).requiresTool());
+    public static final MoldingBlock AZALEA_CROWN_MOLDING = new MoldingBlock(Blocks.ACACIA_PLANKS.getDefaultState(), QuiltBlockSettings.of(Material.WOOD).strength(1.5f).sounds(BlockSoundGroup.WOOD).requiresTool());
+    public static final MoldingBlock JACARANDA_CROWN_MOLDING = new MoldingBlock(Blocks.ACACIA_PLANKS.getDefaultState(), QuiltBlockSettings.of(Material.WOOD).strength(1.5f).sounds(BlockSoundGroup.WOOD).requiresTool());
 
 
     static {

@@ -19,31 +19,31 @@ import java.util.Map;
 
 public class ArchExSoul_IceCompat {
     // Columns
-    public static final ColumnBlock SOUL_ICE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.GLASS));
-    public static final ColumnBlock POLISHED_SOUL_ICE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.GLASS));
-    public static final ColumnBlock SOUL_ICE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.GLASS));
-    public static final ColumnBlock LIGHTSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
-    public static final ColumnBlock POLISHED_LIGHTSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
-    public static final ColumnBlock LIGHTSTONE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
-    public static final ColumnBlock HARDENED_LIGHTSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
+    public static final ColumnBlock SOUL_ICE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(1.5f).sounds(BlockSoundGroup.GLASS).requiresTool());
+    public static final ColumnBlock POLISHED_SOUL_ICE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(1.5f).sounds(BlockSoundGroup.GLASS).requiresTool());
+    public static final ColumnBlock SOUL_ICE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(1.5f).sounds(BlockSoundGroup.GLASS).requiresTool());
+    public static final ColumnBlock LIGHTSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(2.5f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE).requiresTool());
+    public static final ColumnBlock POLISHED_LIGHTSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(2.5f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE).requiresTool());
+    public static final ColumnBlock LIGHTSTONE_BRICK_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(2.5f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE).requiresTool());
+    public static final ColumnBlock HARDENED_LIGHTSTONE_COLUMN = new ColumnBlock(QuiltBlockSettings.of(Material.ICE).strength(2.5f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE).requiresTool());
 
     // Posts
-    public static final WallPostBlock SOUL_ICE_POST = new WallPostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.GLASS));
-    public static final WallPostBlock POLISHED_SOUL_ICE_POST = new WallPostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.GLASS));
-    public static final WallPostBlock SOUL_ICE_BRICK_POST = new WallPostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.GLASS));
-    public static final WallPostBlock LIGHTSTONE_POST = new WallPostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
-    public static final WallPostBlock POLISHED_LIGHTSTONE_POST = new WallPostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
-    public static final WallPostBlock LIGHTSTONE_BRICK_POST = new WallPostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
-    public static final WallPostBlock HARDENED_LIGHTSTONE_POST = new WallPostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
+    public static final WallPostBlock SOUL_ICE_POST = new WallPostBlock(QuiltBlockSettings.of(Material.ICE).strength(1.5f).sounds(BlockSoundGroup.GLASS).requiresTool());
+    public static final WallPostBlock POLISHED_SOUL_ICE_POST = new WallPostBlock(QuiltBlockSettings.of(Material.ICE).strength(1.5f).sounds(BlockSoundGroup.GLASS).requiresTool());
+    public static final WallPostBlock SOUL_ICE_BRICK_POST = new WallPostBlock(QuiltBlockSettings.of(Material.ICE).strength(1.5f).sounds(BlockSoundGroup.GLASS).requiresTool());
+    public static final WallPostBlock LIGHTSTONE_POST = new WallPostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE).requiresTool());
+    public static final WallPostBlock POLISHED_LIGHTSTONE_POST = new WallPostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE).requiresTool());
+    public static final WallPostBlock LIGHTSTONE_BRICK_POST = new WallPostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE).requiresTool());
+    public static final WallPostBlock HARDENED_LIGHTSTONE_POST = new WallPostBlock(QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE).requiresTool());
 
     // Arches
-    public static final ArchBlock SOUL_ICE_ARCH = new ArchBlock(Blocks.BLUE_ICE.getDefaultState(), QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.GLASS));
-    public static final ArchBlock POLISHED_SOUL_ICE_ARCH = new ArchBlock(Blocks.BLUE_ICE.getDefaultState(), QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.GLASS));
-    public static final ArchBlock SOUL_ICE_BRICK_ARCH = new ArchBlock(Blocks.BLUE_ICE.getDefaultState(), QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.GLASS));
-    public static final ArchBlock LIGHTSTONE_ARCH = new ArchBlock(Blocks.DEEPSLATE.getDefaultState(), QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
-    public static final ArchBlock POLISHED_LIGHTSTONE_ARCH = new ArchBlock(Blocks.DEEPSLATE.getDefaultState(), QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
-    public static final ArchBlock LIGHTSTONE_BRICK_ARCH = new ArchBlock(Blocks.DEEPSLATE.getDefaultState(), QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
-    public static final ArchBlock HARDENED_LIGHTSTONE_ARCH = new ArchBlock(Blocks.DEEPSLATE.getDefaultState(), QuiltBlockSettings.of(Material.ICE).strength(3f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE));
+    public static final ArchBlock SOUL_ICE_ARCH = new ArchBlock(Blocks.BLUE_ICE.getDefaultState(), QuiltBlockSettings.of(Material.ICE).strength(1.5f).sounds(BlockSoundGroup.GLASS).requiresTool());
+    public static final ArchBlock POLISHED_SOUL_ICE_ARCH = new ArchBlock(Blocks.BLUE_ICE.getDefaultState(), QuiltBlockSettings.of(Material.ICE).strength(1.5f).sounds(BlockSoundGroup.GLASS).requiresTool());
+    public static final ArchBlock SOUL_ICE_BRICK_ARCH = new ArchBlock(Blocks.BLUE_ICE.getDefaultState(), QuiltBlockSettings.of(Material.ICE).strength(1.5f).sounds(BlockSoundGroup.GLASS).requiresTool());
+    public static final ArchBlock LIGHTSTONE_ARCH = new ArchBlock(Blocks.DEEPSLATE.getDefaultState(), QuiltBlockSettings.of(Material.ICE).strength(2.5f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE).requiresTool());
+    public static final ArchBlock POLISHED_LIGHTSTONE_ARCH = new ArchBlock(Blocks.DEEPSLATE.getDefaultState(), QuiltBlockSettings.of(Material.ICE).strength(2.5f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE).requiresTool());
+    public static final ArchBlock LIGHTSTONE_BRICK_ARCH = new ArchBlock(Blocks.DEEPSLATE.getDefaultState(), QuiltBlockSettings.of(Material.ICE).strength(2.5f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE).requiresTool());
+    public static final ArchBlock HARDENED_LIGHTSTONE_ARCH = new ArchBlock(Blocks.DEEPSLATE.getDefaultState(), QuiltBlockSettings.of(Material.ICE).strength(2.5f).sounds(BlockSoundGroup.POLISHED_DEEPSLATE).requiresTool());
 
 
     static {
