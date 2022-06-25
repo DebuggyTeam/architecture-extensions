@@ -3,7 +3,7 @@ import os
 
 from python_scripts.anApiThingy import ROOT_DIR, block_ids
 
-os.chdir(f"{ROOT_DIR}\\src\\main\\resources\\data\\architecture_extensions\\loot_tables")
+os.chdir(f"{ROOT_DIR}\\src\\main\\resources\\data\\architecture_extensions\\loot_tables\\blocks")
 
 for i in block_ids:
     loot_table = {
