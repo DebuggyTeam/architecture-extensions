@@ -27,22 +27,21 @@ block_ids = [
     "smooth_quartz_arch", "prismarine_brick_arch", "blackstone_arch", "polished_blackstone_brick_arch", "polished_blackstone_arch",
 
     "oak_beam", "spruce_beam", "birch_beam", "jungle_beam", "acacia_beam", "dark_oak_beam", "crimson_beam", "warped_beam",
-    "mangrove_beam", "iron_h_beam",
+    "iron_h_beam",
 
     "oak_fence_post", "spruce_fence_post", "birch_fence_post", "jungle_fence_post", "acacia_fence_post", "dark_oak_fence_post",
-    "mangrove_fence_post", "crimson_fence_post", "warped_fence_post",
+    "crimson_fence_post", "warped_fence_post",
 
-    "oak_joist", "spruce_joist", "birch_joist", "jungle_joist", "acacia_joist", "dark_oak_joist", "mangrove_joist", "crimson_joist",
-    "warped_joist",
+    "oak_joist", "spruce_joist", "birch_joist", "jungle_joist", "acacia_joist", "dark_oak_joist", "crimson_joist", "warped_joist",
 
     "oak_crown_molding", "spruce_crown_molding", "birch_crown_molding", "jungle_crown_molding", "acacia_crown_molding",
-    "dark_oak_crown_molding", "mangrove_crown_molding", "crimson_crown_molding", "warped_crown_molding",
+    "dark_oak_crown_molding", "crimson_crown_molding", "warped_crown_molding",
 
     "bamboo_rod", "copper_rod", "end_rod_nubless", "iron_rod", "debuggy_block", "fake_end_portal_block",
 
     "oak_post_cap", "oak_post_lantern", "spruce_post_cap", "spruce_post_lantern", "birch_post_cap", "birch_post_lantern",
     "jungle_post_cap", "jungle_post_lantern", "acacia_post_cap", "acacia_post_lantern", "dark_oak_post_cap", "dark_oak_post_lantern",
-    "mangrove_post_cap", "mangrove_post_lantern", "crimson_post_cap", "crimson_post_lantern", "warped_post_cap", "warped_post_lantern",
+    "crimson_post_cap", "crimson_post_lantern", "warped_post_cap", "warped_post_lantern",
 
     # Soul Ice Blocks
     "soul_ice_column", "polished_soul_ice_column", "soul_ice_brick_column", "lightstone_column",
@@ -79,10 +78,9 @@ block_names = [
     "Granite Roof", "Diorite Roof", "Andesite Roof", "Cobbled Deepslate Roof", "Polished Deepslate Roof",
     "Cobblestone Roof",
     "Sandstone Roof", "Red Sandstone Roof", "Brick Roof", "Mossy Cobblestone Roof", "Stone Brick Roof",
-    "Mossy Stone Brick Roof",
-    "Deepslate Brick Roof", "Deepslate Tile Roof", "Nether Brick Roof", "Red Nether Brick Roof", "End Stone Brick Roof",
-    "Smooth Quartz Roof", "Prismarine Brick Roof", "Blackstone Roof", "Polished Blackstone Brick Roof",
-    "Polished Blackstone Roof",
+    "Mossy Stone Brick Roof", "Deepslate Brick Roof", "Deepslate Tile Roof", "Nether Brick Roof", "Red Nether Brick Roof",
+    "End Stone Brick Roof", "Smooth Quartz Roof", "Prismarine Brick Roof", "Blackstone Roof",
+    "Polished Blackstone Brick Roof", "Polished Blackstone Roof",
 
     "Granite Arch", "Diorite Arch", "Andesite Arch", "Cobbled Deepslate Arch", "Polished Deepslate Arch",
     "Cobblestone Arch",
@@ -92,26 +90,22 @@ block_names = [
     "Smooth Quartz Arch", "Prismarine Brick Arch", "Blackstone Arch", "Polished Blackstone Brick Arch",
     "Polished Blackstone Arch",
 
-    "Oak Beam", "Spruce Beam", "Birch Beam", "Jungle Beam", "Acacia Beam", "Dark Oak Beam", "Mangrove Beam",
-    "Crimson Beam",
+    "Oak Beam", "Spruce Beam", "Birch Beam", "Jungle Beam", "Acacia Beam", "Dark Oak Beam", "Crimson Beam",
     "Warped Beam", "Iron H Beam",
 
     "Oak Fence Post", "Spruce Fence Post", "Birch Fence Post", "Jungle Fence Post", "Acacia Fence Post",
-    "Dark Oak Fence Post",
-    "Mangrove Fence Post", "Crimson Fence Post", "Warped Fence Post",
+    "Dark Oak Fence Post", "Crimson Fence Post", "Warped Fence Post",
 
-    "Oak Joist", "Spruce Joist", "Birch Joist", "Jungle Joist", "Acacia Joist", "Dark Oak Joist", "Mangrove Joist",
-    "Crimson Joist", "Warped Joist",
+    "Oak Joist", "Spruce Joist", "Birch Joist", "Jungle Joist", "Acacia Joist", "Dark Oak Joist", "Crimson Joist", "Warped Joist",
 
     "Oak Crown Molding", "Spruce Crown Molding", "Birch Crown Molding", "Jungle Crown Molding", "Acacia Crown Molding",
-    "Dark Oak Crown Molding", "Mangrove Crown Molding", "Crimson Crown Molding", "Warped Crown Molding",
+    "Dark Oak Crown Molding", "Crimson Crown Molding", "Warped Crown Molding",
 
     "Bamboo Rod", "Copper Rod", "End Rod Nubless", "Iron Rod", "Oddly Colored Block", "Starry Night Sky Block",
 
     "Oak Post Cap", "Oak Post Lantern", "Spruce Post Cap", "Spruce Post Lantern", "Birch Post Cap", "Birch Post Lantern",
     "Jungle Post Cap", "Jungle Post Lantern", "Acacia Post Cap", "Acacia Post Lantern", "Dark Oak Post Cap",
-    "Dark Oak Post Lantern", "Mangrove Post Cap", "Mangrove Post Lantern", "Crimson Post Cap", "Crimson Post Lantern",
-    "Warped Post Cap", "Warped Post Lantern",
+    "Dark Oak Post Lantern", "Crimson Post Cap", "Crimson Post Lantern", "Warped Post Cap", "Warped Post Lantern",
 
     # Soul Ice Blocks
     "Soul Ice Column", "Polished Soul Ice Column", "Soul Ice Brick Column", "Lightstone Column",
