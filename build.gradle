@@ -1,6 +1,9 @@
+import java.nio.charset.StandardCharsets
+
 plugins {
 	id 'maven-publish'
 	alias(libs.plugins.quilt.loom)
+	alias(libs.plugins.minotaur)
 }
 
 archivesBaseName = project.archives_base_name
@@ -80,5 +83,22 @@ publishing {
 		// Notice: This block does NOT have the same function as the block in the top level.
 		// The repositories here will be used for publishing your artifact, not for
 		// retrieving dependencies.
+	}
+}
+
+modrinth {
+	token = System.getenv("MODRINTH_TOKEN")
+	projectId = "arch-ex"
+	uploadFile = remapJar
+	gameVersions = [libs.versions.minecraft.get()]
+	loaders = ["quilt"]
+	def ref = System.getenv("GITHUB_REF")
+	changelog = System.getenv("CHANGELOG") ?:
+			(ref != null && ref.startsWith("refs/tags/")) ?
+					"You may view the changelog at https://github.com/woodiertexas/architecture-extensions/releases/tag/${URLEncoder.encode(ref.substring(10), StandardCharsets.UTF_8)}" :
+					"No changelog is available. Perhaps poke at https://github.com/woodiertexas/architecture-extensions for a changelog?"
+
+	dependencies {
+		required.project "qsl"
 	}
 }
