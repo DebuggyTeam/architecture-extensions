@@ -3,6 +3,7 @@ package io.github.woodiertexas.architecture_extensions;
 import io.github.woodiertexas.architecture_extensions.blocks.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.EndRodBlock;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
@@ -177,7 +178,7 @@ public class ArchitectureExtensionsBlocks {
     // Rod Blocks
     public static final RodBlockTwo BAMBOO_ROD = new RodBlockTwo(QuiltBlockSettings.of(Material.BAMBOO).strength(1f).sounds(BlockSoundGroup.BAMBOO).nonOpaque().requiresTool());
     public static final RodBlockTwo COPPER_ROD = new RodBlockTwo(QuiltBlockSettings.of(Material.METAL).strength(1f).sounds(BlockSoundGroup.COPPER).nonOpaque().requiresTool());
-    public static final RodBlockTwo END_ROD_NUBLESS = new RodBlockTwo(QuiltBlockSettings.of(Material.STONE).strength(1f).luminance(14).nonOpaque().requiresTool());
+    public static final EndRodBlock END_ROD_NUBLESS = new EndRodBlock(QuiltBlockSettings.of(Material.STONE).strength(1f).luminance(14).nonOpaque().requiresTool());
     public static final RodBlockTwo IRON_ROD = new RodBlockTwo(QuiltBlockSettings.of(Material.METAL).strength(1f).nonOpaque().requiresTool());
 
     // Peculiar Blocks
