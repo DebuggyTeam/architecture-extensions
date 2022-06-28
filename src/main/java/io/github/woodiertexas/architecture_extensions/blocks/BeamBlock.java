@@ -1,19 +1,23 @@
 package io.github.woodiertexas.architecture_extensions.blocks;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.PillarBlock;
-import net.minecraft.block.ShapeContext;
+import net.minecraft.block.*;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.WorldAccess;
 
-public class BeamBlock extends PillarBlock {
+public class BeamBlock extends PillarBlock implements Waterloggable {
+    public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
+
     protected static final VoxelShape X_AXIS_BOX = Block.createCuboidShape(0.0, 2.0, 2.0, 16.0, 14.0, 14.0);
     protected static final VoxelShape Y_AXIS_BOX = Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
     protected static final VoxelShape Z_AXIS_BOX = Block.createCuboidShape(2.0, 2.0, 0.0, 14.0, 14.0, 16.0);
@@ -21,11 +25,7 @@ public class BeamBlock extends PillarBlock {
     public BeamBlock(Settings settings) {
         super(settings);
         setDefaultState(this.stateManager.getDefaultState().with(AXIS, Direction.Axis.Y));
-    }
-
-    @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-        stateManager.add(new Property[]{AXIS});
+        this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false)); // Thanks LambdAurora!
     }
 
     // The following deals with block rotation
@@ -59,6 +59,26 @@ public class BeamBlock extends PillarBlock {
     // Deals with placing the block properly in accordance to direction.
     @Override
     public BlockState getPlacementState(ItemPlacementContext context) {
-        return this.getDefaultState().with(AXIS, context.getSide().getAxis());
+        return this.getDefaultState().with(AXIS, context.getSide().getAxis()).with(WATERLOGGED, context.getWorld().getFluidState(context.getBlockPos()).getFluid() == Fluids.WATER);
+    }
+
+    // Deals with block waterlogging. Thanks acikek!
+    @Override
+    public FluidState getFluidState(BlockState state) {
+        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
+    }
+
+    @Override
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+        if (state.get(WATERLOGGED)) {
+            world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+        }
+        return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+    }
+
+    // Appending block properties
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
+        stateManager.add(new Property[]{AXIS, WATERLOGGED});
     }
 }

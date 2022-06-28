@@ -4,8 +4,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.state.property.Property;
@@ -17,6 +20,7 @@ import net.minecraft.world.BlockView;
 
 public class FencePostBlock extends PillarBlock {
     public static final EnumProperty<Direction.Axis> AXIS = Properties.AXIS;
+    public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
     protected static final VoxelShape X_AXIS_BOX = Block.createCuboidShape(0.0, 6.0, 6.0, 16.0, 10.0, 10.0);
     protected static final VoxelShape Y_AXIS_BOX = Block.createCuboidShape(6.0, 0.0, 6.0, 10.0, 16.0, 10.0);
@@ -25,11 +29,6 @@ public class FencePostBlock extends PillarBlock {
     public FencePostBlock(Settings settings) {
         super(settings);
         setDefaultState(this.stateManager.getDefaultState().with(AXIS, Direction.Axis.Y));
-    }
-
-    @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-        stateManager.add(new Property[]{AXIS});
     }
 
     // The following deals with block rotation
@@ -63,6 +62,16 @@ public class FencePostBlock extends PillarBlock {
     // Deals with placing the block properly in accordance to direction.
     @Override
     public BlockState getPlacementState(ItemPlacementContext context) {
-        return this.getDefaultState().with(AXIS, context.getSide().getAxis());
+        return this.getDefaultState().with(AXIS, context.getSide().getAxis()).with(WATERLOGGED, context.getWorld().getFluidState(context.getBlockPos()).getFluid() == Fluids.WATER);
+    }
+
+    @Override
+    public FluidState getFluidState(BlockState state) {
+        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
+    }
+
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
+        stateManager.add(new Property[]{AXIS, WATERLOGGED});
     }
 }
