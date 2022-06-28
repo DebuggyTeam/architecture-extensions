@@ -2,11 +2,11 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:warped_slab"
+            "item": "minecraft:warped_planks"
         }
     ],
     "result": {
         "item": "architecture_extensions:warped_post_cap",
-        "count": 7
+        "count": 8
     }
 }

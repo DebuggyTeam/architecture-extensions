@@ -2,11 +2,11 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:oak_slab"
+            "item": "minecraft:oak_planks"
         }
     ],
     "result": {
         "item": "architecture_extensions:oak_post_cap",
-        "count": 7
+        "count": 8
     }
 }

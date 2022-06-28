@@ -2,11 +2,11 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:jungle_slab"
+            "item": "minecraft:jungle_planks"
         }
     ],
     "result": {
         "item": "architecture_extensions:jungle_post_cap",
-        "count": 7
+        "count": 8
     }
 }

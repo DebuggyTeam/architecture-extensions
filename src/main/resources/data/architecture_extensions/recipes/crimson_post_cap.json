@@ -2,11 +2,11 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:crimson_slab"
+            "item": "minecraft:crimson_planks"
         }
     ],
     "result": {
         "item": "architecture_extensions:crimson_post_cap",
-        "count": 7
+        "count": 8
     }
 }
