@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:mangrove_fence"
+        }
+    ],
+    "result": {
+        "item": "architecture_extensions:mangrove_fence_post",
+        "count": 1
+    }
+}
