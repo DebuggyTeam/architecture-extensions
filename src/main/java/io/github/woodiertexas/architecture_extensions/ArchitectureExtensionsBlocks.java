@@ -13,6 +13,9 @@ import net.minecraft.util.registry.Registry;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class ArchitectureExtensionsBlocks {
 
     // Creating items/blocks/etc and defining their properties
@@ -192,101 +195,164 @@ public class ArchitectureExtensionsBlocks {
     public static final Block FAKE_END_PORTAL_BLOCK = new Block(QuiltBlockSettings.of(Material.WOOL).strength(1f).sounds(BlockSoundGroup.WOOL).requiresTool());
 
     static {
+        Map<String, Block> blocks = new LinkedHashMap<>();
+            blocks.put("stone_column", STONE_COLUMN);
+            blocks.put("granite_column", GRANITE_COLUMN);
+            blocks.put("diorite_column", DIORITE_COLUMN);
+            blocks.put("andesite_column", ANDESITE_COLUMN);
+            blocks.put("cobbled_deepslate_column", COBBLED_DEEPSLATE_COLUMN);
+            blocks.put("polished_deepslate_column", POLISHED_DEEPSLATE_COLUMN);
+            blocks.put("cobblestone_column", COBBLESTONE_COLUMN);
+            blocks.put("sandstone_column", SANDSTONE_COLUMN);
+            blocks.put("red_sandstone_column", RED_SANDSTONE_COLUMN);
+            blocks.put("brick_column", BRICK_COLUMN);
+            blocks.put("mossy_cobblestone_column", MOSSY_COBBLESTONE_COLUMN);
+            blocks.put("stone_brick_column", STONE_BRICK_COLUMN);
+            blocks.put("mossy_stone_brick_column", MOSSY_STONE_BRICK_COLUMN);
+            blocks.put("deepslate_brick_column", DEEPSLATE_BRICK_COLUMN);
+            blocks.put("deepslate_tile_column", DEEPSLATE_TILE_COLUMN);
+            blocks.put("nether_brick_column", NETHER_BRICK_COLUMN);
+            blocks.put("red_nether_brick_column", RED_NETHER_BRICK_COLUMN);
+            blocks.put("end_stone_brick_column", END_STONE_BRICK_COLUMN);
+            blocks.put("quartz_column", QUARTZ_COLUMN);
+            blocks.put("prismarine_brick_column", PRISMARINE_BRICK_COLUMN);
+            blocks.put("dark_prismarine_column", DARK_PRISMARINE_COLUMN);
+            blocks.put("blackstone_column", BLACKSTONE_COLUMN);
+            blocks.put("polished_blackstone_column", POLISHED_BLACKSTONE_COLUMN);
+            blocks.put("polished_blackstone_brick_column", POLISHED_BLACKSTONE_BRICK_COLUMN);
+            blocks.put("granite_post", GRANITE_POST);
+            blocks.put("diorite_post", DIORITE_POST);
+            blocks.put("andesite_post", ANDESITE_POST);
+            blocks.put("cobbled_deepslate_post", COBBLED_DEEPSLATE_POST);
+            blocks.put("polished_deepslate_post", POLISHED_DEEPSLATE_POST);
+            blocks.put("cobblestone_post", COBBLESTONE_POST);
+            blocks.put("sandstone_post", SANDSTONE_POST);
+            blocks.put("red_sandstone_post", RED_SANDSTONE_POST);
+            blocks.put("brick_post", BRICK_POST);
+            blocks.put("mossy_cobblestone_post", MOSSY_COBBLESTONE_POST);
+            blocks.put("stone_brick_post", STONE_BRICK_POST);
+            blocks.put("mossy_stone_brick_post", MOSSY_STONE_BRICK_POST);
+            blocks.put("deepslate_brick_post", DEEPSLATE_BRICK_POST);
+            blocks.put("deepslate_tile_post", DEEPSLATE_TILE_POST);
+            blocks.put("nether_brick_post", NETHER_BRICK_POST);
+            blocks.put("red_nether_brick_post", RED_NETHER_BRICK_POST);
+            blocks.put("end_stone_brick_post", END_STONE_BRICK_POST);
+            blocks.put("prismarine_post", PRISMARINE_POST);
+            blocks.put("prismarine_brick_post", PRISMARINE_BRICK_POST);
+            blocks.put("blackstone_post", BLACKSTONE_POST);
+            blocks.put("polished_blackstone_brick_post", POLISHED_BLACKSTONE_BRICK_POST);
+            blocks.put("polished_blackstone_post", POLISHED_BLACKSTONE_POST);
+            blocks.put("granite_roof", GRANITE_ROOF);
+            blocks.put("diorite_roof", DIORITE_ROOF);
+            blocks.put("andesite_roof", ANDESITE_ROOF);
+            blocks.put("cobbled_deepslate_roof", COBBLED_DEEPSLATE_ROOF);
+            blocks.put("polished_deepslate_roof", POLISHED_DEEPSLATE_ROOF);
+            blocks.put("cobblestone_roof", COBBLESTONE_ROOF);
+            blocks.put("sandstone_roof", SANDSTONE_ROOF);
+            blocks.put("red_sandstone_roof", RED_SANDSTONE_ROOF);
+            blocks.put("brick_roof", BRICK_ROOF);
+            blocks.put("mossy_cobblestone_roof", MOSSY_COBBLESTONE_ROOF);
+            blocks.put("stone_brick_roof", STONE_BRICK_ROOF);
+            blocks.put("mossy_stone_brick_roof", MOSSY_STONE_BRICK_ROOF);
+            blocks.put("deepslate_brick_roof", DEEPSLATE_BRICK_ROOF);
+            blocks.put("deepslate_tile_roof", DEEPSLATE_TILE_ROOF);
+            blocks.put("nether_brick_roof", NETHER_BRICK_ROOF);
+            blocks.put("red_nether_brick_roof", RED_NETHER_BRICK_ROOF);
+            blocks.put("end_stone_brick_roof", END_STONE_BRICK_ROOF);
+            blocks.put("smooth_quartz_roof", SMOOTH_QUARTZ_ROOF);
+            blocks.put("prismarine_brick_roof", PRISMARINE_BRICK_ROOF);
+            blocks.put("blackstone_roof", BLACKSTONE_ROOF);
+            blocks.put("polished_blackstone_brick_roof", POLISHED_BLACKSTONE_BRICK_ROOF);
+            blocks.put("polished_blackstone_roof", POLISHED_BLACKSTONE_ROOF);
+            blocks.put("granite_arch", GRANITE_ARCH);
+            blocks.put("diorite_arch", DIORITE_ARCH);
+            blocks.put("andesite_arch", ANDESITE_ARCH);
+            blocks.put("cobbled_deepslate_arch", COBBLED_DEEPSLATE_ARCH);
+            blocks.put("polished_deepslate_arch", POLISHED_DEEPSLATE_ARCH);
+            blocks.put("cobblestone_arch", COBBLESTONE_ARCH);
+            blocks.put("sandstone_arch", SANDSTONE_ARCH);
+            blocks.put("red_sandstone_arch", RED_SANDSTONE_ARCH);
+            blocks.put("brick_arch", BRICK_ARCH);
+            blocks.put("mossy_cobblestone_arch", MOSSY_COBBLESTONE_ARCH);
+            blocks.put("stone_brick_arch", STONE_BRICK_ARCH);
+            blocks.put("mossy_stone_brick_arch", MOSSY_STONE_BRICK_ARCH);
+            blocks.put("deepslate_brick_arch", DEEPSLATE_BRICK_ARCH);
+            blocks.put("deepslate_tile_arch", DEEPSLATE_TILE_ARCH);
+            blocks.put("nether_brick_arch", NETHER_BRICK_ARCH);
+            blocks.put("red_nether_brick_arch", RED_NETHER_BRICK_ARCH);
+            blocks.put("end_stone_brick_arch", END_STONE_BRICK_ARCH);
+            blocks.put("smooth_quartz_arch", SMOOTH_QUARTZ_ARCH);
+            blocks.put("prismarine_brick_arch", PRISMARINE_BRICK_ARCH);
+            blocks.put("blackstone_arch", BLACKSTONE_ARCH);
+            blocks.put("polished_blackstone_brick_arch",POLISHED_BLACKSTONE_BRICK_ARCH);
+            blocks.put("polished_blackstone_arch", POLISHED_BLACKSTONE_ARCH);
+            blocks.put("oak_beam", OAK_BEAM);
+            blocks.put("spruce_beam", SPRUCE_BEAM);
+            blocks.put("birch_beam", BIRCH_BEAM);
+            blocks.put("jungle_beam", JUNGLE_BEAM);
+            blocks.put("acacia_beam", ACACIA_BEAM);
+            blocks.put("dark_oak_beam", DARK_OAK_BEAM);
+            blocks.put("mangrove_beam", MANGROVE_BEAM);
+            blocks.put("crimson_beam", CRIMSON_BEAM);
+            blocks.put("warped_beam", WARPED_BEAM);
+            blocks.put("iron_h_beam", IRON_H_BEAM);
+            blocks.put("oak_fence_post", OAK_FENCE_POST);
+            blocks.put("spruce_fence_post", SPRUCE_FENCE_POST);
+            blocks.put("birch_fence_post", BIRCH_FENCE_POST);
+            blocks.put("jungle_fence_post", JUNGLE_FENCE_POST);
+            blocks.put("acacia_fence_post", ACACIA_FENCE_POST);
+            blocks.put("dark_oak_fence_post", DARK_OAK_FENCE_POST);
+            blocks.put("mangrove_fence_post", MANGROVE_FENCE_POST);
+            blocks.put("crimson_fence_post", CRIMSON_FENCE_POST);
+            blocks.put("warped_fence_post", WARPED_FENCE_POST);
+            blocks.put("oak_joist", OAK_JOIST);
+            blocks.put("spruce_joist", SPRUCE_JOIST);
+            blocks.put("birch_joist", BIRCH_JOIST);
+            blocks.put("jungle_joist", JUNGLE_JOIST);
+            blocks.put("acacia_joist", ACACIA_JOIST);
+            blocks.put("dark_oak_joist", DARK_OAK_JOIST);
+            blocks.put("mangrove_joist", MANGROVE_JOIST);
+            blocks.put("crimson_joist", CRIMSON_JOIST);
+            blocks.put("warped_joist", WARPED_JOIST);
+            blocks.put("oak_crown_molding", OAK_CROWN_MOLDING);
+            blocks.put("spruce_crown_molding", SPRUCE_CROWN_MOLDING);
+            blocks.put("birch_crown_molding", BIRCH_CROWN_MOLDING);
+            blocks.put("jungle_crown_molding", JUNGLE_CROWN_MOLDING);
+            blocks.put("acacia_crown_molding", ACACIA_CROWN_MOLDING);
+            blocks.put("dark_oak_crown_molding", DARK_OAK_CROWN_MOLDING);
+            blocks.put("mangrove_crown_molding", MANGROVE_CROWN_MOLDING);
+            blocks.put("crimson_crown_molding", CRIMSON_CROWN_MOLDING);
+            blocks.put("warped_crown_molding", WARPED_CROWN_MOLDING);
+            blocks.put("oak_post_cap", OAK_POST_CAP);
+            blocks.put("oak_post_lantern", OAK_POST_LANTERN);
+            blocks.put("spruce_post_cap", SPRUCE_POST_CAP);
+            blocks.put("spruce_post_lantern", SPRUCE_POST_LANTERN);
+            blocks.put("birch_post_cap", BIRCH_POST_CAP);
+            blocks.put("birch_post_lantern", BIRCH_POST_LANTERN);
+            blocks.put("jungle_post_cap", JUNGLE_POST_CAP);
+            blocks.put("jungle_post_lantern", JUNGLE_POST_LANTERN);
+            blocks.put("acacia_post_cap", ACACIA_POST_CAP);
+            blocks.put("acacia_post_lantern", ACACIA_POST_LANTERN);
+            blocks.put("dark_oak_post_cap", DARK_OAK_POST_CAP);
+            blocks.put("dark_oak_post_lantern", DARK_OAK_POST_LANTERN);
+            blocks.put("mangrove_post_cap", MANGROVE_POST_CAP);
+            blocks.put("mangrove_post_lantern", MANGROVE_POST_LANTERN);
+            blocks.put("crimson_post_cap", CRIMSON_POST_CAP);
+            blocks.put("crimson_post_lantern", CRIMSON_POST_LANTERN);
+            blocks.put("warped_post_cap", WARPED_POST_CAP);
+            blocks.put("warped_post_lantern", WARPED_POST_LANTERN);
+            blocks.put("bamboo_rod", BAMBOO_ROD);
+            blocks.put("copper_rod", COPPER_ROD);
+            blocks.put("end_rod_nubless", END_ROD_NUBLESS);
+            blocks.put("iron_rod", IRON_ROD);
+            blocks.put("debuggy_block", DEBUGGY_BLOCK);
+            blocks.put("fake_end_portal_block", FAKE_END_PORTAL_BLOCK);
 
-        // Block string names
-        String[] blocksArray = {
-                "stone_column", "granite_column", "diorite_column", "andesite_column", "cobbled_deepslate_column",
-                "polished_deepslate_column", "cobblestone_column", "sandstone_column", "red_sandstone_column", "brick_column",
-                "mossy_cobblestone_column", "stone_brick_column", "mossy_stone_brick_column", "deepslate_brick_column",
-                "deepslate_tile_column", "nether_brick_column", "red_nether_brick_column", "end_stone_brick_column",
-                "quartz_column", "prismarine_brick_column", "dark_prismarine_column", "blackstone_column",
-                "polished_blackstone_column", "polished_blackstone_brick_column",
-
-                "granite_post", "diorite_post", "andesite_post", "cobbled_deepslate_post", "polished_deepslate_post", "cobblestone_post",
-                "sandstone_post", "red_sandstone_post", "brick_post", "mossy_cobblestone_post", "stone_brick_post", "mossy_stone_brick_post",
-                "deepslate_brick_post", "deepslate_tile_post", "nether_brick_post", "red_nether_brick_post", "end_stone_brick_post",
-                "prismarine_post", "prismarine_brick_post", "blackstone_post", "polished_blackstone_brick_post", "polished_blackstone_post",
-
-                "granite_roof", "diorite_roof", "andesite_roof", "cobbled_deepslate_roof", "polished_deepslate_roof", "cobblestone_roof",
-                "sandstone_roof", "red_sandstone_roof", "brick_roof", "mossy_cobblestone_roof", "stone_brick_roof", "mossy_stone_brick_roof",
-                "deepslate_brick_roof", "deepslate_tile_roof", "nether_brick_roof", "red_nether_brick_roof", "end_stone_brick_roof",
-                "smooth_quartz_roof", "prismarine_brick_roof", "blackstone_roof", "polished_blackstone_brick_roof", "polished_blackstone_roof",
-
-                "granite_arch", "diorite_arch", "andesite_arch", "cobbled_deepslate_arch", "polished_deepslate_arch", "cobblestone_arch",
-                "sandstone_arch", "red_sandstone_arch", "brick_arch", "mossy_cobblestone_arch", "stone_brick_arch", "mossy_stone_brick_arch",
-                "deepslate_brick_arch", "deepslate_tile_arch", "nether_brick_arch", "red_nether_brick_arch", "end_stone_brick_arch",
-                "smooth_quartz_arch", "prismarine_brick_arch", "blackstone_arch", "polished_blackstone_brick_arch", "polished_blackstone_arch",
-
-                "oak_beam", "spruce_beam", "birch_beam", "jungle_beam", "acacia_beam", "dark_oak_beam", "mangrove_beam",
-                "crimson_beam", "warped_beam", "iron_h_beam",
-
-                "oak_fence_post", "spruce_fence_post", "birch_fence_post", "jungle_fence_post", "acacia_fence_post", "dark_oak_fence_post",
-                "mangrove_fence_post", "crimson_fence_post", "warped_fence_post",
-
-                "oak_joist", "spruce_joist", "birch_joist", "jungle_joist", "acacia_joist", "dark_oak_joist", "mangrove_joist", "crimson_joist",
-                "warped_joist",
-
-                "oak_crown_molding", "spruce_crown_molding", "birch_crown_molding", "jungle_crown_molding", "acacia_crown_molding",
-                "dark_oak_crown_molding", "mangrove_crown_molding", "crimson_crown_molding", "warped_crown_molding",
-
-                "bamboo_rod", "copper_rod", "end_rod_nubless", "iron_rod", "debuggy_block", "fake_end_portal_block",
-
-                "oak_post_cap", "oak_post_lantern", "spruce_post_cap", "spruce_post_lantern", "birch_post_cap", "birch_post_lantern",
-                "jungle_post_cap", "jungle_post_lantern", "acacia_post_cap", "acacia_post_lantern", "dark_oak_post_cap", "dark_oak_post_lantern",
-                "mangrove_post_cap", "mangrove_post_lantern", "crimson_post_cap", "crimson_post_lantern", "warped_post_cap", "warped_post_lantern"
-        };
-
-        Block[] anotherBlocksArray = {
-                STONE_COLUMN, GRANITE_COLUMN, DIORITE_COLUMN, ANDESITE_COLUMN, COBBLED_DEEPSLATE_COLUMN, POLISHED_DEEPSLATE_COLUMN,
-                COBBLESTONE_COLUMN, SANDSTONE_COLUMN, RED_SANDSTONE_COLUMN, BRICK_COLUMN, MOSSY_COBBLESTONE_COLUMN,
-                STONE_BRICK_COLUMN, MOSSY_STONE_BRICK_COLUMN, DEEPSLATE_BRICK_COLUMN, DEEPSLATE_TILE_COLUMN, NETHER_BRICK_COLUMN,
-                RED_NETHER_BRICK_COLUMN, END_STONE_BRICK_COLUMN, QUARTZ_COLUMN, PRISMARINE_BRICK_COLUMN, DARK_PRISMARINE_COLUMN,
-                BLACKSTONE_COLUMN, POLISHED_BLACKSTONE_COLUMN, POLISHED_BLACKSTONE_BRICK_COLUMN,
-
-                GRANITE_POST, DIORITE_POST, ANDESITE_POST, COBBLED_DEEPSLATE_POST, POLISHED_DEEPSLATE_POST, COBBLESTONE_POST, SANDSTONE_POST,
-                RED_SANDSTONE_POST, BRICK_POST, MOSSY_COBBLESTONE_POST, STONE_BRICK_POST, MOSSY_STONE_BRICK_POST, DEEPSLATE_BRICK_POST,
-                DEEPSLATE_TILE_POST, NETHER_BRICK_POST, RED_NETHER_BRICK_POST, END_STONE_BRICK_POST, PRISMARINE_POST, PRISMARINE_BRICK_POST,
-                BLACKSTONE_POST, POLISHED_BLACKSTONE_BRICK_POST, POLISHED_BLACKSTONE_POST,
-
-                GRANITE_ROOF, DIORITE_ROOF, ANDESITE_ROOF, COBBLED_DEEPSLATE_ROOF, POLISHED_DEEPSLATE_ROOF, COBBLESTONE_ROOF, SANDSTONE_ROOF,
-                RED_SANDSTONE_ROOF, BRICK_ROOF, MOSSY_COBBLESTONE_ROOF, STONE_BRICK_ROOF, MOSSY_STONE_BRICK_ROOF, DEEPSLATE_BRICK_ROOF,
-                DEEPSLATE_TILE_ROOF, NETHER_BRICK_ROOF, RED_NETHER_BRICK_ROOF, END_STONE_BRICK_ROOF, SMOOTH_QUARTZ_ROOF, PRISMARINE_BRICK_ROOF,
-                BLACKSTONE_ROOF, POLISHED_BLACKSTONE_BRICK_ROOF, POLISHED_BLACKSTONE_ROOF,
-
-                GRANITE_ARCH, DIORITE_ARCH, ANDESITE_ARCH, COBBLED_DEEPSLATE_ARCH, POLISHED_DEEPSLATE_ARCH, COBBLESTONE_ARCH, SANDSTONE_ARCH,
-                RED_SANDSTONE_ARCH, BRICK_ARCH, MOSSY_COBBLESTONE_ARCH, STONE_BRICK_ARCH, MOSSY_STONE_BRICK_ARCH, DEEPSLATE_BRICK_ARCH,
-                DEEPSLATE_TILE_ARCH, NETHER_BRICK_ARCH, RED_NETHER_BRICK_ARCH, END_STONE_BRICK_ARCH, SMOOTH_QUARTZ_ARCH, PRISMARINE_BRICK_ARCH,
-                BLACKSTONE_ARCH, POLISHED_BLACKSTONE_BRICK_ARCH, POLISHED_BLACKSTONE_ARCH,
-
-                OAK_BEAM, SPRUCE_BEAM, BIRCH_BEAM, JUNGLE_BEAM, ACACIA_BEAM, DARK_OAK_BEAM, MANGROVE_BEAM, CRIMSON_BEAM, WARPED_BEAM,
-                IRON_H_BEAM,
-
-                OAK_FENCE_POST, SPRUCE_FENCE_POST, BIRCH_FENCE_POST, JUNGLE_FENCE_POST, ACACIA_FENCE_POST, DARK_OAK_FENCE_POST,
-                MANGROVE_FENCE_POST, CRIMSON_FENCE_POST, WARPED_FENCE_POST,
-
-                OAK_JOIST, SPRUCE_JOIST, BIRCH_JOIST, JUNGLE_JOIST, ACACIA_JOIST, DARK_OAK_JOIST, MANGROVE_JOIST, CRIMSON_JOIST, WARPED_JOIST,
-
-                OAK_CROWN_MOLDING, SPRUCE_CROWN_MOLDING, BIRCH_CROWN_MOLDING, JUNGLE_CROWN_MOLDING, ACACIA_CROWN_MOLDING,
-                DARK_OAK_CROWN_MOLDING, MANGROVE_CROWN_MOLDING, CRIMSON_CROWN_MOLDING, WARPED_CROWN_MOLDING,
-
-                BAMBOO_ROD, COPPER_ROD, END_ROD_NUBLESS, IRON_ROD, DEBUGGY_BLOCK, FAKE_END_PORTAL_BLOCK,
-
-                OAK_POST_CAP, OAK_POST_LANTERN, SPRUCE_POST_CAP, SPRUCE_POST_LANTERN, BIRCH_POST_CAP, BIRCH_POST_LANTERN, JUNGLE_POST_CAP,
-                JUNGLE_POST_LANTERN, ACACIA_POST_CAP, ACACIA_POST_LANTERN, DARK_OAK_POST_CAP, DARK_OAK_POST_LANTERN, MANGROVE_POST_CAP,
-                MANGROVE_POST_LANTERN, CRIMSON_POST_CAP, CRIMSON_POST_LANTERN, WARPED_POST_CAP, WARPED_POST_LANTERN
-        };
-
-        // Checks to see if the arrays are of the same length. If not, stop the Minecraft process.
-        if (blocksArray.length != anotherBlocksArray.length) {
-            throw new RuntimeException("Mismatched array lengths.\nLength of blocksArray: " + blocksArray.length +
-                    "\nLength of anotherBlocksArray: " + anotherBlocksArray.length);
-        }
-
-        // Loops through the length of both arrays and registers the blocks found in said arrays.
-        for (int i = 0; i < blocksArray.length; i++) {
-            Registry.register(Registry.BLOCK, new Identifier("architecture_extensions", blocksArray[i]), anotherBlocksArray[i]);
-            Registry.register(Registry.ITEM, new Identifier("architecture_extensions", blocksArray[i]),
-                    new BlockItem(anotherBlocksArray[i], new QuiltItemSettings().group(ItemGroup.DECORATIONS)));
+        // Registering the blocks and corresponding block items.
+        for (Map.Entry<String, Block> entry : blocks.entrySet()) {
+            Registry.register(Registry.BLOCK, new Identifier("architecture_extensions", entry.getKey()), entry.getValue());
+            Registry.register(Registry.ITEM, new Identifier("architecture_extensions", entry.getKey()),
+                    new BlockItem(entry.getValue(), new QuiltItemSettings().group(ItemGroup.DECORATIONS)));
         }
     }
 
