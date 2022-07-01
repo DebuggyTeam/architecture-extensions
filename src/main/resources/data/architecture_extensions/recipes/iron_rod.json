@@ -1,11 +1,13 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"pattern": [
-		"#"
+		"i",
+		"i",
+		"i"
 	],
 	"key": {
-		"#": {
-			"item": "minecraft:iron_block"
+		"i": {
+			"item": "minecraft:iron_ingot"
 		}
 	},
 	"result": {
