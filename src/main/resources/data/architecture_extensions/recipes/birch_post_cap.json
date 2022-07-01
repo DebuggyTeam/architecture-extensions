@@ -1,12 +1,8 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "item": "minecraft:birch_planks"
-        }
-    ],
-    "result": {
-        "item": "architecture_extensions:birch_post_cap",
-        "count": 8
-    }
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:birch_planks"
+    },
+    "result": "architecture_extensions:birch_post_cap",
+    "count": 8
 }
