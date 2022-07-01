@@ -2,7 +2,7 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:dark_oak_planks"
+            "item": "minecraft:dark_oak_fence"
         }
     ],
     "result": {

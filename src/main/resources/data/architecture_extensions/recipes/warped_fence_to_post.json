@@ -2,7 +2,7 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:warped_planks"
+            "item": "minecraft:warped_fence"
         }
     ],
     "result": {
