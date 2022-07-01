@@ -1,12 +1,8 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "item": "minecraft:mangrove_planks"
-        }
-    ],
-    "result": {
-        "item": "architecture_extensions:mangrove_post_cap",
-        "count": 8
-    }
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:mangrove_planks"
+    },
+    "result": "architecture_extensions:mangrove_post_cap",
+    "count": 8
 }
