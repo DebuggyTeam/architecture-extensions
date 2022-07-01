@@ -1,12 +1,8 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "item": "minecraft:jungle_planks"
-        }
-    ],
-    "result": {
-        "item": "architecture_extensions:jungle_post_cap",
-        "count": 8
-    }
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:jungle_planks"
+    },
+    "result": "architecture_extensions:jungle_post_cap",
+    "count": 8
 }

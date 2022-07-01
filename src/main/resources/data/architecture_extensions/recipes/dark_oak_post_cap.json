@@ -1,12 +1,8 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "item": "minecraft:dark_oak_planks"
-        }
-    ],
-    "result": {
-        "item": "architecture_extensions:dark_oak_post_cap",
-        "count": 8
-    }
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:dark_oak_planks"
+    },
+    "result": "architecture_extensions:dark_oak_post_cap",
+    "count": 8
 }

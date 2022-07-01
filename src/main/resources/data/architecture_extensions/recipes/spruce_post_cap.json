@@ -1,12 +1,8 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "item": "minecraft:spruce_planks"
-        }
-    ],
-    "result": {
-        "item": "architecture_extensions:spruce_post_cap",
-        "count": 8
-    }
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:spruce_planks"
+    },
+    "result": "architecture_extensions:spruce_post_cap",
+    "count": 8
 }

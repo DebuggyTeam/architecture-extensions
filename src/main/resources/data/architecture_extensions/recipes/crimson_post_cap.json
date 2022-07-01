@@ -1,12 +1,8 @@
 {
-    "type": "minecraft:crafting_shapeless",
-    "ingredients": [
-        {
-            "item": "minecraft:crimson_planks"
-        }
-    ],
-    "result": {
-        "item": "architecture_extensions:crimson_post_cap",
-        "count": 8
-    }
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "minecraft:crimson_planks"
+    },
+    "result": "architecture_extensions:crimson_post_cap",
+    "count": 8
 }
