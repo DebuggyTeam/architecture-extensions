@@ -191,8 +191,7 @@ public class ArchitectureExtensionsBlocks {
     public static final Block DEBUGGY_BLOCK = new Block(QuiltBlockSettings.of(Material.WOOL).strength(1f).sounds(BlockSoundGroup.WOOL).requiresTool());
     public static final Block FAKE_END_PORTAL_BLOCK = new Block(QuiltBlockSettings.of(Material.WOOL).strength(1f).sounds(BlockSoundGroup.WOOL).requiresTool());
 
-    static {
-
+    public static void init() {
         // Block string names
         String[] blocksArray = {
                 "stone_column", "granite_column", "diorite_column", "andesite_column", "cobbled_deepslate_column",
@@ -289,6 +288,4 @@ public class ArchitectureExtensionsBlocks {
                     new BlockItem(anotherBlocksArray[i], new QuiltItemSettings().group(ItemGroup.DECORATIONS)));
         }
     }
-
-    public static void init() {}
 }
