@@ -185,8 +185,7 @@ public class ArchitectureExtensionsBlocks {
     public static final Block DEBUGGY_BLOCK = new Block(QuiltBlockSettings.of(Material.WOOL).strength(1f).sounds(BlockSoundGroup.WOOL).requiresTool());
     public static final Block FAKE_END_PORTAL_BLOCK = new Block(QuiltBlockSettings.of(Material.WOOL).strength(1f).sounds(BlockSoundGroup.WOOL).requiresTool());
 
-    static {
-
+    public static void init() {
         // Block string names
         String[] blocksArray = {
                 "stone_column", "granite_column", "diorite_column", "andesite_column", "cobbled_deepslate_column",
@@ -268,7 +267,7 @@ public class ArchitectureExtensionsBlocks {
                 JUNGLE_POST_LANTERN, ACACIA_POST_CAP, ACACIA_POST_LANTERN, DARK_OAK_POST_CAP, DARK_OAK_POST_LANTERN, CRIMSON_POST_CAP,
                 CRIMSON_POST_LANTERN, WARPED_POST_CAP, WARPED_POST_LANTERN
         };
-
+        
         // Checks to see if the arrays are of the same length. If not, stop the Minecraft process.
         if (blocksArray.length != anotherBlocksArray.length) {
             throw new RuntimeException("Mismatched array lengths.\nLength of blocksArray: " + blocksArray.length +
@@ -281,7 +280,6 @@ public class ArchitectureExtensionsBlocks {
             Registry.register(Registry.ITEM, new Identifier("architecture_extensions", blocksArray[i]),
                     new BlockItem(anotherBlocksArray[i], new QuiltItemSettings().group(ItemGroup.DECORATIONS)));
         }
+        
     }
-
-    public static void init() {}
 }
