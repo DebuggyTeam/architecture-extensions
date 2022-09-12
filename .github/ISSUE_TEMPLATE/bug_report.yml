@@ -47,7 +47,7 @@ body:
       label: Logs
       description: |
         If applicable (crash, error output in console), please provide your crash report or latest.log
-        To upload logs, use an external site to post the crash report, such as [Ubuntu Pastebin](https://paste.ubuntu.com/), [Pastebin](http://pastebin.com/), or [Github Gist](https://gist.github.com/)
+        To upload logs, use [MCLogs](https://mclo.gs/) to upload your crashlog or latest.log.
         Crash reports without a crashlog or a latest.log file will be marked as invalid. Crashes are hard to fix without the crashlogs or latest.log file(s).
   - type: textarea
     id: context
