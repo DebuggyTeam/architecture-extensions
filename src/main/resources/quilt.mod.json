@@ -8,15 +8,15 @@
 			"name": "Architecture Extensions",
 			"description": "A mod that extends one's creativity by implementing new blocks to Minecraft.",
 			"contributors": {
-				"woodiertexas": "Owner",
+				"woodiertexas": "Author",
+				"maximum": "Datagen",
+				"Falkreon": "Datagen",
 				"KJP12": "Datagen",
 				"Crackers0106": "Mod Icon",
-				"Carter": "Textures",
+				"Carter": "Textures + Block model fixes",
 				"Azagwen": "Block Models"
 			},
 			"contact": {
-				"homepage": "https://modrinth.com/mod/arch-ex",
-				"discord": "https://discord.gg/SN89y7EQTN",
 				"issues": "https://github.com/woodiertexas/architecture-extensions/issues",
 				"sources": "https://github.com/woodiertexas/architecture-extensions"
 			},
@@ -40,5 +40,12 @@
 				"versions": ">=1.19"
 			}
 		]
+	},
+	"modmenu": {
+		"links": {
+			"modmenu.modrinth": "https://modrinth.com/mod/arch-ex",
+			"modmenu.discord": "https://discord.gg/SN89y7EQTN"
+		}
 	}
 }
+
