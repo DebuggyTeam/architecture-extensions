@@ -1,9 +1,9 @@
 [versions]
 # The latest versions are available at https://lambdaurora.dev/tools/import_quilt.html
-minecraft = "1.19"
-quilt_mappings = "1.19+build.1"
-quilt_loader = "0.17.1-beta.2"
-quilted_fabric_api = "2.0.0-alpha.3+0.55.3-1.19"
+minecraft = "1.19.2"
+quilt_mappings = "1.19.2+build.14"
+quilt_loader = "0.17.5-beta.2"
+quilted_fabric_api = "4.0.0-beta.11+0.60.0-1.19.2"
 
 # Stone Cutter Recipe Tags
 #scrt = "3.0.1-fabric"
