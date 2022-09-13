@@ -24,7 +24,8 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "io.github.woodiertexas.architecture_extensions.ArchitectureExtensions"
+			"init": "io.github.woodiertexas.architecture_extensions.ArchitectureExtensions",
+			"client_init": "io.github.woodiertexas.architecture_extensions.ArchitectureExtensionsClient"
 		},
 		"depends": [
 			{

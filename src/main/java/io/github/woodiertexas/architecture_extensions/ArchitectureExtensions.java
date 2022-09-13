@@ -1,30 +1,34 @@
 package io.github.woodiertexas.architecture_extensions;
 
-import io.github.woodiertexas.architecture_extensions.compat.ArchExAurorasDecoCompat;
-import io.github.woodiertexas.architecture_extensions.compat.ArchExSoul_IceCompat;
+import io.github.woodiertexas.architecture_extensions.api.ArchExIntegration;
+import net.minecraft.util.Identifier;
+
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.loader.api.QuiltLoader;
+import org.quiltmc.loader.api.entrypoint.EntrypointContainer;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ArchitectureExtensions implements ModInitializer {
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod name as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger("Architecture Extensions");
 
 	@Override
 	public void onInitialize(ModContainer mod) {
-		LOGGER.info("Hello Quilt world from {} v{}!", mod.metadata().name(), mod.metadata().version().raw());
+		PeculiarBlocks.register();
 
-		ArchitectureExtensionsBlocks.init();
+		VanillaIntegration.INSTANCE.integrate(new ArchExIntegrationContextImpl(VanillaIntegration.INSTANCE));
 
-		if (QuiltLoader.isModLoaded("soul_ice")) {
-			ArchExSoul_IceCompat.init();
+		for (EntrypointContainer<ArchExIntegration> entrypoint : QuiltLoader.getEntrypointContainers(ArchExIntegration.ENTRYPOINT_KEY, ArchExIntegration.class)) {
+			try {
+				entrypoint.getEntrypoint().integrate(new ArchExIntegrationContextImpl(entrypoint.getEntrypoint()));
+			} catch (Exception e) {
+				LOGGER.error("Mod '" + entrypoint.getProvider().metadata().id() + "' threw an exception when trying to integrate with Architecture Extensions");
+			}
 		}
-		if (QuiltLoader.isModLoaded("aurorasdeco")) {
-			ArchExAurorasDecoCompat.init();
-		}
+	}
+
+	public static Identifier id(String path) {
+		return new Identifier("architecture_extensions", path);
 	}
 }
