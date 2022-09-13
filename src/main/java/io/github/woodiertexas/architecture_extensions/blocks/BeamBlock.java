@@ -24,8 +24,7 @@ public class BeamBlock extends PillarBlock implements Waterloggable {
 
     public BeamBlock(Settings settings) {
         super(settings);
-        setDefaultState(this.stateManager.getDefaultState().with(AXIS, Direction.Axis.Y));
-        this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false)); // Thanks LambdAurora!
+        this.setDefaultState(this.getDefaultState().with(AXIS, Direction.Axis.Y).with(WATERLOGGED, false)); // Thanks LambdAurora!
     }
 
     // The following deals with block rotation
@@ -76,9 +75,8 @@ public class BeamBlock extends PillarBlock implements Waterloggable {
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
-    // Appending block properties
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-        stateManager.add(new Property[]{AXIS, WATERLOGGED});
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(AXIS, WATERLOGGED);
     }
 }
