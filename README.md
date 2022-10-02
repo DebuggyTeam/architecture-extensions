@@ -9,4 +9,5 @@ To discuss this mod or give suggestions/feedback, join my Discord server: https:
 - Everyone in the Quilt Community discord for helping me with this mod.
 - Crackers0106 for mod icon.
 
+## Contributors
 ![contributors](https://contrib.rocks/image?repo=woodiertexas/architecture-extensions)
