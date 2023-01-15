@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:red_sandstone"
-    },
-    "result": "architecture_extensions:red_sandstone_arch",
-    "count": 1
-}

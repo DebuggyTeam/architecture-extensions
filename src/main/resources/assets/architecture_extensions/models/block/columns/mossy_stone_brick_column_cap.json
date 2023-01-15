@@ -1,8 +1,0 @@
-{
-	"parent": "architecture_extensions:block/templates/template_column_cap_block",
-	"textures": {
-		"texture_up": "minecraft:block/mossy_stone_bricks",
-		"texture_down": "minecraft:block/mossy_stone_bricks",
-		"texture_side": "minecraft:block/mossy_stone_bricks"
-	}
-}

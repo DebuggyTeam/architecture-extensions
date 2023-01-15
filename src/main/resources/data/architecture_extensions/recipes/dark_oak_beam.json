@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:dark_oak_log"
-    },
-    "result": "architecture_extensions:dark_oak_beam",
-    "count": 1
-}

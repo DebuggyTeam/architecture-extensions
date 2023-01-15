@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:prismarine_bricks"
-    },
-    "result": "architecture_extensions:prismarine_brick_arch",
-    "count": 1
-}

@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:acacia_log"
-    },
-    "result": "architecture_extensions:acacia_beam",
-    "count": 1
-}

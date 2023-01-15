@@ -1,8 +1,0 @@
-{
-	"parent": "architecture_extensions:block/templates/template_column_block",
-	"textures": {
-		"texture_up": "architecture_extensions:block/smooth_rose_quartz",
-		"texture_down": "architecture_extensions:block/smooth_rose_quartz",
-		"texture_side": "architecture_extensions:block/rose_quartz_pillar"
-	}
-}

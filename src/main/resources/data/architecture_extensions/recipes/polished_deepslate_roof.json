@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:polished_deepslate"
-    },
-    "result": "architecture_extensions:polished_deepslate_roof",
-    "count": 1
-}

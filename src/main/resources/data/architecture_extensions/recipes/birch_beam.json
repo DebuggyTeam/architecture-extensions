@@ -1,8 +1,0 @@
-{
-	"type": "minecraft:stonecutting",
-	"ingredient": {
-		"item": "minecraft:birch_log"
-	},
-	"result": "architecture_extensions:birch_beam",
-	"count": 1
-}

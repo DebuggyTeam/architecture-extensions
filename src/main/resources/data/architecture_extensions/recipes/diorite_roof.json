@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:diorite"
-    },
-    "result": "architecture_extensions:diorite_roof",
-    "count": 1
-}

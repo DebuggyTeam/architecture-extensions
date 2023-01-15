@@ -1,8 +1,0 @@
-{
-	"parent": "architecture_extensions:block/templates/template_column_cap_block",
-	"textures": {
-		"texture_up": "minecraft:block/quartz_block_bottom",
-		"texture_down": "minecraft:block/quartz_block_bottom",
-		"texture_side": "minecraft:block/quartz_pillar"
-	}
-}

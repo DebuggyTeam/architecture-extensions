@@ -1,8 +1,0 @@
-{
-	"type": "minecraft:stonecutting",
-	"ingredient": {
-		"item": "minecraft:jungle_log"
-	},
-	"result": "architecture_extensions:jungle_beam",
-	"count": 1
-}
