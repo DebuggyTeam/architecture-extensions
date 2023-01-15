@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:mossy_stone_bricks"
-    },
-    "result": "architecture_extensions:mossy_stone_brick_roof",
-    "count": 1
-}

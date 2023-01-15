@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:cobblestone"
-    },
-    "result": "architecture_extensions:cobblestone_arch",
-    "count": 1
-}

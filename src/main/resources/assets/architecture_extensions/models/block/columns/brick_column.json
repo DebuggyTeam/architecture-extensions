@@ -1,8 +1,0 @@
-{
-	"parent": "architecture_extensions:block/templates/template_column_block",
-	"textures": {
-		"texture_up": "minecraft:block/bricks",
-		"texture_down": "minecraft:block/bricks",
-		"texture_side": "minecraft:block/bricks"
-	}
-}

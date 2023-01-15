@@ -1,6 +1,0 @@
-{
-	"parent": "architecture_extensions:block/templates/template_wall_post_block",
-	"textures": {
-		"texture": "soul_ice:block/polished_soul_ice"
-	}
-}

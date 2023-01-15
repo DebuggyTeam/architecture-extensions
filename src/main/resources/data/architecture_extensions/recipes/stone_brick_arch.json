@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:stone_bricks"
-    },
-    "result": "architecture_extensions:stone_brick_arch",
-    "count": 1
-}

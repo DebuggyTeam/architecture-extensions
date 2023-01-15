@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:stripped_acacia_log"
-    },
-    "result": "architecture_extensions:acacia_joist",
-    "count": 3
-}
