@@ -4,35 +4,43 @@ import java.io.FileNotFoundException;
 import java.util.Set;
 
 import org.jetbrains.annotations.Nullable;
-import org.quiltmc.loader.api.minecraft.MinecraftQuiltLoader;
 import org.quiltmc.qsl.block.content.registry.api.BlockContentRegistries;
 
 import com.google.common.collect.Sets;
 
 import io.github.debuggyteam.architecture_extensions.ArchitectureExtensions;
 import io.github.debuggyteam.architecture_extensions.api.BlockType;
-import io.github.debuggyteam.architecture_extensions.api.TextureTemplate;
+import io.github.debuggyteam.architecture_extensions.api.RecipeConfigurator;
+import io.github.debuggyteam.architecture_extensions.api.TextureConfiguration;
 import io.github.debuggyteam.architecture_extensions.api.BlockType.TypedGroupedBlock;
 import me.maximumpower55.objectify.JBlockStateTemplate;
 import me.maximumpower55.objectify.JLootTableTemplate;
 import me.maximumpower55.objectify.JModelTemplate;
+import me.maximumpower55.objectify.JRecipeTemplate;
 import me.maximumpower55.objectify.JTagTemplate;
 import me.maximumpower55.objectify.JLootTableTemplate.JPool;
 import me.maximumpower55.objectify.JLootTableTemplate.JPool.JCondition;
-import net.fabricmc.api.EnvType;
+import net.minecraft.registry.Registries;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 
 public final class DataGeneration {
 	private static final Set<BlockType.TypedGroupedBlock> BLOCKS = Sets.newHashSet();
 
+	private static final String GROUP_PLACEHOLDER = "group";
+	private static final String BASE_PLACEHOLDER = "base";
+	private static final String RESULT_PLACEHOLDER = "result";
+	private static int serverLoadCount = -1;
+
 	private static final String MODEL_PLACEHOLDER = "model";
+	private static int clientLoadCount = -1;
 
 	private static @Nullable String getModelTemplate(BlockType type, String variant) {
 		try {
-			return ResourceUtils.getResourceAsString(ArchitectureExtensions.MOD_CONTAINER, "assets/architecture_extensions/templates/model/block/" + "template_" + type.toString() + variant + ".json");
+			return ResourceUtils.getResourceAsString(ArchitectureExtensions.MOD_CONTAINER, ResourceType.CLIENT_RESOURCES,
+				"assets/architecture_extensions/templates/model/block/" + "template_" + type.toString() + variant + ".json");
 		} catch (FileNotFoundException e) {
-			ArchitectureExtensions.LOGGER.error("Model template for the " + type.toString() + " block type can not be found");
+			ArchitectureExtensions.LOGGER.error("The model template for the " + type.toString() + " block type can not be found");
 			return null;
 		} catch (Exception e) {
 			ArchitectureExtensions.LOGGER.error("Exception while trying to load the model template for the " + type.toString() + " block type : ", e);
@@ -42,12 +50,26 @@ public final class DataGeneration {
 
 	private static @Nullable String getBlockStateTemplate(BlockType type) {
 		try {
-			return  ResourceUtils.getResourceAsString(ArchitectureExtensions.MOD_CONTAINER, "assets/architecture_extensions/templates/blockstates/" + "template_" + type.toString() + ".json");
+			return ResourceUtils.getResourceAsString(ArchitectureExtensions.MOD_CONTAINER, ResourceType.CLIENT_RESOURCES,
+				"assets/architecture_extensions/templates/blockstate/" + "template_" + type.toString() + ".json");
 		} catch (FileNotFoundException e) {
-			ArchitectureExtensions.LOGGER.error("blockstate template for the " + type.toString() + " block type can not be found");
+			ArchitectureExtensions.LOGGER.error("The blockstate template for the " + type.toString() + " block type can not be found");
 			return null;
 		} catch (Exception e) {
 			ArchitectureExtensions.LOGGER.error("Exception while trying to load the blockstate template for the " + type.toString() + " block type : ", e);
+			return null;
+		}
+	}
+
+	private static @Nullable String getRecipeTemplate(String id) {
+		try {
+			return ResourceUtils.getResourceAsString(ArchitectureExtensions.MOD_CONTAINER, ResourceType.SERVER_DATA,
+				"data/architecture_extensions/templates/recipe/" + id + ".json");
+		} catch (FileNotFoundException e) {
+			ArchitectureExtensions.LOGGER.error("The recipe template for " + id + " can not be found");
+			return null;
+		} catch (Exception e) {
+			ArchitectureExtensions.LOGGER.error("Exception while trying to load the recipe template for " + id + " : ", e);
 			return null;
 		}
 	}
@@ -62,10 +84,10 @@ public final class DataGeneration {
 
 			var model = new JModelTemplate(rawModel);
 
-			var textureTemplate = block.groupedBlock().textureTemplate();
+			var textureConfiguration = block.groupedBlock().textureConfiguration();
 
-			for (String textureId : TextureTemplate.TEXTURE_IDS) {
-				if (rawModel.contains(textureId)) model.addTexture(textureId, textureTemplate.apply(block.type(), textureId));
+			for (String textureId : TextureConfiguration.TEXTURE_IDS) {
+				if (rawModel.contains(textureId)) model.addTexture(textureId, textureConfiguration.apply(block.type(), textureId));
 			}
 
 			ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.CLIENT_RESOURCES, new Identifier(modelId.getNamespace(), modelId.getPath() + variant + ".json"), path -> model.serialize().toString());
@@ -109,14 +131,49 @@ public final class DataGeneration {
 		}
 	}
 
-	public static void generate() {
-		generateMineableByPickaxeTag();
-		generateMineableByAxeTag();
-		generateNeedsStoneToolTag();
-		generateLootTables();
+	private static void generateRecipes() {
+		final Set<RecipeConfigurator.RecipeTemplate> templates = Sets.newHashSet();
+		for (TypedGroupedBlock block : BLOCKS) {
+			block.groupedBlock().recipeConfigurator().accept(block.type(), templates::add);
+			for (RecipeConfigurator.RecipeTemplate template : templates) {
+				final var rawRecipe = getRecipeTemplate(template.id());
+				if (rawRecipe == null) continue;
+				final var recipe = new JRecipeTemplate(rawRecipe);
 
-		// we don't need asset generation on the server
-		if (MinecraftQuiltLoader.getEnvironmentType() == EnvType.CLIENT) {
+				recipe.addConstant(GROUP_PLACEHOLDER, block.groupedBlock().id().toString());
+				recipe.addConstant(BASE_PLACEHOLDER, Registries.BLOCK.getId(block.groupedBlock().baseBlock()).toString());
+				recipe.addConstant(RESULT_PLACEHOLDER, block.id().toString());
+
+				final var path = template.tablesaw() ? "custom_recipes/tablesaw/" : "recipes/";
+				final var prefix = template.simple() ? "" : block.id().getPath() + "_";
+				ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.SERVER_DATA, new Identifier(block.id().getNamespace(), path + prefix + template.id() + ".json"), blah -> recipe.serialize().toString());
+			}
+			templates.clear();
+		}
+	}
+
+	public static void generate(ResourceType resourceType) {
+		if (resourceType == ResourceType.SERVER_DATA) {
+			// needs to be a count since for some reason server data tries to get generated 4 TIMES??!??!!?!
+			++serverLoadCount;
+			if (serverLoadCount % 4 == 1) return;
+			if (serverLoadCount > 4) ResourceUtils.refreshCaches(ResourceType.SERVER_DATA);
+
+			generateMineableByPickaxeTag();
+			generateMineableByAxeTag();
+			generateNeedsStoneToolTag();
+			generateLootTables();
+			generateRecipes();
+
+			return;
+		}
+
+		if (resourceType == ResourceType.CLIENT_RESOURCES) {
+			// needs to be a count since for some reason client resources try to get generated 2 times!
+			++clientLoadCount;
+			if (clientLoadCount % 2 == 1) return;
+			if (clientLoadCount > 1) ResourceUtils.refreshCaches(ResourceType.CLIENT_RESOURCES);
+
 			for (TypedGroupedBlock block : BLOCKS) {
 				generateModels(block);
 				generateBlockState(block);

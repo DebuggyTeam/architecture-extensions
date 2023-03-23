@@ -1,0 +1,20 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:registry_contains",
+      "values": [
+        "{group}_wall"
+      ]
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "{group}_wall"
+    }
+  ],
+  "result": {
+    "item": "{result}",
+    "count": 1
+  }
+}
