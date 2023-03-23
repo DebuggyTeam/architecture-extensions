@@ -1,0 +1,12 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+			"item": "architecture_extensions:end_rod_nubless"
+		}
+	],
+	"result": {
+		"item": "minecraft:end_rod",
+		"count": 1
+	}
+}

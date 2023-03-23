@@ -44,12 +44,12 @@ public class ArchitectureExtensions implements ModInitializer, ResourcePackRegis
 	public void onInitialize(ModContainer mod) {
 		MOD_CONTAINER = mod;
 
-		PeculiarBlocks.register();
-
 		ITEM_GROUP = FabricItemGroup
 			.builder(id("building_blocks"))
-			.icon(PeculiarBlocks.DEBUGGY_BLOCK.asItem()::getDefaultStack) // TODO: Better icon?
+			.icon(() -> PeculiarBlocks.DEBUGGY_BLOCK.asItem().getDefaultStack()) // TODO: Better icon?
 			.build();
+
+		PeculiarBlocks.register();
 
 		VanillaIntegration.INSTANCE.integrate(new ArchExIntegrationContextImpl(VanillaIntegration.INSTANCE));
 
@@ -61,15 +61,14 @@ public class ArchitectureExtensions implements ModInitializer, ResourcePackRegis
 			}
 		}
 
-		ItemGroupUtil.pull();
+		ItemGroupUtil.push();
 
-		ResourceLoader.get(ResourceType.CLIENT_RESOURCES).getRegisterDefaultResourcePackEvent().register(this);
 		ResourceLoader.get(ResourceType.SERVER_DATA).getRegisterDefaultResourcePackEvent().register(this);
 	}
 
 	@Override
 	public void onRegisterPack(@NotNull ResourcePackRegistrationContext context) {
-		DataGeneration.generate();
+		DataGeneration.generate(ResourceType.SERVER_DATA);
 		context.addResourcePack(RESOURCE_PACK);
 	}
 

@@ -1,10 +1,8 @@
 package io.github.debuggyteam.architecture_extensions.resource;
 
 import java.io.FileNotFoundException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.HashSet;
 
 import org.jetbrains.annotations.Nullable;
 import org.quiltmc.loader.api.ModContainer;
@@ -12,38 +10,40 @@ import org.quiltmc.loader.api.ModContainer;
 import com.google.common.collect.Sets;
 
 import io.github.debuggyteam.architecture_extensions.ArchitectureExtensions;
-import it.unimi.dsi.fastutil.objects.Object2ReferenceOpenHashMap;
+import io.github.debuggyteam.architecture_extensions.util.LRUHashMap;
+import net.minecraft.resource.ResourceType;
 
-public class ResourceUtils {
+public final class ResourceUtils {
 	// Field to get around weird java crap with lambdas
 	private static Exception exception;
 
-	private static final Object2ReferenceOpenHashMap<String, Cache> CACHES = new Object2ReferenceOpenHashMap<>();
+	private static final LRUHashMap<CacheKey, Cache> CACHES = new LRUHashMap<>(400);
 
-	static void refreshCaches() {
-		HashSet<String> removing = Sets.newHashSet();
-		CACHES.keySet().forEach(resourceName -> {
-			final var refreshedCache = CACHES.get(resourceName).getRefreshed();
-			if (refreshedCache == null) removing.add(resourceName);
-			CACHES.replace(resourceName, refreshedCache);
+	static void refreshCaches(ResourceType resourceType) {
+		final var removing = Sets.newHashSet();
+		CACHES.keySet().forEach(key -> {
+			if (key.resourceType == resourceType) {
+				final var refreshedCache = CACHES.get(key).getRefreshed();
+				if (refreshedCache == null) removing.add(key);
+				CACHES.replace(key, refreshedCache);
+			}
 		});
 		removing.forEach(resourceName -> CACHES.remove(resourceName));
 	}
 
-	static String getResourceAsString(ModContainer resourceOwner, String resourceName) throws Exception {
-		final var cache = createOrGetCache(resourceOwner, resourceName);
+	static String getResourceAsString(ModContainer resourceOwner, ResourceType resourceType, String resourceName) throws Exception {
+		final var cache = loadOrGetCache(resourceOwner, resourceType, resourceName);
 		if (exception != null) throw exception;
-		return new String(cache.data, StandardCharsets.UTF_8);
+		return cache.content;
 	}
 
-	private static Cache createOrGetCache(ModContainer resourceOwner, String resourceName) throws Exception {
+	private static Cache loadOrGetCache(ModContainer resourceOwner, ResourceType resourceType, String resourceName) throws Exception {
 		exception = null;
 
 		// use computeIfAbsent to avoid unnecessary object creation
-		return CACHES.computeIfAbsent(resourceName, k -> {
-			final var resourcePath = resourceOwner.getPath(resourceName).toAbsolutePath();
+		return CACHES.computeIfAbsent(new CacheKey(resourceOwner, resourceType, resourceName), k -> {
 			try {
-				return new Cache(resourceOwner, resourcePath, Files.readAllBytes(resourcePath));
+				return Cache.withInitialContent(resourceOwner.getPath(resourceName).toAbsolutePath());
 			} catch (Exception e) {
 				exception = e;
 			}
@@ -51,10 +51,16 @@ public class ResourceUtils {
 		});
 	}
 
-	private static record Cache(ModContainer resourceOwner, Path resourcePath, byte[] data) {
+	private static record CacheKey(ModContainer resourceOwner, ResourceType resourceType, String resourceName) { }
+
+	private static record Cache(Path resourcePath, String content) {
+		public static Cache withInitialContent(Path resourcePath) throws Exception {
+			return new Cache(resourcePath, Files.readString(resourcePath));
+		}
+
 		public @Nullable Cache getRefreshed() {
 			try {
-				return new Cache(resourceOwner, resourcePath, Files.readAllBytes(resourcePath));
+				return new Cache(resourcePath, Files.readString(resourcePath));
 			} catch (FileNotFoundException e) {
 				return null;
 			} catch (Exception e) {

@@ -1,6 +1,7 @@
 package io.github.debuggyteam.architecture_extensions.api;
 
 import java.util.Locale;
+import java.util.Set;
 import java.util.function.BiFunction;
 
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
@@ -59,12 +60,12 @@ public enum BlockType {
 		return name().toLowerCase(Locale.ROOT);
 	}
 
-	public TypedGroupedBlock register(BlockGroup.GroupedBlock groupedBlock, ItemGroup[] itemGroups) {
-		var id = ArchitectureExtensions.id(groupedBlock.id() + "_" + this);
+	public TypedGroupedBlock register(BlockGroup.GroupedBlock groupedBlock, Set<ItemGroup> itemGroups) {
+		var id = ArchitectureExtensions.id(groupedBlock.id().getPath() + "_" + this);
 		var block = Registry.register(Registries.BLOCK, id, creator.apply(groupedBlock.baseBlock(), QuiltBlockSettings.copyOf(groupedBlock.baseBlock()).mapColorProvider(state -> groupedBlock.mapColor()).strength(strength)));
 
 		var item = Registry.register(Registries.ITEM, id, new BlockItem(block, new QuiltItemSettings()));
-		for (ItemGroup itemGroup : itemGroups) { ItemGroupUtil.collect(itemGroup, item); }
+		for (ItemGroup itemGroup : itemGroups) { ItemGroupUtil.pull(itemGroup, this, groupedBlock.baseBlock(), item); }
 
 		return new TypedGroupedBlock(this, groupedBlock, id);
 	}

@@ -1,0 +1,38 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"BCL",
+		"M W",
+		"PRY"
+	],
+	"key": {
+		"B": {
+			"item": "minecraft:blue_dye"
+		},
+		"C": {
+			"item": "minecraft:cyan_dye"
+		},
+		"L": {
+			"item": "minecraft:light_blue_dye"
+		},
+		"M": {
+			"item": "minecraft:magenta_dye"
+		},
+		"W": {
+			"item": "minecraft:white_dye"
+		},
+		"P": {
+			"item": "minecraft:pink_dye"
+		},
+		"R": {
+			"item": "minecraft:red_dye"
+		},
+		"Y": {
+			"item": "minecraft:yellow_dye"
+		}
+	},
+	"result": {
+		"item": "architecture_extensions:debuggy_block",
+		"count": 1
+	}
+}
