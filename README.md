@@ -10,4 +10,4 @@ To discuss this mod or give suggestions/feedback, join my Discord server: https:
 - Crackers0106 for mod icon.
 
 ## Contributors
-![contributors](https://contrib.rocks/image?repo=woodiertexas/architecture-extensions)
+![contributors](https://contrib.rocks/image?repo=debuggyteam/architecture-extensions)

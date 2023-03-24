@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "": {
-            "model": "architecture_extensions:block/post_caps/warped_post_lantern"
-        }
-    }
-}

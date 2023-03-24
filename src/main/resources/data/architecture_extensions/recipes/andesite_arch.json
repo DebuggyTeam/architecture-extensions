@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:andesite"
-    },
-    "result": "architecture_extensions:andesite_arch",
-    "count": 1
-}

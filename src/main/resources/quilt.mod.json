@@ -1,22 +1,24 @@
 {
 	"schema_version": 1,
 	"quilt_loader": {
-		"group": "io.github.woodiertexas",
+		"group": "io.github.debuggyteam",
 		"id": "architecture_extensions",
 		"version": "${version}",
 		"metadata": {
 			"name": "Architecture Extensions",
 			"description": "A mod that extends one's creativity by implementing new blocks to Minecraft.",
 			"contributors": {
+				"Debuggy Team": "Owner",
 				"woodiertexas": "Author",
-				"maximum": "Datagen",
-				"Falkreon": "Datagen",
-				"KJP12": "Datagen",
+				"maximum": "Rewrite",
+				"Falkreon": "Datagen Help",
 				"Crackers0106": "Mod Icon",
 				"Carter": "Textures + Block model fixes",
 				"Azagwen": "Block Models"
 			},
 			"contact": {
+				"homepage": "https://modrinth.com/mod/arch-ex",
+				"discord": "https://discord.gg/SN89y7EQTN",
 				"issues": "https://github.com/woodiertexas/architecture-extensions/issues",
 				"sources": "https://github.com/woodiertexas/architecture-extensions"
 			},
@@ -24,28 +26,22 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "io.github.woodiertexas.architecture_extensions.ArchitectureExtensions"
+			"init": "io.github.debuggyteam.architecture_extensions.ArchitectureExtensions",
+			"client_init": "io.github.debuggyteam.architecture_extensions.ArchitectureExtensionsClient"
 		},
 		"depends": [
 			{
 				"id": "quilt_loader",
-				"versions": ">=0.16.0-"
+				"versions": ">=0.18.3"
 			},
 			{
 				"id": "quilted_fabric_api",
-				"versions": ">=1.0.0-"
+				"versions": ">=6.0.0-beta.2+0.76.0-1.19.4"
 			},
 			{
 				"id": "minecraft",
-				"versions": ">=1.19"
+				"versions": "~1.19.4"
 			}
 		]
-	},
-	"modmenu": {
-		"links": {
-			"modmenu.modrinth": "https://modrinth.com/mod/arch-ex",
-			"modmenu.discord": "https://discord.gg/SN89y7EQTN"
-		}
 	}
 }
-

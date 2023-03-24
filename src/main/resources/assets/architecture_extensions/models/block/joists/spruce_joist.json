@@ -1,6 +1,0 @@
-{
-    "parent": "architecture_extensions:block/templates/template_joist_block",
-    "textures": {
-        "texture": "minecraft:block/stripped_spruce_log"
-    }
-}

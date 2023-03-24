@@ -1,7 +1,0 @@
-{
-    "parent": "architecture_extensions:block/templates/template_post_lantern",
-    "textures": {
-        "wood_texture": "minecraft:block/mangrove_planks",
-        "lantern_texture": "minecraft:block/soul_lantern"
-    }
-}

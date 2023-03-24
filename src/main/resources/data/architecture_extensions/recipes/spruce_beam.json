@@ -1,8 +1,0 @@
-{
-	"type": "minecraft:stonecutting",
-	"ingredient": {
-		"item": "minecraft:spruce_log"
-	},
-	"result": "architecture_extensions:spruce_beam",
-	"count": 1
-}

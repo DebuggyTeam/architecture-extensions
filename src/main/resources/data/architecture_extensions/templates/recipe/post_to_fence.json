@@ -1,0 +1,20 @@
+{
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:registry_contains",
+      "values": [
+        "{group}_fence"
+      ]
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "{result}"
+    }
+  ],
+  "result": {
+    "item": "{group}_fence",
+    "count": 1
+  }
+}

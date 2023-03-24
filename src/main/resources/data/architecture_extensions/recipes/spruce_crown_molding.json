@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:spruce_planks"
-    },
-    "result": "architecture_extensions:spruce_crown_molding",
-    "count": 6
-}

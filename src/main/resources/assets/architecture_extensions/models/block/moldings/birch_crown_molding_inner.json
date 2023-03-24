@@ -1,6 +1,0 @@
-{
-    "parent": "architecture_extensions:block/templates/template_crown_molding_inner",
-    "textures": {
-        "texture": "minecraft:block/birch_planks"
-    }
-}

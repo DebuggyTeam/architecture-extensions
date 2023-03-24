@@ -1,8 +1,0 @@
-{
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:stripped_jungle_log"
-    },
-    "result": "architecture_extensions:jungle_joist",
-    "count": 3
-}
