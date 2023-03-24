@@ -1,19 +1,19 @@
-package me.maximumpower55.objectify;
+package io.github.debuggyteam.architecture_extensions.resource.json;
 
 import com.google.gson.JsonObject;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
 
-public final class JModelTemplate extends BaseTemplateJson<JModelTemplate> {
+public final class ModelTemplate extends BaseTemplateJson<ModelTemplate> {
 
 	private final Object2ObjectMap<String, String> textures = new Object2ObjectArrayMap<>();
 
-	public JModelTemplate(String raw) {
+	public ModelTemplate(String raw) {
 		super(raw);
 	}
 
-	public JModelTemplate addTexture(String textureId, String texture) {
+	public ModelTemplate addTexture(String textureId, String texture) {
 		textures.putIfAbsent(textureId, texture);
 		return this;
 	}

@@ -1,4 +1,4 @@
-package me.maximumpower55.objectify;
+package io.github.debuggyteam.architecture_extensions.resource.json;
 
 import java.io.IOException;
 import java.io.StringReader;

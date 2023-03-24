@@ -13,13 +13,13 @@ import io.github.debuggyteam.architecture_extensions.api.BlockType;
 import io.github.debuggyteam.architecture_extensions.api.RecipeConfigurator;
 import io.github.debuggyteam.architecture_extensions.api.TextureConfiguration;
 import io.github.debuggyteam.architecture_extensions.api.BlockType.TypedGroupedBlock;
-import me.maximumpower55.objectify.JBlockStateTemplate;
-import me.maximumpower55.objectify.JLootTableTemplate;
-import me.maximumpower55.objectify.JModelTemplate;
-import me.maximumpower55.objectify.JRecipeTemplate;
-import me.maximumpower55.objectify.JTagTemplate;
-import me.maximumpower55.objectify.JLootTableTemplate.JPool;
-import me.maximumpower55.objectify.JLootTableTemplate.JPool.JCondition;
+import io.github.debuggyteam.architecture_extensions.resource.json.BlockStateTemplate;
+import io.github.debuggyteam.architecture_extensions.resource.json.LootTableTemplate;
+import io.github.debuggyteam.architecture_extensions.resource.json.ModelTemplate;
+import io.github.debuggyteam.architecture_extensions.resource.json.RecipeTemplate;
+import io.github.debuggyteam.architecture_extensions.resource.json.TagTemplate;
+import io.github.debuggyteam.architecture_extensions.resource.json.LootTableTemplate.JPool;
+import io.github.debuggyteam.architecture_extensions.resource.json.LootTableTemplate.JPool.JCondition;
 import net.minecraft.registry.Registries;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
@@ -82,7 +82,7 @@ public final class DataGeneration {
 			var rawModel = getModelTemplate(block.type(), variant);
 			if (rawModel == null) continue;
 
-			var model = new JModelTemplate(rawModel);
+			var model = new ModelTemplate(rawModel);
 
 			var textureConfiguration = block.groupedBlock().textureConfiguration();
 
@@ -100,32 +100,32 @@ public final class DataGeneration {
 	private static void generateBlockState(TypedGroupedBlock block) {
 		var rawBlockState = getBlockStateTemplate(block.type());
 		if (rawBlockState == null) return;
-		var blockState = new JBlockStateTemplate(rawBlockState);
+		var blockState = new BlockStateTemplate(rawBlockState);
 		blockState.addConstant(MODEL_PLACEHOLDER, new Identifier(block.id().getNamespace(), "block/" + block.id().getPath()).toString());
 		ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.CLIENT_RESOURCES, new Identifier(block.id().getNamespace(), "blockstates/" + block.id().getPath() + ".json"), path -> blockState.serialize().toString());
 	}
 
 	private static void generateMineableByPickaxeTag() {
-		var tag = JTagTemplate.DEFAULT.get();
+		var tag = TagTemplate.DEFAULT.get();
 		BLOCKS.forEach(block -> { if (BlockContentRegistries.STRIPPABLE.get(block.groupedBlock().baseBlock()).isEmpty()) tag.addValue(block.id().toString()); });
 		ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.SERVER_DATA, new Identifier("tags/blocks/mineable/pickaxe.json"), path -> tag.serialize().toString());
 	}
 
 	private static void generateMineableByAxeTag() {
-		var tag = JTagTemplate.DEFAULT.get();
+		var tag = TagTemplate.DEFAULT.get();
 		BLOCKS.forEach(block -> { if (BlockContentRegistries.STRIPPABLE.get(block.groupedBlock().baseBlock()).isPresent()) tag.addValue(block.id().toString()); });
 		ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.SERVER_DATA, new Identifier("tags/blocks/mineable/axe.json"), path -> tag.serialize().toString());
 	}
 
 	private static void generateNeedsStoneToolTag() {
-		var tag = JTagTemplate.DEFAULT.get();
+		var tag = TagTemplate.DEFAULT.get();
 		BLOCKS.forEach(block -> tag.addValue(block.id().toString()));
 		ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.SERVER_DATA, new Identifier("tags/blocks/needs_stone_tool.json"), path -> tag.serialize().toString());
 	}
 
 	private static void generateLootTables() {
 		for (TypedGroupedBlock block : BLOCKS) {
-			var lootTable = JLootTableTemplate.BLOCK_BREAK.get();
+			var lootTable = LootTableTemplate.BLOCK_BREAK.get();
 			lootTable.addPool(JPool.ofItems(block.id()).addCondition(JCondition.SURVIVES_EXPLOSION.get()));
 			ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.SERVER_DATA, new Identifier(block.id().getNamespace(), "loot_tables/blocks/" + block.id().getPath() + ".json"), path -> lootTable.serialize().toString());
 		}
@@ -138,7 +138,7 @@ public final class DataGeneration {
 			for (RecipeConfigurator.RecipeTemplate template : templates) {
 				final var rawRecipe = getRecipeTemplate(template.id());
 				if (rawRecipe == null) continue;
-				final var recipe = new JRecipeTemplate(rawRecipe);
+				final var recipe = new RecipeTemplate(rawRecipe);
 
 				recipe.addConstant(GROUP_PLACEHOLDER, block.groupedBlock().id().toString());
 				recipe.addConstant(BASE_PLACEHOLDER, Registries.BLOCK.getId(block.groupedBlock().baseBlock()).toString());

@@ -1,4 +1,4 @@
-package me.maximumpower55.objectify;
+package io.github.debuggyteam.architecture_extensions.resource.json;
 
 import java.util.Set;
 import java.util.function.Supplier;
@@ -7,17 +7,17 @@ import com.google.common.collect.Sets;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-public final class JTagTemplate extends BaseTemplateJson<JTagTemplate> {
+public final class TagTemplate extends BaseTemplateJson<TagTemplate> {
 
-	public static final Supplier<JTagTemplate> DEFAULT = () -> new JTagTemplate("{\"replace\":false,\"values\":[]}");
+	public static final Supplier<TagTemplate> DEFAULT = () -> new TagTemplate("{\"replace\":false,\"values\":[]}");
 
 	private final Set<String> values = Sets.newHashSet();
 
-	public JTagTemplate(String raw) {
+	public TagTemplate(String raw) {
 		super(raw);
 	}
 
-	public JTagTemplate addValue(String value) {
+	public TagTemplate addValue(String value) {
 		values.add(value);
 		return this;
 	}

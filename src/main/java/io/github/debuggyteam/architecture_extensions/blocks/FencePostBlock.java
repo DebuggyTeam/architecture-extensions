@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.block.Waterloggable;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
@@ -19,7 +20,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 
-public class FencePostBlock extends PillarBlock {
+public class FencePostBlock extends PillarBlock implements Waterloggable {
 	public static final EnumProperty<Direction.Axis> AXIS = Properties.AXIS;
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 

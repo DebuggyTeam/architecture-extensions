@@ -1,4 +1,4 @@
-package me.maximumpower55.objectify;
+package io.github.debuggyteam.architecture_extensions.resource.json;
 
 import java.util.Set;
 import java.util.function.Supplier;
@@ -9,17 +9,17 @@ import com.google.gson.JsonObject;
 
 import net.minecraft.util.Identifier;
 
-public final class JLootTableTemplate extends BaseTemplateJson<JLootTableTemplate> {
+public final class LootTableTemplate extends BaseTemplateJson<LootTableTemplate> {
 
-	public static final Supplier<JLootTableTemplate> BLOCK_BREAK = () -> new JLootTableTemplate("{\"type\":\"minecraft:block\",\"pools\":[]}");
+	public static final Supplier<LootTableTemplate> BLOCK_BREAK = () -> new LootTableTemplate("{\"type\":\"minecraft:block\",\"pools\":[]}");
 
 	private final Set<JPool> pools = Sets.newHashSet();
 
-	private JLootTableTemplate(String raw) {
+	private LootTableTemplate(String raw) {
 		super(raw);
 	}
 
-	public JLootTableTemplate addPool(JPool pool) {
+	public LootTableTemplate addPool(JPool pool) {
 		pools.add(pool);
 		return this;
 	}
