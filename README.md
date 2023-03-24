@@ -8,6 +8,8 @@ To discuss this mod or give suggestions/feedback, join Debuggy Community: https:
 - Azagwen for the roof block models: https://github.com/woodiertexas/architecture-extensions/pull/7
 - Everyone in the Quilt Community discord for helping me with this mod.
 - Crackers0106 for mod icon.
+- Maximum for rewriting the whole mod and adding datagen stuff on top: https://github.com/DebuggyTeam/architecture-extensions/pull/16
+- Falkreon for helping with datagen stuff.
 
 ## Contributors
 ![contributors](https://contrib.rocks/image?repo=debuggyteam/architecture-extensions)
