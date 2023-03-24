@@ -40,7 +40,9 @@ public final class VanillaBlockGroups {
 														new BlockGroup.GroupedBlock("stone_brick", Blocks.STONE_BRICKS, (type, textureId) -> "minecraft:block/stone_bricks", RecipeConfigurator.STONECUTTER, MapColor.STONE_GRAY),
 														new BlockGroup.GroupedBlock("polished_blackstone_brick", Blocks.POLISHED_BLACKSTONE_BRICKS, (type, textureId) -> "minecraft:block/polished_blackstone_bricks", RecipeConfigurator.STONECUTTER, MapColor.BLACK),
 														new BlockGroup.GroupedBlock("mossy_stone_brick", Blocks.MOSSY_STONE_BRICKS, (type, textureId) -> "minecraft:block/mossy_stone_bricks", RecipeConfigurator.STONECUTTER, MapColor.STONE_GRAY),
+														new BlockGroup.GroupedBlock("mud_brick", Blocks.MUD_BRICKS, (type, textureId) -> "minecraft:block/mud_bricks", RecipeConfigurator.STONECUTTER, MapColor.BROWN),
 														new BlockGroup.GroupedBlock("end_stone_brick", Blocks.END_STONE_BRICKS, (type, textureId) -> "minecraft:block/end_stone_bricks", RecipeConfigurator.STONECUTTER, MapColor.PALE_YELLOW),
+														new BlockGroup.GroupedBlock("purpur", Blocks.PURPUR_BLOCK, (type, textureId) -> "minecraft:block/purpur_block", RecipeConfigurator.STONECUTTER, MapColor.DULL_PINK),
 														new BlockGroup.GroupedBlock("deepslate_brick", Blocks.DEEPSLATE_BRICKS, (type, textureId) -> "minecraft:block/deepslate_bricks", RecipeConfigurator.STONECUTTER, MapColor.DEEPSLATE_GRAY),
 														new BlockGroup.GroupedBlock("prismarine_brick", Blocks.PRISMARINE_BRICKS, (type, textureId) -> "minecraft:block/prismarine_bricks", RecipeConfigurator.STONECUTTER, MapColor.DIAMOND_BLUE),
 														new BlockGroup.GroupedBlock("dark_prismarine", Blocks.DARK_PRISMARINE, (type, textureId) -> "minecraft:block/dark_prismarine", RecipeConfigurator.STONECUTTER, MapColor.DIAMOND_BLUE));
