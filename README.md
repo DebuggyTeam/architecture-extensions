@@ -8,3 +8,6 @@ To discuss this mod or give suggestions/feedback, join my Discord server: https:
 - Azagwen for the roof block models: https://github.com/woodiertexas/architecture-extensions/pull/7
 - Everyone in the Quilt Community discord for helping me with this mod.
 - Crackers0106 for mod icon.
+
+## Contributors
+![contributors](https://contrib.rocks/image?repo=woodiertexas/architecture-extensions)
