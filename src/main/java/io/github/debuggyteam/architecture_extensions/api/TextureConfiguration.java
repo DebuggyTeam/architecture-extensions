@@ -11,6 +11,7 @@ public interface TextureConfiguration extends BiFunction<BlockType, String, Stri
 	static final Function<Identifier, TextureConfiguration> WOOD_WITH_LOG = woodId -> create(
 		blockType -> {
 			return switch (blockType) {
+				case JOIST -> new Identifier(woodId.getNamespace(), "block/" + "stripped_" + woodId.getPath() + "_log").toString();
 				default -> new Identifier(woodId.getNamespace(), "block/" + woodId.getPath() + "_planks").toString();
 			};
 		},
@@ -37,6 +38,7 @@ public interface TextureConfiguration extends BiFunction<BlockType, String, Stri
 	static final Function<Identifier, TextureConfiguration> WOOD_WITH_STEM = woodId -> create(
 		blockType -> {
 			return switch (blockType) {
+				case JOIST -> new Identifier(woodId.getNamespace(), "block/" + "stripped_" + woodId.getPath() + "_stem").toString();
 				default -> new Identifier(woodId.getNamespace(), "block/" + woodId.getPath() + "_planks").toString();
 			};
 		},
