@@ -13,7 +13,7 @@ body:
   - type: textarea
     id: block-list
     attributes:
-      label: List the blocks you want added to AE.
+      label: List the blocks you want added to Arch-Ex.
       description: If you are suggesting new blocktype(s), go to the next input field.
       value: |
         - Cobblestone columns
@@ -21,21 +21,18 @@ body:
   - type: textarea
     id: new-blocktype
     attributes:
-      label: List the blocktype(s) you want added to AE.
-      description: This is where you'd put your blocktypes you want added to AE if applicable.
+      label: List the blocktype(s) you want added to Arch-Ex.
+      description: This is where you'd put your blocktypes you want added to Arch-Ex if applicable.
       value: |
         - Crown Moldings
 
-  - type: checkboxes
+  - type: textarea
     id: blocktypes
     attributes:
       label: What blocktypes do your block(s) fall under if applicable.
-      description: You may select more than one.
-      options:
-        - label: Column Block
-        - label: Arch Block
-        - label: Post Block
-        - label: Beam Block
+      description: Your block can fall under multiple block types if applicable.
+      value: |
+        - Column, Molding, Beam
 
   - type: textarea
     id: description
