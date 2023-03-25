@@ -3,10 +3,12 @@ package io.github.debuggyteam.architecture_extensions.api;
 import java.util.Locale;
 import java.util.Set;
 import java.util.function.BiFunction;
+import java.util.function.Consumer;
 
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
+import io.github.debuggyteam.architecture_extensions.ArchExIntegrationContextImpl;
 import io.github.debuggyteam.architecture_extensions.ArchitectureExtensions;
 import io.github.debuggyteam.architecture_extensions.ItemGroupUtil;
 import io.github.debuggyteam.architecture_extensions.blocks.ArchBlock;
@@ -22,7 +24,6 @@ import io.github.debuggyteam.architecture_extensions.blocks.RoofBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.WallPostBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -60,12 +61,14 @@ public enum BlockType {
 		return name().toLowerCase(Locale.ROOT);
 	}
 
-	public TypedGroupedBlock register(BlockGroup.GroupedBlock groupedBlock, Set<ItemGroup> itemGroups) {
+	public TypedGroupedBlock register(BlockGroup group, BlockGroup.GroupedBlock groupedBlock, ArchExIntegrationContextImpl.BlockCreationCallback onBlockCreated) {
 		var id = ArchitectureExtensions.id(groupedBlock.id().getPath() + "_" + this);
-		var block = Registry.register(Registries.BLOCK, id, creator.apply(groupedBlock.baseBlock(), QuiltBlockSettings.copyOf(groupedBlock.baseBlock()).mapColorProvider(state -> groupedBlock.mapColor()).strength(strength)));
+		var baseBlock = groupedBlock.baseBlock().get();
+		var block = Registry.register(Registries.BLOCK, id, creator.apply(baseBlock, QuiltBlockSettings.copyOf(baseBlock).mapColorProvider(state -> groupedBlock.mapColor()).strength(strength)));
 
-		var item = Registry.register(Registries.ITEM, id, new BlockItem(block, new QuiltItemSettings()));
-		for (ItemGroup itemGroup : itemGroups) { ItemGroupUtil.pull(itemGroup, this, groupedBlock.baseBlock(), item); }
+		Registry.register(Registries.ITEM, id, new BlockItem(block, new QuiltItemSettings()));
+		
+		onBlockCreated.onBlockCreated(group, this, baseBlock, block);
 
 		return new TypedGroupedBlock(this, groupedBlock, id);
 	}

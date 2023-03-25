@@ -2,6 +2,7 @@ package io.github.debuggyteam.architecture_extensions.api;
 
 import java.util.Iterator;
 import java.util.Set;
+import java.util.function.Supplier;
 
 import com.google.common.collect.Sets;
 
@@ -30,9 +31,13 @@ public final class BlockGroup implements Iterable<BlockGroup.GroupedBlock> {
 		return groupedBlocks.iterator();
 	}
 
-	public record GroupedBlock(Identifier id, Block baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, MapColor mapColor) {
-		public GroupedBlock(String id, Block baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, MapColor mapColor) {
+	public record GroupedBlock(Identifier id, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, MapColor mapColor) {
+		public GroupedBlock(String id, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, MapColor mapColor) {
 			this(new Identifier(id), baseBlock, textureConfiguration, recipeConfigurator, mapColor);
+		}
+		
+		public GroupedBlock(String id, Block baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, MapColor mapColor) {
+			this(new Identifier(id), ()->baseBlock, textureConfiguration, recipeConfigurator, mapColor);
 		}
 	}
 }
