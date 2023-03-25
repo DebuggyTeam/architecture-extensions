@@ -1,14 +1,12 @@
 package io.github.debuggyteam.architecture_extensions;
 
-import java.util.function.Consumer;
-
 import io.github.debuggyteam.architecture_extensions.api.ArchExIntegration;
 import io.github.debuggyteam.architecture_extensions.api.BlockGroup;
 import io.github.debuggyteam.architecture_extensions.api.BlockType;
 import io.github.debuggyteam.architecture_extensions.api.RecipeConfigurator;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
-import net.minecraft.item.ItemGroup;
 
 public class VanillaIntegration implements ArchExIntegration {
 	public static final VanillaIntegration INSTANCE = new VanillaIntegration();
@@ -43,7 +41,7 @@ public class VanillaIntegration implements ArchExIntegration {
 	}
 
 	@Override
-	public void itemGroups(Consumer<ItemGroup> itemGroupConsumer) {
-		itemGroupConsumer.accept(ArchitectureExtensions.ITEM_GROUP);
+	public void onBlockCreated(BlockGroup group, BlockType blockType, Block baseBlock, Block block) {
+		ItemGroupUtil.pull(ArchitectureExtensions.ITEM_GROUP, blockType, baseBlock, block.asItem());
 	}
 }

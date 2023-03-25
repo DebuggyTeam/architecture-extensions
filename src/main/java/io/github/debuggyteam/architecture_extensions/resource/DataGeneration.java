@@ -107,13 +107,13 @@ public final class DataGeneration {
 
 	private static void generateMineableByPickaxeTag() {
 		var tag = TagTemplate.DEFAULT.get();
-		BLOCKS.forEach(block -> { if (BlockContentRegistries.STRIPPABLE.get(block.groupedBlock().baseBlock()).isEmpty()) tag.addValue(block.id().toString()); });
+		BLOCKS.forEach(block -> { if (BlockContentRegistries.STRIPPABLE.get(block.groupedBlock().baseBlock().get()).isEmpty()) tag.addValue(block.id().toString()); });
 		ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.SERVER_DATA, new Identifier("tags/blocks/mineable/pickaxe.json"), path -> tag.serialize().toString());
 	}
 
 	private static void generateMineableByAxeTag() {
 		var tag = TagTemplate.DEFAULT.get();
-		BLOCKS.forEach(block -> { if (BlockContentRegistries.STRIPPABLE.get(block.groupedBlock().baseBlock()).isPresent()) tag.addValue(block.id().toString()); });
+		BLOCKS.forEach(block -> { if (BlockContentRegistries.STRIPPABLE.get(block.groupedBlock().baseBlock().get()).isPresent()) tag.addValue(block.id().toString()); });
 		ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.SERVER_DATA, new Identifier("tags/blocks/mineable/axe.json"), path -> tag.serialize().toString());
 	}
 
@@ -141,7 +141,7 @@ public final class DataGeneration {
 				final var recipe = new RecipeTemplate(rawRecipe);
 
 				recipe.addConstant(GROUP_PLACEHOLDER, block.groupedBlock().id().toString());
-				recipe.addConstant(BASE_PLACEHOLDER, Registries.BLOCK.getId(block.groupedBlock().baseBlock()).toString());
+				recipe.addConstant(BASE_PLACEHOLDER, Registries.BLOCK.getId(block.groupedBlock().baseBlock().get()).toString());
 				recipe.addConstant(RESULT_PLACEHOLDER, block.id().toString());
 
 				final var path = template.tablesaw() ? "custom_recipes/tablesaw/" : "recipes/";
