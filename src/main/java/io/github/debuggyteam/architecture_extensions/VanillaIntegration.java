@@ -16,6 +16,8 @@ public class VanillaIntegration implements ArchExIntegration {
 	private static final BlockGroup IRON_ROD = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.IRON_BARS, (type, textureId) -> "minecraft:block/iron_bars", RecipeConfigurator.simple("iron_rod"), MapColor.CLEAR));
 
 	private static final BlockGroup IRON_H_BEAM = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.ANVIL, (type, textureId) -> {
+
+		// TODO: too few case labels so an if-statement could go here...
 		return switch (textureId) {
 			case "texture_side" -> "architecture_extensions:block/h_beam_side";
 			default -> "architecture_extensions:block/h_beam";

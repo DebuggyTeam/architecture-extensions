@@ -6,6 +6,7 @@ import io.github.debuggyteam.architecture_extensions.api.BlockType;
 import io.github.debuggyteam.architecture_extensions.resource.DataGeneration;
 import net.minecraft.block.Block;
 
+// TODO: IntelliJ says the "ArchExIntegrationContextImpl" class can be a record.
 public class ArchExIntegrationContextImpl implements ArchExIntegration.Context {
 	private final ArchExIntegration integration;
 
@@ -22,7 +23,7 @@ public class ArchExIntegrationContextImpl implements ArchExIntegration.Context {
 			}
 		}
 	}
-	
+
 	@FunctionalInterface
 	public static interface BlockCreationCallback {
 		public void onBlockCreated(BlockGroup group, BlockType blockType,  Block base, Block created);

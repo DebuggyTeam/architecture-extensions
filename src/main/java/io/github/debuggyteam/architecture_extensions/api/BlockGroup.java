@@ -35,7 +35,7 @@ public final class BlockGroup implements Iterable<BlockGroup.GroupedBlock> {
 		public GroupedBlock(String id, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, MapColor mapColor) {
 			this(new Identifier(id), baseBlock, textureConfiguration, recipeConfigurator, mapColor);
 		}
-		
+
 		public GroupedBlock(String id, Block baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, MapColor mapColor) {
 			this(new Identifier(id), ()->baseBlock, textureConfiguration, recipeConfigurator, mapColor);
 		}

@@ -28,7 +28,7 @@ public final class ResourceUtils {
 				CACHES.replace(key, refreshedCache);
 			}
 		});
-		removing.forEach(resourceName -> CACHES.remove(resourceName));
+		removing.forEach(CACHES::remove);
 	}
 
 	static String getResourceAsString(ModContainer resourceOwner, ResourceType resourceType, String resourceName) throws Exception {

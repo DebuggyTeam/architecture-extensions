@@ -42,6 +42,7 @@ public interface RecipeConfigurator extends BiConsumer<BlockType, Consumer<Recip
 	};
 
 	static final RecipeConfigurator CRAFTING = (type, templateConsumer) -> {
+		// TODO: swap with enhanced switch statement?
 		switch (type) {
 			case FENCE_POST:
 				templateConsumer.accept(new RecipeTemplate("fence_to_post", false));

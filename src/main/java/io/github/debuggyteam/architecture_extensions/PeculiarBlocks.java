@@ -19,6 +19,7 @@ public class PeculiarBlocks {
 
 	public static final Block FAKE_END_PORTAL_BLOCK = new Block(QuiltBlockSettings.of(Material.WOOL).strength(1f).sounds(BlockSoundGroup.WOOL).requiresTool());
 
+	// TODO: IntelliJ says the return value of the "registerBlock" method is never used.
 	private static <T extends Block> T registerBlock(Identifier id, T block) {
 		T registeredBlock = Registry.register(Registries.BLOCK, id, block);
 		var item = Registry.register(Registries.ITEM, id, new BlockItem(block, new QuiltItemSettings()));
