@@ -3,6 +3,7 @@ package io.github.debuggyteam.architecture_extensions.resource;
 import java.io.FileNotFoundException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashSet;
 
 import org.jetbrains.annotations.Nullable;
 import org.quiltmc.loader.api.ModContainer;
@@ -20,7 +21,7 @@ public final class ResourceUtils {
 	private static final LRUHashMap<CacheKey, Cache> CACHES = new LRUHashMap<>(400);
 
 	static void refreshCaches(ResourceType resourceType) {
-		final var removing = Sets.newHashSet();
+		final var removing = Sets.<CacheKey>newHashSet();
 		CACHES.keySet().forEach(key -> {
 			if (key.resourceType == resourceType) {
 				final var refreshedCache = CACHES.get(key).getRefreshed();
@@ -28,6 +29,7 @@ public final class ResourceUtils {
 				CACHES.replace(key, refreshedCache);
 			}
 		});
+
 		removing.forEach(CACHES::remove);
 	}
 
