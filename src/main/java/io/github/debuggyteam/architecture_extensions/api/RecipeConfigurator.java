@@ -52,6 +52,7 @@ public interface RecipeConfigurator extends BiConsumer<BlockType, Consumer<Recip
 				templateConsumer.accept(new RecipeTemplate("post_to_wall", false));
 			}
 			default -> {
+				// 👻
 			}
 		}
 	};
