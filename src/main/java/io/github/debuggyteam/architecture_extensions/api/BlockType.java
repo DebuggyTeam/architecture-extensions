@@ -5,6 +5,7 @@ import java.util.Set;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
 
+import io.github.debuggyteam.architecture_extensions.blocks.LatticeBlock;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
@@ -40,7 +41,8 @@ public enum BlockType {
 	POST_LANTERN((baseBlock, settings) -> new PostLanternBlock(settings), 1.5f, noVariants()),
 	ROD((baseBlock, settings) -> new ArchExRodBlock(settings), 1f, noVariants()),
 	ROOF((baseBlock, settings) -> new RoofBlock(baseBlock.getDefaultState(), settings), 2.5f, variantsOf("", "inner", "outer")),
-	WALL_POST((baseBlock, settings) -> new WallPostBlock(settings), 2.5f, noVariants());
+	WALL_POST((baseBlock, settings) -> new WallPostBlock(settings), 2.5f, noVariants()),
+	LATTICE((baseBlock, settings) -> new LatticeBlock(settings), 1.5f, noVariants());
 
 	private final BiFunction<Block, QuiltBlockSettings, Block> creator;
 	private final float strength;
