@@ -25,7 +25,7 @@ import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 
 public final class DataGeneration {
-	private static final Set<BlockType.TypedGroupedBlock> BLOCKS = Sets.newHashSet();
+	static final Set<BlockType.TypedGroupedBlock> BLOCKS = Sets.newHashSet();
 
 	private static final String GROUP_PLACEHOLDER = "group";
 	private static final String BASE_PLACEHOLDER = "base";
