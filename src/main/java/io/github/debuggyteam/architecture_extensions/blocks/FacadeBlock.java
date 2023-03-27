@@ -14,15 +14,13 @@ import net.minecraft.world.BlockView;
  * @since ${version}
  **/
 public class FacadeBlock extends AbstractLichenBlock {
-	protected static final VoxelShape NO_COLLISION = VoxelShapes.empty();
-	
 	public FacadeBlock(Settings settings) {
 		super(settings);
 	}
 	
 	@Override
 	public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-		return NO_COLLISION;
+		return VoxelShapes.empty();
 	}
 	
 	
