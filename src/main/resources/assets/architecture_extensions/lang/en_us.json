@@ -18,6 +18,7 @@
   "architecture_extensions.block_type.rod": "Rod",
   "architecture_extensions.block_type.roof": "Roof",
   "architecture_extensions.block_type.wall_post": "Wall Post",
+  "architecture_extensions.block_type.lattice": "Lattice",
 
 
   "architecture_extensions.grouped_block.bamboo": "Bamboo",
