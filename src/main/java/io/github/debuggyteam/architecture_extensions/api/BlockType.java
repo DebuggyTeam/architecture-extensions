@@ -6,7 +6,9 @@ import java.util.function.BiFunction;
 import java.util.function.Consumer;
 
 import io.github.debuggyteam.architecture_extensions.blocks.FacadeBlock;
+import io.github.debuggyteam.architecture_extensions.blocks.IBeamBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.LatticeBlock;
+import io.github.debuggyteam.architecture_extensions.blocks.TubeMetalBlock;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
@@ -44,7 +46,9 @@ public enum BlockType {
 	ROOF((baseBlock, settings) -> new RoofBlock(baseBlock.getDefaultState(), settings), 2.5f, variantsOf("", "inner", "outer")),
 	WALL_POST((baseBlock, settings) -> new WallPostBlock(settings), 2.5f, noVariants()),
 	LATTICE((baseBlock, settings) -> new LatticeBlock(settings), 1.5f, noVariants()),
-	FACADE((baseBlock, settings) -> new FacadeBlock(settings), 1.5f, noVariants());
+	FACADE((baseBlock, settings) -> new FacadeBlock(settings), 1.5f, noVariants()),
+	TUBE_METAL((baseBlock, settings) -> new TubeMetalBlock(settings), 8f, noVariants()),
+	I_BEAM((baseBlock, settings) -> new IBeamBlock(settings), 8f, noVariants());
 
 	private final BiFunction<Block, QuiltBlockSettings, Block> creator;
 	private final float strength;
@@ -71,7 +75,7 @@ public enum BlockType {
 		var block = Registry.register(Registries.BLOCK, id, creator.apply(baseBlock, QuiltBlockSettings.copyOf(baseBlock).mapColorProvider(state -> groupedBlock.mapColor()).strength(strength)));
 
 		Registry.register(Registries.ITEM, id, new BlockItem(block, new QuiltItemSettings()));
-		
+
 		onBlockCreated.onBlockCreated(group, this, baseBlock, block);
 
 		return new TypedGroupedBlock(this, groupedBlock, id);
