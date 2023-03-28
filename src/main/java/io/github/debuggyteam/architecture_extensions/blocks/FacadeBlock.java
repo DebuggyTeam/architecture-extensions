@@ -11,19 +11,19 @@ import net.minecraft.world.BlockView;
 
 /**
  * @author Gaming32 & Portal Cubed devs
- * @since ${version}
+ * @since arch-ex v2.1.0-1.19.4
  **/
 public class FacadeBlock extends AbstractLichenBlock {
 	public FacadeBlock(Settings settings) {
 		super(settings);
 	}
-	
+
 	@Override
 	public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
 		return VoxelShapes.empty();
 	}
-	
-	
+
+
 	@Override
 	public LichenSpreadBehavior getLichenSpreadBehavior() {
 		return new LichenSpreadBehavior(this);
