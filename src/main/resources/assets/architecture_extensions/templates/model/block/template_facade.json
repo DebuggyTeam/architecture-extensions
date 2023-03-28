@@ -1,6 +1,5 @@
 {
   "credit": "Made with Blockbench",
-  "parent": "architecture_extensions:block/template_lattice",
   "ambientocclusion": false,
   "textures": {
     "particle": "#texture"
