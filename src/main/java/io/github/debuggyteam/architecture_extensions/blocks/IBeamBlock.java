@@ -1,11 +1,34 @@
 package io.github.debuggyteam.architecture_extensions.blocks;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PillarBlock;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
+import net.minecraft.state.property.EnumProperty;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.BlockRotation;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.world.World;
 
 public class IBeamBlock extends PillarBlock {
+	public static final BooleanProperty BOLTED = BooleanProperty.of("bolted");
+	public static final EnumProperty<Direction.Axis> AXIS = Properties.AXIS;
+
+	boolean shouldHaveBolts(World world, BlockPos pos, BlockState state) {
+		Direction.Axis axis = state.get(AXIS);
+
+		for (Direction dir : Direction.values()) {
+			if (axis.test(dir)) {
+				BlockPos neighbor = pos.offset(dir, 1);
+			}
+		}
+		return false;
+	}
+
 	public IBeamBlock(Settings settings) {
 		super(settings);
 	}
@@ -25,5 +48,22 @@ public class IBeamBlock extends PillarBlock {
 			};
 			default -> state;
 		};
+	}
+
+	// Deals with placing the block properly in accordance to direction.
+	@Override
+	public BlockState getPlacementState(ItemPlacementContext context) {
+		World world = context.getWorld();
+		BlockPos pos = context.getBlockPos();
+		return this.getDefaultState().with(AXIS, context.getPlayerFacing().getAxis()).with(BOLTED, shouldHaveBolts(world, pos, world.getBlockState(pos)));
+	}
+
+	//return this.getDefaultState().with(Properties.AXIS, context.getPlayerFacing()).with(CAPPED, world.getBlockState(pos.up()).getBlock() != this).with(WATERLOGGED, context.getWorld().getFluidState(context.getBlockPos()).getFluid() == Fluids.WATER);
+
+
+	@Override
+	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+		builder.add(AXIS);
+		builder.add(BOLTED);
 	}
 }
