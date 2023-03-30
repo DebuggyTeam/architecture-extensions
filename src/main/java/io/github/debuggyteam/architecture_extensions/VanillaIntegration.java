@@ -22,12 +22,12 @@ public class VanillaIntegration implements ArchExIntegration {
 		};
 	}, RecipeConfigurator.simple("iron_h_beam"), MapColor.IRON_GRAY));
 
-	private static final BlockGroup TUBE_STEEL = BlockGroup.of(new BlockGroup.GroupedBlock("", Blocks.ANVIL, (type, textureId) -> {
+	private static final BlockGroup TUBE_STEEL = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.ANVIL, (type, textureId) -> {
 		return switch (textureId) {
 			case "texture_top" -> "architecture_extensions:block/tube_steel_top";
 			default -> "architecture_extensions:block/tube_steel";
 		};
-	}, RecipeConfigurator.simple("steel_tube_steel"), MapColor.IRON_GRAY));
+	}, RecipeConfigurator.simple("iron_tube_steel"), MapColor.IRON_GRAY));
 
 	@Override
 	public void integrate(Context ctx) {
