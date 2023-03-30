@@ -11,7 +11,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
-public class TubeMetalBlock extends PillarBlock {
+public class TubeSteelBlock extends PillarBlock {
 	protected static final VoxelShape FIRST_SIDE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 4.0);
 	protected static final VoxelShape SECOND_SIDE = Block.createCuboidShape(0.0, 0.0, 4.0, 4.0, 16.0, 12.0);
 	protected static final VoxelShape THIRD_SIDE = Block.createCuboidShape(12.0, 0.0, 4.0, 16.0, 16.0, 12.0);
@@ -20,7 +20,7 @@ public class TubeMetalBlock extends PillarBlock {
 	protected static final VoxelShape TUBE_UPWARDS = VoxelShapes.union(FIRST_SIDE, SECOND_SIDE, THIRD_SIDE, FOURTH_SIDE);
 
 
-	public TubeMetalBlock(Settings settings) {
+	public TubeSteelBlock(Settings settings) {
 		super(settings);
 	}
 

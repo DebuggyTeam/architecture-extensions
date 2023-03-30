@@ -14,8 +14,6 @@ public class VanillaIntegration implements ArchExIntegration {
 	private static final BlockGroup BAMBOO_ROD = BlockGroup.of(new BlockGroup.GroupedBlock("bamboo", Blocks.BAMBOO, (type, textureId) -> "minecraft:block/bamboo_stalk", RecipeConfigurator.simple("bamboo_rod"), MapColor.DARK_GREEN));
 	private static final BlockGroup COPPER_ROD = BlockGroup.of(new BlockGroup.GroupedBlock("copper", Blocks.LIGHTNING_ROD, (type, textureId) -> "architecture_extensions:block/copper_rod", RecipeConfigurator.simple("copper_rod"), MapColor.ORANGE));
 	private static final BlockGroup IRON_ROD = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.IRON_BARS, (type, textureId) -> "minecraft:block/iron_bars", RecipeConfigurator.simple("iron_rod"), MapColor.CLEAR));
-	private static final BlockGroup TUBE_STEEL = BlockGroup.of(new BlockGroup.GroupedBlock("tube_steel", Blocks.IRON_BLOCK, (type, textureId) -> "minecraft:block/iron_block", RecipeConfigurator.simple("tube_steel"), MapColor.GRAY));
-	private static final BlockGroup IRON_I_BEAM = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.IRON_BLOCK, (type, textureId) -> "minecraft:block/iron_block", RecipeConfigurator.simple("i_beam"), MapColor.GRAY));
 
 	private static final BlockGroup IRON_H_BEAM = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.ANVIL, (type, textureId) -> {
 		return switch (textureId) {
@@ -23,6 +21,13 @@ public class VanillaIntegration implements ArchExIntegration {
 			default -> "architecture_extensions:block/h_beam";
 		};
 	}, RecipeConfigurator.simple("iron_h_beam"), MapColor.IRON_GRAY));
+
+	private static final BlockGroup TUBE_STEEL = BlockGroup.of(new BlockGroup.GroupedBlock("", Blocks.ANVIL, (type, textureId) -> {
+		return switch (textureId) {
+			case "texture_top" -> "architecture_extensions:block/tube_steel_top";
+			default -> "architecture_extensions:block/tube_steel";
+		};
+	}, RecipeConfigurator.simple("steel_tube_steel"), MapColor.IRON_GRAY));
 
 	@Override
 	public void integrate(Context ctx) {
@@ -42,8 +47,8 @@ public class VanillaIntegration implements ArchExIntegration {
 							 VanillaBlockGroups.CRYSTAL);
 		ctx.makeArchExBlocks(BlockType.LATTICE, VanillaBlockGroups.WOOD);
 		ctx.makeArchExBlocks(BlockType.FACADE, VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL);
-		ctx.makeArchExBlocks(BlockType.TUBE_METAL, TUBE_STEEL);
-		ctx.makeArchExBlocks(BlockType.I_BEAM, IRON_I_BEAM);
+			ctx.makeArchExBlocks(BlockType.TUBE_STEEL, TUBE_STEEL);
+		ctx.makeArchExBlocks(BlockType.I_BEAM, TUBE_STEEL);
 	}
 
 	@Override

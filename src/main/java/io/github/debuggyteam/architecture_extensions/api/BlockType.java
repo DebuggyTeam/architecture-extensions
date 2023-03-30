@@ -1,20 +1,17 @@
 package io.github.debuggyteam.architecture_extensions.api;
 
 import java.util.Locale;
-import java.util.Set;
 import java.util.function.BiFunction;
-import java.util.function.Consumer;
 
 import io.github.debuggyteam.architecture_extensions.blocks.FacadeBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.IBeamBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.LatticeBlock;
-import io.github.debuggyteam.architecture_extensions.blocks.TubeMetalBlock;
+import io.github.debuggyteam.architecture_extensions.blocks.TubeSteelBlock;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
 import io.github.debuggyteam.architecture_extensions.ArchExIntegrationContextImpl;
 import io.github.debuggyteam.architecture_extensions.ArchitectureExtensions;
-import io.github.debuggyteam.architecture_extensions.ItemGroupUtil;
 import io.github.debuggyteam.architecture_extensions.blocks.ArchBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.BeamBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.WallColumnBlock;
@@ -47,7 +44,7 @@ public enum BlockType {
 	WALL_POST((baseBlock, settings) -> new WallPostBlock(settings), 2.5f, noVariants()),
 	LATTICE((baseBlock, settings) -> new LatticeBlock(settings), 1.5f, noVariants()),
 	FACADE((baseBlock, settings) -> new FacadeBlock(settings), 1.5f, noVariants()),
-	TUBE_METAL((baseBlock, settings) -> new TubeMetalBlock(settings), 8f, noVariants()),
+	TUBE_STEEL((baseBlock, settings) -> new TubeSteelBlock(settings), 8f, noVariants()),
 	I_BEAM((baseBlock, settings) -> new IBeamBlock(settings), 8f, variantsOf("", "bolted"));
 
 	private final BiFunction<Block, QuiltBlockSettings, Block> creator;
