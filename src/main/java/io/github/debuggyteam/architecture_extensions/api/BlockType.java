@@ -48,7 +48,7 @@ public enum BlockType {
 	LATTICE((baseBlock, settings) -> new LatticeBlock(settings), 1.5f, noVariants()),
 	FACADE((baseBlock, settings) -> new FacadeBlock(settings), 1.5f, noVariants()),
 	TUBE_METAL((baseBlock, settings) -> new TubeMetalBlock(settings), 8f, noVariants()),
-	I_BEAM((baseBlock, settings) -> new IBeamBlock(settings), 8f, noVariants());
+	I_BEAM((baseBlock, settings) -> new IBeamBlock(settings), 8f, variantsOf("", "bolted"));
 
 	private final BiFunction<Block, QuiltBlockSettings, Block> creator;
 	private final float strength;

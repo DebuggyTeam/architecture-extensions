@@ -55,7 +55,9 @@ public class IBeamBlock extends PillarBlock {
 	public BlockState getPlacementState(ItemPlacementContext context) {
 		World world = context.getWorld();
 		BlockPos pos = context.getBlockPos();
-		return this.getDefaultState().with(AXIS, context.getPlayerFacing().getAxis()).with(BOLTED, shouldHaveBolts(world, pos, world.getBlockState(pos)));
+
+		BlockState initialState = this.getDefaultState().with(AXIS, context.getPlayerFacing().getAxis());
+		return initialState.with(BOLTED, shouldHaveBolts(world, pos, initialState));
 	}
 
 	//return this.getDefaultState().with(Properties.AXIS, context.getPlayerFacing()).with(CAPPED, world.getBlockState(pos.up()).getBlock() != this).with(WATERLOGGED, context.getWorld().getFluidState(context.getBlockPos()).getFluid() == Fluids.WATER);
