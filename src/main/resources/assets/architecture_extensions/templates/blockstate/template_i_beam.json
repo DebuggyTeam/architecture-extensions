@@ -1,26 +1,14 @@
 {
   "variants": {
-    "axis=x,bolted=false": {
+    "axis=x": {
       "model": "{model}",
       "x": 90,
       "y": 90
     },
-    "axis=x,bolted=true": {
-      "model": "{model}_bolted",
-      "x": 90,
-      "y": 90
-    },
-    "axis=y,bolted=false": {
+    "axis=y": {
       "model": "{model}"
     },
-    "axis=y,bolted=true": {
-      "model": "{model}_bolted"
-    },
-    "axis=z,bolted=false": {
-      "model": "{model}",
-      "x": 90
-    },
-    "axis=z,bolted=true": {
+    "axis=z": {
       "model": "{model}",
       "x": 90
     }
