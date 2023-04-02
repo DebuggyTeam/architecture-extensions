@@ -40,10 +40,10 @@ public final class DataGeneration {
 			return ResourceUtils.getResourceAsString(ArchitectureExtensions.MOD_CONTAINER, ResourceType.CLIENT_RESOURCES,
 				"assets/architecture_extensions/templates/model/block/" + "template_" + type.toString() + variant + ".json");
 		} catch (FileNotFoundException e) {
-			ArchitectureExtensions.LOGGER.error("The model template_transom.json for the " + type.toString() + " block type can not be found");
+			ArchitectureExtensions.LOGGER.error("The model template for the " + type.toString() + " block type can not be found");
 			return null;
 		} catch (Exception e) {
-			ArchitectureExtensions.LOGGER.error("Exception while trying to load the model template_transom.json for the " + type.toString() + " block type : ", e);
+			ArchitectureExtensions.LOGGER.error("Exception while trying to load the model template for the " + type.toString() + " block type : ", e);
 			return null;
 		}
 	}
@@ -53,10 +53,10 @@ public final class DataGeneration {
 			return ResourceUtils.getResourceAsString(ArchitectureExtensions.MOD_CONTAINER, ResourceType.CLIENT_RESOURCES,
 				"assets/architecture_extensions/templates/blockstate/" + "template_" + type.toString() + ".json");
 		} catch (FileNotFoundException e) {
-			ArchitectureExtensions.LOGGER.error("The blockstate template_transom.json for the " + type.toString() + " block type can not be found");
+			ArchitectureExtensions.LOGGER.error("The blockstate template for the " + type.toString() + " block type can not be found");
 			return null;
 		} catch (Exception e) {
-			ArchitectureExtensions.LOGGER.error("Exception while trying to load the blockstate template_transom.json for the " + type.toString() + " block type : ", e);
+			ArchitectureExtensions.LOGGER.error("Exception while trying to load the blockstate template for the " + type.toString() + " block type : ", e);
 			return null;
 		}
 	}
@@ -66,10 +66,10 @@ public final class DataGeneration {
 			return ResourceUtils.getResourceAsString(ArchitectureExtensions.MOD_CONTAINER, ResourceType.SERVER_DATA,
 				"data/architecture_extensions/templates/recipe/" + id + ".json");
 		} catch (FileNotFoundException e) {
-			ArchitectureExtensions.LOGGER.error("The recipe template_transom.json for " + id + " can not be found");
+			ArchitectureExtensions.LOGGER.error("The recipe template for " + id + " can not be found");
 			return null;
 		} catch (Exception e) {
-			ArchitectureExtensions.LOGGER.error("Exception while trying to load the recipe template_transom.json for " + id + " : ", e);
+			ArchitectureExtensions.LOGGER.error("Exception while trying to load the recipe template for " + id + " : ", e);
 			return null;
 		}
 	}
