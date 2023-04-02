@@ -6,6 +6,7 @@ import java.util.function.BiFunction;
 import io.github.debuggyteam.architecture_extensions.blocks.FacadeBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.IBeamBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.LatticeBlock;
+import io.github.debuggyteam.architecture_extensions.blocks.TransomBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.TubeSteelBlock;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
@@ -45,7 +46,8 @@ public enum BlockType {
 	LATTICE((baseBlock, settings) -> new LatticeBlock(settings), 1.5f, noVariants()),
 	FACADE((baseBlock, settings) -> new FacadeBlock(settings), 1.5f, noVariants()),
 	TUBE_STEEL((baseBlock, settings) -> new TubeSteelBlock(settings), 8f, noVariants()),
-	I_BEAM((baseBlock, settings) -> new IBeamBlock(settings), 8f, variantsOf("", "bolted"));
+	I_BEAM((baseBlock, settings) -> new IBeamBlock(settings), 8f, noVariants()),
+	TRANSOM((baseBlock, settings) -> new TransomBlock(settings), 1.5f, noVariants());
 
 	private final BiFunction<Block, QuiltBlockSettings, Block> creator;
 	private final float strength;

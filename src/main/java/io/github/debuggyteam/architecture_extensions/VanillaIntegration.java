@@ -49,6 +49,7 @@ public class VanillaIntegration implements ArchExIntegration {
 		ctx.makeArchExBlocks(BlockType.FACADE, VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL);
 			ctx.makeArchExBlocks(BlockType.TUBE_STEEL, TUBE_STEEL);
 		ctx.makeArchExBlocks(BlockType.I_BEAM, TUBE_STEEL);
+		ctx.makeArchExBlocks(BlockType.TRANSOM, VanillaBlockGroups.WOOD);
 	}
 
 	@Override

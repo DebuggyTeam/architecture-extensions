@@ -1,8 +1,11 @@
 package io.github.debuggyteam.architecture_extensions;
 
+import io.github.debuggyteam.architecture_extensions.blocks.TransomBlock;
+import net.minecraft.client.render.RenderLayer;
 import org.jetbrains.annotations.NotNull;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.client.ClientModInitializer;
+import org.quiltmc.qsl.block.extensions.api.client.BlockRenderLayerMap;
 import org.quiltmc.qsl.resource.loader.api.ResourceLoader;
 import org.quiltmc.qsl.resource.loader.api.ResourcePackRegistrationContext;
 
@@ -13,6 +16,9 @@ public class ArchitectureExtensionsClient implements ClientModInitializer, Resou
 	@Override
 	public void onInitializeClient(ModContainer mod) {
 		ResourceLoader.get(ResourceType.CLIENT_RESOURCES).getRegisterDefaultResourcePackEvent().register(this);
+
+		// This will be a pain in the ass
+		//BlockRenderLayerMap.put(RenderLayer.getCutout(), TransomBlock);
 	}
 
 	@Override
