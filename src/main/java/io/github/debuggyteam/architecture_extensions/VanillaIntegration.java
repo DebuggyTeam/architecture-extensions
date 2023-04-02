@@ -14,13 +14,7 @@ public class VanillaIntegration implements ArchExIntegration {
 	private static final BlockGroup BAMBOO_ROD = BlockGroup.of(new BlockGroup.GroupedBlock("bamboo", Blocks.BAMBOO, (type, textureId) -> "minecraft:block/bamboo_stalk", RecipeConfigurator.simple("bamboo_rod"), MapColor.DARK_GREEN));
 	private static final BlockGroup COPPER_ROD = BlockGroup.of(new BlockGroup.GroupedBlock("copper", Blocks.LIGHTNING_ROD, (type, textureId) -> "architecture_extensions:block/copper_rod", RecipeConfigurator.simple("copper_rod"), MapColor.ORANGE));
 	private static final BlockGroup IRON_ROD = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.IRON_BARS, (type, textureId) -> "minecraft:block/iron_bars", RecipeConfigurator.simple("iron_rod"), MapColor.CLEAR));
-
-	private static final BlockGroup IRON_H_BEAM = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.ANVIL, (type, textureId) -> {
-		return switch (textureId) {
-			case "texture_side" -> "architecture_extensions:block/h_beam_side";
-			default -> "architecture_extensions:block/h_beam";
-		};
-	}, RecipeConfigurator.simple("iron_h_beam"), MapColor.IRON_GRAY));
+	private static final BlockGroup IRON_H_BEAM = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.ANVIL, (type, textureId) -> "architecture_extensions:block/tube_steel", RecipeConfigurator.simple("iron_h_beam"), MapColor.IRON_GRAY));
 
 	private static final BlockGroup TUBE_STEEL = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.ANVIL, (type, textureId) -> {
 		return switch (textureId) {
