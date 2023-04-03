@@ -38,7 +38,9 @@ public final class VanillaBlockGroups {
 	);
 
 	public static final BlockGroup AQUATIC_STONE = BlockGroup.of(
-			new BlockGroup.GroupedBlock("prismarine", Blocks.PRISMARINE, (type, textureId) -> "minecraft:block/prismarine", RecipeConfigurator.STONECUTTER, MapColor.CYAN)
+			new BlockGroup.GroupedBlock("prismarine", Blocks.PRISMARINE, (type, textureId) -> "minecraft:block/prismarine", RecipeConfigurator.STONECUTTER, MapColor.CYAN),
+			new BlockGroup.GroupedBlock("sea_lantern", Blocks.SEA_LANTERN, (type, textureId) -> "minecraft:block/sea_lantern", RecipeConfigurator.STONECUTTER, MapColor.CYAN)
+
 	);
 
 	public static final BlockGroup PROCESSED_STONE = BlockGroup.of(
