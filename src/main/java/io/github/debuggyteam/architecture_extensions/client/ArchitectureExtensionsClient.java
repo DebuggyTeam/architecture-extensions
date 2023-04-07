@@ -9,6 +9,9 @@ import org.quiltmc.qsl.base.api.entrypoint.client.ClientModInitializer;
 import org.quiltmc.qsl.resource.loader.api.ResourceLoader;
 import org.quiltmc.qsl.resource.loader.api.ResourcePackRegistrationContext;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ArchitectureExtensionsClient implements ClientModInitializer, ResourcePackRegistrationContext.Callback {
 	@Override
 	public void onInitializeClient(ModContainer mod) {

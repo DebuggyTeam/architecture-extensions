@@ -8,6 +8,7 @@ import io.github.debuggyteam.architecture_extensions.blocks.IBeamBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.LatticeBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.TransomBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.TubeSteelBlock;
+import io.github.debuggyteam.architecture_extensions.util.SafeRenderLayer;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
@@ -31,29 +32,29 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public enum BlockType {
-	ARCH((baseBlock, settings) -> new ArchBlock(baseBlock.getDefaultState(), settings), 2.5f, variantsOf("", "inner", "outer")),
-	BEAM((baseBlock, settings) -> new BeamBlock(settings), 1.5f, noVariants()),
-	H_BEAM((baseBlock, settings) -> new BeamBlock(settings), 8f, noVariants()),
-	WALL_COLUMN((baseBlock, settings) -> new WallColumnBlock(settings), 2.5f, variantsOf("", "cap")),
-	FENCE_POST((baseBlock, settings) -> new FencePostBlock(settings), 1.5f, noVariants()),
-	JOIST((baseBlock, settings) -> new JoistBlock(settings), 1.5f, noVariants()),
-	CROWN_MOLDING((baseBlock, settings) -> new CrownMoldingBlock(baseBlock.getDefaultState(), settings), 1.5f, variantsOf("", "inner", "outer")),
-	POST_CAP((baseBlock, settings) -> new PostCapBlock(settings), 1.5f, noVariants()),
-	POST_LANTERN((baseBlock, settings) -> new PostLanternBlock(settings), 1.5f, noVariants()),
-	ROD((baseBlock, settings) -> new ArchExRodBlock(settings), 1f, noVariants()),
-	ROOF((baseBlock, settings) -> new RoofBlock(baseBlock.getDefaultState(), settings), 2.5f, variantsOf("", "inner", "outer")),
-	WALL_POST((baseBlock, settings) -> new WallPostBlock(settings), 2.5f, noVariants()),
-	LATTICE((baseBlock, settings) -> new LatticeBlock(settings), 1.5f, noVariants()),
-	FACADE((baseBlock, settings) -> new FacadeBlock(settings), 1.5f, noVariants()),
-	TUBE_STEEL((baseBlock, settings) -> new TubeSteelBlock(settings), 8f, noVariants()),
-	I_BEAM((baseBlock, settings) -> new IBeamBlock(settings), 8f, noVariants()),
-	TRANSOM((baseBlock, settings) -> new TransomBlock(settings), 1.5f, noVariants());
+	ARCH((baseBlock, settings) -> new ArchBlock(baseBlock.getDefaultState(), settings), 2.5f, variantsOf("", "inner", "outer"), SafeRenderLayer.SOLID),
+	BEAM((baseBlock, settings) -> new BeamBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
+	H_BEAM((baseBlock, settings) -> new BeamBlock(settings), 8f, noVariants(), SafeRenderLayer.SOLID),
+	WALL_COLUMN((baseBlock, settings) -> new WallColumnBlock(settings), 2.5f, variantsOf("", "cap"), SafeRenderLayer.SOLID),
+	FENCE_POST((baseBlock, settings) -> new FencePostBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
+	JOIST((baseBlock, settings) -> new JoistBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
+	CROWN_MOLDING((baseBlock, settings) -> new CrownMoldingBlock(baseBlock.getDefaultState(), settings), 1.5f, variantsOf("", "inner", "outer"), SafeRenderLayer.SOLID),
+	POST_CAP((baseBlock, settings) -> new PostCapBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
+	POST_LANTERN((baseBlock, settings) -> new PostLanternBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
+	ROD((baseBlock, settings) -> new ArchExRodBlock(settings), 1f, noVariants(), SafeRenderLayer.SOLID),
+	ROOF((baseBlock, settings) -> new RoofBlock(baseBlock.getDefaultState(), settings), 2.5f, variantsOf("", "inner", "outer"), SafeRenderLayer.SOLID),
+	WALL_POST((baseBlock, settings) -> new WallPostBlock(settings), 2.5f, noVariants(), SafeRenderLayer.SOLID),
+	LATTICE((baseBlock, settings) -> new LatticeBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
+	FACADE((baseBlock, settings) -> new FacadeBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
+	TUBE_STEEL((baseBlock, settings) -> new TubeSteelBlock(settings), 8f, noVariants(), SafeRenderLayer.SOLID),
+	I_BEAM((baseBlock, settings) -> new IBeamBlock(settings), 8f, noVariants(), SafeRenderLayer.SOLID),
+	TRANSOM((baseBlock, settings) -> new TransomBlock(settings), 1.5f, noVariants(), SafeRenderLayer.TRANSLUCENT);
 
 	private final BiFunction<Block, QuiltBlockSettings, Block> creator;
 	private final float strength;
 	private final String[] variants;
 
-	BlockType(BiFunction<Block, QuiltBlockSettings, Block> creator, float strength, String[] variants) {
+	BlockType(BiFunction<Block, QuiltBlockSettings, Block> creator, float strength, String[] variants, SafeRenderLayer renderLayer) {
 		this.creator = creator;
 		this.strength = strength;
 		this.variants = variants;
