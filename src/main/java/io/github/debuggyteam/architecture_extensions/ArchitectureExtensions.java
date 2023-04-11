@@ -2,13 +2,17 @@ package io.github.debuggyteam.architecture_extensions;
 
 import io.github.debuggyteam.architecture_extensions.api.ArchExIntegration;
 import io.github.debuggyteam.architecture_extensions.resource.DataGeneration;
+import io.github.debuggyteam.architecture_extensions.staticdata.BlockGroupSchema;
+import io.github.debuggyteam.architecture_extensions.staticdata.StaticData;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 
 import org.jetbrains.annotations.NotNull;
 import org.quiltmc.loader.api.ModContainer;
@@ -20,6 +24,9 @@ import org.quiltmc.qsl.resource.loader.api.ResourceLoader;
 import org.quiltmc.qsl.resource.loader.api.ResourcePackRegistrationContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class ArchitectureExtensions implements ModInitializer, ResourcePackRegistrationContext.Callback {
 	public static final Logger LOGGER = LoggerFactory.getLogger("Architecture Extensions");
@@ -58,6 +65,19 @@ public class ArchitectureExtensions implements ModInitializer, ResourcePackRegis
 				entrypoint.getEntrypoint().integrate(new ArchExIntegrationContextImpl(entrypoint.getEntrypoint()));
 			} catch (Exception e) {
 				LOGGER.error("Mod '" + entrypoint.getProvider().metadata().id() + "' threw an exception when trying to integrate with Architecture Extensions");
+			}
+		}
+		
+		List<StaticData.Item> dataRegistrations = StaticData.getData(new Identifier("architecture_extensions", ""));
+		Gson gson = new GsonBuilder().create();
+		for(StaticData.Item item : dataRegistrations) {
+			try {
+				BlockGroupSchema data = gson.fromJson(item.getAsString(), BlockGroupSchema.class);
+				//System.out.println(item.modid()+": "+data);
+				
+				
+			} catch (IOException ex) {
+				throw new RuntimeException("There was a problem getting staticdata for mod container '"+item.modid()+"' with resource id '"+item.id()+"'.", ex);
 			}
 		}
 

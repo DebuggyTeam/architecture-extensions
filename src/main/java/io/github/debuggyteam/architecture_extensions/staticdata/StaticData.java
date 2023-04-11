@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
@@ -49,43 +48,113 @@ public class StaticData {
 			
 			String modid = container.metadata().id();
 			
-			//Acquire the requested folder or resource
-			Path rootPath = container.rootPath();
-			Path staticDataFolder = rootPath.resolve("staticdata");
-			if (!Files.exists(staticDataFolder, LinkOption.NOFOLLOW_LINKS)) continue;
-			Path namespacedFolder = staticDataFolder.resolve(basePath.getNamespace());
-			if (!Files.exists(namespacedFolder, LinkOption.NOFOLLOW_LINKS)) continue;
-			Path pathFolder = (basePath.getPath().isBlank()) ? namespacedFolder : namespacedFolder.resolve(basePath.getPath());
-			if (!Files.exists(pathFolder, LinkOption.NOFOLLOW_LINKS)) continue;
 			
-			//Inspect the valid Path we got
-			if (Files.isRegularFile(pathFolder, LinkOption.NOFOLLOW_LINKS)) {
-				//Found single file. Return it
-				
-				return List.of(
-						new Item(modid, basePath, pathFolder)
-						);
-			} else {
-				//Found directory. Return files in the directory.
-				
-				try {
-					Files.list(pathFolder).forEach(sub->{
-						if (!Files.isRegularFile(sub)) return;
-						
-						String pathPart = namespacedFolder.relativize(sub).toString();
-						if (pathPart.startsWith("/")) pathPart = pathPart.substring(1);
-						Item item = new Item(modid, new Identifier(basePath.getNamespace(), pathPart), sub);
-						result.add(item);
-					});
-				} catch (IOException e) {
-					e.printStackTrace();
+			addStaticDataItems(
+					container.metadata().id(),
+					basePath,
+					container.rootPath().resolve("staticdata"),
+					result
+					);
+			
+			/*
+			//namespacedFolder is the location for staticdata in this mod container
+			Path namespacedFolder = container.rootPath().resolve("staticdata").resolve(basePath.getNamespace());
+			
+			//Acquire the requested folder or resource
+			Path pathFolder = namespacedFolder.resolve(basePath.getPath());
+			
+			if (Files.exists(pathFolder)) {
+				//Inspect the valid Path we got
+				if (Files.isRegularFile(pathFolder)) {
+					//Found single file. Add it
+					
+					result.add(
+							new Item(modid, basePath, pathFolder)
+							);
+				} else {
+					//Found directory. Return files in the directory.
+					
+					try {
+						Files.list(pathFolder).forEach(sub->{
+							if (!Files.isRegularFile(sub)) return;
+							
+							
+							String pathPart = namespacedFolder.relativize(sub).toString();
+							if (pathPart.startsWith("/")) pathPart = pathPart.substring(1);
+							Item item = new Item(modid, new Identifier(basePath.getNamespace(), pathPart), sub);
+							result.add(item);
+						});
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
 				}
-			}
+			}*/
 		}
 		
-		//TODO: Additionally query the 'staticdata' folder in the minecraft server dir, or the client run dir.
+		//Path pathFolder = QuiltLoader.getGameDir().resolve("staticdata");
+		
+		addStaticDataItems(
+				"file",
+				basePath,
+				QuiltLoader.getGameDir().resolve("staticdata"),
+				result
+				);
+		
+		
+		//		.resolve(basePath.getNamespace())
+		//		.resolve(basePath.getPath());
+		/*
+		if (Files.exists(pathFolder)) {
+			if (Files.isRegularFile(pathFolder)) {
+				//Found single file. Add it
+				
+				result.add(
+						new Item("file", basePath, pathFolder)
+						);
+			} else {
+				
+			}
+			
+		}
+		*/
 		
 		return List.copyOf(result);
+	}
+	
+	/**
+	 * Searches this Path, which is the "staticdata" folder of a mod container, client, or server, and appends any
+	 * static data matching the Identifier
+	 * @param modid    The name of the container we're searching - what modid to report for found items.
+	 * @param resId    The requested resource Identifier
+	 * @param basePath A base path - usually `modContainer.rootPath().resolve("staticdata")` but can be a real folder too.
+	 * @param results  A List of StaticData.Items that will be populated with results. Any prior results will not be removed.
+	 */
+	private static void addStaticDataItems(String modid, Identifier resId, Path basePath, List<Item> results) {
+		//Any data found will have Identifier paths relative to this path
+		Path relativePath = basePath.resolve(resId.getNamespace());
+		//This is the Path actually evaluated / enumerated for data
+		Path requestedPath = relativePath.resolve(resId.getPath());
+		
+		if (!Files.exists(requestedPath)) return;
+		
+		if (Files.isRegularFile(requestedPath)) {
+			//resId pointed to an exact file
+			results.add(new Item(modid, resId, requestedPath));
+		} else {
+			//resId pointed to a directory
+			try {
+				Files.list(requestedPath).forEach(file->{
+					if (!Files.isRegularFile(file)) return; //Don't list folders
+					
+					String identifiedResourcePath = relativePath.relativize(file).toString();
+					if (identifiedResourcePath.startsWith("/")) identifiedResourcePath = identifiedResourcePath.substring(1);
+					Item item = new Item(modid, new Identifier(resId.getNamespace(), identifiedResourcePath), file);
+					results.add(item);
+				});
+			} catch (IOException ex) {
+				new IOException("There was a problem searching container '"+modid+"' for static data with resource ID '"+resId+"'.", ex).printStackTrace();
+			}
+		}
 	}
 	
 	/**
