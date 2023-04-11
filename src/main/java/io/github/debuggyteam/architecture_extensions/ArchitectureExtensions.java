@@ -73,11 +73,11 @@ public class ArchitectureExtensions implements ModInitializer, ResourcePackRegis
 		for(StaticData.Item item : dataRegistrations) {
 			try {
 				BlockGroupSchema data = gson.fromJson(item.getAsString(), BlockGroupSchema.class);
-				//System.out.println(item.modid()+": "+data);
-				
+				System.out.println(item.modId()+": "+data);
+				// TODO: resolve through deferred registration system
 				
 			} catch (IOException ex) {
-				throw new RuntimeException("There was a problem getting staticdata for mod container '"+item.modid()+"' with resource id '"+item.id()+"'.", ex);
+				throw new RuntimeException("There was a problem getting staticdata for mod container '"+item.modId()+"' with resource id '"+item.resourceId()+"'.", ex);
 			}
 		}
 

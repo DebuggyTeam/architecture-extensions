@@ -1,16 +1,13 @@
 package io.github.debuggyteam.architecture_extensions.api;
 
 import java.util.Locale;
-import java.util.Set;
 import java.util.function.BiFunction;
-import java.util.function.Consumer;
 
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
 import io.github.debuggyteam.architecture_extensions.ArchExIntegrationContextImpl;
 import io.github.debuggyteam.architecture_extensions.ArchitectureExtensions;
-import io.github.debuggyteam.architecture_extensions.ItemGroupUtil;
 import io.github.debuggyteam.architecture_extensions.blocks.ArchBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.BeamBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.WallColumnBlock;

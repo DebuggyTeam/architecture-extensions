@@ -40,83 +40,40 @@ import net.minecraft.util.Identifier;
 public class StaticData {
 	private static final Set<String> FORBIDDEN_CONTAINERS = Set.of( "java", "minecraft" );
 	
-	public static List<Item> getData(Identifier basePath) {
+	/**
+	 * Acquires static data items matching the given Identifier. The Identifier can be either a specific file name, such
+	 * as "examplemod:config.json", or it could be a directory path such as "examplemod:blocks". Identifiers with an
+	 * empty path (such as {@code new Identifier("examplemod", "")} ) will retrieve any data sitting at the root of that
+	 * namespace.
+	 * 
+	 * <p>Note that the namespace of the resourceId typically identifies the mod that will be *querying* the
+	 * data, not the mod that is supplying it. The mod that supplied the information is always identified in the "modId"
+	 * field of the returned Items, with the special id "file" identifying items supplied by placing files in a
+	 * "staticdata" folder of the client or server, like "minecraft/staticdata/examplemod/foo.json".
+	 * @param resourceId The Identifier of the resource being sought. The namespace of this Id is typically your own,
+	 *                   the mod id of the mod requesting data.
+	 * @return A List of data items discovered. File items will always occur after mod-provided items in the list.
+	 */
+	public static List<Item> getData(Identifier resourceId) {
 		List<Item> result = new ArrayList<>();
 		
 		for(ModContainer container : QuiltLoader.getAllMods()) {
 			if (FORBIDDEN_CONTAINERS.contains(container.metadata().id())) continue;
 			
-			String modid = container.metadata().id();
-			
-			
 			addStaticDataItems(
 					container.metadata().id(),
-					basePath,
+					resourceId,
 					container.rootPath().resolve("staticdata"),
 					result
 					);
-			
-			/*
-			//namespacedFolder is the location for staticdata in this mod container
-			Path namespacedFolder = container.rootPath().resolve("staticdata").resolve(basePath.getNamespace());
-			
-			//Acquire the requested folder or resource
-			Path pathFolder = namespacedFolder.resolve(basePath.getPath());
-			
-			if (Files.exists(pathFolder)) {
-				//Inspect the valid Path we got
-				if (Files.isRegularFile(pathFolder)) {
-					//Found single file. Add it
-					
-					result.add(
-							new Item(modid, basePath, pathFolder)
-							);
-				} else {
-					//Found directory. Return files in the directory.
-					
-					try {
-						Files.list(pathFolder).forEach(sub->{
-							if (!Files.isRegularFile(sub)) return;
-							
-							
-							String pathPart = namespacedFolder.relativize(sub).toString();
-							if (pathPart.startsWith("/")) pathPart = pathPart.substring(1);
-							Item item = new Item(modid, new Identifier(basePath.getNamespace(), pathPart), sub);
-							result.add(item);
-						});
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-				}
-			}*/
 		}
-		
-		//Path pathFolder = QuiltLoader.getGameDir().resolve("staticdata");
 		
 		addStaticDataItems(
 				"file",
-				basePath,
+				resourceId,
 				QuiltLoader.getGameDir().resolve("staticdata"),
 				result
 				);
-		
-		
-		//		.resolve(basePath.getNamespace())
-		//		.resolve(basePath.getPath());
-		/*
-		if (Files.exists(pathFolder)) {
-			if (Files.isRegularFile(pathFolder)) {
-				//Found single file. Add it
-				
-				result.add(
-						new Item("file", basePath, pathFolder)
-						);
-			} else {
-				
-			}
-			
-		}
-		*/
 		
 		return List.copyOf(result);
 	}
@@ -158,16 +115,16 @@ public class StaticData {
 	}
 	
 	/**
-	 * Represents a piece of static data that can be loaded in.
+	 * Represents an identified piece of static data, and a Path that can be used to load the data in.
 	 */
-	public static record Item(String modid, Identifier id, Path p) {
+	public static record Item(String modId, Identifier resourceId, Path dataPath) {
 		/**
 		 * Gets this static data item as a raw InputStream
 		 * @return an InputStream at the start of this static data
 		 * @throws IOException if there was an error opening the stream
 		 */
 		public InputStream getAsStream() throws IOException {
-			return Files.newInputStream(p, StandardOpenOption.READ);
+			return Files.newInputStream(dataPath, StandardOpenOption.READ);
 		}
 		
 		/**
@@ -176,7 +133,7 @@ public class StaticData {
 		 * @throws IOException if there was an error reading in the data
 		 */
 		public byte[] getAsBytes() throws IOException {
-			return Files.readAllBytes(p);
+			return Files.readAllBytes(dataPath);
 		}
 		
 		/**
@@ -185,7 +142,7 @@ public class StaticData {
 		 * @throws IOException if there was an error reading in the data
 		 */
 		public List<String> getAsLines() throws IOException {
-			return Files.readAllLines(p, StandardCharsets.UTF_8);
+			return Files.readAllLines(dataPath, StandardCharsets.UTF_8);
 		}
 		
 		/**
@@ -194,12 +151,12 @@ public class StaticData {
 		 * @throws IOException if there was an error reading in the data
 		 */
 		public String getAsString() throws IOException {
-			return Files.readString(p, StandardCharsets.UTF_8);
+			return Files.readString(dataPath, StandardCharsets.UTF_8);
 		}
 		
 		@Override
 		public String toString() {
-			return modid+":"+id.getNamespace()+":"+id.getPath()+" > "+p.toString();
+			return modId+":"+resourceId.getNamespace()+":"+resourceId.getPath()+" > "+dataPath.toString();
 		}
 	};
 }
