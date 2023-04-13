@@ -58,14 +58,19 @@ public enum BlockType {
 		return name().toLowerCase(Locale.ROOT);
 	}
 
-	public TypedGroupedBlock register(BlockGroup group, BlockGroup.GroupedBlock groupedBlock, ArchExIntegrationContextImpl.BlockCreationCallback onBlockCreated) {
-		var id = ArchitectureExtensions.id(groupedBlock.id().getPath() + "_" + this);
+	public TypedGroupedBlock register(BlockGroup group, BlockGroup.GroupedBlock groupedBlock, ArchExIntegrationContextImpl.BlockCreationCallback callback) {
+		return register(group, groupedBlock, callback, ArchitectureExtensions.MOD_CONTAINER.metadata().id()); // If no id is specified, use our own id
+	}
+	
+	public TypedGroupedBlock register(BlockGroup group, BlockGroup.GroupedBlock groupedBlock, ArchExIntegrationContextImpl.BlockCreationCallback callback, String modid) {
+		if (modid == "file") modid = ArchitectureExtensions.MOD_CONTAINER.metadata().id(); // If it's a staticdata resource, use our own id
+		Identifier id = new Identifier(modid, groupedBlock.id().getPath() + "_" + this);
 		var baseBlock = groupedBlock.baseBlock().get();
 		var block = Registry.register(Registries.BLOCK, id, creator.apply(baseBlock, QuiltBlockSettings.copyOf(baseBlock).mapColorProvider(state -> groupedBlock.mapColor()).strength(strength)));
 
 		Registry.register(Registries.ITEM, id, new BlockItem(block, new QuiltItemSettings()));
 		
-		onBlockCreated.onBlockCreated(group, this, baseBlock, block);
+		if (callback != null) callback.onBlockCreated(group, this, baseBlock, block);
 
 		return new TypedGroupedBlock(this, groupedBlock, id);
 	}

@@ -1,6 +1,8 @@
 package io.github.debuggyteam.architecture_extensions;
 
 import io.github.debuggyteam.architecture_extensions.api.ArchExIntegration;
+import io.github.debuggyteam.architecture_extensions.api.BlockGroup;
+import io.github.debuggyteam.architecture_extensions.api.BlockType;
 import io.github.debuggyteam.architecture_extensions.resource.DataGeneration;
 import io.github.debuggyteam.architecture_extensions.staticdata.BlockGroupSchema;
 import io.github.debuggyteam.architecture_extensions.staticdata.StaticData;
@@ -13,6 +15,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Set;
 
 import org.jetbrains.annotations.NotNull;
 import org.quiltmc.loader.api.ModContainer;
@@ -58,29 +61,39 @@ public class ArchitectureExtensions implements ModInitializer, ResourcePackRegis
 
 		PeculiarBlocks.register();
 
-		VanillaIntegration.INSTANCE.integrate(new ArchExIntegrationContextImpl(VanillaIntegration.INSTANCE));
-
+		VanillaIntegration.INSTANCE.integrate(new ArchExIntegrationContextImpl(VanillaIntegration.INSTANCE, mod.metadata().id()));
+		
+		//Find and execute entrypoint integrations
 		for (EntrypointContainer<ArchExIntegration> entrypoint : QuiltLoader.getEntrypointContainers(ArchExIntegration.ENTRYPOINT_KEY, ArchExIntegration.class)) {
 			try {
-				entrypoint.getEntrypoint().integrate(new ArchExIntegrationContextImpl(entrypoint.getEntrypoint()));
+				entrypoint.getEntrypoint().integrate(new ArchExIntegrationContextImpl(entrypoint.getEntrypoint(), entrypoint.getProvider().metadata().id()));
 			} catch (Exception e) {
 				LOGGER.error("Mod '" + entrypoint.getProvider().metadata().id() + "' threw an exception when trying to integrate with Architecture Extensions");
 			}
 		}
 		
+		//Find and register staticdata blocks
 		List<StaticData.Item> dataRegistrations = StaticData.getData(new Identifier("architecture_extensions", ""));
 		Gson gson = new GsonBuilder().create();
 		for(StaticData.Item item : dataRegistrations) {
 			try {
 				BlockGroupSchema data = gson.fromJson(item.getAsString(), BlockGroupSchema.class);
-				System.out.println(item.modId()+": "+data);
-				// TODO: resolve through deferred registration system
+				BlockGroup group = data.createBlockGroup();
+				Set<BlockType> blockTypes = data.getBlockTypes();
+				for(BlockGroup.GroupedBlock groupedBlock : group) {
+					DeferredRegistration.register(item.modId(), group, groupedBlock, blockTypes, (g, bt, bb, db) -> {
+						ItemGroupUtil.pull(ArchitectureExtensions.ITEM_GROUP, bt, bb, db.asItem());
+					});
+				}
 				
 			} catch (IOException ex) {
 				throw new RuntimeException("There was a problem getting staticdata for mod container '"+item.modId()+"' with resource id '"+item.resourceId()+"'.", ex);
 			}
 		}
-
+		
+		// Start resolving deferred blocks when their base-blocks appear
+		DeferredRegistration.init();
+		
 		ItemGroupUtil.push();
 
 		ResourceLoader.get(ResourceType.SERVER_DATA).getRegisterDefaultResourcePackEvent().register(this);

@@ -1,9 +1,11 @@
 package io.github.debuggyteam.architecture_extensions;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.jetbrains.annotations.Nullable;
 import org.quiltmc.qsl.registry.api.event.RegistryEvents;
 
 import com.google.common.collect.Multimap;
@@ -31,8 +33,12 @@ public class DeferredRegistration {
 			Iterator<Entry> i = safeEntries.iterator();
 			while(i.hasNext()) {
 				Entry entry = i.next();
-				if (i.next().register()) i.remove();
-				System.out.println("Deferred generation: "+entry.modId()+" requested "+entry.groupedBlock().id()+"_"+entry.blockTypes+", which is now complete.");
+				if (entry.register()) {
+					i.remove();
+					//ArchitectureExtensions.LOGGER.info("Deferred generation: "+entry.modId()+" requested "+entry.getIds()+", which is now complete.");
+				} else {
+					ArchitectureExtensions.LOGGER.warn("An unexpected problem ocurred generating "+entry.getIds()+" - this request is still deferred.");
+				}
 			}
 		});
 	}
@@ -44,14 +50,14 @@ public class DeferredRegistration {
 	 * @param groupedBlock
 	 * @param blockTypes
 	 */
-	public static void register(String modId, BlockGroup group, BlockGroup.GroupedBlock groupedBlock, Collection<BlockType> blockTypes) {
-		Entry deferral = new Entry(modId, group, groupedBlock, Set.copyOf(blockTypes));
+	public static void register(String modId, BlockGroup group, BlockGroup.GroupedBlock groupedBlock, Collection<BlockType> blockTypes, @Nullable ArchExIntegrationContextImpl.BlockCreationCallback callback) {
+		Entry deferral = new Entry(modId, group, groupedBlock, Set.copyOf(blockTypes), callback);
 		
 		if (!deferral.register()) {
-			ArchitectureExtensions.LOGGER.info("Deferred generation: "+deferral.modId()+" requested "+deferral.groupedBlock().id()+"_"+deferral.blockTypes()+" and registration was deferred.");
+			//ArchitectureExtensions.LOGGER.info("Deferred generation: "+deferral.modId()+" requested "+deferral.getIds()+" and registration was deferred.");
 			deferrals.put(groupedBlock.id(), deferral);
 		} else {
-			ArchitectureExtensions.LOGGER.info("Deferred generation: "+deferral.modId()+" requested "+deferral.groupedBlock().id()+"_"+deferral.blockTypes()+" and registration was completed immediately.");
+			//ArchitectureExtensions.LOGGER.info("Deferred generation: "+deferral.modId()+" requested "+deferral.getIds()+" and registration was completed immediately.");
 		}
 	}
 	
@@ -66,17 +72,29 @@ public class DeferredRegistration {
 		}
 	}
 	
-	private static record Entry(String modId, BlockGroup group, BlockGroup.GroupedBlock groupedBlock, Set<BlockType> blockTypes) {
+	private static record Entry(String modId, BlockGroup group, BlockGroup.GroupedBlock groupedBlock, Set<BlockType> blockTypes, ArchExIntegrationContextImpl.BlockCreationCallback callback) {
 		public boolean register() {
 			Block baseBlock = groupedBlock.baseBlock().get();
 			if (baseBlock == Blocks.AIR || baseBlock == null) return false;
 			
 			for(BlockType blockType : blockTypes) {
-				BlockType.TypedGroupedBlock created = blockType.register(group, groupedBlock, (g, t, b, cb)->{});
+				BlockType.TypedGroupedBlock created = blockType.register(group, groupedBlock, callback, modId);
 				DataGeneration.collect(created);
 			}
 			
 			return true;
+		}
+		
+		public Set<String> getIds() {
+			String modId = this.modId();
+			if (modId == "file") modId = ArchitectureExtensions.MOD_CONTAINER.metadata().id(); // If it's a staticdata resource, use our own id
+			
+			HashSet<String> result = new HashSet<>();
+			for(BlockType bt : blockTypes) {
+				Identifier id = new Identifier(modId, groupedBlock.id().getPath() + "_" + bt);
+				result.add(id.toString());
+			}
+			return result;
 		}
 	}
 }
