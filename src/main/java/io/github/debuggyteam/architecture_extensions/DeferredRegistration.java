@@ -50,7 +50,7 @@ public class DeferredRegistration {
 	 * @param groupedBlock
 	 * @param blockTypes
 	 */
-	public static void register(String modId, BlockGroup group, BlockGroup.GroupedBlock groupedBlock, Collection<BlockType> blockTypes, @Nullable ArchExIntegrationContextImpl.BlockCreationCallback callback) {
+	public static void register(String modId, BlockGroup group, BlockGroup.GroupedBlock groupedBlock, Collection<BlockType> blockTypes, @Nullable BlockCreationCallback callback) {
 		Entry deferral = new Entry(modId, group, groupedBlock, Set.copyOf(blockTypes), callback);
 		
 		if (!deferral.register()) {
@@ -72,7 +72,7 @@ public class DeferredRegistration {
 		}
 	}
 	
-	private static record Entry(String modId, BlockGroup group, BlockGroup.GroupedBlock groupedBlock, Set<BlockType> blockTypes, ArchExIntegrationContextImpl.BlockCreationCallback callback) {
+	private static record Entry(String modId, BlockGroup group, BlockGroup.GroupedBlock groupedBlock, Set<BlockType> blockTypes, BlockCreationCallback callback) {
 		public boolean register() {
 			Block baseBlock = groupedBlock.baseBlock().get();
 			if (baseBlock == Blocks.AIR || baseBlock == null) return false;

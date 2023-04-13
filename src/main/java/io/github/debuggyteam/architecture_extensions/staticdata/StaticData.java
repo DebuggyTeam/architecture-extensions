@@ -116,6 +116,9 @@ public class StaticData {
 	
 	/**
 	 * Represents an identified piece of static data, and a Path that can be used to load the data in.
+	 * @param modId      The modId for the mod that provided this data
+	 * @param resourceId The resource identifier indicating what data this is
+	 * @param dataPath   A Path where the data can be loaded from
 	 */
 	public static record Item(String modId, Identifier resourceId, Path dataPath) {
 		/**

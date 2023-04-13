@@ -24,6 +24,7 @@ public class BlockGroupSchema {
 	public String recipes;
 	public String map_color;
 	public String[] types_to_generate;
+	public String only_if_present;
 	
 	public BlockGroupSchema() {
 		base_block = "minecraft:air";

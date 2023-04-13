@@ -6,8 +6,8 @@ import java.util.function.BiFunction;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
-import io.github.debuggyteam.architecture_extensions.ArchExIntegrationContextImpl;
 import io.github.debuggyteam.architecture_extensions.ArchitectureExtensions;
+import io.github.debuggyteam.architecture_extensions.BlockCreationCallback;
 import io.github.debuggyteam.architecture_extensions.blocks.ArchBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.BeamBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.WallColumnBlock;
@@ -58,13 +58,12 @@ public enum BlockType {
 		return name().toLowerCase(Locale.ROOT);
 	}
 
-	public TypedGroupedBlock register(BlockGroup group, BlockGroup.GroupedBlock groupedBlock, ArchExIntegrationContextImpl.BlockCreationCallback callback) {
+	public TypedGroupedBlock register(BlockGroup group, BlockGroup.GroupedBlock groupedBlock, BlockCreationCallback callback) {
 		return register(group, groupedBlock, callback, ArchitectureExtensions.MOD_CONTAINER.metadata().id()); // If no id is specified, use our own id
 	}
 	
-	public TypedGroupedBlock register(BlockGroup group, BlockGroup.GroupedBlock groupedBlock, ArchExIntegrationContextImpl.BlockCreationCallback callback, String modid) {
-		if (modid == "file") modid = ArchitectureExtensions.MOD_CONTAINER.metadata().id(); // If it's a staticdata resource, use our own id
-		Identifier id = new Identifier(modid, groupedBlock.id().getPath() + "_" + this);
+	public TypedGroupedBlock register(BlockGroup group, BlockGroup.GroupedBlock groupedBlock, BlockCreationCallback callback, String modid) {
+		Identifier id = new Identifier(ArchitectureExtensions.MOD_CONTAINER.metadata().id(), groupedBlock.id().getPath() + "_" + this);
 		var baseBlock = groupedBlock.baseBlock().get();
 		var block = Registry.register(Registries.BLOCK, id, creator.apply(baseBlock, QuiltBlockSettings.copyOf(baseBlock).mapColorProvider(state -> groupedBlock.mapColor()).strength(strength)));
 

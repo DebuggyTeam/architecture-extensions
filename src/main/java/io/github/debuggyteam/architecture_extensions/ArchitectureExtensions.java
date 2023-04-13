@@ -7,6 +7,7 @@ import io.github.debuggyteam.architecture_extensions.resource.DataGeneration;
 import io.github.debuggyteam.architecture_extensions.staticdata.BlockGroupSchema;
 import io.github.debuggyteam.architecture_extensions.staticdata.StaticData;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
@@ -37,6 +38,12 @@ public class ArchitectureExtensions implements ModInitializer, ResourcePackRegis
 	// This should probably be fine being public and mutable
 	public static ModContainer MOD_CONTAINER;
 	public static ItemGroup ITEM_GROUP;
+	/**
+	 * BlockCreationCallback that adds the created block to the Architecture Extensions "Building Blocks" ItemGroup.
+	 */
+	public static BlockCreationCallback CALLBACK_ADD_TO_ITEM_GROUP = (group, blockType, baseBlock, derivedBlock) -> {
+		ItemGroupUtil.pull(ArchitectureExtensions.ITEM_GROUP, blockType, baseBlock, derivedBlock.asItem());
+	};
 
 	public static final InMemoryResourcePack RESOURCE_PACK = new InMemoryResourcePack.Named(id("pack/runtime").toString()) {
 		@Override
@@ -72,20 +79,24 @@ public class ArchitectureExtensions implements ModInitializer, ResourcePackRegis
 			}
 		}
 		
-		//Find and register staticdata blocks
+		// Find and register staticdata blocks
 		List<StaticData.Item> dataRegistrations = StaticData.getData(new Identifier("architecture_extensions", ""));
 		Gson gson = new GsonBuilder().create();
 		for(StaticData.Item item : dataRegistrations) {
 			try {
 				BlockGroupSchema data = gson.fromJson(item.getAsString(), BlockGroupSchema.class);
+				
+				String requiredMod = data.only_if_present;
+				if (requiredMod != null && !requiredMod.isBlank()) {
+					// Should only be loaded when the indicated mod is present
+					if (!QuiltLoader.isModLoaded(requiredMod)) continue;
+				}
+				
 				BlockGroup group = data.createBlockGroup();
 				Set<BlockType> blockTypes = data.getBlockTypes();
 				for(BlockGroup.GroupedBlock groupedBlock : group) {
-					DeferredRegistration.register(item.modId(), group, groupedBlock, blockTypes, (g, bt, bb, db) -> {
-						ItemGroupUtil.pull(ArchitectureExtensions.ITEM_GROUP, bt, bb, db.asItem());
-					});
+					DeferredRegistration.register(item.modId(), group, groupedBlock, blockTypes, CALLBACK_ADD_TO_ITEM_GROUP);
 				}
-				
 			} catch (IOException ex) {
 				throw new RuntimeException("There was a problem getting staticdata for mod container '"+item.modId()+"' with resource id '"+item.resourceId()+"'.", ex);
 			}
@@ -98,7 +109,7 @@ public class ArchitectureExtensions implements ModInitializer, ResourcePackRegis
 
 		ResourceLoader.get(ResourceType.SERVER_DATA).getRegisterDefaultResourcePackEvent().register(this);
 	}
-
+	
 	@Override
 	public void onRegisterPack(@NotNull ResourcePackRegistrationContext context) {
 		DataGeneration.generate(ResourceType.SERVER_DATA);
