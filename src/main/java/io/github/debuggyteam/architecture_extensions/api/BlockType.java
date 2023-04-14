@@ -53,16 +53,22 @@ public enum BlockType {
 	private final BiFunction<Block, QuiltBlockSettings, Block> creator;
 	private final float strength;
 	private final String[] variants;
+	private final SafeRenderLayer renderLayer;
 
 	BlockType(BiFunction<Block, QuiltBlockSettings, Block> creator, float strength, String[] variants, SafeRenderLayer renderLayer) {
 		this.creator = creator;
 		this.strength = strength;
 		this.variants = variants;
+		this.renderLayer = renderLayer;
 	}
 
 
 	public String[] variants() {
 		return variants;
+	}
+
+	public SafeRenderLayer renderLayer() {
+		return renderLayer;
 	}
 
 	@Override
@@ -71,16 +77,12 @@ public enum BlockType {
 	}
 
 	public TypedGroupedBlock register(BlockGroup group, BlockGroup.GroupedBlock groupedBlock, BlockCreationCallback callback) {
-		return register(group, groupedBlock, callback, ArchitectureExtensions.MOD_CONTAINER.metadata().id()); // If no id is specified, use our own id
-	}
-	
-	public TypedGroupedBlock register(BlockGroup group, BlockGroup.GroupedBlock groupedBlock, BlockCreationCallback callback, String modid) {
 		Identifier id = new Identifier(ArchitectureExtensions.MOD_CONTAINER.metadata().id(), groupedBlock.id().getPath() + "_" + this);
 		var baseBlock = groupedBlock.baseBlock().get();
 		var block = Registry.register(Registries.BLOCK, id, creator.apply(baseBlock, QuiltBlockSettings.copyOf(baseBlock).mapColorProvider(state -> groupedBlock.mapColor()).strength(strength)));
 
 		Registry.register(Registries.ITEM, id, new BlockItem(block, new QuiltItemSettings()));
-		
+
 		if (callback != null) callback.onBlockCreated(group, this, baseBlock, block);
 
 		return new TypedGroupedBlock(this, groupedBlock, id);
