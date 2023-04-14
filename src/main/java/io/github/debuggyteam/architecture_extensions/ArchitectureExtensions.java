@@ -41,7 +41,7 @@ public class ArchitectureExtensions implements ModInitializer, ResourcePackRegis
 	/**
 	 * BlockCreationCallback that adds the created block to the Architecture Extensions "Building Blocks" ItemGroup.
 	 */
-	public static BlockCreationCallback CALLBACK_ADD_TO_ITEM_GROUP = (group, blockType, baseBlock, derivedBlock) -> {
+	public static final BlockCreationCallback CALLBACK_ADD_TO_ITEM_GROUP = (group, blockType, baseBlock, derivedBlock) -> {
 		ItemGroupUtil.pull(ArchitectureExtensions.ITEM_GROUP, blockType, baseBlock, derivedBlock.asItem());
 	};
 
