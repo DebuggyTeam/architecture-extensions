@@ -27,7 +27,7 @@
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
 			"init": "io.github.debuggyteam.architecture_extensions.ArchitectureExtensions",
-			"client_init": "io.github.debuggyteam.architecture_extensions.ArchitectureExtensionsClient"
+			"client_init": "io.github.debuggyteam.architecture_extensions.client.ArchitectureExtensionsClient"
 		},
 		"depends": [
 			{
