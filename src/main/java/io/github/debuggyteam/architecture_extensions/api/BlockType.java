@@ -60,6 +60,7 @@ public enum BlockType {
 		this.variants = variants;
 	}
 
+
 	public String[] variants() {
 		return variants;
 	}
