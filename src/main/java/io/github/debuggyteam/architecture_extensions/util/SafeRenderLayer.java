@@ -17,6 +17,7 @@ public enum SafeRenderLayer implements @ClientOnly Supplier<RenderLayer> {
 		this.priority = priority;
 	}
 
+	@ClientOnly
 	@Override
 	public RenderLayer get() {
 		return switch (this) {

@@ -76,7 +76,8 @@ public enum BlockType {
 		return name().toLowerCase(Locale.ROOT);
 	}
 
-	public TypedGroupedBlock register(BlockGroup group, BlockGroup.GroupedBlock groupedBlock, BlockCreationCallback callback) {
+	public TypedGroupedBlock register(BlockGroup group, BlockGroup.GroupedBlock groupedBlock, BlockCreationCallback callback, String modId) {
+		// Note: the mod id parameter isn't used here by purpose, that parameter is there so we can easily debug where registration is coming from.
 		Identifier id = new Identifier(ArchitectureExtensions.MOD_CONTAINER.metadata().id(), groupedBlock.id().getPath() + "_" + this);
 		var baseBlock = groupedBlock.baseBlock().get();
 		var block = Registry.register(Registries.BLOCK, id, creator.apply(baseBlock, QuiltBlockSettings.copyOf(baseBlock).mapColorProvider(state -> groupedBlock.mapColor()).strength(strength)));

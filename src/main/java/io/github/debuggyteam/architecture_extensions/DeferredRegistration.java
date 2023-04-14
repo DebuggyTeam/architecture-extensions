@@ -22,7 +22,7 @@ import net.minecraft.util.Identifier;
 
 public class DeferredRegistration {
 	private static Multimap<Identifier, Entry> deferrals = MultimapBuilder.hashKeys().arrayListValues(2).build();
-
+	
 	/**
 	 * Called by ArchEx to start resolving deferred registrations.
 	 */
@@ -42,7 +42,7 @@ public class DeferredRegistration {
 			}
 		});
 	}
-
+	
 	/**
 	 * Called indirectly by users to register derived blocks.
 	 * @param modId
@@ -52,7 +52,7 @@ public class DeferredRegistration {
 	 */
 	public static void register(String modId, BlockGroup group, BlockGroup.GroupedBlock groupedBlock, Collection<BlockType> blockTypes, @Nullable BlockCreationCallback callback) {
 		Entry deferral = new Entry(modId, group, groupedBlock, Set.copyOf(blockTypes), callback);
-
+		
 		if (!deferral.register()) {
 			//ArchitectureExtensions.LOGGER.info("Deferred generation: "+deferral.modId()+" requested "+deferral.getIds()+" and registration was deferred.");
 			deferrals.put(groupedBlock.id(), deferral);
@@ -60,8 +60,8 @@ public class DeferredRegistration {
 			//ArchitectureExtensions.LOGGER.info("Deferred generation: "+deferral.modId()+" requested "+deferral.getIds()+" and registration was completed immediately.");
 		}
 	}
-
-
+	
+	
 	/**
 	 * Called by ArchEx to warn users that we couldn't create blocks that were requested.
 	 */
@@ -71,24 +71,24 @@ public class DeferredRegistration {
 			ArchitectureExtensions.LOGGER.warn(sourceString+" requested architecture extensions blocks derived from base block "+entry.groupedBlock.id()+", but this base block was never registered.");
 		}
 	}
-
+	
 	private static record Entry(String modId, BlockGroup group, BlockGroup.GroupedBlock groupedBlock, Set<BlockType> blockTypes, BlockCreationCallback callback) {
 		public boolean register() {
 			Block baseBlock = groupedBlock.baseBlock().get();
 			if (baseBlock == Blocks.AIR || baseBlock == null) return false;
-
+			
 			for(BlockType blockType : blockTypes) {
-				BlockType.TypedGroupedBlock created = blockType.register(group, groupedBlock, callback);
+				BlockType.TypedGroupedBlock created = blockType.register(group, groupedBlock, callback, modId);
 				DataGeneration.collect(created);
 			}
-
+			
 			return true;
 		}
-
+		
 		public Set<String> getIds() {
 			String modId = this.modId();
 			if (modId == "file") modId = ArchitectureExtensions.MOD_CONTAINER.metadata().id(); // If it's a staticdata resource, use our own id
-
+			
 			HashSet<String> result = new HashSet<>();
 			for(BlockType bt : blockTypes) {
 				Identifier id = new Identifier(modId, groupedBlock.id().getPath() + "_" + bt);
