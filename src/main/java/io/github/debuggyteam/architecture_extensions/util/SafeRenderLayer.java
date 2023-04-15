@@ -1,13 +1,34 @@
 package io.github.debuggyteam.architecture_extensions.util;
 
-public enum SafeRenderLayer {
-	SOLID,
-	TRANSLUCENT,
-	CUTOUT;
+import java.util.function.Supplier;
 
-	public static SafeRenderLayer combine(SafeRenderLayer first, SafeRenderLayer second) {
-		if (first == TRANSLUCENT || second == TRANSLUCENT) return TRANSLUCENT;
-		if (first == CUTOUT || second == CUTOUT) return CUTOUT;
-		return SOLID;
+import org.quiltmc.loader.api.minecraft.ClientOnly;
+
+import net.minecraft.client.render.RenderLayer;
+
+public enum SafeRenderLayer implements @ClientOnly Supplier<RenderLayer> {
+	SOLID(0),
+	TRANSLUCENT(2),
+	CUTOUT(1);
+
+	private final int priority;
+
+	SafeRenderLayer(int priority) {
+		this.priority = priority;
+	}
+
+	@ClientOnly
+	@Override
+	public RenderLayer get() {
+		return switch (this) {
+			case SOLID -> RenderLayer.getSolid();
+			case TRANSLUCENT -> RenderLayer.getTranslucent();
+			case CUTOUT -> RenderLayer.getCutout();
+		};
+	}
+
+	public static SafeRenderLayer choose(SafeRenderLayer first, SafeRenderLayer second) {
+		if (second.priority > first.priority) return second;
+		return first;
 	}
 }
