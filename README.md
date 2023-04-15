@@ -1,7 +1,7 @@
 ## About Architecture Extensions
 The mod idea for Architecture Extensions is technically based off the old ![ArchitectureCraft mod from MC 1.8-1.10](https://www.curseforge.com/minecraft/mc-mods/architecturecraft). The major differences are that the added blocks are not "super detailed" like in the original AC mod and there are blocks that are not in the original mod either.
 
-To discuss this mod or give suggestions/feedback, join Debuggy Community: https://discord.gg/bWN57F5CCA
+To discuss this mod or give suggestions/feedback, join Debuggy Community: https://debuggy.gay/discord
 
 ## Credits
 - Carter for the Rose Quartz and H Beam textures: https://github.com/woodiertexas/architecture-extensions/pull/8
