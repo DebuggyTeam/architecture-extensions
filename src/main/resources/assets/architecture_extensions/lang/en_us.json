@@ -1,7 +1,7 @@
 {
   "itemGroup.architecture_extensions.building_blocks": "Arch-Ex Building Blocks",
 
-  "block.architecture_extensions.end_rod_nubless": "End Rod Nubless",
+  "block.architecture_extensions.end_rod_nubless": "Continuous End Rod",
   "block.architecture_extensions.debuggy_block": "Oddly Colored Block",
   "block.architecture_extensions.fake_end_portal_block": "Starry Night Sky Block",
 
@@ -9,21 +9,21 @@
 
   "architecture_extensions.block_type.arch": "Arch",
   "architecture_extensions.block_type.beam": "Beam",
-  "architecture_extensions.block_type.crown_molding": "Crown Molding",
-  "architecture_extensions.block_type.facade": "Facade",
-  "architecture_extensions.block_type.fence_post": "Fence Post",
   "architecture_extensions.block_type.h_beam": "H Beam",
-  "architecture_extensions.block_type.i_beam": "I Beam",
+  "architecture_extensions.block_type.wall_column": "Wall Column",
+  "architecture_extensions.block_type.fence_post": "Fence Post",
   "architecture_extensions.block_type.joist": "Joist",
-  "architecture_extensions.block_type.lattice": "Lattice",
+  "architecture_extensions.block_type.crown_molding": "Crown Molding",
   "architecture_extensions.block_type.post_cap": "Post Cap",
   "architecture_extensions.block_type.post_lantern": "Post Lantern",
   "architecture_extensions.block_type.rod": "Rod",
   "architecture_extensions.block_type.roof": "Roof",
-  "architecture_extensions.block_type.tube_steel": "Tube Steel",
-  "architecture_extensions.block_type.wall_column": "Wall Column",
   "architecture_extensions.block_type.wall_post": "Wall Post",
-
+  "architecture_extensions.block_type.facade": "Facade",
+  "architecture_extensions.block_type.tube_steel": "Tube Steel",
+  "architecture_extensions.block_type.i_beam": "I Beam",
+  "architecture_extensions.block_type.lattice": "Lattice",
+  "architecture_extensions.block_type.transom": "Transom",
 
   "architecture_extensions.grouped_block.bamboo": "Bamboo",
 
@@ -43,6 +43,7 @@
   "architecture_extensions.grouped_block.deepslate": "Deepslate",
   "architecture_extensions.grouped_block.sandstone": "Sandstone",
   "architecture_extensions.grouped_block.red_sandstone": "Red Sandstone",
+  "architecture_extensions.grouped_block.end_stone": "End Stone",
   "architecture_extensions.grouped_block.blackstone": "Blackstone",
 
   "architecture_extensions.grouped_block.prismarine": "Prismarine",
@@ -82,6 +83,7 @@
   "architecture_extensions.grouped_block.quartz": "Quartz",
   "architecture_extensions.grouped_block.smooth_quartz": "Smooth Quartz",
 
+  "architecture_extensions.grouped_block.terracotta": "Terracotta",
   "architecture_extensions.grouped_block.white_terracotta": "White Terracotta",
   "architecture_extensions.grouped_block.light_gray_terracotta": "Light Gray Terracotta",
   "architecture_extensions.grouped_block.gray_terracotta": "Gray Terracotta",
