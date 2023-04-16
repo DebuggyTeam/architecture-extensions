@@ -5,6 +5,7 @@
     "block.architecture_extensions.debuggy_block": "奇怪的彩色方块",
     "block.architecture_extensions.fake_end_portal_block": "璀璨星空块",
   
+    "architecture_extensions.block_type_block": "%s%s",
   
     "architecture_extensions.block_type.arch": "拱",
     "architecture_extensions.block_type.beam": "梁",
