@@ -5,6 +5,7 @@
   "block.architecture_extensions.debuggy_block": "Oddly Colored Block",
   "block.architecture_extensions.fake_end_portal_block": "Starry Night Sky Block",
 
+  "architecture_extensions.block_type_block": "%s %s",
 
   "architecture_extensions.block_type.arch": "Arch",
   "architecture_extensions.block_type.beam": "Beam",

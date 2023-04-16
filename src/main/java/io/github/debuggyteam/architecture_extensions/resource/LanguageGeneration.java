@@ -15,7 +15,7 @@ public final class LanguageGeneration {
 			final var groupedBlockComponent = Component.GROUPED_BLOCK.translate(langEntries, block.groupedBlock().id().getPath());
 			final var blockTypeComponent = Component.BLOCK_TYPE.translate(langEntries, block.type().toString());
 
-			langEntries.put(getLangKey(block.id()), groupedBlockComponent + " " + blockTypeComponent);
+			langEntries.put(getLangKey(block.id()), String.format(langEntries.get("architecture_extensions.block_type_block"), groupedBlockComponent, blockTypeComponent));
 		}
 	}
 
