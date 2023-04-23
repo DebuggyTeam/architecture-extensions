@@ -7,12 +7,7 @@ import io.github.debuggyteam.architecture_extensions.resource.DataGeneration;
 import io.github.debuggyteam.architecture_extensions.staticdata.BlockGroupSchema;
 import io.github.debuggyteam.architecture_extensions.staticdata.StaticData;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Block;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.registry.Registries;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 
@@ -27,7 +22,6 @@ import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.loader.api.QuiltLoader;
 import org.quiltmc.loader.api.entrypoint.EntrypointContainer;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
-import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 import org.quiltmc.qsl.resource.loader.api.InMemoryResourcePack;
 import org.quiltmc.qsl.resource.loader.api.ResourceLoader;
 import org.quiltmc.qsl.resource.loader.api.ResourcePackRegistrationContext;
@@ -70,7 +64,7 @@ public class ArchitectureExtensions implements ModInitializer, ResourcePackRegis
 			.builder(id("building_blocks"))
 			.icon(() -> PeculiarBlocks.DEBUGGY_BLOCK.asItem().getDefaultStack()) // TODO: Better icon?
 			.build();
-
+		
 		PeculiarBlocks.register();
 
 		VanillaIntegration.INSTANCE.integrate(new ArchExIntegrationContextImpl(VanillaIntegration.INSTANCE, mod.metadata().id()));
