@@ -17,7 +17,7 @@ public class VoxelHelper {
 			int y2i = (int) (y2 * 16);
 			int z2i = (int) (z2 * 16);
 			
-			if (x>=x1i && y>=y1i && z>=z1i && x<x2i && y<y2i && z<z2i) {
+			if (x >= x1i && y >= y1i && z >= z1i && x < x2i && y < y2i && z < z2i) {
 				hits.add(Boolean.valueOf(true));
 			}
 		});
