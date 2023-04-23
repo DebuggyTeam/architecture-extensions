@@ -1,7 +1,16 @@
 {
   "variants": {
-      "": {
-          "model": "{model}"
-      }
+    "hanging=false,waterlogged=false": {
+      "model": "{model}"
+    },
+    "hanging=false,waterlogged=true": {
+      "model": "{model}"
+    },
+    "hanging=true,waterlogged=false": {
+      "model": "{model}_hanging"
+    },
+    "hanging=true,waterlogged=true": {
+      "model": "{model}_hanging"
+    }
   }
 }

@@ -40,7 +40,7 @@ public enum BlockType {
 	JOIST((baseBlock, settings) -> new JoistBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
 	CROWN_MOLDING((baseBlock, settings) -> new CrownMoldingBlock(baseBlock.getDefaultState(), settings), 1.5f, variantsOf("", "inner", "outer"), SafeRenderLayer.SOLID),
 	POST_CAP((baseBlock, settings) -> new PostCapBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
-	POST_LANTERN((baseBlock, settings) -> new PostLanternBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
+	POST_LANTERN((baseBlock, settings) -> new PostLanternBlock(settings), 1.5f, variantsOf("", "hanging"), SafeRenderLayer.SOLID),
 	ROD((baseBlock, settings) -> new ArchExRodBlock(settings), 1f, noVariants(), SafeRenderLayer.SOLID),
 	ROOF((baseBlock, settings) -> new RoofBlock(baseBlock.getDefaultState(), settings), 2.5f, variantsOf("", "inner", "outer"), SafeRenderLayer.SOLID),
 	WALL_POST((baseBlock, settings) -> new WallPostBlock(settings), 2.5f, noVariants(), SafeRenderLayer.SOLID),
