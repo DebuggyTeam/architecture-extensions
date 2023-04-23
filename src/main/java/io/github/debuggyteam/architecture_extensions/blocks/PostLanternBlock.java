@@ -23,7 +23,7 @@ public class PostLanternBlock extends Block {
 	public static final BooleanProperty HANGING = Properties.HANGING;
 
 	protected static final VoxelShape POST_CAP_SHAPE = Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 6.0, 11.0);
-	protected static final VoxelShape POST_CAP_HANGING_SHAPE = Block.createCuboidShape(5, 10, 5, 11, 16, 11);
+	protected static final VoxelShape POST_CAP_HANGING_SHAPE = Block.createCuboidShape(5, 9, 5, 11, 15, 11);
 
 	public PostLanternBlock(Settings settings) {
 		super(settings.luminance(state -> 15));
@@ -32,7 +32,7 @@ public class PostLanternBlock extends Block {
 
 	@Override
 	public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-		return POST_CAP_SHAPE;
+		return state.get(HANGING) ? POST_CAP_HANGING_SHAPE : POST_CAP_SHAPE;
 	}
 	
 	@Override
@@ -58,11 +58,21 @@ public class PostLanternBlock extends Block {
 	public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
 		if (state.get(WATERLOGGED)) world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
 		
-		//TODO: Update hanging status
 		if (state.get(HANGING)) {
-			//Check the block above to see if the hanging is still valid
+			//Make sure we can still hang from the block above us, and if not, do not hang
+			if (!canHang(world, pos)) {
+				return state.with(HANGING, false);
+			}
 		} else {
-			//Check the block below to see if the below is still valid
+			/*
+			 * This is more complicated because we kind of favor the non-hanging status. If we're not ahnging, but the
+			 * block below us is completely air, and we discover that there's something to hang from, go ahead and hang.
+			 */
+			if (world.getBlockState(pos.down()).isAir()) {
+				if (canHang(world, pos)) {
+					return state.with(HANGING, true);
+				}
+			}
 		}
 		
 		return state;
