@@ -6,9 +6,7 @@ The mod idea for Architecture Extensions is technically based off the old ![Arch
 To discuss this mod or give suggestions/feedback, join Debuggy Community: https://debuggy.gay/discord
 
 ## About Ports
-The Debuggy Team won't be porting any of our mods to Forge, Fabric, or any previous Minecraft version.
-
-If you want a Debuggy mod on, say, Forge 1.12.2 or on 1.7.10, you are welcome to create a port yourself, as long as you follow the project's license. Please let us know if you do, as we may endorse high-quality ports!
+The debuggy team welcomes third party ports to previous minecraft versions, but respectfully asks that you don't port to Forge or Fabric.
 
 ## Credits
 - Carter for the Rose Quartz and H Beam textures: https://github.com/woodiertexas/architecture-extensions/pull/8
