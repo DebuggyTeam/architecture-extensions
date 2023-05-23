@@ -10,7 +10,7 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:soul_lantern"
+            "item": "aurorasdeco:amethyst_lantern"
         },
         {
             "item": "architecture_extensions:jacaranda_post_cap"

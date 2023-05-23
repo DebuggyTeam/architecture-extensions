@@ -10,7 +10,7 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
         {
-            "item": "minecraft:soul_lantern"
+            "item": "aurorasdeco:amethyst_lantern"
         },
         {
             "item": "architecture_extensions:azalea_post_cap"
