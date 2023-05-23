@@ -178,5 +178,9 @@
     "block.architecture_extensions.azalea_joist": "Azalea Joist",
     "block.architecture_extensions.jacaranda_joist": "Jacaranda Joist",
     "block.architecture_extensions.azalea_crown_molding": "Azalea Crown Molding",
-    "block.architecture_extensions.jacaranda_crown_molding": "Jacaranda Crown Molding"
+    "block.architecture_extensions.jacaranda_crown_molding": "Jacaranda Crown Molding",
+    "block.architecture_extensions.azalea_post_cap": "Azalea Post Cap",
+    "block.architecture_extensions.azalea_post_lantern": "Azalea Post Lantern",
+    "block.architecture_extensions.jacaranda_post_cap": "Jacaranda Post Cap",
+    "block.architecture_extensions.jacaranda_post_lantern": "Jacaranda Post Lantern"
 }

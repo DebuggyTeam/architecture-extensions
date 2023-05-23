@@ -1,0 +1,23 @@
+{
+    "fabric:load_conditions": [
+        {
+            "condition": "fabric:all_mods_loaded",
+            "values": [
+                "aurorasdeco"
+            ]
+        }
+    ],
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:soul_lantern"
+        },
+        {
+            "item": "architecture_extensions:azalea_post_cap"
+        }
+    ],
+    "result": {
+        "item": "architecture_extensions:azalea_post_lantern",
+        "count": 1
+    }
+}

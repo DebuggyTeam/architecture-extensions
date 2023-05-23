@@ -1,9 +1,6 @@
 package io.github.woodiertexas.architecture_extensions.compat;
 
-import io.github.woodiertexas.architecture_extensions.blocks.BeamBlock;
-import io.github.woodiertexas.architecture_extensions.blocks.FencePostBlock;
-import io.github.woodiertexas.architecture_extensions.blocks.JoistBlock;
-import io.github.woodiertexas.architecture_extensions.blocks.MoldingBlock;
+import io.github.woodiertexas.architecture_extensions.blocks.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
@@ -30,13 +27,19 @@ public class ArchExAurorasDecoCompat {
     // Joist Blocks
     public static final JoistBlock AZALEA_JOIST = new JoistBlock(QuiltBlockSettings.of(Material.WOOD).strength(1.5f).sounds(BlockSoundGroup.WOOD).requiresTool());
     public static final JoistBlock JACARANDA_JOIST = new JoistBlock(QuiltBlockSettings.of(Material.WOOD).strength(1.5f).sounds(BlockSoundGroup.WOOD).requiresTool());
-    
+
     // Molding Blocks
     public static final MoldingBlock AZALEA_CROWN_MOLDING = new MoldingBlock(Blocks.ACACIA_PLANKS.getDefaultState(), QuiltBlockSettings.of(Material.WOOD).strength(1.5f).sounds(BlockSoundGroup.WOOD).requiresTool());
     public static final MoldingBlock JACARANDA_CROWN_MOLDING = new MoldingBlock(Blocks.ACACIA_PLANKS.getDefaultState(), QuiltBlockSettings.of(Material.WOOD).strength(1.5f).sounds(BlockSoundGroup.WOOD).requiresTool());
 
+	// Fence Post Caps and Lanterns
+	public static final PostCapBlock AZALEA_POST_CAP = new PostCapBlock(QuiltBlockSettings.of(Material.WOOD).strength(1.5f).sounds(BlockSoundGroup.WOOD).requiresTool());
+	public static final PostLanternBlock AZALEA_POST_LANTERN = new PostLanternBlock(QuiltBlockSettings.of(Material.WOOD).strength(1.5f).sounds(BlockSoundGroup.WOOD).luminance(15).requiresTool());
+	public static final PostCapBlock JACARANDA_POST_CAP = new PostCapBlock(QuiltBlockSettings.of(Material.WOOD).strength(1.5f).sounds(BlockSoundGroup.WOOD).requiresTool());
+	public static final PostLanternBlock JACARANDA_POST_LANTERN = new PostLanternBlock(QuiltBlockSettings.of(Material.WOOD).strength(1.5f).sounds(BlockSoundGroup.WOOD).luminance(15).requiresTool());
 
-    static {
+
+	static {
         /*
         List of blocks to be registered in key, value pairs.
         For example, "cobblestone_column, COBBLESTONE_COLUMN"
@@ -50,6 +53,10 @@ public class ArchExAurorasDecoCompat {
             blocks.put("jacaranda_joist", JACARANDA_JOIST);
             blocks.put("azalea_crown_molding", AZALEA_CROWN_MOLDING);
             blocks.put("jacaranda_crown_molding", JACARANDA_CROWN_MOLDING);
+            blocks.put("azalea_post_cap", AZALEA_POST_CAP);
+            blocks.put("azalea_post_lantern", AZALEA_POST_LANTERN);
+            blocks.put("jacaranda_post_cap", JACARANDA_POST_CAP);
+            blocks.put("jacaranda_post_lantern", JACARANDA_POST_LANTERN);
 
         // Registering the blocks and corresponding block items.
         for (Map.Entry<String, Block> entry : blocks.entrySet()) {
