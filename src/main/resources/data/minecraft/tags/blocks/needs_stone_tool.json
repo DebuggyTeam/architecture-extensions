@@ -100,6 +100,7 @@
 		"architecture_extensions:dark_oak_beam",
 		"architecture_extensions:crimson_beam",
 		"architecture_extensions:warped_beam",
+		"architecture_extensions:mangrove_beam",
 		"architecture_extensions:iron_h_beam",
 		"architecture_extensions:oak_fence_post",
 		"architecture_extensions:spruce_fence_post",
@@ -109,6 +110,7 @@
 		"architecture_extensions:dark_oak_fence_post",
 		"architecture_extensions:crimson_fence_post",
 		"architecture_extensions:warped_fence_post",
+		"architecture_extensions:mangrove_fence_post",
 		"architecture_extensions:oak_joist",
 		"architecture_extensions:spruce_joist",
 		"architecture_extensions:birch_joist",
@@ -117,6 +119,7 @@
 		"architecture_extensions:dark_oak_joist",
 		"architecture_extensions:crimson_joist",
 		"architecture_extensions:warped_joist",
+		"architecture_extensions:mangrove_joist",
 		"architecture_extensions:oak_crown_molding",
 		"architecture_extensions:spruce_crown_molding",
 		"architecture_extensions:birch_crown_molding",
@@ -125,6 +128,7 @@
 		"architecture_extensions:dark_oak_crown_molding",
 		"architecture_extensions:crimson_crown_molding",
 		"architecture_extensions:warped_crown_molding",
+		"architecture_extensions:mangrove_crown_molding",
 		"architecture_extensions:bamboo_rod",
 		"architecture_extensions:copper_rod",
 		"architecture_extensions:end_rod_nubless",
@@ -146,6 +150,8 @@
 		"architecture_extensions:crimson_post_cap",
 		"architecture_extensions:crimson_post_lantern",
 		"architecture_extensions:warped_post_cap",
-		"architecture_extensions:warped_post_lantern"
+		"architecture_extensions:warped_post_lantern",
+		"architecture_extensions:mangrove_post_cap",
+		"architecture_extensions:mangrove_post_lantern"
 	]
 }
