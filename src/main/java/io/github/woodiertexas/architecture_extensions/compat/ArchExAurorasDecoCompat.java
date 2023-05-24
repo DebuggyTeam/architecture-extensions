@@ -1,6 +1,11 @@
 package io.github.woodiertexas.architecture_extensions.compat;
 
-import io.github.woodiertexas.architecture_extensions.blocks.*;
+import io.github.woodiertexas.architecture_extensions.blocks.BeamBlock;
+import io.github.woodiertexas.architecture_extensions.blocks.FencePostBlock;
+import io.github.woodiertexas.architecture_extensions.blocks.JoistBlock;
+import io.github.woodiertexas.architecture_extensions.blocks.MoldingBlock;
+import io.github.woodiertexas.architecture_extensions.blocks.PostCapBlock;
+import io.github.woodiertexas.architecture_extensions.blocks.PostLanternBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
