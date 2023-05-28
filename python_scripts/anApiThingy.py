@@ -56,7 +56,7 @@ block_ids = [
 
     # Aurora's Deco Blocks
     "azalea_beam", "jacaranda_beam", "azalea_fence_post", "jacaranda_fence_post", "azalea_joist", "jacaranda_joist",
-    "azalea_crown_molding", "jacaranda_crown_molding"
+    "azalea_crown_molding", "jacaranda_crown_molding", "azalea_post_cap", "azalea_post_lantern", "jacaranda_post_cap", "jacaranda_post_lantern",
 ]
 
 block_names = [
@@ -124,7 +124,8 @@ block_names = [
 
     # Aurora's Deco Blocks
     "Azalea Beam", "Jacaranda Beam", "Azalea Fence Post", "Jacaranda Fence Post", "Azalea Joist", "Jacaranda Joist",
-    "Azalea Crown Molding", "Jacaranda Crown Molding"
+    "Azalea Crown Molding", "Jacaranda Crown Molding", "Azalea Post Cap", "Azalea Post Lantern",
+    "Jacaranda Post Cap", "Jacaranda Post Lantern",
 ]
 
 
