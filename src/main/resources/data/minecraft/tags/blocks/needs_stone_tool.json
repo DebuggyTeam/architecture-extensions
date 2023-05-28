@@ -159,11 +159,11 @@
 		"architecture_extensions:crimson_post_lantern",
 		"architecture_extensions:warped_post_cap",
 		"architecture_extensions:warped_post_lantern",
-    "architecture_extensions:mangrove_post_cap",
-    "architecture_extensions:mangrove_post_lantern",
-    "architecture_extensions:jacaranda_post_cap",
-    "architecture_extensions:jacaranda_post_lantern",
-    "architecture_extensions:azalea_post_cap",
-    "architecture_extensions:azalea_post_lantern"
+		"architecture_extensions:mangrove_post_cap",
+		"architecture_extensions:mangrove_post_lantern",
+		"architecture_extensions:jacaranda_post_cap",
+		"architecture_extensions:jacaranda_post_lantern",
+		"architecture_extensions:azalea_post_cap",
+		"architecture_extensions:azalea_post_lantern"
 	]
 }
