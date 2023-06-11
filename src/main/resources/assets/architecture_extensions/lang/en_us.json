@@ -45,6 +45,7 @@
   "architecture_extensions.grouped_block.sandstone": "Sandstone",
   "architecture_extensions.grouped_block.red_sandstone": "Red Sandstone",
   "architecture_extensions.grouped_block.blackstone": "Blackstone",
+  "architecture_extensions.grouped_block.end_stone": "End Stone",
 
   "architecture_extensions.grouped_block.prismarine": "Prismarine",
   "architecture_extensions.grouped_block.sea_lantern": "Sea",
