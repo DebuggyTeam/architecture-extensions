@@ -1,6 +1,7 @@
 package io.github.debuggyteam.architecture_extensions.api;
 
 import java.util.Iterator;
+import java.util.Optional;
 import java.util.Set;
 import java.util.function.Supplier;
 
@@ -31,13 +32,29 @@ public final class BlockGroup implements Iterable<BlockGroup.GroupedBlock> {
 		return groupedBlocks.iterator();
 	}
 
-	public record GroupedBlock(Identifier id, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, MapColor mapColor) {
+	public record GroupedBlock(Identifier id, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, Optional<MapColor> mapColor) {
 		public GroupedBlock(String id, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, MapColor mapColor) {
-			this(new Identifier(id), baseBlock, textureConfiguration, recipeConfigurator, mapColor);
+			this(new Identifier(id), baseBlock, textureConfiguration, recipeConfigurator, Optional.of(mapColor));
 		}
 		
 		public GroupedBlock(String id, Block baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, MapColor mapColor) {
-			this(new Identifier(id), ()->baseBlock, textureConfiguration, recipeConfigurator, mapColor);
+			this(new Identifier(id), ()->baseBlock, textureConfiguration, recipeConfigurator, Optional.of(mapColor));
+		}
+
+		public GroupedBlock(Identifier id, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, MapColor mapColor) {
+			this(id, baseBlock, textureConfiguration, recipeConfigurator, Optional.of(mapColor));
+		}
+
+		public GroupedBlock(String id, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator) {
+			this(new Identifier(id), baseBlock, textureConfiguration, recipeConfigurator, Optional.empty());
+		}
+		
+		public GroupedBlock(String id, Block baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator) {
+			this(new Identifier(id), ()->baseBlock, textureConfiguration, recipeConfigurator, Optional.empty());
+		}
+
+		public GroupedBlock(Identifier id, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator) {
+			this(id, baseBlock, textureConfiguration, recipeConfigurator, Optional.empty());
 		}
 	}
 }

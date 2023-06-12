@@ -11,48 +11,48 @@ import net.minecraft.block.MapColor;
 public class VanillaIntegration implements ArchExIntegration {
 	public static final VanillaIntegration INSTANCE = new VanillaIntegration();
 
-	private static final BlockGroup BAMBOO_ROD = BlockGroup.of(new BlockGroup.GroupedBlock("bamboo", Blocks.BAMBOO, (type, textureId) -> "minecraft:block/bamboo_stalk", RecipeConfigurator.simple("bamboo_rod"), MapColor.DARK_GREEN));
+	private static final BlockGroup BAMBOO_ROD = BlockGroup.of(new BlockGroup.GroupedBlock("bamboo", Blocks.BAMBOO, (type, textureId) -> "minecraft:block/bamboo_stalk", RecipeConfigurator.simple("bamboo_rod"), MapColor.PLANT));
 	private static final BlockGroup COPPER_ROD = BlockGroup.of(new BlockGroup.GroupedBlock("copper", Blocks.LIGHTNING_ROD, (type, textureId) -> "architecture_extensions:block/copper_rod", RecipeConfigurator.simple("copper_rod"), MapColor.ORANGE));
-	private static final BlockGroup IRON_ROD = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.IRON_BARS, (type, textureId) -> "minecraft:block/iron_bars", RecipeConfigurator.simple("iron_rod"), MapColor.CLEAR));
-	private static final BlockGroup IRON_H_BEAM = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.ANVIL, (type, textureId) -> "architecture_extensions:block/tube_steel", RecipeConfigurator.simple("iron_h_beam"), MapColor.IRON_GRAY));
+	private static final BlockGroup IRON_ROD = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.IRON_BARS, (type, textureId) -> "minecraft:block/iron_bars", RecipeConfigurator.simple("iron_rod")));
+	private static final BlockGroup IRON_H_BEAM = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.ANVIL, (type, textureId) -> "architecture_extensions:block/tube_steel", RecipeConfigurator.simple("iron_h_beam"), MapColor.METAL));
 
 	private static final BlockGroup TUBE_STEEL = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.ANVIL, (type, textureId) -> {
 		return switch (textureId) {
 			case "texture_top" -> "architecture_extensions:block/tube_steel_top";
 			default -> "architecture_extensions:block/tube_steel";
 		};
-	}, RecipeConfigurator.simple("iron_tube_steel"), MapColor.IRON_GRAY));
+	}, RecipeConfigurator.simple("iron_tube_steel"), MapColor.METAL));
 
 	@Override
 	public void integrate(Context ctx) {
 		ctx.makeArchExBlocks(
-				BlockType.ARCH, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
-				VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
-				VanillaBlockGroups.CRYSTAL
+			BlockType.ARCH, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
+			VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
+			VanillaBlockGroups.CRYSTAL
 		);
 
 		ctx.makeArchExBlocks(
-				BlockType.WALL_COLUMN, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
-				VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
-				VanillaBlockGroups.CRYSTAL
+			BlockType.WALL_COLUMN, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
+			VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
+			VanillaBlockGroups.CRYSTAL
 		);
 
 		ctx.makeArchExBlocks(
-				BlockType.ROOF, VanillaBlockGroups.STONE, VanillaBlockGroups.PROCESSED_STONE,
-				VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL
+			BlockType.ROOF, VanillaBlockGroups.STONE, VanillaBlockGroups.PROCESSED_STONE,
+			VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL
 		);
 
 		ctx.makeArchExBlocks(
-				BlockType.WALL_POST, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
-				VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
-				VanillaBlockGroups.CRYSTAL
+			BlockType.WALL_POST, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
+			VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
+			VanillaBlockGroups.CRYSTAL
 		);
 
 		ctx.makeArchExBlocks(
-				BlockType.FACADE, VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE,
-				VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE,
-				VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL,
-				VanillaBlockGroups.TERRACOTTA, VanillaBlockGroups.CONCRETE
+			BlockType.FACADE, VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE,
+			VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE,
+			VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL,
+			VanillaBlockGroups.TERRACOTTA, VanillaBlockGroups.CONCRETE
 		);
 
 		ctx.makeArchExBlocks(BlockType.BEAM, VanillaBlockGroups.WOOD);

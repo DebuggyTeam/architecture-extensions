@@ -1,6 +1,7 @@
 package io.github.debuggyteam.architecture_extensions.staticdata;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 import java.util.function.Supplier;
 
@@ -54,8 +55,8 @@ public class BlockGroupSchema {
 			case "crafting"       -> RecipeConfigurator.CRAFTING;
 			default -> RecipeConfigurator.STONECUTTER;
 		};
-		MapColor mapColor = MapColors.byName(map_color);
-		
+		Optional<MapColor> mapColor = MapColors.byName(map_color);
+
 		return BlockGroup.of(
 				new BlockGroup.GroupedBlock(baseId, getter, textureConfig, recipeConfig, mapColor)
 				);
