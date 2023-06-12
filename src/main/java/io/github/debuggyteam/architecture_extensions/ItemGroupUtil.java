@@ -15,13 +15,14 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.registry.RegistryKey;
 
 public final class ItemGroupUtil {
 	private ItemGroupUtil() { }
 
-	private static final Multimap<ItemGroup, TypedGroupedItem> ITEM_GROUP_ITEMS = LinkedHashMultimap.create();
+	private static final Multimap<RegistryKey<ItemGroup>, TypedGroupedItem> ITEM_GROUP_ITEMS = LinkedHashMultimap.create();
 
-	public static void pull(ItemGroup itemGroup, @Nullable BlockType type, @Nullable Block baseBlock, Item item) {
+	public static void pull(RegistryKey<ItemGroup> itemGroup, @Nullable BlockType type, @Nullable Block baseBlock, Item item) {
 		ITEM_GROUP_ITEMS.put(itemGroup, new TypedGroupedItem(type, baseBlock, item));
 	}
 
@@ -40,7 +41,7 @@ public final class ItemGroupUtil {
 		return sorted;
 	}
 
-	private static void pushInto(ItemGroup itemGroup) {
+	private static void pushInto(RegistryKey<ItemGroup> itemGroup) {
 		ItemGroupEvents.modifyEntriesEvent(itemGroup).register(entries -> typedGroupingSort(ITEM_GROUP_ITEMS.get(itemGroup)).forEach(entries::addItem));
 	}
 
