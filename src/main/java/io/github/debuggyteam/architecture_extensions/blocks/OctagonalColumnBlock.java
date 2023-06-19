@@ -32,8 +32,7 @@ public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
 	
 	public OctagonalColumnBlock(Settings settings) {
 		super(settings);
-		setDefaultState(this.stateManager.getDefaultState().with(AXIS, Direction.Axis.Y));
-		this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false)); // Thanks LambdAurora!
+		this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false).with(AXIS, Direction.Axis.Y).with(CAPPED, false)); // Thanks LambdAurora!
 	}
 	
 	// The following deals with block rotation
@@ -69,7 +68,7 @@ public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
 	public BlockState getPlacementState(ItemPlacementContext context) {
 		World world = context.getWorld();
 		BlockPos pos = context.getBlockPos();
-		return this.getDefaultState().with(Properties.HORIZONTAL_FACING, context.getPlayerFacing()).with(CAPPED, world.getBlockState(pos.up()).getBlock() != this).with(WATERLOGGED, context.getWorld().getFluidState(context.getBlockPos()).getFluid() == Fluids.WATER);
+		return this.getDefaultState().with(Properties.AXIS, context.getPlayerFacing().getAxis()).with(CAPPED, world.getBlockState(pos.up()).getBlock() != this).with(WATERLOGGED, context.getWorld().getFluidState(context.getBlockPos()).getFluid() == Fluids.WATER);
 	}
 	
 	@Override
