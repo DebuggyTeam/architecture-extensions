@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.block.Waterloggable;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
@@ -17,28 +18,30 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
-public class WallPostBlock extends PillarBlock {
+public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
+	public static final BooleanProperty CAPPED = BooleanProperty.of("cap");
 	public static final EnumProperty<Direction.Axis> AXIS = Properties.AXIS;
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-
+	
 	protected static final VoxelShape X_AXIS_BOX = Block.createCuboidShape(0.0, 4.0, 4.0, 16.0, 12.0, 12.0);
 	protected static final VoxelShape Y_AXIS_BOX = Block.createCuboidShape(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
 	protected static final VoxelShape Z_AXIS_BOX = Block.createCuboidShape(4.0, 4.0, 0.0, 12.0, 12.0, 16.0);
-
-	public WallPostBlock(Settings settings) {
+	
+	public OctagonalColumnBlock(Settings settings) {
 		super(settings);
 		setDefaultState(this.stateManager.getDefaultState().with(AXIS, Direction.Axis.Y));
 		this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false)); // Thanks LambdAurora!
 	}
-
+	
 	// The following deals with block rotation
 	@Override
 	public BlockState rotate(BlockState state, BlockRotation rotation)  {
 		return changeRotation(state, rotation);
 	}
-
+	
 	public static BlockState changeRotation(BlockState state, BlockRotation rotation) {
 		return switch (rotation) {
 			case COUNTERCLOCKWISE_90, CLOCKWISE_90 -> switch (state.get(AXIS)) {
@@ -49,7 +52,7 @@ public class WallPostBlock extends PillarBlock {
 			default -> state;
 		};
 	}
-
+	
 	// The following block of code below deals with block collision.
 	@Override
 	public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
@@ -60,25 +63,27 @@ public class WallPostBlock extends PillarBlock {
 			case Z -> Z_AXIS_BOX;
 		};
 	}
-
+	
 	// Deals with placing the block properly in accordance to direction.
 	@Override
 	public BlockState getPlacementState(ItemPlacementContext context) {
-		return this.getDefaultState().with(AXIS, context.getSide().getAxis()).with(WATERLOGGED, context.getWorld().getFluidState(context.getBlockPos()).getFluid() == Fluids.WATER);
+		World world = context.getWorld();
+		BlockPos pos = context.getBlockPos();
+		return this.getDefaultState().with(Properties.HORIZONTAL_FACING, context.getPlayerFacing()).with(CAPPED, world.getBlockState(pos.up()).getBlock() != this).with(WATERLOGGED, context.getWorld().getFluidState(context.getBlockPos()).getFluid() == Fluids.WATER);
 	}
-
+	
 	@Override
 	public FluidState getFluidState(BlockState state) {
 		return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : Fluids.EMPTY.getDefaultState();
 	}
-
+	
 	@Override
 	public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
 		if (state.get(WATERLOGGED)) world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
-
+		
 		return state;
 	}
-
+	
 	@Override
 	protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
 		stateManager.add(AXIS, WATERLOGGED);

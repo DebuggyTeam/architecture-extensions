@@ -1,7 +1,0 @@
-{
-  "parent": "architecture_extensions:block/octagonal_column.gltf",
-  "loader": "suspicious_shapes:gltf",
-  "textures": {
-    "all": "#texture"
-  }
-}

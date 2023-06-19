@@ -6,7 +6,7 @@ import java.util.function.BiFunction;
 import io.github.debuggyteam.architecture_extensions.blocks.FacadeBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.IBeamBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.LatticeBlock;
-import io.github.debuggyteam.architecture_extensions.blocks.OctoColumnBlock;
+import io.github.debuggyteam.architecture_extensions.blocks.OctagonalColumnBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.TransomBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.TubeSteelBlock;
 import io.github.debuggyteam.architecture_extensions.util.SafeRenderLayer;
@@ -50,7 +50,7 @@ public enum BlockType {
 	TUBE_STEEL((baseBlock, settings) -> new TubeSteelBlock(settings), 8f, noVariants(), SafeRenderLayer.SOLID),
 	I_BEAM((baseBlock, settings) -> new IBeamBlock(settings), 8f, noVariants(), SafeRenderLayer.SOLID),
 	TRANSOM((baseBlock, settings) -> new TransomBlock(settings), 1.5f, noVariants(), SafeRenderLayer.TRANSLUCENT),
-	OCTOGONAL_COLUMN((baseBlock, settings) -> new OctoColumnBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID);
+	OCTAGONAL_COLUMN((baseBlock, settings) -> new OctagonalColumnBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID);
 
 	private final BiFunction<Block, QuiltBlockSettings, Block> creator;
 	private final float strength;

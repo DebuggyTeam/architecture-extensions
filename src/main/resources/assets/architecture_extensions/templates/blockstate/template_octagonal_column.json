@@ -1,0 +1,29 @@
+{
+  "variants": {
+    "axis=x,cap=false": {
+      "model": "{model}",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,cap=true": {
+      "model": "{model}_cap",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,cap=false": {
+      "model": "{model}"
+    },
+    "axis=y,cap=true": {
+      "model": "{model}_cap"
+    },
+    "axis=z,cap=false": {
+      "model": "{model}",
+      "x": 90
+    },
+    "axis=z,cap=true": {
+      "model": "{model}_cap",
+      "x": 90
+    }
+  }
+}
+
