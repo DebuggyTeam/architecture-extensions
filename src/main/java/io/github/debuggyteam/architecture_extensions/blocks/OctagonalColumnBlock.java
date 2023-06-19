@@ -86,6 +86,6 @@ public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
 	
 	@Override
 	protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-		stateManager.add(AXIS, WATERLOGGED);
+		stateManager.add(AXIS, CAPPED, WATERLOGGED);
 	}
 }

@@ -58,7 +58,7 @@
 			"bufferView":4,
 			"mimeType":"image/png",
 			"name":"octagonal_column",
-			"uri": "#all"
+            "uri":"#all"
 		}
 	],
 	"accessors":[
