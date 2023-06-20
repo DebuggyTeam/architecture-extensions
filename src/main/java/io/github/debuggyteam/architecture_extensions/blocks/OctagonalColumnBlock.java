@@ -66,9 +66,8 @@ public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
 	// Deals with placing the block properly in accordance to direction.
 	@Override
 	public BlockState getPlacementState(ItemPlacementContext context) {
-		World world = context.getWorld();
-		BlockPos pos = context.getBlockPos();
-		return this.getDefaultState().with(Properties.AXIS, context.getPlayerFacing().getAxis()).with(CAPPED, world.getBlockState(pos.up()).getBlock() != this).with(WATERLOGGED, context.getWorld().getFluidState(context.getBlockPos()).getFluid() == Fluids.WATER);
+		BlockState initialState = this.getDefaultState().with(AXIS, context.getSide().getAxis());
+		return getUpdatedState(context.getWorld(), context.getBlockPos(), initialState);
 	}
 	
 	@Override
@@ -86,5 +85,16 @@ public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
 	@Override
 	protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
 		stateManager.add(AXIS, CAPPED, WATERLOGGED);
+	}
+	
+	public BlockState getUpdatedState(World world, BlockPos pos, BlockState state) {
+		Direction.Axis axis = state.get(AXIS);
+		
+		BlockState minNeighbor = world.getBlockState(pos.offset(axis, -1));
+		boolean minCap = (minNeighbor.getBlock() instanceof OctagonalColumnBlock && minNeighbor.get(AXIS) == state.get(AXIS));
+		boolean maxCap = world
+				.getBlockState(pos.offset(axis, 1))
+						.getBlock() instanceof OctagonalColumnBlock;
+		return state;
 	}
 }

@@ -1,26 +1,50 @@
 {
   "variants": {
-    "axis=x,cap=false": {
+    "axis=x,min_cap=false": {
       "model": "{model}",
       "x": 90,
       "y": 90
     },
-    "axis=x,cap=true": {
+    "axis=x,min_cap=true": {
       "model": "{model}_cap",
       "x": 90,
       "y": 90
     },
-    "axis=y,cap=false": {
+    "axis=x,max_cap=false": {
+      "model": "{model}",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,max_cap=true": {
+      "model": "{model}_cap",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,min_cap=false": {
       "model": "{model}"
     },
-    "axis=y,cap=true": {
+    "axis=y,min_cap=true": {
       "model": "{model}_cap"
     },
-    "axis=z,cap=false": {
+    "axis=y,max_cap=false": {
+      "model": "{model}"
+    },
+    "axis=y,max_cap=true": {
+      "model": "{model}_cap"
+    },
+    "axis=z,min_cap=false": {
       "model": "{model}",
       "x": 90
     },
-    "axis=z,cap=true": {
+    "axis=z,min_cap=true": {
+      "model": "{model}_cap",
+      "x": 90
+    },
+    "axis=z,max_cap=false": {
+      "model": "{model}",
+      "x": 90
+    },
+    "axis=z,max_cap=true": {
       "model": "{model}_cap",
       "x": 90
     }
