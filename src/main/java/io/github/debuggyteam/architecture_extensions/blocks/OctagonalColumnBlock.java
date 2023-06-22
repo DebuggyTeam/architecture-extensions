@@ -22,7 +22,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
 public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
-	public static final BooleanProperty CAPPED = BooleanProperty.of("cap");
+	public static final BooleanProperty MIN_CAP = BooleanProperty.of("min_cap");
+	public static final BooleanProperty MAX_CAP = BooleanProperty.of("max_cap");
 	public static final EnumProperty<Direction.Axis> AXIS = Properties.AXIS;
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 	
@@ -32,7 +33,7 @@ public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
 	
 	public OctagonalColumnBlock(Settings settings) {
 		super(settings);
-		this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false).with(AXIS, Direction.Axis.Y).with(CAPPED, false)); // Thanks LambdAurora!
+		this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false).with(AXIS, Direction.Axis.Y).with(MIN_CAP, false).with(MAX_CAP, false)); // Thanks LambdAurora!
 	}
 	
 	// The following deals with block rotation
@@ -84,7 +85,7 @@ public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
 	
 	@Override
 	protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
-		stateManager.add(AXIS, CAPPED, WATERLOGGED);
+		stateManager.add(AXIS, MIN_CAP, MAX_CAP, WATERLOGGED);
 	}
 	
 	public BlockState getUpdatedState(World world, BlockPos pos, BlockState state) {
@@ -95,6 +96,6 @@ public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
 		boolean maxCap = world
 				.getBlockState(pos.offset(axis, 1))
 						.getBlock() instanceof OctagonalColumnBlock;
-		return state;
+		return state.with(MIN_CAP, minCap).with(MAX_CAP, maxCap);
 	}
 }
