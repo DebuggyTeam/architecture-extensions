@@ -55,9 +55,7 @@ public class VanillaIntegration implements ArchExIntegration {
 			VanillaBlockGroups.TERRACOTTA, VanillaBlockGroups.CONCRETE
 		);
 		
-		ctx.makeArchExBlocks(
-				BlockType.OCTAGONAL_COLUMN, VanillaBlockGroups.WOOD
-		);
+		ctx.makeArchExBlocks(BlockType.ACTUAL_ARCH, VanillaBlockGroups.CONCRETE);
 
 		ctx.makeArchExBlocks(BlockType.BEAM, VanillaBlockGroups.WOOD);
 		ctx.makeArchExBlocks(BlockType.FENCE_POST, VanillaBlockGroups.WOOD);
