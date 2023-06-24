@@ -95,7 +95,7 @@ public class ArchitectureExtensions implements ModInitializer, ResourcePackRegis
 				throw new RuntimeException("There was a problem getting staticdata for mod container '"+item.getModId()+"' with resource id '"+item.getResourceId()+"'.", ex);
 			}
 		}
-		
+
 		// Start resolving deferred blocks when their base-blocks appear
 		DeferredRegistration.init();
 		

@@ -55,7 +55,7 @@ public class DeferredRegistration {
 		
 		if (!deferral.register()) {
 			//ArchitectureExtensions.LOGGER.info("Deferred generation: "+deferral.modId()+" requested "+deferral.getIds()+" and registration was deferred.");
-			deferrals.put(groupedBlock.id(), deferral);
+			deferrals.put(groupedBlock.baseBlockId(), deferral);
 		} else {
 			//ArchitectureExtensions.LOGGER.info("Deferred generation: "+deferral.modId()+" requested "+deferral.getIds()+" and registration was completed immediately.");
 		}
