@@ -1,7 +1,47 @@
 {
   "variants": {
-    "": {
-      "model": "{model}"
+    "facing=east,half=bottom": {
+      "model": "{model}",
+      "y": 90
+    },
+    "facing=east,half=top": {
+      "model": "{model}",
+      "x": 180,
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=north,half=bottom": {
+      "model": "{model}",
+      "y": 0,
+      "uvlock": true
+    },
+    "facing=north,half=top": {
+      "model": "{model}",
+      "x": 180,
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,half=bottom": {
+      "model": "{model}",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,half=top": {
+      "model": "{model}",
+      "x": 180,
+      "y": 360,
+      "uvlock": true
+    },
+    "facing=west,half=bottom": {
+      "model": "{model}",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,half=top": {
+      "model": "{model}",
+      "x": 180,
+      "y": 90,
+      "uvlock": true
     }
   }
 }
