@@ -11,11 +11,11 @@ import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
-public class ActualArchBlock extends HorizontalFacingBlock {
+public class RoundArchBlock extends HorizontalFacingBlock {
 	public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
 	public static final EnumProperty<BlockHalf> HALF = Properties.BLOCK_HALF;
 	
-	public ActualArchBlock(QuiltBlockSettings settings) {
+	public RoundArchBlock(QuiltBlockSettings settings) {
 		super(settings);
 	}
 	
@@ -41,6 +41,6 @@ public class ActualArchBlock extends HorizontalFacingBlock {
 	@Override
 	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
 		super.appendProperties(builder);
-		builder.add(HALF);
+		builder.add(FACING, HALF);
 	}
 }

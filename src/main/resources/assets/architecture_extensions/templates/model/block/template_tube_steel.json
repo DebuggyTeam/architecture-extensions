@@ -1,9 +1,9 @@
 {
   "credit": "Made with Blockbench",
   "textures": {
-    "particle": "architecture_extensions:block/tube_steel",
-    "texture": "architecture_extensions:block/tube_steel",
-    "texture_top": "architecture_extensions:block/tube_steel_top"
+    "particle": "architecture_extensions:block/tube_metal",
+    "texture": "architecture_extensions:block/tube_metal",
+    "texture_top": "architecture_extensions:block/tube_metal_top"
   },
   "elements": [
     {

@@ -3,11 +3,12 @@ package io.github.debuggyteam.architecture_extensions.api;
 import java.util.Locale;
 import java.util.function.BiFunction;
 
-import io.github.debuggyteam.architecture_extensions.blocks.ActualArchBlock;
+import io.github.debuggyteam.architecture_extensions.blocks.RoundArchBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.FacadeBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.IBeamBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.LatticeBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.OctagonalColumnBlock;
+import io.github.debuggyteam.architecture_extensions.blocks.RoundFencePostBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.TransomBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.TubeSteelBlock;
 import io.github.debuggyteam.architecture_extensions.util.SafeRenderLayer;
@@ -48,11 +49,12 @@ public enum BlockType {
 	WALL_POST((baseBlock, settings) -> new WallPostBlock(settings), 2.5f, noVariants(), SafeRenderLayer.SOLID),
 	LATTICE((baseBlock, settings) -> new LatticeBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
 	FACADE((baseBlock, settings) -> new FacadeBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
-	TUBE_STEEL((baseBlock, settings) -> new TubeSteelBlock(settings), 8f, noVariants(), SafeRenderLayer.SOLID),
+	TUBE_METAL((baseBlock, settings) -> new TubeSteelBlock(settings), 8f, noVariants(), SafeRenderLayer.SOLID),
 	I_BEAM((baseBlock, settings) -> new IBeamBlock(settings), 8f, noVariants(), SafeRenderLayer.SOLID),
 	TRANSOM((baseBlock, settings) -> new TransomBlock(settings), 1.5f, noVariants(), SafeRenderLayer.TRANSLUCENT),
 	OCTAGONAL_COLUMN((baseBlock, settings) -> new OctagonalColumnBlock(settings), 1.5f, variantsOf("", "cap"), SafeRenderLayer.SOLID),
-	ACTUAL_ARCH((baseBlock, settings) -> new ActualArchBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID);
+	ROUND_ARCH((baseBlock, settings) -> new RoundArchBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
+	ROUND_FENCE_POST((baseBlock, settings) -> new RoundFencePostBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID);
 
 	private final BiFunction<Block, QuiltBlockSettings, Block> creator;
 	private final float strength;
