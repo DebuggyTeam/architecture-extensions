@@ -31,6 +31,7 @@ public class BlockGroupSchema {
 	public String only_if_present;
 	
 	public BlockGroupSchema() {
+		name = null;
 		base_block = "minecraft:air";
 		types_to_generate = new String[0];
 	}
@@ -50,7 +51,8 @@ public class BlockGroupSchema {
 			Block b = Registries.BLOCK.get(baseBlockId);
 			return (b == Blocks.AIR) ? null : b;
 		};
-		Identifier baseId = new Identifier(baseBlockId.getNamespace(), name);
+		Identifier baseId = baseBlockId;
+		if (name != null) baseId = new Identifier(baseBlockId.getNamespace(), name);
 
 		TextureConfiguration textureConfig = (textures.contains(":")) ? TextureConfiguration.create(it->textures, it->textures, it->textures, it->textures) :
 			BlockGroupSchema.<Function<Identifier, TextureConfiguration>>reflectField(TextureConfiguration.class, textures.toUpperCase(Locale.ROOT))
