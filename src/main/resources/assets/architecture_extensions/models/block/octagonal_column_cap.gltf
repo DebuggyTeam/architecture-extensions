@@ -63,7 +63,8 @@
 		{
 			"bufferView":4,
 			"mimeType":"image/png",
-			"name":"stone_bricks"
+			"name":"octagonal_column_cap",
+            "uri": "#all"
 		}
 	],
 	"accessors":[

@@ -1,5 +1,5 @@
 {
-  "parent": "architecture_extensions:block/arch.gltf",
+  "parent": "architecture_extensions:block/round_arch.gltf",
   "loader": "suspicious_shapes:gltf",
   "textures": {
     "particle": "#texture",
