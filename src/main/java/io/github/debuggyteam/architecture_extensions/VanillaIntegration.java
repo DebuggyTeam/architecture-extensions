@@ -58,20 +58,32 @@ public class VanillaIntegration implements ArchExIntegration {
 		);
 
 		ctx.makeArchExBlocks(
-			BlockType.FACADE, VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE,
-			VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE,
-			VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL,
-			VanillaBlockGroups.TERRACOTTA, VanillaBlockGroups.CONCRETE
+				BlockType.FACADE,
+				VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE,
+				VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE,
+				VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL,
+				VanillaBlockGroups.TERRACOTTA, VanillaBlockGroups.CONCRETE
 		);
 		
-		ctx.makeArchExBlocks(BlockType.ROUND_FENCE_POST, VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, 
-			VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, 
-			VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL
+		ctx.makeArchExBlocks(
+				BlockType.ROUND_FENCE_POST,
+				VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
+				VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
+				VanillaBlockGroups.CRYSTAL
 		);
 		
-		ctx.makeArchExBlocks(BlockType.ROUND_ARCH, VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE,
-				VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK,
-				VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL
+		ctx.makeArchExBlocks(
+				BlockType.ROUND_ARCH,
+				VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
+				VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
+				VanillaBlockGroups.CRYSTAL
+		);
+		
+		ctx.makeArchExBlocks(
+				BlockType.OCTAGONAL_COLUMN,
+				VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
+				VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
+				VanillaBlockGroups.CRYSTAL
 		);
 
 		ctx.makeArchExBlocks(BlockType.BEAM, VanillaBlockGroups.WOOD);

@@ -12,13 +12,11 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
-import net.minecraft.state.property.Property;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
 public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
@@ -33,7 +31,13 @@ public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
 	
 	public OctagonalColumnBlock(Settings settings) {
 		super(settings);
-		this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false).with(AXIS, Direction.Axis.Y).with(MIN_CAP, false).with(MAX_CAP, false)); // Thanks LambdAurora!
+		this.setDefaultState(
+				this.getDefaultState()
+				.with(WATERLOGGED, false)
+				.with(AXIS, Direction.Axis.Y)
+				.with(MIN_CAP, false)
+				.with(MAX_CAP, false)
+			); // Thanks LambdAurora!
 	}
 	
 	// The following deals with block rotation
@@ -80,7 +84,7 @@ public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
 	public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
 		if (state.get(WATERLOGGED)) world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
 		
-		return state;
+		return getUpdatedState(world, pos, state);
 	}
 	
 	@Override
@@ -88,14 +92,17 @@ public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
 		stateManager.add(AXIS, MIN_CAP, MAX_CAP, WATERLOGGED);
 	}
 	
-	public BlockState getUpdatedState(World world, BlockPos pos, BlockState state) {
-		Direction.Axis axis = state.get(AXIS);
+	public BlockState getUpdatedState(WorldAccess world, BlockPos pos, BlockState state) {
+		Direction.Axis selfAxis = state.get(AXIS);
 		
-		BlockState minNeighbor = world.getBlockState(pos.offset(axis, -1));
-		boolean minCap = (minNeighbor.getBlock() instanceof OctagonalColumnBlock && minNeighbor.get(AXIS) == state.get(AXIS));
-		boolean maxCap = world
-				.getBlockState(pos.offset(axis, 1))
-						.getBlock() instanceof OctagonalColumnBlock;
+		BlockState minNeighbor = world.getBlockState(pos.offset(selfAxis, -1));
+		boolean minCap = !(minNeighbor.getBlock() instanceof OctagonalColumnBlock &&
+				minNeighbor.get(AXIS) == selfAxis);
+		
+		BlockState maxNeighbor = world.getBlockState(pos.offset(selfAxis, 1));
+		boolean maxCap = !(maxNeighbor.getBlock() instanceof OctagonalColumnBlock &&
+				maxNeighbor.get(AXIS) == selfAxis);
+		
 		return state.with(MIN_CAP, minCap).with(MAX_CAP, maxCap);
 	}
 }

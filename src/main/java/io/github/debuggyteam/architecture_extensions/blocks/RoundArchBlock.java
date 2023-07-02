@@ -9,6 +9,11 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.world.BlockView;
+
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
 public class RoundArchBlock extends HorizontalFacingBlock {
@@ -42,5 +47,10 @@ public class RoundArchBlock extends HorizontalFacingBlock {
 	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
 		super.appendProperties(builder);
 		builder.add(FACING, HALF);
+	}
+	
+	@Override
+	public VoxelShape getCullingShape(BlockState state, BlockView world, BlockPos pos) {
+		return VoxelShapes.empty();
 	}
 }

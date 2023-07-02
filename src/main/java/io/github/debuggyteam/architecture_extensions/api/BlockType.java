@@ -52,7 +52,7 @@ public enum BlockType {
 	TUBE_METAL((baseBlock, settings) -> new TubeSteelBlock(settings), 8f, noVariants(), SafeRenderLayer.SOLID),
 	I_BEAM((baseBlock, settings) -> new IBeamBlock(settings), 8f, noVariants(), SafeRenderLayer.SOLID),
 	TRANSOM((baseBlock, settings) -> new TransomBlock(settings), 1.5f, noVariants(), SafeRenderLayer.TRANSLUCENT),
-	OCTAGONAL_COLUMN((baseBlock, settings) -> new OctagonalColumnBlock(settings), 1.5f, variantsOf("", "cap"), SafeRenderLayer.SOLID),
+	OCTAGONAL_COLUMN((baseBlock, settings) -> new OctagonalColumnBlock(settings), 1.5f, variantsOf("", "cap", "double_cap"), SafeRenderLayer.SOLID),
 	ROUND_ARCH((baseBlock, settings) -> new RoundArchBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
 	ROUND_FENCE_POST((baseBlock, settings) -> new RoundFencePostBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID);
 
