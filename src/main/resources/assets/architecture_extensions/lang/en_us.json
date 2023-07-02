@@ -26,6 +26,7 @@
   "architecture_extensions.block_type.tube_metal": "Tube Steel",
   "architecture_extensions.block_type.wall_column": "Wall Column",
   "architecture_extensions.block_type.wall_post": "Wall Post",
+  "architecture_extensions.block_type.octagonal_column": "Octagonal Column",
 
 
   "architecture_extensions.grouped_block.bamboo": "Bamboo",
