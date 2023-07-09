@@ -1,42 +1,42 @@
 {
   "variants": {
-      "facing=north,cap=false": {
-          "model": "{model}",
-          "uvlock": true
-      },
-      "facing=north,cap=true": {
-          "model": "{model}_cap",
-          "uvlock": true
-      },
-      "facing=east,cap=false": {
-          "model": "{model}",
-          "y": 90,
-          "uvlock": true
-      },
-      "facing=east,cap=true": {
-          "model": "{model}_cap",
-          "y": 90,
-          "uvlock": true
-      },
-      "facing=south,cap=false": {
-          "model": "{model}",
-          "y": 180,
-          "uvlock": true
-      },
-      "facing=south,cap=true": {
-          "model": "{model}_cap",
-          "y": 180,
-          "uvlock": true
-      },
-      "facing=west,cap=false": {
-          "model": "{model}",
-          "y": 270,
-          "uvlock": true
-      },
-      "facing=west,cap=true": {
-          "model": "{model}_cap",
-          "y": 270,
-          "uvlock": true
-      }
+    "facing=north,cap=false": {
+      "model": "{model}",
+      "uvlock": true
+    },
+    "facing=north,cap=true": {
+      "model": "{model}_cap",
+      "uvlock": true
+    },
+    "facing=east,cap=false": {
+      "model": "{model}",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=east,cap=true": {
+      "model": "{model}_cap",
+      "y": 90,
+      "uvlock": true
+    },
+    "facing=south,cap=false": {
+      "model": "{model}",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=south,cap=true": {
+      "model": "{model}_cap",
+      "y": 180,
+      "uvlock": true
+    },
+    "facing=west,cap=false": {
+      "model": "{model}",
+      "y": 270,
+      "uvlock": true
+    },
+    "facing=west,cap=true": {
+      "model": "{model}_cap",
+      "y": 270,
+      "uvlock": true
+    }
   }
 }

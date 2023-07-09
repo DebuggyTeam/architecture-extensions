@@ -92,7 +92,7 @@ public class ArchitectureExtensions implements ModInitializer, ResourcePackRegis
 					DeferredRegistration.register(item.getModId(), group, groupedBlock, blockTypes, CALLBACK_ADD_TO_ITEM_GROUP);
 				}
 			} catch (IOException ex) {
-				throw new RuntimeException("There was a problem getting staticdata for mod container '"+item.getModId()+"' with resource id '"+item.getResourceId()+"'.", ex);
+				throw new RuntimeException("There was a problem getting staticdata for mod container '" + item.getModId() + "' with resource id '"+item.getResourceId()+"'.", ex);
 			}
 		}
 

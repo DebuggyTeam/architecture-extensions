@@ -8,10 +8,12 @@
   "architecture_extensions.block_type_block": "%s %s",
 
   "architecture_extensions.block_type.arch": "Arch",
+  "architecture_extensions.block_type.round_arch": "Arch",
   "architecture_extensions.block_type.beam": "Beam",
   "architecture_extensions.block_type.crown_molding": "Crown Molding",
   "architecture_extensions.block_type.facade": "Facade",
   "architecture_extensions.block_type.fence_post": "Fence Post",
+  "architecture_extensions.block_type.round_fence_post": "Fence Post",
   "architecture_extensions.block_type.h_beam": "H Beam",
   "architecture_extensions.block_type.i_beam": "I Beam",
   "architecture_extensions.block_type.joist": "Joist",
@@ -21,9 +23,10 @@
   "architecture_extensions.block_type.rod": "Rod",
   "architecture_extensions.block_type.roof": "Roof",
   "architecture_extensions.block_type.transom": "Transom",
-  "architecture_extensions.block_type.tube_steel": "Tube Steel",
+  "architecture_extensions.block_type.tube_metal": "Tube Steel",
   "architecture_extensions.block_type.wall_column": "Wall Column",
   "architecture_extensions.block_type.wall_post": "Wall Post",
+  "architecture_extensions.block_type.octagonal_column": "Octagonal Column",
 
 
   "architecture_extensions.grouped_block.bamboo": "Bamboo",
@@ -85,6 +88,7 @@
   "architecture_extensions.grouped_block.quartz": "Quartz",
   "architecture_extensions.grouped_block.smooth_quartz": "Smooth Quartz",
 
+  "architecture_extensions.grouped_block.terracotta": "Terracotta",
   "architecture_extensions.grouped_block.white_terracotta": "White Terracotta",
   "architecture_extensions.grouped_block.light_gray_terracotta": "Light Gray Terracotta",
   "architecture_extensions.grouped_block.gray_terracotta": "Gray Terracotta",
