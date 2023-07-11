@@ -52,7 +52,5 @@
 			}
 		]
 	},
-	"mixin": [
-		"architecture_extensions.mixins.json"
-	]
+	"mixin": ["architecture_extensions.mixins.json"]
 }

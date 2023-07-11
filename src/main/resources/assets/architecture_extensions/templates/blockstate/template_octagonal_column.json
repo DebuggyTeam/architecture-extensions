@@ -20,6 +20,7 @@
 			"x": 90,
 			"y": 90
 		},
+
 		"axis=y,max_cap=false,min_cap=false": {
 			"model": "{model}"
 		},
@@ -33,6 +34,7 @@
 		"axis=y,max_cap=true,min_cap=true": {
 			"model": "{model}_double_cap"
 		},
+
 		"axis=z,max_cap=false,min_cap=false": {
 			"model": "{model}",
 			"x": 90

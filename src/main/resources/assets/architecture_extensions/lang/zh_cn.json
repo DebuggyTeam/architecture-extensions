@@ -1,9 +1,12 @@
 {
 	"itemGroup.architecture_extensions.building_blocks": "建筑拓展：建造方块",
+
 	"block.architecture_extensions.end_rod_nubless": "连贯末地烛",
 	"block.architecture_extensions.debuggy_block": "奇怪的彩色方块",
 	"block.architecture_extensions.fake_end_portal_block": "璀璨星空块",
+
 	"architecture_extensions.block_type_block": "%s%s",
+
 	"architecture_extensions.block_type.arch": "拱",
 	"architecture_extensions.block_type.beam": "梁",
 	"architecture_extensions.block_type.crown_molding": "冠饰",
@@ -21,9 +24,14 @@
 	"architecture_extensions.block_type.tube_metal": "管柱",
 	"architecture_extensions.block_type.wall_column": "壁柱",
 	"architecture_extensions.block_type.wall_post": "柱",
+
+
 	"architecture_extensions.grouped_block.bamboo": "竹",
+
 	"architecture_extensions.grouped_block.copper": "铜",
+
 	"architecture_extensions.grouped_block.iron": "铁",
+
 	"architecture_extensions.grouped_block.stone": "石头",
 	"architecture_extensions.grouped_block.granite": "花岗岩",
 	"architecture_extensions.grouped_block.diorite": "闪长岩",
@@ -38,13 +46,16 @@
 	"architecture_extensions.grouped_block.red_sandstone": "红砂岩",
 	"architecture_extensions.grouped_block.end_stone": "末地石",
 	"architecture_extensions.grouped_block.blackstone": "黑石",
+
 	"architecture_extensions.grouped_block.prismarine": "海晶石",
 	"architecture_extensions.grouped_block.sea_lantern": "海晶灯",
+
 	"architecture_extensions.grouped_block.cobblestone": "圆石",
 	"architecture_extensions.grouped_block.mossy_cobblestone": "苔石",
 	"architecture_extensions.grouped_block.cobbled_deepslate": "深板岩圆石",
 	"architecture_extensions.grouped_block.polished_deepslate": "磨制深板岩",
 	"architecture_extensions.grouped_block.polished_blackstone": "磨制黑石",
+
 	"architecture_extensions.grouped_block.oak": "橡木",
 	"architecture_extensions.grouped_block.spruce": "云杉木",
 	"architecture_extensions.grouped_block.birch": "白桦木",
@@ -54,6 +65,7 @@
 	"architecture_extensions.grouped_block.mangrove": "红树木",
 	"architecture_extensions.grouped_block.crimson": "绯红菌",
 	"architecture_extensions.grouped_block.warped": "扭曲菌",
+
 	"architecture_extensions.grouped_block.stone_brick": "石砖",
 	"architecture_extensions.grouped_block.mossy_stone_brick": "苔石砖",
 	"architecture_extensions.grouped_block.deepslate_brick": "深板岩砖",
@@ -64,11 +76,14 @@
 	"architecture_extensions.grouped_block.red_nether_brick": "红色下界砖",
 	"architecture_extensions.grouped_block.polished_blackstone_brick": "磨制黑石砖",
 	"architecture_extensions.grouped_block.end_stone_brick": "末地石砖",
+
 	"architecture_extensions.grouped_block.deepslate_tile": "深板岩瓦",
 	"architecture_extensions.grouped_block.dark_prismarine": "暗海晶石",
 	"architecture_extensions.grouped_block.purpur": "紫珀",
+
 	"architecture_extensions.grouped_block.quartz": "石英",
 	"architecture_extensions.grouped_block.smooth_quartz": "平滑石英",
+
 	"architecture_extensions.grouped_block.terracotta": "陶瓦",
 	"architecture_extensions.grouped_block.white_terracotta": "白色陶瓦",
 	"architecture_extensions.grouped_block.light_gray_terracotta": "淡灰色陶瓦",
@@ -86,6 +101,7 @@
 	"architecture_extensions.grouped_block.purple_terracotta": "紫色陶瓦",
 	"architecture_extensions.grouped_block.magenta_terracotta": "品红色陶瓦",
 	"architecture_extensions.grouped_block.pink_terracotta": "粉红色陶瓦",
+
 	"architecture_extensions.grouped_block.white_concrete": "白色混凝土",
 	"architecture_extensions.grouped_block.light_gray_concrete": "淡灰色混凝土",
 	"architecture_extensions.grouped_block.gray_concrete": "灰色混凝土",
