@@ -50,8 +50,7 @@ public final class ResourceUtils {
 			return null;
 		});
 	}
-
-	// intelliJ says `static` is redundant for records
+	
 	private static record CacheKey(ModContainer resourceOwner, ResourceType resourceType, String resourceName) { }
 
 	private static record Cache(Path resourcePath, String content) {
