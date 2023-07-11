@@ -1,17 +1,17 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#",
-    "#",
-    "#"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:bamboo"
-    }
-  },
-  "result": {
-    "item": "architecture_extensions:bamboo_rod",
-    "count": 6
-  }
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"#",
+		"#"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:bamboo"
+		}
+	},
+	"result": {
+		"item": "architecture_extensions:bamboo_rod",
+		"count": 6
+	}
 }

@@ -28,7 +28,7 @@ public final class ResourceUtils {
 				CACHES.replace(key, refreshedCache);
 			}
 		});
-		removing.forEach(resourceName -> CACHES.remove(resourceName));
+		removing.forEach(CACHES::remove);
 	}
 
 	static String getResourceAsString(ModContainer resourceOwner, ResourceType resourceType, String resourceName) throws Exception {
@@ -51,6 +51,7 @@ public final class ResourceUtils {
 		});
 	}
 
+	// intelliJ says `static` is redundant for records
 	private static record CacheKey(ModContainer resourceOwner, ResourceType resourceType, String resourceName) { }
 
 	private static record Cache(Path resourcePath, String content) {

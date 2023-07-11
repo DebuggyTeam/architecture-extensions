@@ -45,8 +45,14 @@
 			{
 				"id": "staticdata",
 				"versions": ">=1.0.1+1.20"
+			},
+			{
+				"id": "suspicious_shapes",
+				"versions": ">=1.0.0+1.20.1"
 			}
 		]
 	},
-	"mixin": ["architecture_extensions.mixins.json"]
+	"mixin": [
+		"architecture_extensions.mixins.json"
+	]
 }

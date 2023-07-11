@@ -88,7 +88,7 @@ public enum BlockType {
 		var baseBlock = groupedBlock.baseBlock().get();
 
 		var blockSettings = QuiltBlockSettings.copyOf(baseBlock).strength(strength);
-		groupedBlock.mapColor().map(mapColor -> blockSettings.mapColor(mapColor));
+		groupedBlock.mapColor().map(mapColor -> blockSettings.mapColor(mapColor)); // replace lambda with method reference?
 		var block = Registry.register(Registries.BLOCK, id, creator.apply(baseBlock, blockSettings));
 
 		Registry.register(Registries.ITEM, id, new BlockItem(block, new QuiltItemSettings()));

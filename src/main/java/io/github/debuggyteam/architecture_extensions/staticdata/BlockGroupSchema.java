@@ -40,7 +40,7 @@ public class BlockGroupSchema {
 	private static <T> Optional<T> reflectField(Class<?> originClass, String name) {
 		try {
 			return Optional.of((T) originClass.getDeclaredField(name).get(null));
-		} catch (Exception e) {
+		} catch (Exception ex) {
 			return Optional.empty();
 		}
 	}
@@ -48,13 +48,13 @@ public class BlockGroupSchema {
 	public BlockGroup createBlockGroup() {
 		Identifier baseBlockId = new Identifier(base_block);
 		Supplier<Block> getter = () -> {
-			Block b = Registries.BLOCK.get(baseBlockId);
-			return (b == Blocks.AIR) ? null : b;
+			Block block = Registries.BLOCK.get(baseBlockId);
+			return (block == Blocks.AIR) ? null : block;
 		};
 		Identifier baseId = baseBlockId;
 		if (name != null) baseId = new Identifier(baseBlockId.getNamespace(), name);
 
-		TextureConfiguration textureConfig = (textures.contains(":")) ? TextureConfiguration.create(it->textures, it->textures, it->textures, it->textures) :
+		TextureConfiguration textureConfig = (textures.contains(":")) ? TextureConfiguration.create(it -> textures, it -> textures, it -> textures, it -> textures) :
 			BlockGroupSchema.<Function<Identifier, TextureConfiguration>>reflectField(TextureConfiguration.class, textures.toUpperCase(Locale.ROOT))
 				.orElse(TextureConfiguration.TOP).apply(baseId);
 		RecipeConfigurator recipeConfig = BlockGroupSchema.<RecipeConfigurator>reflectField(RecipeConfigurator.class, recipes.toUpperCase(Locale.ROOT))
@@ -69,12 +69,12 @@ public class BlockGroupSchema {
 	public Set<BlockType> getBlockTypes() {
 		Set<BlockType> result = new HashSet<>();
 		
-		for(String s : types_to_generate) {
-			BlockType blockType = BlockGroupSchema.<BlockType>reflectField(BlockType.class, s.toUpperCase(Locale.ROOT)).orElse(null);
+		for(String string : types_to_generate) {
+			BlockType blockType = BlockGroupSchema.<BlockType>reflectField(BlockType.class, string.toUpperCase(Locale.ROOT)).orElse(null);
 			if (blockType != null) {
 				result.add(blockType);
 			} else {
-				ArchitectureExtensions.LOGGER.warn("A file requested the nonexistant block type '"+s+"'.");
+				ArchitectureExtensions.LOGGER.warn("A file requested the nonexistant block type '" + string + "'.");
 			}
 		}
 		
