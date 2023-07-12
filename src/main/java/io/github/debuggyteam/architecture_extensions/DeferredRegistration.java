@@ -88,7 +88,7 @@ public class DeferredRegistration {
 		
 		public Set<String> getIds() {
 			String modId = this.modId();
-			if (Objects.equals(modId, "file")) modId = ArchitectureExtensions.MOD_CONTAINER.metadata().id(); // If it's a staticdata resource, use our own id
+			if (modId.equals("file")) modId = ArchitectureExtensions.MOD_CONTAINER.metadata().id(); // If it's a staticdata resource, use our own id
 			
 			HashSet<String> result = new HashSet<>();
 			for(BlockType bt : blockTypes) {
