@@ -69,12 +69,12 @@ public class BlockGroupSchema {
 	public Set<BlockType> getBlockTypes() {
 		Set<BlockType> result = new HashSet<>();
 		
-		for(String typeToGenerate : types_to_generate) {
-			BlockType blockType = BlockGroupSchema.<BlockType>reflectField(BlockType.class, typeToGenerate.toUpperCase(Locale.ROOT)).orElse(null);
+		for(String typesToGenerate : types_to_generate) {
+			BlockType blockType = BlockGroupSchema.<BlockType>reflectField(BlockType.class, typesToGenerate.toUpperCase(Locale.ROOT)).orElse(null);
 			if (blockType != null) {
 				result.add(blockType);
 			} else {
-				ArchitectureExtensions.LOGGER.warn("A file requested the nonexistant block type '" + typeToGenerate + "'.");
+				ArchitectureExtensions.LOGGER.warn("A file requested the nonexistant block type '" + typesToGenerate + "'.");
 			}
 		}
 		
