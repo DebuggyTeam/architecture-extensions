@@ -27,7 +27,7 @@ public class DeferredRegistration {
 	 * Called by ArchEx to start resolving deferred registrations.
 	 */
 	public static void init() {
-		RegistryEvents.getEntryAddEvent(Registries.BLOCK).register(ctx->{
+		RegistryEvents.getEntryAddEvent(Registries.BLOCK).register(ctx -> {
 			Identifier registeredId = ctx.id();
 			Collection<Entry> safeEntries = deferrals.get(registeredId);
 			Iterator<Entry> i = safeEntries.iterator();
@@ -54,10 +54,10 @@ public class DeferredRegistration {
 		Entry deferral = new Entry(modId, group, groupedBlock, Set.copyOf(blockTypes), callback);
 		
 		if (!deferral.register()) {
-			//ArchitectureExtensions.LOGGER.info("Deferred generation: "+deferral.modId()+" requested "+deferral.getIds()+" and registration was deferred.");
+			//ArchitectureExtensions.LOGGER.info("Deferred generation: " + deferral.modId() + " requested " + deferral.getIds() + " and registration was deferred.");
 			deferrals.put(groupedBlock.baseBlockId(), deferral);
 		} else {
-			//ArchitectureExtensions.LOGGER.info("Deferred generation: "+deferral.modId()+" requested "+deferral.getIds()+" and registration was completed immediately.");
+			//ArchitectureExtensions.LOGGER.info("Deferred generation: " + deferral.modId() + " requested " + deferral.getIds() + " and registration was completed immediately.");
 		}
 	}
 	
@@ -67,8 +67,8 @@ public class DeferredRegistration {
 	 */
 	public static void assertFinished() {
 		for(Entry entry : deferrals.values()) {
-			String sourceString = (entry.modId().equals("file")) ? "A file in the staticdata folder" : "Mod '"+entry.modId()+"'";
-			ArchitectureExtensions.LOGGER.warn(sourceString+" requested architecture extensions blocks derived from base block "+entry.groupedBlock.id()+", but this base block was never registered.");
+			String sourceString = (entry.modId().equals("file")) ? "A file in the staticdata folder" : "Mod '" + entry.modId() + "'";
+			ArchitectureExtensions.LOGGER.warn(sourceString + " requested architecture extensions blocks derived from base block " + entry.groupedBlock.id() + ", but this base block was never registered.");
 		}
 	}
 	
@@ -87,7 +87,7 @@ public class DeferredRegistration {
 		
 		public Set<String> getIds() {
 			String modId = this.modId();
-			if (modId == "file") modId = ArchitectureExtensions.MOD_CONTAINER.metadata().id(); // If it's a staticdata resource, use our own id
+			if (modId.equals("file")) modId = ArchitectureExtensions.MOD_CONTAINER.metadata().id(); // If it's a staticdata resource, use our own id
 			
 			HashSet<String> result = new HashSet<>();
 			for(BlockType bt : blockTypes) {

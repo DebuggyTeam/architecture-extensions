@@ -1,10 +1,10 @@
 {
-  "input": {
-    "item": "{group}_planks",
-    "count": 1
-  },
-  "result": {
-    "item": "{result}",
-    "count": 1
-  }
+	"input": {
+		"item": "{group}_planks",
+		"count": 1
+	},
+	"result": {
+		"item": "{result}",
+		"count": 1
+	}
 }

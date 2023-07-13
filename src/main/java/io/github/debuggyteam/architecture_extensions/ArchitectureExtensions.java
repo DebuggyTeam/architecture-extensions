@@ -68,7 +68,7 @@ public class ArchitectureExtensions implements ModInitializer, ResourcePackRegis
 		for (EntrypointContainer<ArchExIntegration> entrypoint : QuiltLoader.getEntrypointContainers(ArchExIntegration.ENTRYPOINT_KEY, ArchExIntegration.class)) {
 			try {
 				entrypoint.getEntrypoint().integrate(new ArchExIntegrationContextImpl(entrypoint.getEntrypoint(), entrypoint.getProvider().metadata().id()));
-			} catch (Exception e) {
+			} catch (Exception ex) {
 				LOGGER.error("Mod '" + entrypoint.getProvider().metadata().id() + "' threw an exception when trying to integrate with Architecture Extensions");
 			}
 		}
@@ -92,7 +92,7 @@ public class ArchitectureExtensions implements ModInitializer, ResourcePackRegis
 					DeferredRegistration.register(item.getModId(), group, groupedBlock, blockTypes, CALLBACK_ADD_TO_ITEM_GROUP);
 				}
 			} catch (IOException ex) {
-				throw new RuntimeException("There was a problem getting staticdata for mod container '" + item.getModId() + "' with resource id '"+item.getResourceId()+"'.", ex);
+				throw new RuntimeException("There was a problem getting staticdata for mod container '" + item.getModId() + "' with resource id '" + item.getResourceId() + "'.", ex);
 			}
 		}
 
