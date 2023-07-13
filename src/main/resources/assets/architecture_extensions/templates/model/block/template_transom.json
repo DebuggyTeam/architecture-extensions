@@ -1,6 +1,6 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "block",
+	"parent": "block/block",
 	"textures": {
 		"glass": "block/light_blue_stained_glass",
 		"particle": "#texture"
