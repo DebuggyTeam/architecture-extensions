@@ -74,7 +74,7 @@ public class BlockGroupSchema {
 			if (blockType != null) {
 				result.add(blockType);
 			} else {
-				ArchitectureExtensions.LOGGER.warn("A file requested an nonexistent block type '" + typeToGenerate + "'.");
+				ArchitectureExtensions.LOGGER.warn("A file requested a nonexistent block type '" + typeToGenerate + "'.");
 			}
 		}
 		
