@@ -7,11 +7,11 @@
 	],
 	"key": {
 		"#": {
-			"item": "minecraft:bamboo"
+			"item": "{group}"
 		}
 	},
 	"result": {
-		"item": "architecture_extensions:bamboo_rod",
+		"item": "{result}",
 		"count": 6
 	}
 }

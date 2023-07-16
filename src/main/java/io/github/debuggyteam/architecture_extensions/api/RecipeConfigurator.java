@@ -51,6 +51,15 @@ public interface RecipeConfigurator extends BiConsumer<BlockType, Consumer<Recip
 				templateConsumer.accept(new RecipeTemplate("wall_to_post", false));
 				templateConsumer.accept(new RecipeTemplate("post_to_wall", false));
 				break;
+			case H_BEAM:
+				templateConsumer.accept(new RecipeTemplate("h_beam", false));
+				break;
+			case I_BEAM:
+				templateConsumer.accept(new RecipeTemplate("i_beam", false));
+				break;
+			case TUBE_METAL:
+				templateConsumer.accept(new RecipeTemplate("tube_metal", false));
+				break;
 			default:
 				break;
 		}

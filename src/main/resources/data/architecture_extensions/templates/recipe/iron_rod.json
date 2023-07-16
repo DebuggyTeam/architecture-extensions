@@ -7,11 +7,11 @@
 	],
 	"key": {
 		"i": {
-			"item": "minecraft:iron_ingot"
+			"item": "{group}_ingot"
 		}
 	},
 	"result": {
-		"item": "architecture_extensions:iron_rod",
+		"item": "{result}",
 		"count": 8
 	}
 }
