@@ -7,11 +7,11 @@
 	],
 	"key": {
 		"i": {
-			"item": "minecraft:copper_ingot"
+			"item": "{group}_ingot"
 		}
 	},
 	"result": {
-		"item": "architecture_extensions:copper_tube_metal",
+		"item": "{result}",
 		"count": 1
 	}
 }

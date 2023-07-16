@@ -2,15 +2,18 @@
 	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"iii",
-		" i ",
+		" I ",
 		"iii"
 	],
 	"key": {
 		"i": {
-			"item": "minecraft:iron_ingot"
+			"item": "{group}_ingot"
+		},
+		"I": {
+			"item": "{group}_block"
 		}
 	},
 	"result": {
-		"item": "architecture_extensions:iron_h_beam"
+		"item": "{result}"
 	}
 }
