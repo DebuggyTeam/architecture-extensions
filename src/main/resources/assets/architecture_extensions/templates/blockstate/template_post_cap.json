@@ -1,7 +1,7 @@
 {
-  "variants": {
-      "": {
-          "model": "{model}"
-      }
-  }
+	"variants": {
+		"": {
+			"model": "{model}"
+		}
+	}
 }

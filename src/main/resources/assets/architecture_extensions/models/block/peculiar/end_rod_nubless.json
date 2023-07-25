@@ -1,7 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-    "texture": "architecture_extensions:block/end_rod_nubless",
+		"texture": "architecture_extensions:block/end_rod_nubless",
 		"particle": "#texture"
 	},
 	"elements": [

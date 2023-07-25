@@ -1,8 +1,8 @@
 {
-  "sources": [
-      {
-          "type": "single",
-          "resource": "minecraft:entity/end_portal"
-      }
-  ]
+	"sources": [
+		{
+			"type": "single",
+			"resource": "minecraft:entity/end_portal"
+		}
+	]
 }

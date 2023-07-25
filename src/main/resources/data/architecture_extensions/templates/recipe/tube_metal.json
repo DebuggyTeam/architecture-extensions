@@ -1,17 +1,17 @@
 {
 	"type": "minecraft:crafting_shaped",
 	"pattern": [
-		"  c",
-		" c ",
-		"c  "
+		"iii",
+		"i i",
+		"iii"
 	],
 	"key": {
-		"c": {
+		"i": {
 			"item": "{group}_ingot"
 		}
 	},
 	"result": {
 		"item": "{result}",
-		"count": 8
+		"count": 1
 	}
 }

@@ -1,17 +1,17 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "  i",
-    " i ",
-    "i  "
-  ],
-  "key": {
-    "i": {
-      "item": "minecraft:iron_ingot"
-    }
-  },
-  "result": {
-    "item": "architecture_extensions:iron_rod",
-    "count": 8
-  }
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"  i",
+		" i ",
+		"i  "
+	],
+	"key": {
+		"i": {
+			"item": "{group}_ingot"
+		}
+	},
+	"result": {
+		"item": "{result}",
+		"count": 8
+	}
 }
