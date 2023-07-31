@@ -7,6 +7,7 @@ import net.minecraft.block.LichenSpreadBehavior;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
@@ -37,6 +38,11 @@ public class FacadeBlock extends AbstractLichenBlock {
 	@Override
 	public LichenSpreadBehavior getLichenSpreadBehavior() {
 		return new LichenSpreadBehavior(this);
+	}
+	
+	@Override
+	public boolean canReplace(BlockState state, ItemPlacementContext ctx) {
+		return ctx.getStack().isOf(this.asItem());
 	}
 
 	// Deals with block waterlogging. Thanks acikek!
