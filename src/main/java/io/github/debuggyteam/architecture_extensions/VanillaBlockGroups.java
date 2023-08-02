@@ -3,6 +3,7 @@ package io.github.debuggyteam.architecture_extensions;
 import io.github.debuggyteam.architecture_extensions.api.BlockGroup;
 import io.github.debuggyteam.architecture_extensions.api.RecipeConfigurator;
 import io.github.debuggyteam.architecture_extensions.api.TextureConfiguration;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
 import net.minecraft.util.DyeColor;
@@ -36,7 +37,10 @@ public final class VanillaBlockGroups {
 		new BlockGroup.GroupedBlock("sandstone", Blocks.SANDSTONE, TextureConfiguration.TOP_BOTTOM.apply(new Identifier("sandstone")), RecipeConfigurator.STONECUTTER, MapColor.SAND),
 		new BlockGroup.GroupedBlock("red_sandstone", Blocks.RED_SANDSTONE, TextureConfiguration.TOP_BOTTOM.apply(new Identifier("red_sandstone")), RecipeConfigurator.STONECUTTER, MapColor.ORANGE),
 		new BlockGroup.GroupedBlock("end_stone", Blocks.BASALT, (type, textureId) -> "minecraft:block/end_stone", RecipeConfigurator.STONECUTTER, MapColor.BLACK),
-		new BlockGroup.GroupedBlock("blackstone", Blocks.BLACKSTONE, TextureConfiguration.TOP.apply(new Identifier("blackstone")), RecipeConfigurator.STONECUTTER, MapColor.BLACK)
+		new BlockGroup.GroupedBlock("blackstone", Blocks.BLACKSTONE, TextureConfiguration.TOP.apply(new Identifier("blackstone")), RecipeConfigurator.STONECUTTER, MapColor.BLACK),
+		new BlockGroup.GroupedBlock("raw_iron", Blocks.RAW_IRON_BLOCK, (type, textureId) -> "minecraft:block/raw_iron_block", RecipeConfigurator.STONECUTTER, MapColor.RAW_IRON),
+		new BlockGroup.GroupedBlock("raw_copper", Blocks.RAW_COPPER_BLOCK, (type, textureId) -> "minecraft:block/raw_copper_block", RecipeConfigurator.STONECUTTER, MapColor.ORANGE),
+		new BlockGroup.GroupedBlock("raw_gold", Blocks.RAW_GOLD_BLOCK, (type, textureId) -> "minecraft:block/raw_gold_block", RecipeConfigurator.STONECUTTER, MapColor.GOLD)
 	);
 
 	public static final BlockGroup AQUATIC_STONE = BlockGroup.of(
@@ -54,19 +58,24 @@ public final class VanillaBlockGroups {
 
 	public static final BlockGroup BRICK = BlockGroup.of(
 		new BlockGroup.GroupedBlock("stone_brick", Blocks.STONE_BRICKS, (type, textureId) -> "minecraft:block/stone_bricks", RecipeConfigurator.STONECUTTER, MapColor.STONE),
+		new BlockGroup.GroupedBlock("cracked_stone_brick", Blocks.CRACKED_STONE_BRICKS, (type, textureId) -> "minecraft:block/cracked_stone_bricks", RecipeConfigurator.STONECUTTER, MapColor.STONE),
 		new BlockGroup.GroupedBlock("mossy_stone_brick", Blocks.MOSSY_STONE_BRICKS, (type, textureId) -> "minecraft:block/mossy_stone_bricks", RecipeConfigurator.STONECUTTER, MapColor.STONE),
 		new BlockGroup.GroupedBlock("deepslate_brick", Blocks.DEEPSLATE_BRICKS, (type, textureId) -> "minecraft:block/deepslate_bricks", RecipeConfigurator.STONECUTTER, MapColor.DEEPSLATE),
+		new BlockGroup.GroupedBlock("cracked_deepslate_brick", Blocks.CRACKED_DEEPSLATE_BRICKS, (type, textureId) -> "minecraft:block/cracked_deepslate_bricks", RecipeConfigurator.STONECUTTER, MapColor.DEEPSLATE),
 		new BlockGroup.GroupedBlock("brick", Blocks.BRICKS, (type, textureId) -> "minecraft:block/bricks", RecipeConfigurator.STONECUTTER, MapColor.RED),
 		new BlockGroup.GroupedBlock("mud_brick", Blocks.MUD_BRICKS, (type, textureId) -> "minecraft:block/mud_bricks", RecipeConfigurator.STONECUTTER, MapColor.LIGHT_GRAY_TERRACOTTA),
 		new BlockGroup.GroupedBlock("prismarine_brick", Blocks.PRISMARINE_BRICKS, (type, textureId) -> "minecraft:block/prismarine_bricks", RecipeConfigurator.STONECUTTER, MapColor.DIAMOND),
 		new BlockGroup.GroupedBlock("nether_brick", Blocks.NETHER_BRICKS, (type, textureId) -> "minecraft:block/nether_bricks", RecipeConfigurator.STONECUTTER, MapColor.NETHER),
+		new BlockGroup.GroupedBlock("cracked_nether_brick", Blocks.CRACKED_NETHER_BRICKS, (type, textureId) -> "minecraft:block/cracked_nether_bricks", RecipeConfigurator.STONECUTTER, MapColor.NETHER),
 		new BlockGroup.GroupedBlock("red_nether_brick", Blocks.RED_NETHER_BRICKS, (type, textureId) -> "minecraft:block/red_nether_bricks", RecipeConfigurator.STONECUTTER, MapColor.NETHER),
 		new BlockGroup.GroupedBlock("polished_blackstone_brick", Blocks.POLISHED_BLACKSTONE_BRICKS, (type, textureId) -> "minecraft:block/polished_blackstone_bricks", RecipeConfigurator.STONECUTTER, MapColor.BLACK),
+		new BlockGroup.GroupedBlock("cracked_polished_blackstone_brick", Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS, (type, textureId) -> "minecraft:block/cracked_polished_blackstone_bricks", RecipeConfigurator.STONECUTTER, MapColor.BLACK),
 		new BlockGroup.GroupedBlock("end_stone_brick", Blocks.END_STONE_BRICKS, (type, textureId) -> "minecraft:block/end_stone_bricks", RecipeConfigurator.STONECUTTER, MapColor.SAND)
 	);
 
 	public static final BlockGroup TILE = BlockGroup.of(
 		new BlockGroup.GroupedBlock("deepslate_tile", Blocks.DEEPSLATE_TILES, (type, textureId) -> "minecraft:block/deepslate_tiles", RecipeConfigurator.STONECUTTER, MapColor.DEEPSLATE),
+		new BlockGroup.GroupedBlock("cracked_deepslate_tile", Blocks.CRACKED_DEEPSLATE_TILES, (type, textureId) -> "minecraft:block/cracked_deepslate_tiles", RecipeConfigurator.STONECUTTER, MapColor.DEEPSLATE),
 		new BlockGroup.GroupedBlock("dark_prismarine", Blocks.DARK_PRISMARINE, (type, textureId) -> "minecraft:block/dark_prismarine", RecipeConfigurator.STONECUTTER, MapColor.DIAMOND),
 		new BlockGroup.GroupedBlock("purpur", Blocks.PURPUR_BLOCK, (type, textureId) -> "minecraft:block/purpur_block", RecipeConfigurator.STONECUTTER, MapColor.MAGENTA)
 	);

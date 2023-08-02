@@ -34,56 +34,49 @@ public class VanillaIntegration implements ArchExIntegration {
 
 	@Override
 	public void integrate(Context ctx) {
-		ctx.makeArchExBlocks(
-			BlockType.ARCH, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
-			VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
-			VanillaBlockGroups.CRYSTAL
-		);
-
-		ctx.makeArchExBlocks(
-			BlockType.WALL_COLUMN, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
-			VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
-			VanillaBlockGroups.CRYSTAL
-		);
-
-		ctx.makeArchExBlocks(
-			BlockType.ROOF, VanillaBlockGroups.STONE, VanillaBlockGroups.PROCESSED_STONE,
+		ctx.makeArchExBlocks(BlockType.ARCH, 
+			VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE, 
 			VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL
 		);
 
-		ctx.makeArchExBlocks(
-			BlockType.WALL_POST, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
+		ctx.makeArchExBlocks(BlockType.WALL_COLUMN, 
+			VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE, 
+			VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL
+		);
+
+		ctx.makeArchExBlocks(BlockType.ROOF, 
+			VanillaBlockGroups.STONE, VanillaBlockGroups.PROCESSED_STONE,
+			VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL
+		);
+
+		ctx.makeArchExBlocks(BlockType.WALL_POST, 
+			VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE, 
+			VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL
+		);
+
+		ctx.makeArchExBlocks(BlockType.FACADE,
+			VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE,
+			VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE,
+			VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL,
+			VanillaBlockGroups.TERRACOTTA, VanillaBlockGroups.CONCRETE
+		);
+		
+		ctx.makeArchExBlocks(BlockType.ROUND_FENCE_POST,
+			VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
 			VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
 			VanillaBlockGroups.CRYSTAL
 		);
-
-		ctx.makeArchExBlocks(
-				BlockType.FACADE,
-				VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE,
-				VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE,
-				VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL,
-				VanillaBlockGroups.TERRACOTTA, VanillaBlockGroups.CONCRETE
+		
+		ctx.makeArchExBlocks(BlockType.ROUND_ARCH,
+			VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
+			VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
+			VanillaBlockGroups.CRYSTAL
 		);
 		
-		ctx.makeArchExBlocks(
-				BlockType.ROUND_FENCE_POST,
-				VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
-				VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
-				VanillaBlockGroups.CRYSTAL
-		);
-		
-		ctx.makeArchExBlocks(
-				BlockType.ROUND_ARCH,
-				VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
-				VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
-				VanillaBlockGroups.CRYSTAL
-		);
-		
-		ctx.makeArchExBlocks(
-				BlockType.OCTAGONAL_COLUMN,
-				VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
-				VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
-				VanillaBlockGroups.CRYSTAL
+		ctx.makeArchExBlocks(BlockType.OCTAGONAL_COLUMN,
+			VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
+			VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
+			VanillaBlockGroups.CRYSTAL
 		);
 
 		ctx.makeArchExBlocks(BlockType.BEAM, VanillaBlockGroups.WOOD);
