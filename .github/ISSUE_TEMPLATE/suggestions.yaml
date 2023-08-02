@@ -8,7 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking your time to create your block suggestion! If you want to discuss your suggestion, join us on Discord.
+        Thanks for taking your time to create your feature suggestion! If you want to discuss your suggestion, join us on [Discord](https://debuggy.gay/discord).
         Make sure you are running the latest version of Architecture Extensions before making the suggestion.
   - type: textarea
     id: features
