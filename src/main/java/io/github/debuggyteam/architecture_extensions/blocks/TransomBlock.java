@@ -15,7 +15,6 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
 
 public class TransomBlock extends HorizontalFacingBlock {
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
@@ -46,8 +45,6 @@ public class TransomBlock extends HorizontalFacingBlock {
 	// Deals with placing the block properly in accordance to direction.
 	@Override
 	public BlockState getPlacementState(ItemPlacementContext context) {
-		World world = context.getWorld();
-		BlockPos pos = context.getBlockPos();
 		return this.getDefaultState().with(Properties.HORIZONTAL_FACING, context.getPlayerFacing()).with(WATERLOGGED, context.getWorld().getFluidState(context.getBlockPos()).getFluid() == Fluids.WATER);
 	}
 

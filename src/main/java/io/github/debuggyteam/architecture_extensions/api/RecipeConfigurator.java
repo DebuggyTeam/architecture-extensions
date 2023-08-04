@@ -64,6 +64,8 @@ public interface RecipeConfigurator extends BiConsumer<BlockType, Consumer<Recip
 				break;
 		}
 	};
+	
+	static final RecipeConfigurator CREATIVE = (type, templateConsumer) -> {};
 
 	static record RecipeTemplate(String id, boolean simple, boolean tablesaw) {
 		RecipeTemplate(String id, boolean tablesaw) {

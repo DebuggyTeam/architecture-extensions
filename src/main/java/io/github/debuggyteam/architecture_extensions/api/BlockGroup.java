@@ -7,6 +7,7 @@ import java.util.function.Supplier;
 
 import com.google.common.collect.Sets;
 
+import io.github.debuggyteam.architecture_extensions.util.SafeRenderLayer;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
 import net.minecraft.registry.Registries;
@@ -33,7 +34,11 @@ public final class BlockGroup implements Iterable<BlockGroup.GroupedBlock> {
 		return groupedBlocks.iterator();
 	}
 
-	public record GroupedBlock(Identifier id, Identifier baseBlockId, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, Optional<MapColor> mapColor) {
+	public record GroupedBlock(Identifier id, Identifier baseBlockId, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, Optional<MapColor> mapColor, SafeRenderLayer renderLayer) {
+		public GroupedBlock(Identifier id, Identifier baseBlockId, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, Optional<MapColor> mapColor) {
+			this(id, baseBlockId, baseBlock, textureConfiguration, recipeConfigurator, mapColor, SafeRenderLayer.SOLID);
+		}
+		
 		public GroupedBlock(String id, Identifier baseBlockId, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, MapColor mapColor) {
 			this(new Identifier(id), baseBlockId, baseBlock, textureConfiguration, recipeConfigurator, Optional.of(mapColor));
 		}

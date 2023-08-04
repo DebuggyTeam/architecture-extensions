@@ -12,9 +12,11 @@ import com.google.gson.GsonBuilder;
 import io.github.debuggyteam.architecture_extensions.ArchitectureExtensions;
 import io.github.debuggyteam.architecture_extensions.api.BlockGroup;
 import io.github.debuggyteam.architecture_extensions.api.BlockType;
+import io.github.debuggyteam.architecture_extensions.api.MetaBlockType;
 import io.github.debuggyteam.architecture_extensions.api.RecipeConfigurator;
 import io.github.debuggyteam.architecture_extensions.api.TextureConfiguration;
 import io.github.debuggyteam.architecture_extensions.util.MapColors;
+import io.github.debuggyteam.architecture_extensions.util.SafeRenderLayer;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
@@ -29,6 +31,7 @@ public class BlockGroupSchema {
 	public String map_color;
 	public String[] types_to_generate;
 	public String only_if_present;
+	public String render_layer;
 	
 	public BlockGroupSchema() {
 		name = null;
@@ -60,9 +63,12 @@ public class BlockGroupSchema {
 		RecipeConfigurator recipeConfig = BlockGroupSchema.<RecipeConfigurator>reflectField(RecipeConfigurator.class, recipes.toUpperCase(Locale.ROOT))
 			.orElse(RecipeConfigurator.STONECUTTER);
 		Optional<MapColor> mapColor = MapColors.byName(map_color);
-
+		
+		if (render_layer == null) render_layer = "solid";
+		SafeRenderLayer renderLayer = BlockGroupSchema.<SafeRenderLayer>reflectField(SafeRenderLayer.class, render_layer.toUpperCase(Locale.ROOT)).orElse(SafeRenderLayer.SOLID);
+		
 		return BlockGroup.of(
-				new BlockGroup.GroupedBlock(baseId, baseBlockId, getter, textureConfig, recipeConfig, mapColor)
+				new BlockGroup.GroupedBlock(baseId, baseBlockId, getter, textureConfig, recipeConfig, mapColor, renderLayer)
 				);
 	}
 	
@@ -70,6 +76,17 @@ public class BlockGroupSchema {
 		Set<BlockType> result = new HashSet<>();
 		
 		for(String typeToGenerate : types_to_generate) {
+			if (typeToGenerate.startsWith("#")) {
+				typeToGenerate = typeToGenerate.substring(1);
+				Optional<MetaBlockType> metaType = BlockGroupSchema.<MetaBlockType>reflectField(MetaBlockType.class, typeToGenerate.toUpperCase(Locale.ROOT));
+				if (metaType.isPresent()) {
+					for(BlockType t : metaType.get().blockTypes()) result.add(t);
+				} else {
+					ArchitectureExtensions.LOGGER.warn("A file requested a nonexistent meta-type '#" + typeToGenerate + "'.");
+				}
+				continue;
+			}
+			
 			BlockType blockType = BlockGroupSchema.<BlockType>reflectField(BlockType.class, typeToGenerate.toUpperCase(Locale.ROOT)).orElse(null);
 			if (blockType != null) {
 				result.add(blockType);
