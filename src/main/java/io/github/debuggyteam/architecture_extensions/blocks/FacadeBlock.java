@@ -1,5 +1,6 @@
 package io.github.debuggyteam.architecture_extensions.blocks;
 
+import io.github.debuggyteam.architecture_extensions.api.BlockType.TypedGroupedBlock;
 import net.minecraft.block.AbstractLichenBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -11,6 +12,7 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.text.MutableText;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
@@ -22,14 +24,20 @@ import net.minecraft.world.WorldAccess;
  * @author Gaming32 & Portal Cubed devs
  * @since arch-ex v2.1.0-1.19.4
  **/
-public class FacadeBlock extends AbstractLichenBlock {
+public class FacadeBlock extends AbstractLichenBlock implements TypedGrouped {
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
-
-	public FacadeBlock(Settings settings) {
+	protected final TypedGroupedBlock typedGroupedBlock;
+	
+	public FacadeBlock(Settings settings, TypedGroupedBlock typedGroupedBlock) {
 		super(settings);
 		this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false)); // Thanks LambdAurora!
+		this.typedGroupedBlock = typedGroupedBlock;
 	}
 
+	public FacadeBlock(Block baseBlock, Settings settings, TypedGroupedBlock typedGroupedBlock) {
+		this(settings, typedGroupedBlock);
+	}
+	
 	@Override
 	public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
 		return VoxelShapes.empty();
@@ -62,5 +70,15 @@ public class FacadeBlock extends AbstractLichenBlock {
 	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
 		super.appendProperties(builder);
 		builder.add(WATERLOGGED);
+	}
+
+	@Override
+	public TypedGroupedBlock getTypedGroupedBlock() {
+		return typedGroupedBlock;
+	}
+	
+	@Override
+	public MutableText getName() {
+		return getServerTranslation();
 	}
 }

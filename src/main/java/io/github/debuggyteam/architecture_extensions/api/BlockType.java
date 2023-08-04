@@ -36,26 +36,26 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public enum BlockType {
-	ARCH((baseBlock, settings, grouped) -> new ArchBlock(baseBlock.getDefaultState(), settings, grouped), 2.5f, variantsOf("", "inner", "outer"), SafeRenderLayer.SOLID),
-	BEAM((baseBlock, settings, grouped) -> new BeamBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
-	H_BEAM((baseBlock, settings, grouped) -> new BeamBlock(settings), 8f, noVariants(), SafeRenderLayer.SOLID),
-	WALL_COLUMN((baseBlock, settings, grouped) -> new WallColumnBlock(settings), 2.5f, variantsOf("", "cap"), SafeRenderLayer.SOLID),
-	FENCE_POST((baseBlock, settings, grouped) -> new FencePostBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
-	JOIST((baseBlock, settings, grouped) -> new JoistBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
-	CROWN_MOLDING((baseBlock, settings, grouped) -> new CrownMoldingBlock(baseBlock.getDefaultState(), settings), 1.5f, variantsOf("", "inner", "outer"), SafeRenderLayer.SOLID),
-	POST_CAP((baseBlock, settings, grouped) -> new PostCapBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
-	POST_LANTERN((baseBlock, settings, grouped) -> new PostLanternBlock(settings), 1.5f, variantsOf("", "hanging"), SafeRenderLayer.SOLID),
-	ROD((baseBlock, settings, grouped) -> new ArchExRodBlock(settings), 1f, noVariants(), SafeRenderLayer.SOLID),
-	ROOF((baseBlock, settings, grouped) -> new RoofBlock(baseBlock.getDefaultState(), settings), 2.5f, variantsOf("", "inner", "outer"), SafeRenderLayer.SOLID),
-	WALL_POST((baseBlock, settings, grouped) -> new WallPostBlock(settings), 2.5f, noVariants(), SafeRenderLayer.SOLID),
-	LATTICE((baseBlock, settings, grouped) -> new LatticeBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
-	FACADE((baseBlock, settings, grouped) -> new FacadeBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
-	TUBE_METAL((baseBlock, settings, grouped) -> new TubeSteelBlock(settings), 8f, noVariants(), SafeRenderLayer.SOLID),
-	I_BEAM((baseBlock, settings, grouped) -> new IBeamBlock(settings), 8f, noVariants(), SafeRenderLayer.SOLID),
-	TRANSOM((baseBlock, settings, grouped) -> new TransomBlock(settings), 1.5f, noVariants(), SafeRenderLayer.TRANSLUCENT),
-	OCTAGONAL_COLUMN((baseBlock, settings, grouped) -> new OctagonalColumnBlock(settings), 1.5f, variantsOf("", "cap", "double_cap"), SafeRenderLayer.SOLID),
-	ROUND_ARCH((baseBlock, settings, grouped) -> new RoundArchBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
-	ROUND_FENCE_POST((baseBlock, settings, grouped) -> new RoundFencePostBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID);
+	ARCH         (ArchBlock::new,        2.5f, variantsOf("", "inner", "outer"), SafeRenderLayer.SOLID),
+	BEAM         (BeamBlock::new,        1.5f),
+	H_BEAM       (BeamBlock::new,        8.0f),
+	WALL_COLUMN  (WallColumnBlock::new,  2.5f, variantsOf("", "cap"), SafeRenderLayer.SOLID),
+	FENCE_POST   (FencePostBlock::new,   1.5f),
+	JOIST        (JoistBlock::new,       1.5f),
+	CROWN_MOLDING(CrownMoldingBlock::new,1.5f, variantsOf("", "inner", "outer"), SafeRenderLayer.SOLID),
+	POST_CAP     (PostCapBlock::new,     1.5f),
+	POST_LANTERN (PostLanternBlock::new, 1.5f, variantsOf("", "hanging"), SafeRenderLayer.SOLID),
+	ROD          (ArchExRodBlock::new,   1.0f),
+	ROOF         (RoofBlock::new,        2.5f, variantsOf("", "inner", "outer"), SafeRenderLayer.SOLID),
+	WALL_POST    (WallPostBlock::new,    2.5f),
+	LATTICE      (LatticeBlock::new,     1.5f),
+	FACADE       (FacadeBlock::new,      1.5f),
+	TUBE_METAL   (TubeSteelBlock::new,   8.0f),
+	I_BEAM       (IBeamBlock::new,       8.0f),
+	TRANSOM      (TransomBlock::new,     1.5f, noVariants(), SafeRenderLayer.TRANSLUCENT),
+	OCTAGONAL_COLUMN(OctagonalColumnBlock::new, 1.5f, variantsOf("", "cap", "double_cap"), SafeRenderLayer.SOLID),
+	ROUND_ARCH   (RoundArchBlock::new,   1.5f),
+	ROUND_FENCE_POST(RoundFencePostBlock::new,  1.5f);
 	
 	private final TriFunction<Block, QuiltBlockSettings, TypedGroupedBlock, Block> creator;
 	private final float strength;
@@ -68,7 +68,14 @@ public enum BlockType {
 		this.variants = variants;
 		this.renderLayer = renderLayer;
 	}
-
+	
+	/**
+	 * Makes a BlockType with no variants and solid RenderLayer
+	 * @see #BlockType(TriFunction, float, String[], SafeRenderLayer)
+	 */
+	BlockType(TriFunction<Block, QuiltBlockSettings, TypedGroupedBlock, Block> creator, float strength) {
+		this(creator, strength, noVariants(), SafeRenderLayer.SOLID);
+	}
 
 	public String[] variants() {
 		return variants;

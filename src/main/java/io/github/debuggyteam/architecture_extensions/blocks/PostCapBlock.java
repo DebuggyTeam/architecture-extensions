@@ -1,5 +1,6 @@
 package io.github.debuggyteam.architecture_extensions.blocks;
 
+import io.github.debuggyteam.architecture_extensions.api.BlockType.TypedGroupedBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -9,22 +10,30 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.text.MutableText;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 
-public class PostCapBlock extends Block {
+public class PostCapBlock extends Block implements TypedGrouped {
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
 	protected static final VoxelShape POST_CAP_SHAPE = Block.createCuboidShape(5.0, 0.0, 5.0, 11.0, 3.0, 11.0);
 
-	public PostCapBlock(Settings settings) {
+	protected final TypedGroupedBlock typedGroupedBlock;
+	
+	public PostCapBlock(Settings settings, TypedGroupedBlock typedGroupedBlock) {
 		super(settings);
 		this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false)); // Thanks LambdAurora!
+		this.typedGroupedBlock = typedGroupedBlock;
 	}
 
+	public PostCapBlock(Block baseBlock, Settings settings, TypedGroupedBlock typedGroupedBlock) {
+		this(settings, typedGroupedBlock);
+	}
+	
 	@Override
 	public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
 		return POST_CAP_SHAPE;
@@ -51,5 +60,15 @@ public class PostCapBlock extends Block {
 	@Override
 	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
 		builder.add(WATERLOGGED);
+	}
+
+	@Override
+	public TypedGroupedBlock getTypedGroupedBlock() {
+		return typedGroupedBlock;
+	}
+	
+	@Override
+	public MutableText getName() {
+		return getServerTranslation();
 	}
 }

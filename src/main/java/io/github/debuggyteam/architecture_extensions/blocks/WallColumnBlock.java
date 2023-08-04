@@ -1,5 +1,6 @@
 package io.github.debuggyteam.architecture_extensions.blocks;
 
+import io.github.debuggyteam.architecture_extensions.api.BlockType.TypedGroupedBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
@@ -10,6 +11,7 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.text.MutableText;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
@@ -18,7 +20,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
-public class WallColumnBlock extends HorizontalFacingBlock {
+public class WallColumnBlock extends HorizontalFacingBlock implements TypedGrouped {
 	public static final BooleanProperty CAPPED = BooleanProperty.of("cap");
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
@@ -27,11 +29,18 @@ public class WallColumnBlock extends HorizontalFacingBlock {
 	protected static final VoxelShape EAST_BOX = Block.createCuboidShape(12.0, 0.0, 2.0, 16.0, 16.0, 14.0);
 	protected static final VoxelShape WEST_BOX = Block.createCuboidShape(0.0, 0.0, 2.0, 4.0, 16.0, 14.0);
 
+	protected final TypedGroupedBlock typedGroupedBlock;
+	
 	// This is a super class of settings.
-	public WallColumnBlock(Settings settings) {
+	public WallColumnBlock(Settings settings, TypedGroupedBlock typedGroupedBlock) {
 		super(settings);
 		setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(CAPPED, false));
 		this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false)); // Thanks LambdAurora!
+		this.typedGroupedBlock = typedGroupedBlock;
+	}
+	
+	public WallColumnBlock(Block baseBlock, Settings settings, TypedGroupedBlock typedGroupedBlock) {
+		this(settings, typedGroupedBlock);
 	}
 
 	// Both of the following blocks of code below deals with block collision.
@@ -73,5 +82,15 @@ public class WallColumnBlock extends HorizontalFacingBlock {
 		builder.add(Properties.HORIZONTAL_FACING);
 		builder.add(WATERLOGGED);
 		builder.add(CAPPED);
+	}
+
+	@Override
+	public TypedGroupedBlock getTypedGroupedBlock() {
+		return typedGroupedBlock;
+	}
+	
+	@Override
+	public MutableText getName() {
+		return getServerTranslation();
 	}
 }

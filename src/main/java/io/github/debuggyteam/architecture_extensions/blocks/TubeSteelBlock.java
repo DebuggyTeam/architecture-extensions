@@ -1,9 +1,11 @@
 package io.github.debuggyteam.architecture_extensions.blocks;
 
+import io.github.debuggyteam.architecture_extensions.api.BlockType.TypedGroupedBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PillarBlock;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.text.MutableText;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -11,7 +13,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
-public class TubeSteelBlock extends PillarBlock {
+public class TubeSteelBlock extends PillarBlock implements TypedGrouped {
 	protected static final VoxelShape FIRST_SIDE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 3.0);
 	protected static final VoxelShape SECOND_SIDE = Block.createCuboidShape(0.0, 0.0, 3.0, 3.0, 16.0, 13.0);
 	protected static final VoxelShape THIRD_SIDE = Block.createCuboidShape(13.0, 0.0, 3.0, 16.0, 16.0, 13.0);
@@ -19,9 +21,11 @@ public class TubeSteelBlock extends PillarBlock {
 
 	protected static final VoxelShape TUBE_UPWARDS = VoxelShapes.union(FIRST_SIDE, SECOND_SIDE, THIRD_SIDE, FOURTH_SIDE);
 
-
-	public TubeSteelBlock(Settings settings) {
+	protected final TypedGroupedBlock typedGroupedBlock;
+	
+	public TubeSteelBlock(Block baseBlock, Settings settings, TypedGroupedBlock typedGroupedBlock) {
 		super(settings);
+		this.typedGroupedBlock = typedGroupedBlock;
 	}
 
 	// The following deals with block rotation
@@ -49,5 +53,15 @@ public class TubeSteelBlock extends PillarBlock {
 			case Y -> TUBE_UPWARDS;
 			default -> VoxelShapes.fullCube();
 		};
+	}
+
+	@Override
+	public TypedGroupedBlock getTypedGroupedBlock() {
+		return typedGroupedBlock;
+	}
+	
+	@Override
+	public MutableText getName() {
+		return getServerTranslation();
 	}
 }
