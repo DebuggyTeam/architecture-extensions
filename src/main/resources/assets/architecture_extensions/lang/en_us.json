@@ -45,6 +45,7 @@
 	"architecture_extensions.grouped_block.glowstone": "Glowstone",
 	"architecture_extensions.grouped_block.deepslate": "Deepslate",
 	"architecture_extensions.grouped_block.sandstone": "Sandstone",
+	"architecture_extensions.grouped_block.sandstone_top": "Sandstone Top",
 	"architecture_extensions.grouped_block.red_sandstone": "Red Sandstone",
 	"architecture_extensions.grouped_block.blackstone": "Blackstone",
 	"architecture_extensions.grouped_block.end_stone": "End Stone",

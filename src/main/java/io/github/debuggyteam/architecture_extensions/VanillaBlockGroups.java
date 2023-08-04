@@ -3,7 +3,6 @@ package io.github.debuggyteam.architecture_extensions;
 import io.github.debuggyteam.architecture_extensions.api.BlockGroup;
 import io.github.debuggyteam.architecture_extensions.api.RecipeConfigurator;
 import io.github.debuggyteam.architecture_extensions.api.TextureConfiguration;
-import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
 import net.minecraft.util.DyeColor;

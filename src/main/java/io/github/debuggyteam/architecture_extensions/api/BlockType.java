@@ -1,7 +1,6 @@
 package io.github.debuggyteam.architecture_extensions.api;
 
 import java.util.Locale;
-import java.util.function.BiFunction;
 
 import io.github.debuggyteam.architecture_extensions.blocks.RoundArchBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.FacadeBlock;
@@ -11,7 +10,6 @@ import io.github.debuggyteam.architecture_extensions.blocks.OctagonalColumnBlock
 import io.github.debuggyteam.architecture_extensions.blocks.RoundFencePostBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.TransomBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.TubeSteelBlock;
-import io.github.debuggyteam.architecture_extensions.blocks.TypedGrouped;
 import io.github.debuggyteam.architecture_extensions.util.SafeRenderLayer;
 
 import org.apache.commons.lang3.function.TriFunction;
@@ -33,7 +31,6 @@ import io.github.debuggyteam.architecture_extensions.blocks.ArchExRodBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.RoofBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.WallPostBlock;
 import net.minecraft.block.Block;
-import net.minecraft.item.BlockItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -59,7 +56,7 @@ public enum BlockType {
 	OCTAGONAL_COLUMN((baseBlock, settings, grouped) -> new OctagonalColumnBlock(settings), 1.5f, variantsOf("", "cap", "double_cap"), SafeRenderLayer.SOLID),
 	ROUND_ARCH((baseBlock, settings, grouped) -> new RoundArchBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID),
 	ROUND_FENCE_POST((baseBlock, settings, grouped) -> new RoundFencePostBlock(settings), 1.5f, noVariants(), SafeRenderLayer.SOLID);
-
+	
 	private final TriFunction<Block, QuiltBlockSettings, TypedGroupedBlock, Block> creator;
 	private final float strength;
 	private final String[] variants;

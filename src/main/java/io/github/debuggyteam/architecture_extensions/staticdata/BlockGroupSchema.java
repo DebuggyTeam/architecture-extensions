@@ -12,6 +12,7 @@ import com.google.gson.GsonBuilder;
 import io.github.debuggyteam.architecture_extensions.ArchitectureExtensions;
 import io.github.debuggyteam.architecture_extensions.api.BlockGroup;
 import io.github.debuggyteam.architecture_extensions.api.BlockType;
+import io.github.debuggyteam.architecture_extensions.api.MetaBlockType;
 import io.github.debuggyteam.architecture_extensions.api.RecipeConfigurator;
 import io.github.debuggyteam.architecture_extensions.api.TextureConfiguration;
 import io.github.debuggyteam.architecture_extensions.util.MapColors;
@@ -70,6 +71,17 @@ public class BlockGroupSchema {
 		Set<BlockType> result = new HashSet<>();
 		
 		for(String typeToGenerate : types_to_generate) {
+			if (typeToGenerate.startsWith("#")) {
+				typeToGenerate = typeToGenerate.substring(1);
+				Optional<MetaBlockType> metaType = BlockGroupSchema.<MetaBlockType>reflectField(MetaBlockType.class, typeToGenerate.toUpperCase(Locale.ROOT));
+				if (metaType.isPresent()) {
+					for(BlockType t : metaType.get().blockTypes()) result.add(t);
+				} else {
+					ArchitectureExtensions.LOGGER.warn("A file requested a nonexistent meta-type '#" + typeToGenerate + "'.");
+				}
+				continue;
+			}
+			
 			BlockType blockType = BlockGroupSchema.<BlockType>reflectField(BlockType.class, typeToGenerate.toUpperCase(Locale.ROOT)).orElse(null);
 			if (blockType != null) {
 				result.add(blockType);
