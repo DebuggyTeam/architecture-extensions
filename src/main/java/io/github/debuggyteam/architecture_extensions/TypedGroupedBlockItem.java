@@ -47,7 +47,7 @@ public class TypedGroupedBlockItem extends BlockItem implements TypedGrouped {
 		
 		//This hover never actually displays since the tooltip is already a hover.
 		//But this keeps the Null tradition alive and prevents the tooltip from becoming gigantic.
-		return Text.literal("Null")
+		return Text.literal("Missing")
 				.styled(it -> it.withHoverEvent(
 						HoverEvent.Action.SHOW_TEXT.buildHoverEvent(Text.translatable(MISSING_LOCALIZATION_KEY, Text.literal(ideal)))
 						));
