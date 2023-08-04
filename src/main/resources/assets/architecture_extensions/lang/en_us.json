@@ -127,5 +127,7 @@
 	"architecture_extensions.grouped_block.blue_concrete": "Blue Concrete",
 	"architecture_extensions.grouped_block.purple_concrete": "Purple Concrete",
 	"architecture_extensions.grouped_block.magenta_concrete": "Magenta Concrete",
-	"architecture_extensions.grouped_block.pink_concrete": "Pink Concrete"
+	"architecture_extensions.grouped_block.pink_concrete": "Pink Concrete",
+	
+	"architecture_extensions.i18n.missing_key": "Missing Localization: %s"
 }
