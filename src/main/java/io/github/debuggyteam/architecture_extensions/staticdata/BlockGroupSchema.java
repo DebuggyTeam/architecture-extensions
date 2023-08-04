@@ -16,6 +16,7 @@ import io.github.debuggyteam.architecture_extensions.api.MetaBlockType;
 import io.github.debuggyteam.architecture_extensions.api.RecipeConfigurator;
 import io.github.debuggyteam.architecture_extensions.api.TextureConfiguration;
 import io.github.debuggyteam.architecture_extensions.util.MapColors;
+import io.github.debuggyteam.architecture_extensions.util.SafeRenderLayer;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
@@ -30,6 +31,7 @@ public class BlockGroupSchema {
 	public String map_color;
 	public String[] types_to_generate;
 	public String only_if_present;
+	public String render_layer;
 	
 	public BlockGroupSchema() {
 		name = null;
@@ -61,9 +63,12 @@ public class BlockGroupSchema {
 		RecipeConfigurator recipeConfig = BlockGroupSchema.<RecipeConfigurator>reflectField(RecipeConfigurator.class, recipes.toUpperCase(Locale.ROOT))
 			.orElse(RecipeConfigurator.STONECUTTER);
 		Optional<MapColor> mapColor = MapColors.byName(map_color);
-
+		
+		if (render_layer == null) render_layer = "solid";
+		SafeRenderLayer renderLayer = BlockGroupSchema.<SafeRenderLayer>reflectField(SafeRenderLayer.class, render_layer.toUpperCase(Locale.ROOT)).orElse(SafeRenderLayer.SOLID);
+		
 		return BlockGroup.of(
-				new BlockGroup.GroupedBlock(baseId, baseBlockId, getter, textureConfig, recipeConfig, mapColor)
+				new BlockGroup.GroupedBlock(baseId, baseBlockId, getter, textureConfig, recipeConfig, mapColor, renderLayer)
 				);
 	}
 	

@@ -2,6 +2,7 @@ package io.github.debuggyteam.architecture_extensions.client;
 
 import io.github.debuggyteam.architecture_extensions.ArchitectureExtensions;
 import io.github.debuggyteam.architecture_extensions.resource.DataGeneration;
+import io.github.debuggyteam.architecture_extensions.util.SafeRenderLayer;
 import net.minecraft.registry.Registries;
 import net.minecraft.resource.ResourceType;
 import org.jetbrains.annotations.NotNull;
@@ -14,7 +15,15 @@ import org.quiltmc.qsl.resource.loader.api.ResourcePackRegistrationContext;
 public class ArchitectureExtensionsClient implements ClientModInitializer, ResourcePackRegistrationContext.Callback {
 	@Override
 	public void onInitializeClient(ModContainer mod) {
-		DataGeneration.BLOCKS.forEach(block -> BlockRenderLayerMap.put(block.type().renderLayer().get(), Registries.BLOCK.get(block.id())));
+		DataGeneration.BLOCKS.forEach(block -> {
+			SafeRenderLayer renderLayer = SafeRenderLayer.choose(
+					block.type().renderLayer(),
+					block.groupedBlock().renderLayer()
+					);
+			if (renderLayer != SafeRenderLayer.SOLID) {
+				BlockRenderLayerMap.put(renderLayer.get(), Registries.BLOCK.get(block.id()));
+			}
+		});
 
 		ResourceLoader.get(ResourceType.CLIENT_RESOURCES).getRegisterDefaultResourcePackEvent().register(this);
 	}
