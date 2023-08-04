@@ -11,6 +11,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.text.HoverEvent;
 import net.minecraft.text.Text;
+import net.minecraft.text.TextColor;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
 
@@ -50,7 +52,9 @@ public class TypedGroupedBlockItem extends BlockItem implements TypedGrouped {
 		return Text.literal("Missing")
 				.styled(it -> it.withHoverEvent(
 						HoverEvent.Action.SHOW_TEXT.buildHoverEvent(Text.translatable(MISSING_LOCALIZATION_KEY, Text.literal(ideal)))
-						));
+						)
+						.withItalic(true)
+						.withColor(TextColor.fromFormatting(Formatting.GRAY)));
 	}
 
 	@Override
