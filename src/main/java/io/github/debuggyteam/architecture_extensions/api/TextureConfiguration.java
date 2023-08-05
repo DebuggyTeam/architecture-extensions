@@ -100,6 +100,8 @@ public interface TextureConfiguration extends BiFunction<BlockType, String, Stri
 			return new Identifier(id.getNamespace(), "block/" + id.getPath() + "_bottom").toString();
 		}
 	);
+	
+	static final Function<Identifier, TextureConfiguration> ALL = it -> (type, textureId) -> it.toString();
 
 	static TextureConfiguration create(Function<BlockType, String> base,
 								 Function<BlockType, String> side,
