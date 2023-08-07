@@ -28,6 +28,7 @@
 	"architecture_extensions.block_type.wall_post": "Wall Post",
 	"architecture_extensions.block_type.octagonal_column": "Octagonal Column",
 
+	"architecture_extensions.grouped_block.debuggy_block": "Debuggy Block",
 
 	"architecture_extensions.grouped_block.bamboo": "Bamboo",
 
@@ -39,6 +40,7 @@
 	"architecture_extensions.grouped_block.red_sand": "Red Sand",
 
 	"architecture_extensions.grouped_block.stone": "Stone",
+	"architecture_extensions.grouped_block.smooth_stone": "Smooth Stone",
 	"architecture_extensions.grouped_block.granite": "Granite",
 	"architecture_extensions.grouped_block.diorite": "Diorite",
 	"architecture_extensions.grouped_block.andesite": "Andesite",
