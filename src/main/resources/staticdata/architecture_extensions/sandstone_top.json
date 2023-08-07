@@ -1,8 +1,0 @@
-{
-	"name": "sandstone_top",
-	"base_block": "minecraft:sandstone",
-	"textures": "minecraft:block/sandstone_top",
-	"recipes": "stonecutter",
-	"map_color": "sand",
-	"types_to_generate": [ "#stone" ]
-}
