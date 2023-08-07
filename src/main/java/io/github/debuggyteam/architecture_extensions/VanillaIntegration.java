@@ -58,7 +58,8 @@ public class VanillaIntegration implements ArchExIntegration {
 			VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE,
 			VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE,
 			VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL,
-			VanillaBlockGroups.TERRACOTTA, VanillaBlockGroups.CONCRETE
+			VanillaBlockGroups.TERRACOTTA, VanillaBlockGroups.CONCRETE, VanillaBlockGroups.GLASS,
+			VanillaBlockGroups.POWDER
 		);
 		
 		ctx.makeArchExBlocks(BlockType.ROUND_FENCE_POST,

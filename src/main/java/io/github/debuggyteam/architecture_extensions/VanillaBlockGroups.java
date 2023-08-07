@@ -3,10 +3,13 @@ package io.github.debuggyteam.architecture_extensions;
 import io.github.debuggyteam.architecture_extensions.api.BlockGroup;
 import io.github.debuggyteam.architecture_extensions.api.RecipeConfigurator;
 import io.github.debuggyteam.architecture_extensions.api.TextureConfiguration;
+import io.github.debuggyteam.architecture_extensions.util.SafeRenderLayer;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.MapColor;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
+
+import java.util.Optional;
 
 public final class VanillaBlockGroups {
 	public static final BlockGroup WOOD = BlockGroup.of(
@@ -115,9 +118,12 @@ public final class VanillaBlockGroups {
 
 	public static final BlockGroup PROCESSED_STONE = BlockGroup.of(
 		new BlockGroup.GroupedBlock("cobblestone", Blocks.COBBLESTONE, (type, textureId) -> "minecraft:block/cobblestone", RecipeConfigurator.STONECUTTER, MapColor.STONE),
+		new BlockGroup.GroupedBlock("smooth_stone", Blocks.SMOOTH_STONE, (type, textureId) -> "minecraft:block/smooth_stone", RecipeConfigurator.STONECUTTER, MapColor.STONE),
 		new BlockGroup.GroupedBlock("mossy_cobblestone", Blocks.MOSSY_COBBLESTONE, (type, textureId) -> "minecraft:block/mossy_cobblestone", RecipeConfigurator.STONECUTTER, MapColor.STONE),
 		new BlockGroup.GroupedBlock("cobbled_deepslate", Blocks.COBBLED_DEEPSLATE, (type, textureId) -> "minecraft:block/cobbled_deepslate", RecipeConfigurator.STONECUTTER, MapColor.DEEPSLATE),
 		new BlockGroup.GroupedBlock("polished_deepslate", Blocks.POLISHED_DEEPSLATE, (type, textureId) -> "minecraft:block/polished_deepslate", RecipeConfigurator.STONECUTTER, MapColor.DEEPSLATE),
+		new BlockGroup.GroupedBlock("smooth_sandstone", Blocks.SMOOTH_SANDSTONE, (type, textureId) -> "minecraft:block/sandstone_top", RecipeConfigurator.STONECUTTER, MapColor.SAND),
+		new BlockGroup.GroupedBlock("smooth_red_sandstone", Blocks.SMOOTH_RED_SANDSTONE, (type, textureId) -> "minecraft:block/red_sandstone_top", RecipeConfigurator.STONECUTTER, MapColor.ORANGE),
 		new BlockGroup.GroupedBlock("polished_blackstone", Blocks.POLISHED_BLACKSTONE, (type, textureId) -> "minecraft:block/polished_blackstone", RecipeConfigurator.STONECUTTER, MapColor.BLACK)
 	);
 
@@ -148,6 +154,26 @@ public final class VanillaBlockGroups {
 	public static final BlockGroup CRYSTAL = BlockGroup.of(
 		new BlockGroup.GroupedBlock("quartz", Blocks.QUARTZ_BLOCK, TextureConfiguration.SIDED.apply(new Identifier("quartz_block")), RecipeConfigurator.STONECUTTER, MapColor.QUARTZ),
 		new BlockGroup.GroupedBlock("smooth_quartz", Blocks.SMOOTH_QUARTZ, (type, textureId) -> "minecraft:block/quartz_block_bottom", RecipeConfigurator.STONECUTTER, MapColor.QUARTZ)
+	);
+	
+	public static final BlockGroup GLASS = BlockGroup.of(
+		new BlockGroup.GroupedBlock(new Identifier("glass"), new Identifier("glass"), () -> Blocks.GLASS, (type, textureId) -> "minecraft:block/glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(new Identifier("white_stained_glass"), new Identifier("white_stained_glass"), () -> Blocks.WHITE_STAINED_GLASS, (type, textureId) -> "minecraft:block/white_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(new Identifier("light_gray_stained_glass"), new Identifier("light_gray_stained_glass"), () -> Blocks.LIGHT_GRAY_STAINED_GLASS, (type, textureId) -> "minecraft:block/light_gray_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(new Identifier("gray_stained_glass"), new Identifier("gray_stained_glass"), () -> Blocks.GRAY_STAINED_GLASS, (type, textureId) -> "minecraft:block/gray_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(new Identifier("black_stained_glass"), new Identifier("black_stained_glass"), () -> Blocks.BLACK_STAINED_GLASS, (type, textureId) -> "minecraft:block/black_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(new Identifier("brown_stained_glass"), new Identifier("brown_stained_glass"), () -> Blocks.BROWN_STAINED_GLASS, (type, textureId) -> "minecraft:block/brown_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(new Identifier("red_stained_glass"), new Identifier("red_stained_glass"), () -> Blocks.RED_STAINED_GLASS, (type, textureId) -> "minecraft:block/red_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(new Identifier("orange_stained_glass"), new Identifier("orange_stained_glass"), () -> Blocks.ORANGE_STAINED_GLASS, (type, textureId) -> "minecraft:block/orange_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(new Identifier("yellow_stained_glass"), new Identifier("yellow_stained_glass"), () -> Blocks.YELLOW_STAINED_GLASS, (type, textureId) -> "minecraft:block/yellow_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(new Identifier("lime_stained_glass"), new Identifier("lime_stained_glass"), () -> Blocks.LIME_STAINED_GLASS, (type, textureId) -> "minecraft:block/lime_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(new Identifier("green_stained_glass"), new Identifier("green_stained_glass"), () -> Blocks.GREEN_STAINED_GLASS, (type, textureId) -> "minecraft:block/green_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(new Identifier("cyan_stained_glass"), new Identifier("cyan_stained_glass"), () -> Blocks.CYAN_STAINED_GLASS, (type, textureId) -> "minecraft:block/cyan_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(new Identifier("light_blue_stained_glass"), new Identifier("light_blue_stained_glass"), () -> Blocks.LIGHT_BLUE_STAINED_GLASS, (type, textureId) -> "minecraft:block/light_blue_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(new Identifier("blue_stained_glass"), new Identifier("blue_stained_glass"), () -> Blocks.BLUE_STAINED_GLASS, (type, textureId) -> "minecraft:block/blue_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(new Identifier("purple_stained_glass"), new Identifier("purple_stained_glass"), () -> Blocks.PURPLE_STAINED_GLASS, (type, textureId) -> "minecraft:block/purple_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(new Identifier("magenta_stained_glass"), new Identifier("magenta_stained_glass"), () -> Blocks.MAGENTA_STAINED_GLASS, (type, textureId) -> "minecraft:block/magenta_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(new Identifier("pink_stained_glass"), new Identifier("pink_stained_glass"), () -> Blocks.PINK_STAINED_GLASS, (type, textureId) -> "minecraft:block/pink_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT)
 	);
 
 	public static final BlockGroup TERRACOTTA = BlockGroup.of(
@@ -187,5 +213,27 @@ public final class VanillaBlockGroups {
 		new BlockGroup.GroupedBlock("purple_concrete", Blocks.PURPLE_CONCRETE, (type, textureId) -> "minecraft:block/purple_concrete", RecipeConfigurator.STONECUTTER, DyeColor.PURPLE.getMapColor()),
 		new BlockGroup.GroupedBlock("magenta_concrete", Blocks.MAGENTA_CONCRETE, (type, textureId) -> "minecraft:block/magenta_concrete", RecipeConfigurator.STONECUTTER, DyeColor.MAGENTA.getMapColor()),
 		new BlockGroup.GroupedBlock("pink_concrete", Blocks.PINK_CONCRETE, (type, textureId) -> "minecraft:block/pink_concrete", RecipeConfigurator.STONECUTTER, DyeColor.PINK.getMapColor())
+	);
+	
+	public static final BlockGroup POWDER = BlockGroup.of(
+		new BlockGroup.GroupedBlock("sand", Blocks.SAND, (type, textureId) -> "minecraft:block/sand", RecipeConfigurator.CREATIVE, MapColor.SAND),
+		new BlockGroup.GroupedBlock("red_sand", Blocks.RED_SAND, (type, textureId) -> "minecraft:block/red_sand", RecipeConfigurator.CREATIVE, MapColor.ORANGE),
+		new BlockGroup.GroupedBlock("dirt", Blocks.DIRT, (type, textureId) -> "minecraft:block/dirt", RecipeConfigurator.CREATIVE, MapColor.DIRT),
+		new BlockGroup.GroupedBlock("white_concrete_powder", Blocks.WHITE_CONCRETE_POWDER, (type, textureId) -> "minecraft:block/white_concrete_powder", RecipeConfigurator.CREATIVE, DyeColor.WHITE.getMapColor()),
+		new BlockGroup.GroupedBlock("light_gray_concrete_powder", Blocks.LIGHT_GRAY_CONCRETE_POWDER, (type, textureId) -> "minecraft:block/light_gray_concrete_powder", RecipeConfigurator.CREATIVE, DyeColor.LIGHT_GRAY.getMapColor()),
+		new BlockGroup.GroupedBlock("gray_concrete_powder", Blocks.GRAY_CONCRETE_POWDER, (type, textureId) -> "minecraft:block/gray_concrete_powder", RecipeConfigurator.CREATIVE, DyeColor.GRAY.getMapColor()),
+		new BlockGroup.GroupedBlock("black_concrete_powder", Blocks.BLACK_CONCRETE_POWDER, (type, textureId) -> "minecraft:block/black_concrete_powder", RecipeConfigurator.CREATIVE, DyeColor.BLACK.getMapColor()),
+		new BlockGroup.GroupedBlock("brown_concrete_powder", Blocks.BROWN_CONCRETE_POWDER, (type, textureId) -> "minecraft:block/brown_concrete_powder", RecipeConfigurator.CREATIVE, DyeColor.BROWN.getMapColor()),
+		new BlockGroup.GroupedBlock("red_concrete_powder", Blocks.RED_CONCRETE_POWDER, (type, textureId) -> "minecraft:block/red_concrete_powder", RecipeConfigurator.CREATIVE, DyeColor.RED.getMapColor()),
+		new BlockGroup.GroupedBlock("orange_concrete_powder", Blocks.ORANGE_CONCRETE_POWDER, (type, textureId) -> "minecraft:block/orange_concrete_powder", RecipeConfigurator.CREATIVE, DyeColor.ORANGE.getMapColor()),
+		new BlockGroup.GroupedBlock("yellow_concrete_powder", Blocks.YELLOW_CONCRETE_POWDER, (type, textureId) -> "minecraft:block/yellow_concrete_powder", RecipeConfigurator.CREATIVE, DyeColor.YELLOW.getMapColor()),
+		new BlockGroup.GroupedBlock("lime_concrete_powder", Blocks.LIME_CONCRETE_POWDER, (type, textureId) -> "minecraft:block/lime_concrete_powder", RecipeConfigurator.CREATIVE, DyeColor.LIME.getMapColor()),
+		new BlockGroup.GroupedBlock("green_concrete_powder", Blocks.GREEN_CONCRETE_POWDER, (type, textureId) -> "minecraft:block/green_concrete_powder", RecipeConfigurator.CREATIVE, DyeColor.GREEN.getMapColor()),
+		new BlockGroup.GroupedBlock("cyan_concrete_powder", Blocks.CYAN_CONCRETE_POWDER, (type, textureId) -> "minecraft:block/cyan_concrete_powder", RecipeConfigurator.CREATIVE, DyeColor.CYAN.getMapColor()),
+		new BlockGroup.GroupedBlock("light_blue_concrete_powder", Blocks.LIGHT_BLUE_CONCRETE_POWDER, (type, textureId) -> "minecraft:block/light_blue_concrete_powder", RecipeConfigurator.CREATIVE, DyeColor.LIGHT_BLUE.getMapColor()),
+		new BlockGroup.GroupedBlock("blue_concrete_powder", Blocks.BLUE_CONCRETE_POWDER, (type, textureId) -> "minecraft:block/blue_concrete_powder", RecipeConfigurator.CREATIVE, DyeColor.BLUE.getMapColor()),
+		new BlockGroup.GroupedBlock("purple_concrete_powder", Blocks.PURPLE_CONCRETE_POWDER, (type, textureId) -> "minecraft:block/purple_concrete_powder", RecipeConfigurator.CREATIVE, DyeColor.PURPLE.getMapColor()),
+		new BlockGroup.GroupedBlock("magenta_concrete_powder", Blocks.MAGENTA_CONCRETE_POWDER, (type, textureId) -> "minecraft:block/magenta_concrete_powder", RecipeConfigurator.CREATIVE, DyeColor.MAGENTA.getMapColor()),
+		new BlockGroup.GroupedBlock("pink_concrete_powder", Blocks.PINK_CONCRETE_POWDER, (type, textureId) -> "minecraft:block/pink_concrete_powder", RecipeConfigurator.CREATIVE, DyeColor.PINK.getMapColor())
 	);
 }
