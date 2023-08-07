@@ -30,7 +30,9 @@ import io.github.debuggyteam.architecture_extensions.blocks.PostLanternBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.ArchExRodBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.RoofBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.WallPostBlock;
+import net.fabricmc.fabric.api.registry.LandPathNodeTypesRegistry;
 import net.minecraft.block.Block;
+import net.minecraft.entity.ai.pathing.PathNodeType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -102,6 +104,9 @@ public enum BlockType {
 		
 		Registry.register(Registries.ITEM, id, new TypedGroupedBlockItem(block, typedGroupedBlock, new QuiltItemSettings()));
 
+		// So mobs don't get stuck on arch-ex blocks, and lag the server trying to path-find through them
+		// Required since that is the default for non full blocks
+		LandPathNodeTypesRegistry.register(block, PathNodeType.BLOCKED, PathNodeType.BLOCKED);
 		if (callback != null) callback.onBlockCreated(group, this, baseBlock, block);
 
 		return typedGroupedBlock;
