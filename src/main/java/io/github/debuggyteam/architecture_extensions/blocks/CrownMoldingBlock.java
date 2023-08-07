@@ -1,11 +1,13 @@
 package io.github.debuggyteam.architecture_extensions.blocks;
 
+import io.github.debuggyteam.architecture_extensions.api.BlockType.TypedGroupedBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.enums.BlockHalf;
 import net.minecraft.block.enums.StairShape;
+import net.minecraft.text.MutableText;
 import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -13,7 +15,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
-public class CrownMoldingBlock extends StairsBlock {
+public class CrownMoldingBlock extends StairsBlock implements TypedGrouped {
 	/*
 	NE -> Northeast
 	NW -> Northwest
@@ -29,6 +31,8 @@ public class CrownMoldingBlock extends StairsBlock {
 	protected static final VoxelShape SOUTH_BOX_BOTTOM = Block.createCuboidShape(0.0, 0.0, 8.0, 16.0, 8.0, 16.0);
 	protected static final VoxelShape EAST_BOX_BOTTOM = Block.createCuboidShape(8.0, 0.0, 0.0, 16.0, 8.0, 16.0);
 	protected static final VoxelShape WEST_BOX_BOTTOM = Block.createCuboidShape(0.0, 0.0, 0.0, 8.0, 8.0, 16.0);
+	
+	protected final TypedGroupedBlock typedGroupedBlock;
 
 	private VoxelShape getStraightShapeFor(BlockHalf upOrDown, Direction cardinalDir) {
 		return switch (upOrDown) {
@@ -50,8 +54,13 @@ public class CrownMoldingBlock extends StairsBlock {
 		};
 	}
 
-	public CrownMoldingBlock(BlockState blockState, Settings settings) {
+	public CrownMoldingBlock(BlockState blockState, Settings settings, TypedGroupedBlock typedGroupedBlock) {
 		super(blockState, settings);
+		this.typedGroupedBlock = typedGroupedBlock;
+	}
+	
+	public CrownMoldingBlock(Block baseBlock, Settings settings, TypedGroupedBlock typedGroupedBlock) {
+		this(baseBlock.getDefaultState(), settings, typedGroupedBlock);
 	}
 
 	// Both of the following blocks of code below deals with block collision.
@@ -73,5 +82,15 @@ public class CrownMoldingBlock extends StairsBlock {
 			case OUTER_LEFT -> OUTER_CORNER;
 			default -> A_DEFAULT_CORNER;
 		};
+	}
+
+	@Override
+	public TypedGroupedBlock getTypedGroupedBlock() {
+		return typedGroupedBlock;
+	}
+	
+	@Override
+	public MutableText getName() {
+		return getServerTranslation();
 	}
 }

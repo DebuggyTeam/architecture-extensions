@@ -1,5 +1,6 @@
 package io.github.debuggyteam.architecture_extensions.blocks;
 
+import io.github.debuggyteam.architecture_extensions.api.BlockType.TypedGroupedBlock;
 import io.github.debuggyteam.architecture_extensions.util.VoxelHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -10,6 +11,7 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.text.MutableText;
 import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -18,7 +20,7 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 
-public class PostLanternBlock extends Block {
+public class PostLanternBlock extends Block implements TypedGrouped {
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 	public static final BooleanProperty HANGING = Properties.HANGING;
 	
@@ -38,9 +40,16 @@ public class PostLanternBlock extends Block {
 			VoxelShapes.combine(HANGING_LANTERN_BODY, HANGING_LANTERN_CAP, BooleanBiFunction.OR),
 			HANGING_LANTERN_FINIAL, BooleanBiFunction.OR);
 
-	public PostLanternBlock(Settings settings) {
+	protected final TypedGroupedBlock typedGroupedBlock;
+	
+	public PostLanternBlock(Settings settings, TypedGroupedBlock typedGroupedBlock) {
 		super(settings.luminance(state -> 15));
 		this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false)); // Thanks LambdAurora!
+		this.typedGroupedBlock = typedGroupedBlock;
+	}
+	
+	public PostLanternBlock(Block baseBlock, Settings settings, TypedGroupedBlock typedGroupedBlock) {
+		this(settings, typedGroupedBlock);
 	}
 
 	@Override
@@ -106,5 +115,15 @@ public class PostLanternBlock extends Block {
 		if (!VoxelHelper.testVoxel(shape, 8, 0, 8)) return false;
 		
 		return true;
+	}
+
+	@Override
+	public TypedGroupedBlock getTypedGroupedBlock() {
+		return typedGroupedBlock;
+	}
+	
+	@Override
+	public MutableText getName() {
+		return getServerTranslation();
 	}
 }

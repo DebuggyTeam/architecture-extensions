@@ -1,5 +1,6 @@
 package io.github.debuggyteam.architecture_extensions.blocks;
 
+import io.github.debuggyteam.architecture_extensions.api.BlockType.TypedGroupedBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PillarBlock;
@@ -11,6 +12,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.text.MutableText;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -18,18 +20,25 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 
-public class WallPostBlock extends PillarBlock {
+public class WallPostBlock extends PillarBlock implements TypedGrouped {
 	public static final EnumProperty<Direction.Axis> AXIS = Properties.AXIS;
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
 	protected static final VoxelShape X_AXIS_BOX = Block.createCuboidShape(0.0, 4.0, 4.0, 16.0, 12.0, 12.0);
 	protected static final VoxelShape Y_AXIS_BOX = Block.createCuboidShape(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
 	protected static final VoxelShape Z_AXIS_BOX = Block.createCuboidShape(4.0, 4.0, 0.0, 12.0, 12.0, 16.0);
+	
+	protected final TypedGroupedBlock typedGroupedBlock;
 
-	public WallPostBlock(Settings settings) {
+	public WallPostBlock(Settings settings, TypedGroupedBlock typedGroupedBlock) {
 		super(settings);
 		setDefaultState(this.stateManager.getDefaultState().with(AXIS, Direction.Axis.Y));
 		this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false)); // Thanks LambdAurora!
+		this.typedGroupedBlock = typedGroupedBlock;
+	}
+	
+	public WallPostBlock(Block baseBlock, Settings settings, TypedGroupedBlock typedGroupedBlock) {
+		this(settings, typedGroupedBlock);
 	}
 
 	// The following deals with block rotation
@@ -81,5 +90,15 @@ public class WallPostBlock extends PillarBlock {
 	@Override
 	protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
 		stateManager.add(AXIS, WATERLOGGED);
+	}
+
+	@Override
+	public TypedGroupedBlock getTypedGroupedBlock() {
+		return typedGroupedBlock;
+	}
+	
+	@Override
+	public MutableText getName() {
+		return getServerTranslation();
 	}
 }

@@ -1,5 +1,6 @@
 package io.github.debuggyteam.architecture_extensions.blocks;
 
+import io.github.debuggyteam.architecture_extensions.api.BlockType.TypedGroupedBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PillarBlock;
@@ -12,6 +13,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.text.MutableText;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -19,7 +21,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 
-public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
+public class OctagonalColumnBlock extends PillarBlock implements Waterloggable, TypedGrouped {
 	public static final BooleanProperty MIN_CAP = BooleanProperty.of("min_cap");
 	public static final BooleanProperty MAX_CAP = BooleanProperty.of("max_cap");
 	public static final EnumProperty<Direction.Axis> AXIS = Properties.AXIS;
@@ -29,7 +31,9 @@ public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
 	protected static final VoxelShape Y_AXIS_BOX = Block.createCuboidShape(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
 	protected static final VoxelShape Z_AXIS_BOX = Block.createCuboidShape(4.0, 4.0, 0.0, 12.0, 12.0, 16.0);
 	
-	public OctagonalColumnBlock(Settings settings) {
+	protected final TypedGroupedBlock typedGroupedBlock;
+	
+	public OctagonalColumnBlock(Block baseBlock, Settings settings, TypedGroupedBlock typedGroupedBlock) {
 		super(settings);
 		this.setDefaultState(
 				this.getDefaultState()
@@ -38,6 +42,8 @@ public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
 				.with(MIN_CAP, false)
 				.with(MAX_CAP, false)
 			); // Thanks LambdAurora!
+		
+		this.typedGroupedBlock = typedGroupedBlock;
 	}
 	
 	// The following deals with block rotation
@@ -104,5 +110,15 @@ public class OctagonalColumnBlock extends PillarBlock implements Waterloggable {
 				maxNeighbor.get(AXIS) == selfAxis);
 		
 		return state.with(MIN_CAP, minCap).with(MAX_CAP, maxCap);
+	}
+
+	@Override
+	public TypedGroupedBlock getTypedGroupedBlock() {
+		return typedGroupedBlock;
+	}
+	
+	@Override
+	public MutableText getName() {
+		return getServerTranslation();
 	}
 }

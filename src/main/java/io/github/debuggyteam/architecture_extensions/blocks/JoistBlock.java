@@ -1,5 +1,6 @@
 package io.github.debuggyteam.architecture_extensions.blocks;
 
+import io.github.debuggyteam.architecture_extensions.api.BlockType.TypedGroupedBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
@@ -11,6 +12,7 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.text.MutableText;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
@@ -18,16 +20,23 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 
-public class JoistBlock extends HorizontalFacingBlock implements Waterloggable {
+public class JoistBlock extends HorizontalFacingBlock implements Waterloggable, TypedGrouped {
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
 	protected static final VoxelShape X_BOX = Block.createCuboidShape(4.0, 4.0, 0.0, 12.0, 16.0, 16.0);
 	protected static final VoxelShape Y_BOX = Block.createCuboidShape(0.0, 4.0, 4.0, 16.0, 16.0, 12.0);
 
-	public JoistBlock(Settings settings) {
+	protected final TypedGroupedBlock typedGroupedBlock;
+	
+	public JoistBlock(Settings settings, TypedGroupedBlock typedGroupedBlock) {
 		super(settings);
 		setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH));
 		this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false)); // Thanks LambdAurora!
+		this.typedGroupedBlock = typedGroupedBlock;
+	}
+	
+	public JoistBlock(Block baseBlock, Settings settings, TypedGroupedBlock typedGroupedBlock) {
+		this(settings, typedGroupedBlock);
 	}
 
 	// The following deals with block rotation
@@ -66,5 +75,15 @@ public class JoistBlock extends HorizontalFacingBlock implements Waterloggable {
 	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
 		builder.add(Properties.HORIZONTAL_FACING);
 		builder.add(WATERLOGGED);
+	}
+
+	@Override
+	public TypedGroupedBlock getTypedGroupedBlock() {
+		return typedGroupedBlock;
+	}
+	
+	@Override
+	public MutableText getName() {
+		return getServerTranslation();
 	}
 }

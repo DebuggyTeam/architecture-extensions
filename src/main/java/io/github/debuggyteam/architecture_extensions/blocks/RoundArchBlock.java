@@ -9,6 +9,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.text.MutableText;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
@@ -16,12 +17,17 @@ import net.minecraft.world.BlockView;
 
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
-public class RoundArchBlock extends HorizontalFacingBlock {
+import io.github.debuggyteam.architecture_extensions.api.BlockType.TypedGroupedBlock;
+
+public class RoundArchBlock extends HorizontalFacingBlock implements TypedGrouped {
 	public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
 	public static final EnumProperty<BlockHalf> HALF = Properties.BLOCK_HALF;
 	
-	public RoundArchBlock(QuiltBlockSettings settings) {
+	protected final TypedGroupedBlock typedGroupedBlock;
+	
+	public RoundArchBlock(Block baseBlock, QuiltBlockSettings settings, TypedGroupedBlock typedGroupedBlock) {
 		super(settings);
+		this.typedGroupedBlock = typedGroupedBlock;
 	}
 	
 	@Override
@@ -52,5 +58,15 @@ public class RoundArchBlock extends HorizontalFacingBlock {
 	@Override
 	public VoxelShape getCullingShape(BlockState state, BlockView world, BlockPos pos) {
 		return VoxelShapes.empty();
+	}
+
+	@Override
+	public TypedGroupedBlock getTypedGroupedBlock() {
+		return typedGroupedBlock;
+	}
+	
+	@Override
+	public MutableText getName() {
+		return getServerTranslation();
 	}
 }

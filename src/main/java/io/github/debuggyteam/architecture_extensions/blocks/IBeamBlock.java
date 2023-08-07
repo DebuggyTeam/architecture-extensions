@@ -1,5 +1,6 @@
 package io.github.debuggyteam.architecture_extensions.blocks;
 
+import io.github.debuggyteam.architecture_extensions.api.BlockType.TypedGroupedBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PillarBlock;
@@ -12,6 +13,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.text.MutableText;
 import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -19,7 +21,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 
-public class IBeamBlock extends PillarBlock implements Waterloggable {
+public class IBeamBlock extends PillarBlock implements Waterloggable, TypedGrouped {
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 	public static final EnumProperty<Direction.Axis> AXIS = Properties.AXIS;
 
@@ -27,8 +29,11 @@ public class IBeamBlock extends PillarBlock implements Waterloggable {
 	protected static final VoxelShape Y_AXIS_BOX = Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
 	protected static final VoxelShape Z_AXIS_BOX = Block.createCuboidShape(2.0, 2.0, 0.0, 14.0, 14.0, 16.0);
 
-	public IBeamBlock(Settings settings) {
+	protected final TypedGroupedBlock typedGroupedBlock;
+	
+	public IBeamBlock(Block baseBlock, Settings settings, TypedGroupedBlock typedGroupedBlock) {
 		super(settings);
+		this.typedGroupedBlock = typedGroupedBlock;
 	}
 
 	// The following deals with block rotation
@@ -80,5 +85,15 @@ public class IBeamBlock extends PillarBlock implements Waterloggable {
 	@Override
 	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
 		builder.add(AXIS, WATERLOGGED);
+	}
+
+	@Override
+	public TypedGroupedBlock getTypedGroupedBlock() {
+		return typedGroupedBlock;
+	}
+	
+	@Override
+	public MutableText getName() {
+		return getServerTranslation();
 	}
 }

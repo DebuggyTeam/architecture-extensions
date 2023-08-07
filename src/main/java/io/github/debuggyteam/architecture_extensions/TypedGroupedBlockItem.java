@@ -18,7 +18,6 @@ import net.minecraft.util.Util;
 
 public class TypedGroupedBlockItem extends BlockItem implements TypedGrouped {
 	public static final String BLOCKTYPE_BLOCK_KEY = "architecture_extensions.block_type_block";
-	public static final String GROUPED_BLOCK_PREFIX = "architecture_extensions.grouped_block";
 	public static final String BLOCK_TYPE_PREFIX = "architecture_extensions.block_type";
 	public static final String MISSING_LOCALIZATION_KEY = "architecture_extensions.i18n.missing_key";
 	

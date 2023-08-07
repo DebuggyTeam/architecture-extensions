@@ -59,7 +59,7 @@ public class BlockGroupSchema {
 
 		TextureConfiguration textureConfig = (textures.contains(":")) ? TextureConfiguration.create(it -> textures, it -> textures, it -> textures, it -> textures) :
 			BlockGroupSchema.<Function<Identifier, TextureConfiguration>>reflectField(TextureConfiguration.class, textures.toUpperCase(Locale.ROOT))
-				.orElse(TextureConfiguration.TOP).apply(baseId);
+				.orElse(TextureConfiguration.ALL).apply(baseId);
 		RecipeConfigurator recipeConfig = BlockGroupSchema.<RecipeConfigurator>reflectField(RecipeConfigurator.class, recipes.toUpperCase(Locale.ROOT))
 			.orElse(RecipeConfigurator.STONECUTTER);
 		Optional<MapColor> mapColor = MapColors.byName(map_color);

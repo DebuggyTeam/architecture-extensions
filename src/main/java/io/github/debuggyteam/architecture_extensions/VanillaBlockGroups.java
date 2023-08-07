@@ -10,17 +10,83 @@ import net.minecraft.util.Identifier;
 
 public final class VanillaBlockGroups {
 	public static final BlockGroup WOOD = BlockGroup.of(
-		new BlockGroup.GroupedBlock("oak", Blocks.OAK_LOG, TextureConfiguration.WOOD_WITH_LOG.apply(new Identifier("oak")), RecipeConfigurator.SAWING, MapColor.WOOD),
-		new BlockGroup.GroupedBlock("spruce", Blocks.SPRUCE_LOG, TextureConfiguration.WOOD_WITH_LOG.apply(new Identifier("spruce")), RecipeConfigurator.SAWING, MapColor.PODZOL),
-		new BlockGroup.GroupedBlock("birch", Blocks.BIRCH_LOG, TextureConfiguration.WOOD_WITH_LOG.apply(new Identifier("birch")), RecipeConfigurator.SAWING, MapColor.SAND),
-		new BlockGroup.GroupedBlock("jungle", Blocks.JUNGLE_LOG, TextureConfiguration.WOOD_WITH_LOG.apply(new Identifier("jungle")), RecipeConfigurator.SAWING, MapColor.DIRT),
-		new BlockGroup.GroupedBlock("acacia", Blocks.ACACIA_LOG, TextureConfiguration.WOOD_WITH_LOG.apply(new Identifier("acacia")), RecipeConfigurator.SAWING, MapColor.ORANGE),
-		new BlockGroup.GroupedBlock("cherry", Blocks.CHERRY_LOG, TextureConfiguration.WOOD_WITH_LOG.apply(new Identifier("cherry")), RecipeConfigurator.SAWING, MapColor.WHITE_TERRACOTTA),
-		new BlockGroup.GroupedBlock("dark_oak", Blocks.DARK_OAK_LOG, TextureConfiguration.WOOD_WITH_LOG.apply(new Identifier("dark_oak")), RecipeConfigurator.SAWING, MapColor.BROWN),
-		new BlockGroup.GroupedBlock("mangrove", Blocks.MANGROVE_LOG, TextureConfiguration.WOOD_WITH_LOG.apply(new Identifier("mangrove")), RecipeConfigurator.SAWING, MapColor.RED),
-		new BlockGroup.GroupedBlock("bamboo", Blocks.BAMBOO_PLANKS, (type, textureId) -> "minecraft:block/bamboo_planks", RecipeConfigurator.SAWING, MapColor.YELLOW),
-		new BlockGroup.GroupedBlock("crimson", Blocks.CRIMSON_STEM, TextureConfiguration.WOOD_WITH_STEM.apply(new Identifier("crimson")), RecipeConfigurator.SAWING, MapColor.CRIMSON_STEM),
-		new BlockGroup.GroupedBlock("warped", Blocks.WARPED_STEM, TextureConfiguration.WOOD_WITH_STEM.apply(new Identifier("warped")), RecipeConfigurator.SAWING, MapColor.WARPED_STEM)
+		BlockGroup.GroupedBlock.builder(Blocks.OAK_LOG)
+			.id(new Identifier("oak"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(new Identifier("oak")))
+			.usesTablesaw()
+			.mapColor(MapColor.WOOD)
+			.build(),
+		
+		BlockGroup.GroupedBlock.builder(Blocks.SPRUCE_LOG)
+			.id(new Identifier("spruce"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(new Identifier("spruce")))
+			.usesTablesaw()
+			.mapColor(MapColor.PODZOL)
+			.build(),
+		
+		BlockGroup.GroupedBlock.builder(Blocks.BIRCH_LOG)
+			.id(new Identifier("birch"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(new Identifier("birch")))
+			.usesTablesaw()
+			.mapColor(MapColor.SAND)
+			.build(),
+		
+		BlockGroup.GroupedBlock.builder(Blocks.JUNGLE_LOG)
+			.id(new Identifier("jungle"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(new Identifier("jungle")))
+			.usesTablesaw()
+			.mapColor(MapColor.DIRT)
+			.build(),
+		
+		BlockGroup.GroupedBlock.builder(Blocks.ACACIA_LOG)
+			.id(new Identifier("acacia"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(new Identifier("acacia")))
+			.usesTablesaw()
+			.mapColor(MapColor.ORANGE)
+			.build(),
+		
+		BlockGroup.GroupedBlock.builder(Blocks.CHERRY_LOG)
+			.id(new Identifier("cherry"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(new Identifier("cherry")))
+			.usesTablesaw()
+			.mapColor(MapColor.WHITE_TERRACOTTA)
+			.build(),
+		
+		BlockGroup.GroupedBlock.builder(Blocks.DARK_OAK_LOG)
+			.id(new Identifier("dark_oak"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(new Identifier("dark_oak")))
+			.usesTablesaw()
+			.mapColor(MapColor.BROWN)
+			.build(),
+		
+		BlockGroup.GroupedBlock.builder(Blocks.MANGROVE_LOG)
+			.id(new Identifier("mangrove"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(new Identifier("mangrove")))
+			.usesTablesaw()
+			.mapColor(MapColor.RED)
+			.build(),
+		
+		BlockGroup.GroupedBlock.builder(Blocks.BAMBOO_PLANKS)
+			.id(new Identifier("bamboo"))
+			.textures((type, textureId) -> "minecraft:block/bamboo_planks")
+			.usesTablesaw()
+			.mapColor(MapColor.YELLOW)
+			.build(),
+			
+		
+		BlockGroup.GroupedBlock.builder(Blocks.CRIMSON_STEM)
+			.id(new Identifier("crimson"))
+			.textures(TextureConfiguration.WOOD_WITH_STEM.apply(new Identifier("crimson")))
+			.usesTablesaw()
+			.mapColor(MapColor.CRIMSON_STEM)
+			.build(),
+		
+		BlockGroup.GroupedBlock.builder(Blocks.WARPED_STEM)
+			.id(new Identifier("warped"))
+			.textures(TextureConfiguration.WOOD_WITH_STEM.apply(new Identifier("warped")))
+			.usesTablesaw()
+			.mapColor(MapColor.WARPED_STEM)
+			.build()
 	);
 
 	public static final BlockGroup STONE = BlockGroup.of(
