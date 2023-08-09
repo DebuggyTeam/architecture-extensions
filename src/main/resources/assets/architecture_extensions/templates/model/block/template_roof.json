@@ -1,4 +1,5 @@
 {
+	"credit": "Made with Blockbench. Fixed by Carter.",
 	"parent": "minecraft:block/cube",
 	"textures": {
 		"particle": "#texture"
@@ -28,77 +29,81 @@
 		},
 		{
 			"name": "upper_slope",
-			"from": [7, 9.5, 0],
-			"to": [18, 13.5, 16],
+			"from": [6.74, 9.49, -0.01],
+			"to": [17.76, 13.51, 16.01],
 			"rotation": {"angle": 22.5, "axis": "z", "origin": [8, 10.5, 8]},
 			"faces": {
-				"east": {"uv": [0, 0, 16, 4], "texture": "#texture", "cullface": "east"},
+				"north": {"uv": [5, 0, 16, 4], "texture": "#texture"},
+				"east": {"uv": [0, 0, 16, 4], "texture": "#texture"},
+				"south": {"uv": [0, 0, 11, 4], "texture": "#texture"},
 				"west": {"uv": [0, 0, 16, 4], "texture": "#texture"},
-				"up": {"uv": [0, 0, 16, 11], "rotation": 270, "texture": "#texture"},
-				"down": {"uv": [0, 5, 16, 16], "rotation": 90, "texture": "#texture", "cullface": "east"}
+				"up": {"uv": [0, 0, 16, 11], "rotation": 90, "texture": "#texture"},
+				"down": {"uv": [0, 0, 16, 11], "rotation": 90, "texture": "#texture"}
 			}
 		},
 		{
 			"name": "upper_slope_right",
-			"from": [7, 9.5, 16],
-			"to": [18, 13.5, 20],
+			"from": [6.75, 9.5, 16],
+			"to": [17.75, 13.5, 20],
 			"rotation": {"angle": 22.5, "axis": "z", "origin": [8, 10.5, 8]},
 			"faces": {
-				"east": {"uv": [12, 0, 16, 4], "texture": "#texture", "cullface": "east"},
+				"east": {"uv": [12, 0, 16, 4], "texture": "#texture", "cullface": "south"},
 				"south": {"uv": [0, 0, 11, 4], "texture": "#texture", "cullface": "south"},
 				"west": {"uv": [0, 0, 4, 4], "texture": "#texture", "cullface": "south"},
-				"up": {"uv": [12, 0, 16, 11], "rotation": 270, "texture": "#texture", "cullface": "south"},
-				"down": {"uv": [12, 5, 16, 16], "rotation": 90, "texture": "#texture", "cullface": "south"}
+				"up": {"uv": [0, 0, 4, 11], "rotation": 90, "texture": "#texture", "cullface": "south"},
+				"down": {"uv": [12, 0, 16, 11], "rotation": 90, "texture": "#texture", "cullface": "south"}
 			}
 		},
 		{
 			"name": "upper_slope_left",
-			"from": [7, 9.5, -4],
-			"to": [18, 13.5, 0],
+			"from": [6.75, 9.5, -4],
+			"to": [17.75, 13.5, 0],
 			"rotation": {"angle": 22.5, "axis": "z", "origin": [8, 10.5, 8]},
 			"faces": {
 				"north": {"uv": [5, 0, 16, 4], "texture": "#texture", "cullface": "north"},
 				"east": {"uv": [0, 0, 4, 4], "texture": "#texture", "cullface": "north"},
 				"west": {"uv": [12, 0, 16, 4], "texture": "#texture", "cullface": "north"},
-				"up": {"uv": [0, 0, 4, 11], "rotation": 270, "texture": "#texture", "cullface": "north"},
-				"down": {"uv": [0, 5, 4, 16], "rotation": 90, "texture": "#texture", "cullface": "north"}
+				"up": {"uv": [12, 0, 16, 11], "rotation": 90, "texture": "#texture", "cullface": "north"},
+				"down": {"uv": [0, 0, 4, 11], "rotation": 90, "texture": "#texture", "cullface": "north"}
 			}
 		},
 		{
 			"name": "lower_slope",
-			"from": [-1, 2, 0],
-			"to": [10, 6, 16],
-			"rotation": {"angle": 22.5, "axis": "z", "origin": [0, 3, 8]},
+			"from": [-0.89194, 1.58496, -0.01],
+			"to": [10.12806, 5.60496, 16.01],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [-0.63194, 2.59496, 8]},
 			"faces": {
-				"west": {"uv": [0, 0, 16, 4], "texture": "#texture", "cullface": "west"},
-				"up": {"uv": [0, 0, 16, 11], "rotation": 270, "texture": "#texture"},
-				"down": {"uv": [0, 5, 16, 16], "rotation": 90, "texture": "#texture", "cullface": "west"}
+				"north": {"uv": [5, 0, 16, 4], "texture": "#texture"},
+				"south": {"uv": [0, 0, 11, 4], "texture": "#texture"},
+				"west": {"uv": [0, 0, 16, 4], "texture": "#texture"},
+				"up": {"uv": [0, 0, 16, 11], "rotation": 90, "texture": "#texture"},
+				"down": {"uv": [0, 0, 16, 11], "rotation": 90, "texture": "#texture"}
 			}
 		},
 		{
 			"name": "lower_slope_right",
-			"from": [-1, 2, 16],
-			"to": [10, 6, 20],
-			"rotation": {"angle": 22.5, "axis": "z", "origin": [0, 3, 8]},
+			"from": [-0.88194, 1.59496, 16],
+			"to": [10.11806, 5.59496, 20],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [-0.63194, 2.59496, 8]},
 			"faces": {
 				"east": {"uv": [12, 0, 16, 4], "texture": "#texture", "cullface": "south"},
 				"south": {"uv": [0, 0, 11, 4], "texture": "#texture", "cullface": "south"},
-				"west": {"uv": [0, 0, 4, 4], "texture": "#texture", "cullface": "west"},
-				"up": {"uv": [12, 0, 16, 11], "rotation": 270, "texture": "#texture", "cullface": "south"},
-				"down": {"uv": [12, 5, 16, 16], "rotation": 90, "texture": "#texture", "cullface": "south"}
+				"west": {"uv": [0, 0, 4, 4], "texture": "#texture", "cullface": "south"},
+				"up": {"uv": [0, 0, 4, 11], "rotation": 90, "texture": "#texture", "cullface": "south"},
+				"down": {"uv": [12, 0, 16, 11], "rotation": 90, "texture": "#texture", "cullface": "south"}
 			}
 		},
 		{
 			"name": "lower_slope_left",
-			"from": [-1, 2, -4],
-			"to": [10, 6, 0],
-			"rotation": {"angle": 22.5, "axis": "z", "origin": [0, 3, 8]},
+			"from": [-0.88194, 1.59496, -4],
+			"to": [10.11806, 5.59496, 0],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [-0.63194, 2.59496, 8]},
 			"faces": {
 				"north": {"uv": [5, 0, 16, 4], "texture": "#texture", "cullface": "north"},
 				"east": {"uv": [0, 0, 4, 4], "texture": "#texture", "cullface": "north"},
-				"west": {"uv": [12, 0, 16, 4], "texture": "#texture", "cullface": "west"},
-				"up": {"uv": [0, 0, 4, 11], "rotation": 270, "texture": "#texture", "cullface": "north"},
-				"down": {"uv": [0, 5, 4, 16], "rotation": 90, "texture": "#texture", "cullface": "north"}
+				"west": {"uv": [12, 0, 16, 4], "texture": "#texture", "cullface": "north"},
+				"up": {"uv": [12, 0, 16, 11], "rotation": 90, "texture": "#texture", "cullface": "north"},
+				"down": {"uv": [0, 0, 4, 11], "rotation": 90, "texture": "#texture", "cullface": "north"}
 			}
 		}
 	],
@@ -141,23 +146,27 @@
 			"name": "roof",
 			"origin": [0, 11, 7],
 			"color": 0,
+			"nbt": "{}",
 			"children": [
 				{
 					"name": "main_block",
 					"origin": [0, 6, 1],
 					"color": 0,
+					"nbt": "{}",
 					"children": [0, 1]
 				},
 				{
 					"name": "upper_slope",
 					"origin": [1, 10.5, 8],
 					"color": 0,
+					"nbt": "{}",
 					"children": [2, 3, 4]
 				},
 				{
 					"name": "lower_slope",
 					"origin": [1, 10.5, 8],
 					"color": 0,
+					"nbt": "{}",
 					"children": [5, 6, 7]
 				}
 			]
