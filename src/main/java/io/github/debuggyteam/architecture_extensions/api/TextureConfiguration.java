@@ -87,6 +87,19 @@ public interface TextureConfiguration extends BiFunction<BlockType, String, Stri
 			return new Identifier(id.getNamespace(), "block/" + id.getPath()).toString();
 		}
 	);
+	
+	static final Function<Identifier, TextureConfiguration> END = id -> create(
+		blockType -> new Identifier(id.getNamespace(), "block/" + id.getPath()).toString(),
+		blockType -> {
+			return new Identifier(id.getNamespace(), "block/" + id.getPath()).toString();
+		},
+		blockType -> {
+			return new Identifier(id.getNamespace(), "block/" + id.getPath() + "_end").toString();
+		},
+		blockType -> {
+			return new Identifier(id.getNamespace(), "block/" + id.getPath()).toString();
+		}
+	);
 
 	static final Function<Identifier, TextureConfiguration> TOP_BOTTOM = id -> create(
 		blockType -> new Identifier(id.getNamespace(), "block/" + id.getPath()).toString(),
@@ -101,7 +114,7 @@ public interface TextureConfiguration extends BiFunction<BlockType, String, Stri
 		}
 	);
 	
-	static final Function<Identifier, TextureConfiguration> ALL = it -> (type, textureId) -> it.toString();
+	static final Function<Identifier, TextureConfiguration> ALL = it -> (type, textureId) -> new Identifier(it.getNamespace(), "block/" + it.getPath()).toString();
 
 	static TextureConfiguration create(Function<BlockType, String> base,
 								 Function<BlockType, String> side,
