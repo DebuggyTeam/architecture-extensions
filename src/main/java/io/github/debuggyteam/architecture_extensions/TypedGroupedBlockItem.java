@@ -21,9 +21,6 @@ public class TypedGroupedBlockItem extends BlockItem implements TypedGrouped {
 	
 	protected final TypedGroupedBlock typedGroupedBlock;
 	
-	@ClientOnly
-	protected Text cachedLocalization = null;
-	
 	public <T extends Block & TypedGrouped> TypedGroupedBlockItem(T block, Settings settings) {
 		super(block, settings);
 		typedGroupedBlock = block.getTypedGroupedBlock();
@@ -57,21 +54,16 @@ public class TypedGroupedBlockItem extends BlockItem implements TypedGrouped {
 	@Override
 	@ClientOnly
 	public Text getName() {
-		if (cachedLocalization == null) {
+		String translationKey = Util.createTranslationKey("block", Registries.ITEM.getId(this));
+		if (I18n.hasTranslation(translationKey)) {
+			return Text.translatable(translationKey);
+		} else {
+			Text baseBlock = getBaseTranslationKey();
+			String typedGroupedKey = BLOCK_TYPE_PREFIX + "." + typedGroupedBlock.type().toString();
+			Text blockType = Text.translatable(typedGroupedKey);
 			
-			String translationKey = Util.createTranslationKey("block", Registries.ITEM.getId(this));
-			if (I18n.hasTranslation(translationKey)) {
-				cachedLocalization = Text.translatable(translationKey);
-			} else {
-				Text baseBlock = getBaseTranslationKey();
-				String typedGroupedKey = BLOCK_TYPE_PREFIX + "." + typedGroupedBlock.type().toString();
-				Text blockType = Text.translatable(typedGroupedKey);
-				
-				cachedLocalization = Text.translatable(BLOCKTYPE_BLOCK_KEY, baseBlock, blockType);
-			}
+			return Text.translatable(BLOCKTYPE_BLOCK_KEY, baseBlock, blockType);
 		}
-		
-		return cachedLocalization;
 	}
 	
 	@Override
