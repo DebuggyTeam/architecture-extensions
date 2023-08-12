@@ -28,7 +28,8 @@
 	"architecture_extensions.block_type.wall_post": "壁掛けポスト",
 	"architecture_extensions.block_type.octagonal_column": "八角柱",
 
-
+        "architecture_extensions.grouped_block.debuggy_block": "デバッグブロック",
+	
 	"architecture_extensions.grouped_block.bamboo": "竹",
 
 	"architecture_extensions.grouped_block.iron": "鉄",
@@ -39,6 +40,7 @@
 	"architecture_extensions.grouped_block.red_sand": "赤い砂",
 
 	"architecture_extensions.grouped_block.stone": "石",
+	"architecture_extensions.grouped_block.smooth_stone": "滑らかな石",
 	"architecture_extensions.grouped_block.granite": "花崗岩",
 	"architecture_extensions.grouped_block.diorite": "閃緑岩",
 	"architecture_extensions.grouped_block.andesite": "安山岩",
@@ -153,6 +155,7 @@
 	"architecture_extensions.grouped_block.magenta_concrete_powder": "赤紫色のコンクリートパウダー",
 	"architecture_extensions.grouped_block.pink_concrete_powder": "桃色のコンクリートパウダー",
 
+	"architecture_extensions.grouped_block.glass": "ガラス",
 	"architecture_extensions.grouped_block.white_stained_glass": "白色の色付きガラス",
 	"architecture_extensions.grouped_block.light_gray_stained_glass": "薄灰色の色付きガラス",
 	"architecture_extensions.grouped_block.gray_stained_glass": "灰色の色付きガラス",
