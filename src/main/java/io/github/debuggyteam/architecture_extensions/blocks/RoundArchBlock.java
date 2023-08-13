@@ -3,6 +3,7 @@ package io.github.debuggyteam.architecture_extensions.blocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.block.enums.BlockHalf;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
@@ -11,6 +12,7 @@ import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.text.MutableText;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
@@ -24,6 +26,9 @@ public class RoundArchBlock extends HorizontalFacingBlock implements TypedGroupe
 	public static final EnumProperty<BlockHalf> HALF = Properties.BLOCK_HALF;
 	
 	protected final TypedGroupedBlock typedGroupedBlock;
+	
+	protected static final VoxelShape SHAPE_TOP = Block.createCuboidShape(0.0, 8.0, 0.0, 16.0, 16.0, 16.0);
+	protected static final VoxelShape SHAPE_BOTTOM = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
 	
 	public RoundArchBlock(Block baseBlock, QuiltBlockSettings settings, TypedGroupedBlock typedGroupedBlock) {
 		super(settings);
@@ -58,6 +63,16 @@ public class RoundArchBlock extends HorizontalFacingBlock implements TypedGroupe
 	@Override
 	public VoxelShape getCullingShape(BlockState state, BlockView world, BlockPos pos) {
 		return VoxelShapes.empty();
+	}
+	
+	@Override
+	public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
+		BlockHalf half = state.get(HALF);
+		return switch (half) {
+			case TOP -> SHAPE_TOP;
+			case BOTTOM -> SHAPE_BOTTOM;
+		};
+		
 	}
 
 	@Override
