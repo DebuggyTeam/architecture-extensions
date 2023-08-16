@@ -14,17 +14,17 @@ public class VanillaIntegration implements ArchExIntegration {
 	private static final BlockGroup BAMBOO_ROD = BlockGroup.of(new BlockGroup.GroupedBlock("bamboo", Blocks.BAMBOO, (type, textureId) -> "minecraft:block/bamboo_stalk", RecipeConfigurator.simple("bamboo_rod"), MapColor.PLANT));
 	private static final BlockGroup COPPER_ROD = BlockGroup.of(new BlockGroup.GroupedBlock("copper", Blocks.LIGHTNING_ROD, (type, textureId) -> "architecture_extensions:block/copper_rod", RecipeConfigurator.simple("copper_rod"), MapColor.ORANGE));
 	private static final BlockGroup IRON_ROD = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.IRON_BARS, (type, textureId) -> "minecraft:block/iron_bars", RecipeConfigurator.simple("iron_rod")));
-	private static final BlockGroup IRON_H_BEAM = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.ANVIL, (type, textureId) -> "architecture_extensions:block/iron_tube_metal", RecipeConfigurator.CRAFTING, MapColor.METAL));
+	private static final BlockGroup IRON_H_BEAM = BlockGroup.of(new BlockGroup.GroupedBlock("iron", Blocks.IRON_BLOCK, (type, textureId) -> "architecture_extensions:block/iron_tube_metal", RecipeConfigurator.CRAFTING, MapColor.METAL));
 	
 	
 	private static final BlockGroup TUBE_METAL = BlockGroup.of(
-			new BlockGroup.GroupedBlock("iron", Blocks.ANVIL, (type, textureId) -> {
+			new BlockGroup.GroupedBlock("iron", Blocks.IRON_BLOCK, (type, textureId) -> {
 				return switch (textureId) {
 					case "texture_up" -> "architecture_extensions:block/iron_tube_metal_top";
 					default -> "architecture_extensions:block/iron_tube_metal";
 				};
 			}, RecipeConfigurator.CRAFTING, MapColor.METAL),
-			new BlockGroup.GroupedBlock("copper", Blocks.ANVIL, (type, textureId) -> {
+			new BlockGroup.GroupedBlock("copper", Blocks.COPPER_BLOCK, (type, textureId) -> {
 				return switch (textureId) {
 					case "texture_up" -> "architecture_extensions:block/copper_tube_metal_top";
 					default -> "architecture_extensions:block/copper_tube_metal";
