@@ -18,9 +18,9 @@
 			},
 			"contact": {
 				"homepage": "https://modrinth.com/mod/arch-ex",
-				"discord": "https://discord.gg/SN89y7EQTN",
-				"issues": "https://github.com/woodiertexas/architecture-extensions/issues",
-				"sources": "https://github.com/woodiertexas/architecture-extensions"
+				"discord": "https://debuggy.gay/discord",
+				"issues": "https://github.com/debuggyteam/architecture-extensions/issues",
+				"sources": "https://github.com/debuggyteam/architecture-extensions"
 			},
 			"icon": "assets/architecture_extensions/icon.png"
 		},
