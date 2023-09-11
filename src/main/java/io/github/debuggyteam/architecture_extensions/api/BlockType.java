@@ -3,6 +3,7 @@ package io.github.debuggyteam.architecture_extensions.api;
 import java.util.Locale;
 
 import io.github.debuggyteam.architecture_extensions.blocks.RoundArchBlock;
+import io.github.debuggyteam.architecture_extensions.blocks.QuadrantBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.FacadeBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.IBeamBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.LatticeBlock;
@@ -57,6 +58,7 @@ public enum BlockType {
 	TRANSOM      (TransomBlock::new,     1.5f, noVariants(), SafeRenderLayer.TRANSLUCENT),
 	OCTAGONAL_COLUMN(OctagonalColumnBlock::new, 1.5f, variantsOf("", "cap", "double_cap"), SafeRenderLayer.SOLID),
 	ROUND_ARCH   (RoundArchBlock::new,   1.5f),
+	QUADRANT   (QuadrantBlock::new,   1.5f),
 	ROUND_FENCE_POST(RoundFencePostBlock::new,  1.5f);
 	
 	private final TriFunction<Block, QuiltBlockSettings, TypedGroupedBlock, Block> creator;

@@ -20,6 +20,7 @@
 	"architecture_extensions.block_type.lattice": "Lattice",
 	"architecture_extensions.block_type.post_cap": "Post Cap",
 	"architecture_extensions.block_type.post_lantern": "Post Lantern",
+	"architecture_extensions.block_type.quadrant": "Quadrant",
 	"architecture_extensions.block_type.rod": "Rod",
 	"architecture_extensions.block_type.roof": "Roof",
 	"architecture_extensions.block_type.transom": "Transom",

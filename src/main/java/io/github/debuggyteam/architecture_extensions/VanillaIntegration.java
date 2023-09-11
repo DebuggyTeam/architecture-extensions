@@ -73,6 +73,12 @@ public class VanillaIntegration implements ArchExIntegration {
 			VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
 			VanillaBlockGroups.CRYSTAL
 		);
+
+		ctx.makeArchExBlocks(BlockType.QUADRANT,
+			VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
+			VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
+			VanillaBlockGroups.CRYSTAL
+		);
 		
 		ctx.makeArchExBlocks(BlockType.OCTAGONAL_COLUMN,
 			VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
