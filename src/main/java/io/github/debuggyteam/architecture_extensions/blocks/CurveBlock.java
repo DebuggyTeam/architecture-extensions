@@ -4,7 +4,6 @@ import io.github.debuggyteam.architecture_extensions.api.BlockType.TypedGroupedB
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
-import net.minecraft.block.ShapeContext;
 import net.minecraft.block.enums.BlockHalf;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
@@ -18,7 +17,7 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 
-public class QuadrantBlock extends HorizontalFacingBlock implements TypedGrouped {
+public class CurveBlock extends HorizontalFacingBlock implements TypedGrouped {
 	public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
 	public static final EnumProperty<BlockHalf> HALF = Properties.BLOCK_HALF;
 	
@@ -27,7 +26,7 @@ public class QuadrantBlock extends HorizontalFacingBlock implements TypedGrouped
 	protected static final VoxelShape SHAPE_TOP = Block.createCuboidShape(0.0, 8.0, 0.0, 16.0, 16.0, 16.0);
 	protected static final VoxelShape SHAPE_BOTTOM = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 8.0, 16.0);
 	
-	public QuadrantBlock(Block baseBlock, QuiltBlockSettings settings, TypedGroupedBlock typedGroupedBlock) {
+	public CurveBlock(Block baseBlock, QuiltBlockSettings settings, TypedGroupedBlock typedGroupedBlock) {
 		super(settings);
 		this.typedGroupedBlock = typedGroupedBlock;
 	}

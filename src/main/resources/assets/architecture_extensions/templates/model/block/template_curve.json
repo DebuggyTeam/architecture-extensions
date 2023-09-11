@@ -1,5 +1,5 @@
 {
-	"parent": "architecture_extensions:block/quadrant.gltf",
+	"parent": "architecture_extensions:block/curve.gltf",
 	"loader": "suspicious_shapes:gltf",
 	"textures": {
 		"particle": "#texture",
