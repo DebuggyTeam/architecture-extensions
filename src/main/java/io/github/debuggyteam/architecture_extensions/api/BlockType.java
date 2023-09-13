@@ -3,6 +3,7 @@ package io.github.debuggyteam.architecture_extensions.api;
 import java.util.Locale;
 
 import io.github.debuggyteam.architecture_extensions.blocks.RoundArchBlock;
+import io.github.debuggyteam.architecture_extensions.blocks.CurveBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.FacadeBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.IBeamBlock;
 import io.github.debuggyteam.architecture_extensions.blocks.LatticeBlock;
@@ -40,6 +41,7 @@ import net.minecraft.util.Identifier;
 public enum BlockType {
 	ARCH         (ArchBlock::new,        2.5f, variantsOf("", "inner", "outer"), SafeRenderLayer.SOLID),
 	BEAM         (BeamBlock::new,        1.5f),
+	CURVE   (CurveBlock::new,   1.5f),
 	H_BEAM       (BeamBlock::new,        8.0f),
 	WALL_COLUMN  (WallColumnBlock::new,  2.5f, variantsOf("", "cap"), SafeRenderLayer.SOLID),
 	FENCE_POST   (FencePostBlock::new,   1.5f),

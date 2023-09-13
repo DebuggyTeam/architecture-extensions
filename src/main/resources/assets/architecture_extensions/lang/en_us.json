@@ -11,6 +11,7 @@
 	"architecture_extensions.block_type.round_arch": "Arch",
 	"architecture_extensions.block_type.beam": "Beam",
 	"architecture_extensions.block_type.crown_molding": "Crown Molding",
+	"architecture_extensions.block_type.curve": "Curve",
 	"architecture_extensions.block_type.facade": "Facade",
 	"architecture_extensions.block_type.fence_post": "Fence Post",
 	"architecture_extensions.block_type.round_fence_post": "Fence Post",
