@@ -11,6 +11,7 @@
 	"architecture_extensions.block_type.round_arch": "アーチ",
 	"architecture_extensions.block_type.beam": "ビーム",
 	"architecture_extensions.block_type.crown_molding": "クラウンモールディング",
+	"architecture_extensions.block_type.curve": "曲線",
 	"architecture_extensions.block_type.facade": "外観",
 	"architecture_extensions.block_type.fence_post": "フェンスの支柱",
 	"architecture_extensions.block_type.round_fence_post": "フェンスの支柱",
