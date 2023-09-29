@@ -6,7 +6,7 @@
 		"version": "${version}",
 		"metadata": {
 			"name": "Architecture Extensions",
-			"description": "A mod that extends one's creativity by implementing new blocks to Minecraft.",
+			"description": "A mod that allows you to make more detailed builds with all kinds of new building blocks and shapes.",
 			"contributors": {
 				"Debuggy Team": "Owner",
 				"woodiertexas": "Author",
