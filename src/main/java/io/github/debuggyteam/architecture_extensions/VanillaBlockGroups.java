@@ -104,7 +104,7 @@ public final class VanillaBlockGroups {
 		new BlockGroup.GroupedBlock("deepslate", Blocks.DEEPSLATE, (type, textureId) -> "minecraft:block/deepslate", RecipeConfigurator.STONECUTTER, MapColor.DEEPSLATE),
 		new BlockGroup.GroupedBlock("sandstone", Blocks.SANDSTONE, TextureConfiguration.TOP_BOTTOM.apply(new Identifier("sandstone")), RecipeConfigurator.STONECUTTER, MapColor.SAND),
 		new BlockGroup.GroupedBlock("red_sandstone", Blocks.RED_SANDSTONE, TextureConfiguration.TOP_BOTTOM.apply(new Identifier("red_sandstone")), RecipeConfigurator.STONECUTTER, MapColor.ORANGE),
-		new BlockGroup.GroupedBlock("end_stone", Blocks.BASALT, (type, textureId) -> "minecraft:block/end_stone", RecipeConfigurator.STONECUTTER, MapColor.BLACK),
+		new BlockGroup.GroupedBlock("end_stone", Blocks.END_STONE, (type, textureId) -> "minecraft:block/end_stone", RecipeConfigurator.STONECUTTER, MapColor.BLACK),
 		new BlockGroup.GroupedBlock("blackstone", Blocks.BLACKSTONE, TextureConfiguration.TOP.apply(new Identifier("blackstone")), RecipeConfigurator.STONECUTTER, MapColor.BLACK),
 		new BlockGroup.GroupedBlock("raw_iron", Blocks.RAW_IRON_BLOCK, (type, textureId) -> "minecraft:block/raw_iron_block", RecipeConfigurator.STONECUTTER, MapColor.RAW_IRON),
 		new BlockGroup.GroupedBlock("raw_copper", Blocks.RAW_COPPER_BLOCK, (type, textureId) -> "minecraft:block/raw_copper_block", RecipeConfigurator.STONECUTTER, MapColor.ORANGE),
