@@ -1,5 +1,8 @@
 <a href="https://discord.gg/bWN57F5CCA"><img src="https://cdn.jsdelivr.net/gh/intergrav/devins-badges/assets/cozy/social/discord-plural_vector.svg" alt="Join Debuggycord on Discord!" height=64></a> <a href="https://modrinth.com/mod/arch-ex"><img src="https://cdn.jsdelivr.net/gh/intergrav/devins-badges/assets/cozy/available/modrinth_vector.svg" alt="Download on Modrinth." height=64></a> <a href="https://github.com/DebuggyTeam/architecture-extensions/wiki"><img alt="Read the Architecture Extensions documentation." height=64 src="https://cdn.jsdelivr.net/gh/intergrav/devins-badges/assets/cozy/documentation/generic_vector.svg"></a>
 
+# WARNING: Arch-Ex 2.X is unsupported!
+Any bug reports or feature suggestions for Arch-ex 2.X will be closed. Please use a [newer version](https://modrinth.com/mod/arch-ex/versions) of Arch-Ex.
+
 ## About Architecture Extensions
 The mod idea for Architecture Extensions is technically based off the old ![ArchitectureCraft mod from MC 1.8-1.10](https://www.curseforge.com/minecraft/mc-mods/architecturecraft). The major differences are that the added blocks are not "super detailed" like in the original AC mod and there are blocks that are not in the original mod either.
 
