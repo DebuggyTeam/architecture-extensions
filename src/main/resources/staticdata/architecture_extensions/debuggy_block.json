@@ -1,8 +1,0 @@
-{
-	"name": "debuggy_block",
-	"base_block": "architecture_extensions:debuggy_block",
-	"textures": "minecraft:block/debug",
-	"recipes": "stonecutting",
-	"map_color": "sand",
-	"types_to_generate": [ "#stone" ]
-}

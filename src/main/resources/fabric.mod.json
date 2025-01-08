@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "arch_ex",
+	"version": "${version}",
+	"name": "Architecture Extensions",
+	"description": "Make more detailed builds with all kinds of new building blocks and shapes.",
+	"contributors": [
+		"woodiertexas",
+		"maximum",
+		"Falkreon",
+		"Crackers0106",
+		"Carter",
+		"Azagwen"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/arch-ex",
+		"issues": "https://github.com/DebuggyTeam/architecture-extensions/issues",
+		"sources": "https://github.com/DebuggyTeam/architecture-extensions"
+	},
+	"license": "MIT",
+	"icon": "assets/architecture_extensions/icon.png",
+	"environment": "*",
+	"entrypoints": {},
+	"mixins": [],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": ["1.20", "1.20.1"],
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}
