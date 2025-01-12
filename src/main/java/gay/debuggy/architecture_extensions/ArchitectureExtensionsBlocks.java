@@ -12,12 +12,12 @@ import net.minecraft.util.Identifier;
 
 public class ArchitectureExtensionsBlocks {
 	private static <T extends Block> T registerBlock(String path, T block) {
-		Registry.register(Registries.BLOCK, new Identifier(ArchitectureExtensions.MOD_ID, path), block);
-		Registry.register(Registries.ITEM, new Identifier(ArchitectureExtensions.MOD_ID, path), new BlockItem(block, new Item.Settings()));
+		Registry.register(Registries.BLOCK, Identifier.of(ArchitectureExtensions.MOD_ID, path), block);
+		Registry.register(Registries.ITEM, Identifier.of(ArchitectureExtensions.MOD_ID, path), new BlockItem(block, new Item.Settings()));
 		return block;
 	}
 	
-	public static final BeamBlock BIRCH_BEAM = registerBlock("birch_beam", new BeamBlock(FabricBlockSettings.copyOf(Blocks.BIRCH_LOG)));
+	public static final BeamBlock BIRCH_BEAM = registerBlock("birch_beam", new BeamBlock(Block.Settings.copy(Blocks.BIRCH_LOG)));
 	
 	public static void init() {}
 }

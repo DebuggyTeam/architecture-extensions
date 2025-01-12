@@ -14,7 +14,7 @@ import static gay.debuggy.architecture_extensions.ArchitectureExtensionsBlocks.B
 
 public class ArchExItemGroups {
 	public static RegistryKey<ItemGroup> makeItemGroupKey(String mod_id, String itemGroupPath) {
-		return RegistryKey.of(Registries.ITEM_GROUP.getKey(), new Identifier(mod_id, itemGroupPath));
+		return RegistryKey.of(Registries.ITEM_GROUP.getKey(), Identifier.of(mod_id, itemGroupPath));
 	}
 	
 	public static final RegistryKey<ItemGroup> ARCH_EX_JSON_BLOCKS_KEY = makeItemGroupKey(MOD_ID, "json_blocks");
