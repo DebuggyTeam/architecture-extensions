@@ -1,6 +1,6 @@
 ## 4.0 Goals
 - [ ] Use Debuggycore datagen when that's a thing
-- [ ] Change modid to `arch_ex` (?)
+- [ ] Change modid to `architecture_extensions` (?)
 - [ ] Migrate over to Quilt Static Resources API when its a thing
 - [ ] Use other Quilt APIs when appropriate (ex: Recipe API)
 - [ ] Figure out the creative tab situation because currently, its a mess

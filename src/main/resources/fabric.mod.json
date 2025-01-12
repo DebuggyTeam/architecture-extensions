@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "arch_ex",
+	"id": "architecture_extensions",
 	"version": "${version}",
 	"name": "Architecture Extensions",
 	"description": "Make more detailed builds with all kinds of new building blocks and shapes.",
@@ -20,7 +20,9 @@
 	"license": "MIT",
 	"icon": "assets/architecture_extensions/icon.png",
 	"environment": "*",
-	"entrypoints": {},
+	"entrypoints": {
+		"main": ["gay.debuggy.architecture_extensions.ArchitectureExtensions"]
+	},
 	"mixins": [],
 	"depends": {
 		"fabricloader": ">=0.16.9",

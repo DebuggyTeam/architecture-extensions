@@ -1,0 +1,23 @@
+package gay.debuggy.architecture_extensions;
+
+import gay.debuggy.architecture_extensions.blocks.BeamBlock;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
+
+public class ArchitectureExtensionsBlocks {
+	private static <T extends Block> T registerBlock(String path, T block) {
+		Registry.register(Registries.BLOCK, new Identifier(ArchitectureExtensions.MOD_ID, path), block);
+		Registry.register(Registries.ITEM, new Identifier(ArchitectureExtensions.MOD_ID, path), new BlockItem(block, new Item.Settings()));
+		return block;
+	}
+	
+	public static final BeamBlock BIRCH_BEAM = registerBlock("birch_beam", new BeamBlock(FabricBlockSettings.copyOf(Blocks.BIRCH_LOG)));
+	
+	public static void init() {}
+}
