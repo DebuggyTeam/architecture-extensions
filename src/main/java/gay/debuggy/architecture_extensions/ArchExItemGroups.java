@@ -10,7 +10,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 import static gay.debuggy.architecture_extensions.ArchitectureExtensions.MOD_ID;
-import static gay.debuggy.architecture_extensions.ArchitectureExtensionsBlocks.BIRCH_BEAM;
+import static gay.debuggy.architecture_extensions.ArchExBlocks.BIRCH_BEAM;
 
 public class ArchExItemGroups {
 	public static RegistryKey<ItemGroup> makeItemGroupKey(String mod_id, String itemGroupPath) {

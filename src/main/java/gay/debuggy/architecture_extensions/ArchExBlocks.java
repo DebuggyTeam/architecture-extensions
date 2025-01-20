@@ -1,7 +1,6 @@
 package gay.debuggy.architecture_extensions;
 
 import gay.debuggy.architecture_extensions.blocks.BeamBlock;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
@@ -10,7 +9,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
-public class ArchitectureExtensionsBlocks {
+public class ArchExBlocks {
 	private static <T extends Block> T registerBlock(String path, T block) {
 		Registry.register(Registries.BLOCK, Identifier.of(ArchitectureExtensions.MOD_ID, path), block);
 		Registry.register(Registries.ITEM, Identifier.of(ArchitectureExtensions.MOD_ID, path), new BlockItem(block, new Item.Settings()));

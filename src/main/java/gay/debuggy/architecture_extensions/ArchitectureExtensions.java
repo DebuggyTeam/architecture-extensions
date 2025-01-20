@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 
-import static gay.debuggy.architecture_extensions.ArchitectureExtensionsBlocks.BIRCH_BEAM;
+import static gay.debuggy.architecture_extensions.ArchExBlocks.BIRCH_BEAM;
 
 public class ArchitectureExtensions implements ModInitializer {
 	public static final String MOD_ID = "architecture_extensions";
@@ -23,7 +23,7 @@ public class ArchitectureExtensions implements ModInitializer {
 			itemGroup.addItem(BIRCH_BEAM);
 		});
 		
-		ArchitectureExtensionsBlocks.init();
+		ArchExBlocks.init();
 		ArchExItemGroups.init();
 	}
 }
