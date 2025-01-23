@@ -30,14 +30,15 @@ repositories {
 }
 
 dependencies {
-	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "org.quiltmc:quilt-mappings:${project.quilt_mappings}:intermediary-v2"
+	
+	// Fabric
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-
-	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
+	// Dependencies required for ArchEx to work.
+	modImplementation include("maven.modrinth:static-data:1.1.1+1.21.1")
 }
 
 processResources {
@@ -64,10 +65,6 @@ java {
 
 jar {
 	from('LICENSE') {
-		rename { "${it}_${base.archivesName.get()}" }
-	}
-
-	from('LICENSE-ASSETS.md') {
 		rename { "${it}_${base.archivesName.get()}" }
 	}
 }
