@@ -16,63 +16,63 @@ import static gay.debuggy.architecture_extensions.ArchitectureExtensions.MOD_ID;
 public final class VanillaBlockGroups {
 	public static final BlockGroup WOOD = BlockGroup.of(
 		BlockGroup.GroupedBlock.builder(Blocks.OAK_LOG)
-			.id(Identifier.of(MOD_ID, ("oak"))
-			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, ("oak")))
+			.id(Identifier.of(MOD_ID, "oak"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, "oak")))
 			.usesTablesaw()
 			.mapColor(MapColor.WOOD)
 			.build(),
 		
 		BlockGroup.GroupedBlock.builder(Blocks.SPRUCE_LOG)
-			.id(Identifier.of(MOD_ID, ("spruce"))
-			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, ("spruce")))
+			.id(Identifier.of(MOD_ID, "spruce"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, "spruce")))
 			.usesTablesaw()
 			.mapColor(MapColor.PODZOL)
 			.build(),
 		
 		BlockGroup.GroupedBlock.builder(Blocks.BIRCH_LOG)
-			.id(Identifier.of(MOD_ID, ("birch"))
-			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, ("birch")))
+			.id(Identifier.of(MOD_ID, "birch"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, "birch")))
 			.usesTablesaw()
 			.mapColor(MapColor.SAND)
 			.build(),
 		
 		BlockGroup.GroupedBlock.builder(Blocks.JUNGLE_LOG)
-			.id(Identifier.of(MOD_ID, ("jungle"))
-			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, ("jungle")))
+			.id(Identifier.of(MOD_ID, "jungle"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, "jungle")))
 			.usesTablesaw()
 			.mapColor(MapColor.DIRT)
 			.build(),
 		
 		BlockGroup.GroupedBlock.builder(Blocks.ACACIA_LOG)
-			.id(Identifier.of(MOD_ID, ("acacia"))
-			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, ("acacia")))
+			.id(Identifier.of(MOD_ID, "acacia"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, "acacia")))
 			.usesTablesaw()
 			.mapColor(MapColor.ORANGE)
 			.build(),
 		
 		BlockGroup.GroupedBlock.builder(Blocks.CHERRY_LOG)
-			.id(Identifier.of(MOD_ID, ("cherry"))
-			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, ("cherry")))
+			.id(Identifier.of(MOD_ID, "cherry"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, "cherry")))
 			.usesTablesaw()
 			.mapColor(MapColor.WHITE_TERRACOTTA)
 			.build(),
 		
 		BlockGroup.GroupedBlock.builder(Blocks.DARK_OAK_LOG)
-			.id(Identifier.of(MOD_ID, ("dark_oak"))
-			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, ("dark_oak")))
+			.id(Identifier.of(MOD_ID, "dark_oak"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, "dark_oak")))
 			.usesTablesaw()
 			.mapColor(MapColor.BROWN)
 			.build(),
 		
 		BlockGroup.GroupedBlock.builder(Blocks.MANGROVE_LOG)
-			.id(Identifier.of(MOD_ID, ("mangrove"))
-			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, ("mangrove")))
+			.id(Identifier.of(MOD_ID, "mangrove"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, "mangrove")))
 			.usesTablesaw()
 			.mapColor(MapColor.RED)
 			.build(),
 		
 		BlockGroup.GroupedBlock.builder(Blocks.BAMBOO_PLANKS)
-			.id(Identifier.of(MOD_ID, ("bamboo"))
+			.id(Identifier.of(MOD_ID, "bamboo"))
 			.textures((type, textureId) -> "minecraft:block/bamboo_planks")
 			.usesTablesaw()
 			.mapColor(MapColor.YELLOW)
@@ -80,15 +80,15 @@ public final class VanillaBlockGroups {
 			
 		
 		BlockGroup.GroupedBlock.builder(Blocks.CRIMSON_STEM)
-			.id(Identifier.of(MOD_ID, ("crimson"))
-			.textures(TextureConfiguration.WOOD_WITH_STEM.apply(Identifier.of(MOD_ID, ("crimson")))
+			.id(Identifier.of(MOD_ID, "crimson"))
+			.textures(TextureConfiguration.WOOD_WITH_STEM.apply(Identifier.of(MOD_ID, "crimson")))
 			.usesTablesaw()
 			.mapColor(MapColor.CRIMSON_STEM)
 			.build(),
 		
 		BlockGroup.GroupedBlock.builder(Blocks.WARPED_STEM)
-			.id(Identifier.of(MOD_ID, ("warped"))
-			.textures(TextureConfiguration.WOOD_WITH_STEM.apply(Identifier.of(MOD_ID, ("warped")))
+			.id(Identifier.of(MOD_ID, "warped"))
+			.textures(TextureConfiguration.WOOD_WITH_STEM.apply(Identifier.of(MOD_ID, "warped")))
 			.usesTablesaw()
 			.mapColor(MapColor.WARPED_STEM)
 			.build()
@@ -104,10 +104,10 @@ public final class VanillaBlockGroups {
 		new BlockGroup.GroupedBlock("dripstone", Blocks.DRIPSTONE_BLOCK, (type, textureId) -> "minecraft:block/dripstone_block", RecipeConfigurator.STONECUTTER, MapColor.BROWN_TERRACOTTA),
 		new BlockGroup.GroupedBlock("obsidian", Blocks.OBSIDIAN, (type, textureId) -> "minecraft:block/obsidian", RecipeConfigurator.STONECUTTER, MapColor.BLACK),
 		new BlockGroup.GroupedBlock("deepslate", Blocks.DEEPSLATE, (type, textureId) -> "minecraft:block/deepslate", RecipeConfigurator.STONECUTTER, MapColor.DEEPSLATE),
-		new BlockGroup.GroupedBlock("sandstone", Blocks.SANDSTONE, TextureConfiguration.TOP_BOTTOM.apply(Identifier.of(MOD_ID, ("sandstone")), RecipeConfigurator.STONECUTTER, MapColor.SAND),
-		new BlockGroup.GroupedBlock("red_sandstone", Blocks.RED_SANDSTONE, TextureConfiguration.TOP_BOTTOM.apply(Identifier.of(MOD_ID, "red_sandstone"), RecipeConfigurator.STONECUTTER, MapColor.ORANGE),
+		new BlockGroup.GroupedBlock("sandstone", Blocks.SANDSTONE, TextureConfiguration.TOP_BOTTOM.apply(Identifier.of(MOD_ID, "sandstone")), RecipeConfigurator.STONECUTTER, MapColor.SAND),
+		new BlockGroup.GroupedBlock("red_sandstone", Blocks.RED_SANDSTONE, TextureConfiguration.TOP_BOTTOM.apply(Identifier.of(MOD_ID, "red_sandstone")), RecipeConfigurator.STONECUTTER, MapColor.ORANGE),
 		new BlockGroup.GroupedBlock("end_stone", Blocks.END_STONE, (type, textureId) -> "minecraft:block/end_stone", RecipeConfigurator.STONECUTTER, MapColor.BLACK),
-		new BlockGroup.GroupedBlock("blackstone", Blocks.BLACKSTONE, TextureConfiguration.TOP.apply(Identifier.of(MOD_ID, ("blackstone")), RecipeConfigurator.STONECUTTER, MapColor.BLACK),
+		new BlockGroup.GroupedBlock("blackstone", Blocks.BLACKSTONE, TextureConfiguration.TOP.apply(Identifier.of(MOD_ID, "blackstone")), RecipeConfigurator.STONECUTTER, MapColor.BLACK),
 		new BlockGroup.GroupedBlock("raw_iron", Blocks.RAW_IRON_BLOCK, (type, textureId) -> "minecraft:block/raw_iron_block", RecipeConfigurator.STONECUTTER, MapColor.RAW_IRON),
 		new BlockGroup.GroupedBlock("raw_copper", Blocks.RAW_COPPER_BLOCK, (type, textureId) -> "minecraft:block/raw_copper_block", RecipeConfigurator.STONECUTTER, MapColor.ORANGE),
 		new BlockGroup.GroupedBlock("raw_gold", Blocks.RAW_GOLD_BLOCK, (type, textureId) -> "minecraft:block/raw_gold_block", RecipeConfigurator.STONECUTTER, MapColor.GOLD)
@@ -154,32 +154,29 @@ public final class VanillaBlockGroups {
 	);
 
 	public static final BlockGroup CRYSTAL = BlockGroup.of(
-			new BlockGroup.GroupedBlock("quartz", Blocks.QUARTZ_BLOCK, TextureConfiguration.SIDED.apply(Identifier.of(MOD_ID, ("quartz_block"))),
-			new BlockGroup.GroupedBlock("smooth_quartz", Blocks.SMOOTH_QUARTZ, (type, textureId) -> "minecraft:block/quartz_block_bottom", RecipeConfigurator.STONECUTTER, MapColor.QUARTZ).recipeConfigurator()
+		new BlockGroup.GroupedBlock("quartz", Blocks.QUARTZ_BLOCK, TextureConfiguration.SIDED.apply(Identifier.of(MOD_ID, ("quartz_block"))),
+		new BlockGroup.GroupedBlock("smooth_quartz", Blocks.SMOOTH_QUARTZ, (type, textureId) -> "minecraft:block/quartz_block_bottom", RecipeConfigurator.STONECUTTER, MapColor.QUARTZ).recipeConfigurator()
 	));
 	
-		/*
 	public static final BlockGroup GLASS = BlockGroup.of(
-		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, ("glass"), Identifier.of(MOD_ID, ("glass"), () -> Blocks.GLASS, (type, textureId) -> "minecraft:block/glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
-		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, ("white_stained_glass"), Identifier.of(MOD_ID, ("white_stained_glass"), () -> Blocks.WHITE_STAINED_GLASS, (type, textureId) -> "minecraft:block/white_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
-		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, ("light_gray_stained_glass"), Identifier.of(MOD_ID, ("light_gray_stained_glass"), () -> Blocks.LIGHT_GRAY_STAINED_GLASS, (type, textureId) -> "minecraft:block/light_gray_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
-		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, ("gray_stained_glass"), Identifier.of(MOD_ID, ("gray_stained_glass"), () -> Blocks.GRAY_STAINED_GLASS, (type, textureId) -> "minecraft:block/gray_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
-		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, ("black_stained_glass"), Identifier.of(MOD_ID, ("black_stained_glass"), () -> Blocks.BLACK_STAINED_GLASS, (type, textureId) -> "minecraft:block/black_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
-		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, ("brown_stained_glass"), Identifier.of(MOD_ID, ("brown_stained_glass"), () -> Blocks.BROWN_STAINED_GLASS, (type, textureId) -> "minecraft:block/brown_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
-		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, ("red_stained_glass"), Identifier.of(MOD_ID, ("red_stained_glass"), () -> Blocks.RED_STAINED_GLASS, (type, textureId) -> "minecraft:block/red_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
-		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, ("orange_stained_glass"), Identifier.of(MOD_ID, ("orange_stained_glass"), () -> Blocks.ORANGE_STAINED_GLASS, (type, textureId) -> "minecraft:block/orange_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
-		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, ("yellow_stained_glass"), Identifier.of(MOD_ID, ("yellow_stained_glass"), () -> Blocks.YELLOW_STAINED_GLASS, (type, textureId) -> "minecraft:block/yellow_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
-		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, ("lime_stained_glass"), Identifier.of(MOD_ID, ("lime_stained_glass"), () -> Blocks.LIME_STAINED_GLASS, (type, textureId) -> "minecraft:block/lime_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
-		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, ("green_stained_glass"), Identifier.of(MOD_ID, ("green_stained_glass"), () -> Blocks.GREEN_STAINED_GLASS, (type, textureId) -> "minecraft:block/green_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
-		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, ("cyan_stained_glass"), Identifier.of(MOD_ID, ("cyan_stained_glass"), () -> Blocks.CYAN_STAINED_GLASS, (type, textureId) -> "minecraft:block/cyan_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
-		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, ("light_blue_stained_glass"), Identifier.of(MOD_ID, ("light_blue_stained_glass"), () -> Blocks.LIGHT_BLUE_STAINED_GLASS, (type, textureId) -> "minecraft:block/light_blue_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
-		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, ("blue_stained_glass"), Identifier.of(MOD_ID, ("blue_stained_glass"), () -> Blocks.BLUE_STAINED_GLASS, (type, textureId) -> "minecraft:block/blue_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
-		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, ("purple_stained_glass"), Identifier.of(MOD_ID, ("purple_stained_glass"), () -> Blocks.PURPLE_STAINED_GLASS, (type, textureId) -> "minecraft:block/purple_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
-		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, ("magenta_stained_glass"), Identifier.of(MOD_ID, ("magenta_stained_glass"), () -> Blocks.MAGENTA_STAINED_GLASS, (type, textureId) -> "minecraft:block/magenta_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
-		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, ("pink_stained_glass"), Identifier.of(MOD_ID, ("pink_stained_glass"), () -> Blocks.PINK_STAINED_GLASS, (type, textureId) -> "minecraft:block/pink_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT)
+		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, "glass"), Identifier.of(MOD_ID, "glass"), () -> Blocks.GLASS, (type, textureId) -> "minecraft:block/glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, "white_stained_glass"), Identifier.of(MOD_ID, "white_stained_glass"), () -> Blocks.WHITE_STAINED_GLASS, (type, textureId) -> "minecraft:block/white_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, "light_gray_stained_glass"), Identifier.of(MOD_ID, "light_gray_stained_glass"), () -> Blocks.LIGHT_GRAY_STAINED_GLASS, (type, textureId) -> "minecraft:block/light_gray_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, "gray_stained_glass"), Identifier.of(MOD_ID, "gray_stained_glass"), () -> Blocks.GRAY_STAINED_GLASS, (type, textureId) -> "minecraft:block/gray_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, "black_stained_glass"), Identifier.of(MOD_ID, "black_stained_glass"), () -> Blocks.BLACK_STAINED_GLASS, (type, textureId) -> "minecraft:block/black_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, "brown_stained_glass"), Identifier.of(MOD_ID, "brown_stained_glass"), () -> Blocks.BROWN_STAINED_GLASS, (type, textureId) -> "minecraft:block/brown_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, "red_stained_glass"), Identifier.of(MOD_ID, "red_stained_glass"), () -> Blocks.RED_STAINED_GLASS, (type, textureId) -> "minecraft:block/red_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, "orange_stained_glass"), Identifier.of(MOD_ID, "orange_stained_glass"), () -> Blocks.ORANGE_STAINED_GLASS, (type, textureId) -> "minecraft:block/orange_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, "yellow_stained_glass"), Identifier.of(MOD_ID, "yellow_stained_glass"), () -> Blocks.YELLOW_STAINED_GLASS, (type, textureId) -> "minecraft:block/yellow_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, "lime_stained_glass"), Identifier.of(MOD_ID, "lime_stained_glass"), () -> Blocks.LIME_STAINED_GLASS, (type, textureId) -> "minecraft:block/lime_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, "green_stained_glass"), Identifier.of(MOD_ID, "green_stained_glass"), () -> Blocks.GREEN_STAINED_GLASS, (type, textureId) -> "minecraft:block/green_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, "cyan_stained_glass"), Identifier.of(MOD_ID, "cyan_stained_glass"), () -> Blocks.CYAN_STAINED_GLASS, (type, textureId) -> "minecraft:block/cyan_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, "light_blue_stained_glass"), Identifier.of(MOD_ID, "light_blue_stained_glass"), () -> Blocks.LIGHT_BLUE_STAINED_GLASS, (type, textureId) -> "minecraft:block/light_blue_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, "blue_stained_glass"), Identifier.of(MOD_ID, "blue_stained_glass"), () -> Blocks.BLUE_STAINED_GLASS, (type, textureId) -> "minecraft:block/blue_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, "purple_stained_glass"), Identifier.of(MOD_ID, "purple_stained_glass"), () -> Blocks.PURPLE_STAINED_GLASS, (type, textureId) -> "minecraft:block/purple_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, "magenta_stained_glass"), Identifier.of(MOD_ID, "magenta_stained_glass"), () -> Blocks.MAGENTA_STAINED_GLASS, (type, textureId) -> "minecraft:block/magenta_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT),
+		new BlockGroup.GroupedBlock(Identifier.of(MOD_ID, "pink_stained_glass"), Identifier.of(MOD_ID, "pink_stained_glass"), () -> Blocks.PINK_STAINED_GLASS, (type, textureId) -> "minecraft:block/pink_stained_glass", RecipeConfigurator.CREATIVE, Optional.ofNullable(DyeColor.WHITE.getMapColor()), SafeRenderLayer.TRANSLUCENT)
 	);
-	
-		 */
 
 	public static final BlockGroup TERRACOTTA = BlockGroup.of(
 		new BlockGroup.GroupedBlock("terracotta", Blocks.TERRACOTTA, (type, textureId) -> "minecraft:block/terracotta", RecipeConfigurator.STONECUTTER, MapColor.ORANGE),
