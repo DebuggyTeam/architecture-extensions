@@ -1,7 +1,5 @@
 package gay.debuggy.architecture_extensions;
 
-import org.quiltmc.loader.api.minecraft.ClientOnly;
-
 import gay.debuggy.architecture_extensions.api.BlockType.TypedGroupedBlock;
 import gay.debuggy.architecture_extensions.blocks.TypedGrouped;
 import net.minecraft.block.Block;
@@ -9,10 +7,7 @@ import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
-import net.minecraft.text.HoverEvent;
 import net.minecraft.text.Text;
-import net.minecraft.text.TextColor;
-import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
 
@@ -31,7 +26,7 @@ public class TypedGroupedBlockItem extends BlockItem implements TypedGrouped {
 		typedGroupedBlock = typedGrouped;
 	}
 	
-	@ClientOnly
+	// This code is to be run on the client only.
 	private Text getBaseTranslationKey() {
 		Identifier blockId = typedGroupedBlock.groupedBlock().id();
 		
@@ -57,7 +52,7 @@ public class TypedGroupedBlockItem extends BlockItem implements TypedGrouped {
 	}
 
 	@Override
-	@ClientOnly
+	// This code is to be run on the client only.
 	public Text getName() {
 		String translationKey = Util.createTranslationKey("block", Registries.ITEM.getId(this));
 		if (I18n.hasTranslation(translationKey)) {

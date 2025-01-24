@@ -1,12 +1,11 @@
 package gay.debuggy.architecture_extensions.util;
 
-import java.util.function.Supplier;
-
-import org.quiltmc.loader.api.minecraft.ClientOnly;
-
 import net.minecraft.client.render.RenderLayer;
 
-public enum SafeRenderLayer implements @ClientOnly Supplier<RenderLayer> {
+import java.util.function.Supplier;
+
+// This code is to be run on the client only.
+public enum SafeRenderLayer implements Supplier<RenderLayer> {
 	SOLID(0),
 	TRANSLUCENT(2),
 	CUTOUT(1);
@@ -17,7 +16,7 @@ public enum SafeRenderLayer implements @ClientOnly Supplier<RenderLayer> {
 		this.priority = priority;
 	}
 
-	@ClientOnly
+	// This code is to be run on the client only.
 	@Override
 	public RenderLayer get() {
 		return switch (this) {
