@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 import org.jetbrains.annotations.Nullable;
-import org.quiltmc.qsl.registry.api.event.RegistryEvents;
+
 
 import com.google.common.collect.Multimap;
 import com.google.common.collect.MultimapBuilder;

@@ -26,6 +26,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Set;
 
 public class ArchitectureExtensions implements ModInitializer, PackRegistrationContext.Callback {
@@ -76,7 +77,7 @@ public class ArchitectureExtensions implements ModInitializer, PackRegistrationC
 				String requiredMod = data.only_if_present;
 				if (requiredMod != null && !requiredMod.isBlank()) {
 					// Should only be loaded when the indicated mod is present
-					if (!QuiltLoader.isModLoaded(requiredMod)) continue;
+					if (!FabricLoader.getInstance().isModLoaded(requiredMod)) continue;
 				}
 				
 				BlockGroup group = data.createBlockGroup();
