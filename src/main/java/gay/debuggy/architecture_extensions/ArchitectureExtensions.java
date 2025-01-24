@@ -45,9 +45,7 @@ public class ArchitectureExtensions implements ModInitializer, PackRegistrationC
 	public static final InMemoryPack RESOURCE_PACK = new InMemoryPack.Named("Architecture Extensions");
 
 	@Override
-	public void onInitialize(ModContainer mod) {
-		MOD_CONTAINER = mod;
-
+	public void onInitialize() {
 		Registry.register(Registries.ITEM_GROUP, ITEM_GROUP.getValue(), FabricItemGroup.builder()
 			.name(Text.translatable("itemGroup.architecture_extensions.building_blocks"))
 			.icon(() -> PeculiarBlocks.DEBUGGY_BLOCK.asItem().getDefaultStack()) // TODO: Better icon?
@@ -56,7 +54,7 @@ public class ArchitectureExtensions implements ModInitializer, PackRegistrationC
 		
 		PeculiarBlocks.register();
 
-		VanillaIntegration.INSTANCE.integrate(new ArchExIntegrationContextImpl(VanillaIntegration.INSTANCE, mod.metadata().id()));
+		VanillaIntegration.INSTANCE.integrate(new ArchExIntegrationContextImpl(VanillaIntegration.INSTANCE, MOD_CONTAINER.getMetadata().getId()));
 		
 		//Find and execute entrypoint integrations
 		for (EntrypointContainer<ArchExIntegration> entrypoint : QuiltLoader.getEntrypointContainers(ArchExIntegration.ENTRYPOINT_KEY, ArchExIntegration.class)) {
