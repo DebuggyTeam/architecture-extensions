@@ -66,7 +66,7 @@ public class ArchitectureExtensions implements ModInitializer, PackRegistrationC
 		}
 		
 		// Find and register staticdata blocks
-		List<StaticDataItem> dataRegistrations = StaticData.getDataInDirectory(Identifier.of(MOD_ID, ("architecture_extensions", ""), true);
+		List<StaticDataItem> dataRegistrations = StaticData.getDataInDirectory(Identifier.of("architecture_extensions", ""), true);
 		Gson gson = new GsonBuilder().create();
 		for(StaticDataItem item : dataRegistrations) {
 			try {
