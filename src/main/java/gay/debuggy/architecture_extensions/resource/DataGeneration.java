@@ -104,7 +104,7 @@ public final class DataGeneration {
 		if (rawBlockState == null) return;
 		var blockState = new BlockStateTemplate(rawBlockState);
 		blockState.addConstant(MODEL_PLACEHOLDER, Identifier.of(MOD_ID, block.id().getNamespace()) + "block/" + block.id().getPath()).toString();
-		ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.CLIENT_RESOURCES, Identifier.of(MOD_ID, (block.id().getNamespace(), "blockstates/" + block.id().getPath() + ".json"), path -> blockState.serialize().toString());
+		ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.CLIENT_RESOURCES, Identifier.of(MOD_ID, block.id().getNamespace() + "blockstates/" + block.id().getPath() + ".json"), path -> blockState.serialize().toString());
 	}
 
 	private static void generateMineableByPickaxeTag() {
