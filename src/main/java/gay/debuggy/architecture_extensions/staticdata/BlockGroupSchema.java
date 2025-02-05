@@ -22,8 +22,6 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import static gay.debuggy.architecture_extensions.ArchitectureExtensions.MOD_ID;
-
 public class BlockGroupSchema {
 	public String name;
 	public String base_block;
@@ -50,13 +48,13 @@ public class BlockGroupSchema {
 	}
 	
 	public BlockGroup createBlockGroup() {
-		Identifier baseBlockId = Identifier.of(MOD_ID, base_block);
+		Identifier baseBlockId = Identifier.of(ArchitectureExtensions.MOD_ID, base_block);
 		Supplier<Block> getter = () -> {
 			Block block = Registries.BLOCK.get(baseBlockId);
 			return (block == Blocks.AIR) ? null : block;
 		};
 		Identifier baseId = baseBlockId;
-		if (name != null) baseId = Identifier.of(MOD_ID, baseBlockId.getNamespace());
+		if (name != null) baseId = Identifier.of(ArchitectureExtensions.MOD_ID, baseBlockId.getNamespace());
 
 		TextureConfiguration textureConfig = (textures.contains(":")) ? TextureConfiguration.create(it -> textures, it -> textures, it -> textures, it -> textures) :
 			BlockGroupSchema.<Function<Identifier, TextureConfiguration>>reflectField(TextureConfiguration.class, textures.toUpperCase(Locale.ROOT))

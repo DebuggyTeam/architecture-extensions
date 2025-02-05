@@ -37,9 +37,6 @@ import org.apache.commons.lang3.function.TriFunction;
 
 import java.util.Locale;
 
-import static gay.debuggy.architecture_extensions.ArchitectureExtensions.MOD_CONTAINER;
-import static gay.debuggy.architecture_extensions.ArchitectureExtensions.MOD_ID;
-
 public enum BlockType {
 	ARCH         (ArchBlock::new,        2.5f, variantsOf("", "inner", "outer"), SafeRenderLayer.SOLID),
 	BEAM         (BeamBlock::new,        1.5f),
@@ -98,7 +95,7 @@ public enum BlockType {
 
 	public TypedGroupedBlock register(BlockGroup group, BlockGroup.GroupedBlock groupedBlock, BlockCreationCallback callback, String modId) {
 		// Note: the mod id parameter isn't used here by purpose, that parameter is there so we can easily debug where registration is coming from.
-		Identifier id = Identifier.of(MOD_ID, MOD_CONTAINER.getMetadata().getId() + String.format("%s/%s", groupedBlock.id().getNamespace(), groupedBlock.id().getPath() + "_" + this));
+		Identifier id = Identifier.of(ArchitectureExtensions.MOD_ID, String.format("%s/%s", groupedBlock.id().getNamespace(), groupedBlock.id().getPath() + "_" + this));
 		var baseBlock = groupedBlock.baseBlock().get();
 
 		var blockSettings = AbstractBlock.Settings.copy(baseBlock).strength(strength);

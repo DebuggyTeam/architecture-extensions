@@ -19,10 +19,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
-import static gay.debuggy.architecture_extensions.ArchitectureExtensions.MOD_CONTAINER;
-import static gay.debuggy.architecture_extensions.ArchitectureExtensions.MOD_ID;
-
-
 public class DeferredRegistration {
 	private static Multimap<Identifier, Entry> deferrals = MultimapBuilder.hashKeys().arrayListValues(2).build();
 	
@@ -90,7 +86,7 @@ public class DeferredRegistration {
 		
 		public Set<String> getIds() {
 			String modId = this.modId();
-			if (modId.equals("file")) modId = MOD_CONTAINER.getMetadata().getId(); // If it's a staticdata resource, use our own id
+			if (modId.equals("file")) modId = ArchitectureExtensions.MOD_ID; // If it's a staticdata resource, use our own id
 			
 			HashSet<String> result = new HashSet<>();
 			for(BlockType bt : blockTypes) {

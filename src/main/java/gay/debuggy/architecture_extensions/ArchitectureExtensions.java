@@ -54,7 +54,7 @@ public class ArchitectureExtensions implements ModInitializer, PackRegistrationC
 		
 		PeculiarBlocks.register();
 
-		VanillaIntegration.INSTANCE.integrate(new ArchExIntegrationContextImpl(VanillaIntegration.INSTANCE, MOD_CONTAINER.getMetadata().getId()));
+		VanillaIntegration.INSTANCE.integrate(new ArchExIntegrationContextImpl(VanillaIntegration.INSTANCE, MOD_ID));
 		
 		//Find and execute entrypoint integrations
 		for (EntrypointContainer<ArchExIntegration> entrypoint : QuiltLoader.getEntrypointContainers(ArchExIntegration.ENTRYPOINT_KEY, ArchExIntegration.class)) {
