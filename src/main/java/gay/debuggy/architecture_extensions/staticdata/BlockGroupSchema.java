@@ -48,13 +48,13 @@ public class BlockGroupSchema {
 	}
 	
 	public BlockGroup createBlockGroup() {
-		Identifier baseBlockId = Identifier.of(ArchitectureExtensions.MOD_ID, base_block);
+		Identifier baseBlockId = Identifier.of(base_block);
 		Supplier<Block> getter = () -> {
 			Block block = Registries.BLOCK.get(baseBlockId);
 			return (block == Blocks.AIR) ? null : block;
 		};
 		Identifier baseId = baseBlockId;
-		if (name != null) baseId = Identifier.of(ArchitectureExtensions.MOD_ID, baseBlockId.getNamespace());
+		if (name != null) baseId = Identifier.of(baseBlockId.getNamespace(), name);
 
 		TextureConfiguration textureConfig = (textures.contains(":")) ? TextureConfiguration.create(it -> textures, it -> textures, it -> textures, it -> textures) :
 			BlockGroupSchema.<Function<Identifier, TextureConfiguration>>reflectField(TextureConfiguration.class, textures.toUpperCase(Locale.ROOT))

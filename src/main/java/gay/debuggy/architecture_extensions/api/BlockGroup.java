@@ -8,6 +8,7 @@ import java.util.function.Supplier;
 
 import com.google.common.collect.Sets;
 
+import gay.debuggy.architecture_extensions.ArchitectureExtensions;
 import gay.debuggy.architecture_extensions.util.SafeRenderLayer;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -15,8 +16,6 @@ import net.minecraft.block.MapColor;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
-
-import static gay.debuggy.architecture_extensions.ArchitectureExtensions.MOD_ID;
 
 public final class BlockGroup implements Iterable<BlockGroup.GroupedBlock> {
 	private final Set<BlockGroup.GroupedBlock> groupedBlocks;
@@ -45,11 +44,11 @@ public final class BlockGroup implements Iterable<BlockGroup.GroupedBlock> {
 		}
 		
 		public GroupedBlock(String id, Identifier baseBlockId, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, MapColor mapColor) {
-			this(Identifier.of(MOD_ID, (id)), baseBlockId, baseBlock, textureConfiguration, recipeConfigurator, Optional.of(mapColor));
+			this(Identifier.of(id), baseBlockId, baseBlock, textureConfiguration, recipeConfigurator, Optional.of(mapColor));
 		}
 		
 		public GroupedBlock(String id, Block baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, MapColor mapColor) {
-			this(Identifier.of(MOD_ID, (id)), Registries.BLOCK.getId(baseBlock), ()->baseBlock, textureConfiguration, recipeConfigurator, Optional.of(mapColor));
+			this(Identifier.of(id), Registries.BLOCK.getId(baseBlock), ()->baseBlock, textureConfiguration, recipeConfigurator, Optional.of(mapColor));
 		}
 
 		public GroupedBlock(Identifier id, Identifier baseBlockId, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, MapColor mapColor) {
@@ -57,11 +56,11 @@ public final class BlockGroup implements Iterable<BlockGroup.GroupedBlock> {
 		}
 
 		public GroupedBlock(String id, Identifier baseBlockId, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator) {
-			this(Identifier.of(MOD_ID, (id)), baseBlockId, baseBlock, textureConfiguration, recipeConfigurator, Optional.empty());
+			this(Identifier.of(id), baseBlockId, baseBlock, textureConfiguration, recipeConfigurator, Optional.empty());
 		}
 		
 		public GroupedBlock(String id, Block baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator) {
-			this(Identifier.of(MOD_ID, (id)), Registries.BLOCK.getId(baseBlock), ()->baseBlock, textureConfiguration, recipeConfigurator, Optional.empty());
+			this(Identifier.of(id), Registries.BLOCK.getId(baseBlock), ()->baseBlock, textureConfiguration, recipeConfigurator, Optional.empty());
 		}
 
 		public GroupedBlock(Identifier id, Identifier baseBlockId, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator) {
