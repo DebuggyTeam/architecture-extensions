@@ -75,7 +75,7 @@ public final class DataGeneration {
 	}
 
 	private static void generateModels(TypedGroupedBlock block) {
-		var modelId = Identifier.of(block.id().getNamespace(), block.id() + "models/block/" + block.id().getPath());
+		var modelId = Identifier.of(block.id().getNamespace(), "models/block/" + block.id().getPath());
 
 		for (String variant : block.type().variants()) {
 			if (!variant.isBlank()) variant = "_" + variant;
@@ -90,18 +90,18 @@ public final class DataGeneration {
 				if (rawModel.contains(textureId)) model.addTexture(textureId, textureConfiguration.apply(block.type(), textureId));
 			}
 
-			ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.CLIENT_RESOURCES, Identifier.of(block.id().getNamespace(), modelId.getPath() + variant + ".json"), path -> model.serialize().toString());
+			ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.CLIENT_RESOURCES, Identifier.of(modelId.getNamespace(), modelId.getPath() + variant + ".json"), path -> model.serialize().toString());
 		}
 
 		var itemModel = "{\"parent\":\"" + modelId.toString().replaceFirst("models/", "") + "\"}";
-		ArchitectureExtensions.RESOURCE_PACK.putText(ResourceType.CLIENT_RESOURCES, Identifier.of(block.id().getNamespace(), modelId.getPath().replaceFirst("block", "item") + ".json"), itemModel);
+		ArchitectureExtensions.RESOURCE_PACK.putText(ResourceType.CLIENT_RESOURCES, Identifier.of(modelId.getNamespace(), modelId.getPath().replaceFirst("block", "item") + ".json"), itemModel);
 	}
 
 	private static void generateBlockState(TypedGroupedBlock block) {
 		var rawBlockState = getBlockStateTemplate(block.type());
 		if (rawBlockState == null) return;
 		var blockState = new BlockStateTemplate(rawBlockState);
-		blockState.addConstant(MODEL_PLACEHOLDER, Identifier.of(block.id().getNamespace(), block.id() + "block/" + block.id().getPath()).toString());
+		blockState.addConstant(MODEL_PLACEHOLDER, Identifier.of(block.id().getNamespace(), "block/" + block.id().getPath()).toString());
 		ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.CLIENT_RESOURCES, Identifier.of(block.id().getNamespace(), "blockstates/" + block.id().getPath() + ".json"), path -> blockState.serialize().toString());
 	}
 
@@ -146,7 +146,7 @@ public final class DataGeneration {
 
 				final var path = template.tablesaw() ? "custom_recipes/tablesaw/" : "recipes/";
 				final var prefix = template.simple() ? "" : block.id().getPath() + "_";
-				ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.SERVER_DATA, Identifier.of(block.id().getNamespace(), block.id() + path + prefix + template.id() + ".json"), blah -> recipe.serialize().toString());
+				ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.SERVER_DATA, Identifier.of(block.id().getNamespace(), path + prefix + template.id() + ".json"), blah -> recipe.serialize().toString());
 			}
 			templates.clear();
 		}
