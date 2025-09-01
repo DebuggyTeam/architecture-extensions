@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder;
 import gay.debuggy.architecture_extensions.api.ArchExIntegration;
 import gay.debuggy.architecture_extensions.api.BlockGroup;
 import gay.debuggy.architecture_extensions.api.BlockType;
-import gay.debuggy.architecture_extensions.resource.DataGeneration;
+import gay.debuggy.architecture_extensions.resource.MapBackedPack;
 import gay.debuggy.architecture_extensions.staticdata.BlockGroupSchema;
 import gay.debuggy.staticdata.api.StaticData;
 import gay.debuggy.staticdata.api.StaticDataItem;
@@ -19,10 +19,8 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.resource.ResourceType;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,7 +28,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
-public class ArchitectureExtensions implements ModInitializer, PackRegistrationContext.Callback {
+public class ArchitectureExtensions implements ModInitializer {
 	public static final String MOD_ID = "architecture_extensions";
 	public static final Logger LOGGER = LoggerFactory.getLogger("Architecture Extensions");
 
@@ -43,7 +41,7 @@ public class ArchitectureExtensions implements ModInitializer, PackRegistrationC
 	public static final BlockCreationCallback CALLBACK_ADD_TO_ITEM_GROUP = (group, blockType, baseBlock, derivedBlock) ->
 		ItemGroupUtil.pull(ArchitectureExtensions.ITEM_GROUP, blockType, baseBlock, derivedBlock.asItem());
 
-	public static final InMemoryPack RESOURCE_PACK = new InMemoryPack.Named("Architecture Extensions");
+	public static final MapBackedPack RESOURCE_PACK = new MapBackedPack();
 
 	@Override
 	public void onInitialize() {
@@ -93,15 +91,17 @@ public class ArchitectureExtensions implements ModInitializer, PackRegistrationC
 		DeferredRegistration.init();
 		
 		ItemGroupUtil.push();
-
-		ResourceLoader.get(ResourceType.SERVER_DATA).getRegisterDefaultPackEvent().register(this);
+		
+		//ResourceManagerHelper.get(ResourceType.SERVER_DATA).getRegisterDefaultPackEvent().register(this);
 	}
 	
+	/*
 	@Override
 	public void onRegisterPack(@NotNull PackRegistrationContext context) {
 		DataGeneration.generate(ResourceType.SERVER_DATA);
 		context.addResourcePack(RESOURCE_PACK);
 	}
+	 */
 
 	public static Identifier id(String path) {
 		return Identifier.of("architecture_extensions", path);

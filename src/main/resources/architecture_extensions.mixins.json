@@ -1,0 +1,12 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "gay.debuggy.architecture_extensions.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"ReloadableResourceManagerMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

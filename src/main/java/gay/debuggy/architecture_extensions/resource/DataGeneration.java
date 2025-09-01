@@ -90,11 +90,11 @@ public final class DataGeneration {
 				if (rawModel.contains(textureId)) model.addTexture(textureId, textureConfiguration.apply(block.type(), textureId));
 			}
 
-			ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.CLIENT_RESOURCES, Identifier.of(modelId.getNamespace(), modelId.getPath() + variant + ".json"), path -> model.serialize().toString());
+			ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.CLIENT_RESOURCES, Identifier.of(modelId.getNamespace(), modelId.getPath() + variant + ".json"), model.serialize().toString());
 		}
 
 		var itemModel = "{\"parent\":\"" + modelId.toString().replaceFirst("models/", "") + "\"}";
-		ArchitectureExtensions.RESOURCE_PACK.putText(ResourceType.CLIENT_RESOURCES, Identifier.of(modelId.getNamespace(), modelId.getPath().replaceFirst("block", "item") + ".json"), itemModel);
+		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.CLIENT_RESOURCES, Identifier.of(modelId.getNamespace(), modelId.getPath().replaceFirst("block", "item") + ".json"), itemModel);
 	}
 
 	private static void generateBlockState(TypedGroupedBlock block) {
@@ -102,32 +102,32 @@ public final class DataGeneration {
 		if (rawBlockState == null) return;
 		var blockState = new BlockStateTemplate(rawBlockState);
 		blockState.addConstant(MODEL_PLACEHOLDER, Identifier.of(block.id().getNamespace(), "block/" + block.id().getPath()).toString());
-		ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.CLIENT_RESOURCES, Identifier.of(block.id().getNamespace(), "blockstates/" + block.id().getPath() + ".json"), path -> blockState.serialize().toString());
+		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.CLIENT_RESOURCES, Identifier.of(block.id().getNamespace(), "blockstates/" + block.id().getPath() + ".json"), blockState.serialize().toString());
 	}
 
 	private static void generateMineableByPickaxeTag() {
 		var tag = TagTemplate.DEFAULT.get();
 		BLOCKS.forEach(block -> { if (BlockContentRegistries.STRIPPABLE.get(block.groupedBlock().baseBlock().get()).isEmpty()) tag.addValue(block.id().toString()); });
-		ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.SERVER_DATA, Identifier.of("tags/blocks/mineable/pickaxe.json"), path -> tag.serialize().toString());
+		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.of("tags/blocks/mineable/pickaxe.json"), tag.serialize().toString());
 	}
 
 	private static void generateMineableByAxeTag() {
 		var tag = TagTemplate.DEFAULT.get();
 		BLOCKS.forEach(block -> { if (BlockContentRegistries.STRIPPABLE.get(block.groupedBlock().baseBlock().get()).isPresent()) tag.addValue(block.id().toString()); });
-		ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.SERVER_DATA, Identifier.of("tags/blocks/mineable/axe.json"), path -> tag.serialize().toString());
+		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.of("tags/blocks/mineable/axe.json"), tag.serialize().toString());
 	}
 
 	private static void generateNeedsStoneToolTag() {
 		var tag = TagTemplate.DEFAULT.get();
 		BLOCKS.forEach(block -> tag.addValue(block.id().toString()));
-		ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.SERVER_DATA, Identifier.of("tags/blocks/needs_stone_tool.json"), path -> tag.serialize().toString());
+		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.of("tags/blocks/needs_stone_tool.json"), tag.serialize().toString());
 	}
 
 	private static void generateLootTables() {
 		for (TypedGroupedBlock block : BLOCKS) {
 			var lootTable = LootTableTemplate.BLOCK_BREAK.get();
 			lootTable.addPool(JPool.ofItems(block.id()).addCondition(JCondition.SURVIVES_EXPLOSION.get()));
-			ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.SERVER_DATA, Identifier.of(block.id().getNamespace(), "loot_tables/blocks/" + block.id().getPath() + ".json"), path -> lootTable.serialize().toString());
+			ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.of(block.id().getNamespace(), "loot_tables/blocks/" + block.id().getPath() + ".json"), lootTable.serialize().toString());
 		}
 	}
 
@@ -146,7 +146,7 @@ public final class DataGeneration {
 
 				final var path = template.tablesaw() ? "custom_recipes/tablesaw/" : "recipes/";
 				final var prefix = template.simple() ? "" : block.id().getPath() + "_";
-				ArchitectureExtensions.RESOURCE_PACK.putTextAsync(ResourceType.SERVER_DATA, Identifier.of(block.id().getNamespace(), path + prefix + template.id() + ".json"), blah -> recipe.serialize().toString());
+				ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.of(block.id().getNamespace(), path + prefix + template.id() + ".json"), recipe.serialize().toString());
 			}
 			templates.clear();
 		}
