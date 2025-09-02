@@ -12,6 +12,9 @@
 package gay.debuggy.architecture_extensions.mixin;
 
 import gay.debuggy.architecture_extensions.ArchitectureExtensions;
+import gay.debuggy.architecture_extensions.DeferredRegistration;
+import gay.debuggy.architecture_extensions.resource.DataGeneration;
+import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.minecraft.resource.MultiPackResourceManager;
 import net.minecraft.resource.ResourceReload;
 import net.minecraft.resource.pack.ResourcePack;
@@ -47,8 +50,12 @@ public class ReloadableResourceManagerMixin {
 	private void archEx$reloadGeneratedData(Executor prepareExecutor, Executor applyExecutor, CompletableFuture<Unit> initialStage, List<ResourcePack> packs, CallbackInfoReturnable<ResourceReload> cir) {
 		var temp = new MultiPackResourceManager(type, packs);
 		try {
-			// (re)load arch-ex's virtual resource pack
-		} catch (IOException ex) {}
+			// TODO: figure out exactly what to reload in here when someone reloads resources. 
+			//  also figure out whether or not generating twice can work on a (headless) server
+			
+		} catch (IOException ex) {
+			ArchitectureExtensions.LOGGER.error(ex.toString());
+		}
 		temp.close();
 	}
 
