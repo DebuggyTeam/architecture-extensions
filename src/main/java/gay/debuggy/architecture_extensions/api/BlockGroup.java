@@ -43,6 +43,7 @@ public final class BlockGroup implements Iterable<BlockGroup.GroupedBlock> {
 			this(id, baseBlockId, baseBlock, textureConfiguration, recipeConfigurator, mapColor, SafeRenderLayer.SOLID);
 		}
 		
+		// TODO: "Identifier.of(id)" wants two arguments, what a pain in the ass
 		public GroupedBlock(String id, Identifier baseBlockId, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, MapColor mapColor) {
 			this(Identifier.of(id), baseBlockId, baseBlock, textureConfiguration, recipeConfigurator, Optional.of(mapColor));
 		}

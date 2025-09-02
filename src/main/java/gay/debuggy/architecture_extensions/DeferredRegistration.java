@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
+import net.fabricmc.fabric.api.event.registry.RegistryEntryAddedCallback;
 import org.jetbrains.annotations.Nullable;
 
 
@@ -26,8 +27,10 @@ public class DeferredRegistration {
 	 * Called by ArchEx to start resolving deferred registrations.
 	 */
 	public static void init() {
-		RegistryEvents.getEntryAddEvent(Registries.BLOCK).register(ctx -> {
-			Identifier registeredId = ctx.id();
+
+		// TODO: figure out how to get this bit working with fabric's "RegistryEntryAddedCallback.event()"
+		RegistryEntryAddedCallback.event(Registries.BLOCK).register(ctx -> {
+			Identifier registeredId = ctx;
 			Collection<Entry> safeEntries = deferrals.get(registeredId);
 			Iterator<Entry> i = safeEntries.iterator();
 			while(i.hasNext()) {

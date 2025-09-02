@@ -9,7 +9,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.resource.ResourceType;
 import org.jetbrains.annotations.NotNull;
 
-
+// TODO: more resource loading shenanigans here, mainly pertaining to ReloadableResourceManagerMixin
 public class ArchitectureExtensionsClient implements ClientModInitializer, PackRegistrationContext.Callback {
 	@Override
 	public void onInitializeClient() {

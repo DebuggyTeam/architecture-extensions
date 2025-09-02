@@ -105,6 +105,7 @@ public final class DataGeneration {
 		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.CLIENT_RESOURCES, Identifier.of(block.id().getNamespace(), "blockstates/" + block.id().getPath() + ".json"), blockState.serialize().toString());
 	}
 
+	// TODO: replace "BlockContentRegistries.STRIPPABLE" with an equivalent in fabric's "FlammableBlockRegistry"
 	private static void generateMineableByPickaxeTag() {
 		var tag = TagTemplate.DEFAULT.get();
 		BLOCKS.forEach(block -> { if (BlockContentRegistries.STRIPPABLE.get(block.groupedBlock().baseBlock().get()).isEmpty()) tag.addValue(block.id().toString()); });
