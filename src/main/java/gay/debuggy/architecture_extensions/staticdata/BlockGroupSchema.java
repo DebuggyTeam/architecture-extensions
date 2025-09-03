@@ -49,7 +49,7 @@ public class BlockGroupSchema {
 	
 	public BlockGroup createBlockGroup() {
 		// TODO: more "Identifier.of()" wanting two arguments
-		Identifier baseBlockId = Identifier.of(base_block);
+		Identifier baseBlockId = Identifier.parse(base_block);
 		Supplier<Block> getter = () -> {
 			Block block = Registries.BLOCK.get(baseBlockId);
 			return (block == Blocks.AIR) ? null : block;
