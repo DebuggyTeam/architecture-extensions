@@ -38,7 +38,8 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	// Dependencies required for ArchEx to work.
-	modImplementation include("maven.modrinth:static-data:1.1.1+1.21.1")
+	modImplementation include("maven.modrinth:static-data:1.1.3+1.21.1")
+	modImplementation include("maven.modrinth:suspicious-shapes:1.1.0-alpha.1+1.21.1")
 }
 
 processResources {

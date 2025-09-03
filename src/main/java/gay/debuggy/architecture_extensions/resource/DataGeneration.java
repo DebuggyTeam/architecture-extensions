@@ -3,8 +3,8 @@ package gay.debuggy.architecture_extensions.resource;
 import java.io.FileNotFoundException;
 import java.util.Set;
 
+import gay.debuggy.architecture_extensions.util.IsLog;
 import org.jetbrains.annotations.Nullable;
-import org.quiltmc.qsl.block.content.registry.api.BlockContentRegistries;
 
 import com.google.common.collect.Sets;
 
@@ -105,23 +105,23 @@ public final class DataGeneration {
 		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.CLIENT_RESOURCES, Identifier.of(block.id().getNamespace(), "blockstates/" + block.id().getPath() + ".json"), blockState.serialize().toString());
 	}
 
-	// TODO: replace "BlockContentRegistries.STRIPPABLE" with an equivalent in fabric's "FlammableBlockRegistry"
 	private static void generateMineableByPickaxeTag() {
 		var tag = TagTemplate.DEFAULT.get();
-		BLOCKS.forEach(block -> { if (BlockContentRegistries.STRIPPABLE.get(block.groupedBlock().baseBlock().get()).isEmpty()) tag.addValue(block.id().toString()); });
-		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.of("tags/blocks/mineable/pickaxe.json"), tag.serialize().toString());
+		
+		BLOCKS.forEach(block -> { if (!IsLog.isLog(block.id())) tag.addValue(block.id().toString()); });
+		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.parse("tags/blocks/mineable/pickaxe.json"), tag.serialize().toString());
 	}
 
 	private static void generateMineableByAxeTag() {
 		var tag = TagTemplate.DEFAULT.get();
-		BLOCKS.forEach(block -> { if (BlockContentRegistries.STRIPPABLE.get(block.groupedBlock().baseBlock().get()).isPresent()) tag.addValue(block.id().toString()); });
-		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.of("tags/blocks/mineable/axe.json"), tag.serialize().toString());
+		BLOCKS.forEach(block -> { if (IsLog.isLog(block.id())) tag.addValue(block.id().toString()); });
+		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.parse("tags/blocks/mineable/axe.json"), tag.serialize().toString());
 	}
 
 	private static void generateNeedsStoneToolTag() {
 		var tag = TagTemplate.DEFAULT.get();
 		BLOCKS.forEach(block -> tag.addValue(block.id().toString()));
-		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.of("tags/blocks/needs_stone_tool.json"), tag.serialize().toString());
+		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.parse("tags/blocks/needs_stone_tool.json"), tag.serialize().toString());
 	}
 
 	private static void generateLootTables() {

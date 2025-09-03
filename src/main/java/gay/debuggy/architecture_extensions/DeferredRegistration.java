@@ -29,17 +29,18 @@ public class DeferredRegistration {
 	public static void init() {
 
 		// TODO: figure out how to get this bit working with fabric's "RegistryEntryAddedCallback.event()"
-		RegistryEntryAddedCallback.event(Registries.BLOCK).register(ctx -> {
-			Identifier registeredId = ctx;
-			Collection<Entry> safeEntries = deferrals.get(registeredId);
+		var event = RegistryEntryAddedCallback.event(Registries.BLOCK);
+		event.register((intId, identifier, object) -> {
+			Collection<Entry> safeEntries = deferrals.get(identifier);
+
 			Iterator<Entry> i = safeEntries.iterator();
+
 			while(i.hasNext()) {
 				Entry entry = i.next();
 				if (entry.register()) {
 					i.remove();
-					//ArchitectureExtensions.LOGGER.info("Deferred generation: "+entry.modId()+" requested "+entry.getIds()+", which is now complete.");
 				} else {
-					ArchitectureExtensions.LOGGER.warn("An unexpected problem ocurred generating "+entry.getIds()+" - this request is still deferred.");
+					ArchitectureExtensions.LOGGER.warn("An unexpected problem ocurred generating " + entry.getIds() + " - this request is still deferred.");
 				}
 			}
 		});

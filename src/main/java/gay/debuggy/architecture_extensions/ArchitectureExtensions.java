@@ -91,17 +91,7 @@ public class ArchitectureExtensions implements ModInitializer {
 		DeferredRegistration.init();
 		
 		ItemGroupUtil.push();
-		
-		//ResourceManagerHelper.get(ResourceType.SERVER_DATA).getRegisterDefaultPackEvent().register(this);
 	}
-	
-	/*
-	@Override
-	public void onRegisterPack(@NotNull PackRegistrationContext context) {
-		DataGeneration.generate(ResourceType.SERVER_DATA);
-		context.addResourcePack(RESOURCE_PACK);
-	}
-	 */
 
 	public static Identifier id(String path) {
 		return Identifier.of("architecture_extensions", path);

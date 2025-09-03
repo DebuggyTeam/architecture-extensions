@@ -9,8 +9,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.resource.ResourceType;
 import org.jetbrains.annotations.NotNull;
 
-// TODO: more resource loading shenanigans here, mainly pertaining to ReloadableResourceManagerMixin
-public class ArchitectureExtensionsClient implements ClientModInitializer, PackRegistrationContext.Callback {
+public class ArchitectureExtensionsClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		DataGeneration.BLOCKS.forEach(block -> {
@@ -22,13 +21,5 @@ public class ArchitectureExtensionsClient implements ClientModInitializer, PackR
 				BlockRenderLayerMap.INSTANCE.putBlocks(renderLayer.get(), Registries.BLOCK.get(block.id()));
 			}
 		});
-
-		ResourceLoader.get(ResourceType.CLIENT_RESOURCES).getRegisterDefaultPackEvent().register(this);
-	}
-
-	@Override
-	public void onRegisterPack(@NotNull PackRegistrationContext context) {
-		DataGeneration.generate(ResourceType.CLIENT_RESOURCES);
-		context.addResourcePack(ArchitectureExtensions.RESOURCE_PACK);
 	}
 }
