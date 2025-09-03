@@ -49,13 +49,11 @@ public class ReloadableResourceManagerMixin {
 	)
 	private void archEx$reloadGeneratedData(Executor prepareExecutor, Executor applyExecutor, CompletableFuture<Unit> initialStage, List<ResourcePack> packs, CallbackInfoReturnable<ResourceReload> cir) {
 		var temp = new MultiPackResourceManager(type, packs);
-		try {
-			// TODO: figure out exactly what to reload in here when someone reloads resources. 
-			//  also figure out whether or not generating twice can work on a (headless) server
-			
-		} catch (IOException ex) {
-			ArchitectureExtensions.LOGGER.error(ex.toString());
-		}
+		// TODO: figure out exactly what to reload in here when someone reloads resources. 
+		//  also figure out whether or not generating twice can work on a (headless) server
+		DataGeneration.generate(type);
+
+		// might not be needed since we're not giving "temp" to any datageneration method
 		temp.close();
 	}
 
