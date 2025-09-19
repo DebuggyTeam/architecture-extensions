@@ -21,7 +21,11 @@
 	"license": "MIT",
 	"icon": "assets/architecture_extensions/icon.png",
 	"environment": "*",
-	"entrypoints": {},
+	"entrypoints": {
+		"main": [
+			"gay.debuggy.architecture_extensions.ArchitectureExtensions"
+		]
+	},
 	"mixins": [
 		"architecture_extensions.mixins.json"
 	],
