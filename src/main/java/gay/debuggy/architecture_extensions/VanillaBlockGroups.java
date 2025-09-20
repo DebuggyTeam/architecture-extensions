@@ -16,57 +16,57 @@ import static gay.debuggy.architecture_extensions.ArchitectureExtensions.MOD_ID;
 public final class VanillaBlockGroups {
 	public static final BlockGroup WOOD = BlockGroup.of(
 		BlockGroup.GroupedBlock.builder(Blocks.OAK_LOG)
-			.id(Identifier.of(MOD_ID, "oak"))
-			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, "oak")))
+			.id(Identifier.parse("oak"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.parse("oak")))
 			.usesTablesaw()
 			.mapColor(MapColor.WOOD)
 			.build(),
 		
 		BlockGroup.GroupedBlock.builder(Blocks.SPRUCE_LOG)
-			.id(Identifier.of(MOD_ID, "spruce"))
-			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, "spruce")))
+			.id(Identifier.parse("spruce"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.parse("spruce")))
 			.usesTablesaw()
 			.mapColor(MapColor.PODZOL)
 			.build(),
 		
 		BlockGroup.GroupedBlock.builder(Blocks.BIRCH_LOG)
-			.id(Identifier.of(MOD_ID, "birch"))
-			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, "birch")))
+			.id(Identifier.parse("birch"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.parse("birch")))
 			.usesTablesaw()
 			.mapColor(MapColor.SAND)
 			.build(),
 		
 		BlockGroup.GroupedBlock.builder(Blocks.JUNGLE_LOG)
-			.id(Identifier.of(MOD_ID, "jungle"))
-			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, "jungle")))
+			.id(Identifier.parse("jungle"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.parse("jungle")))
 			.usesTablesaw()
 			.mapColor(MapColor.DIRT)
 			.build(),
 		
 		BlockGroup.GroupedBlock.builder(Blocks.ACACIA_LOG)
-			.id(Identifier.of(MOD_ID, "acacia"))
-			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, "acacia")))
+			.id(Identifier.parse("acacia"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.parse("acacia")))
 			.usesTablesaw()
 			.mapColor(MapColor.ORANGE)
 			.build(),
 		
 		BlockGroup.GroupedBlock.builder(Blocks.CHERRY_LOG)
-			.id(Identifier.of(MOD_ID, "cherry"))
-			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, "cherry")))
+			.id(Identifier.parse("cherry"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.parse("cherry")))
 			.usesTablesaw()
 			.mapColor(MapColor.WHITE_TERRACOTTA)
 			.build(),
 		
 		BlockGroup.GroupedBlock.builder(Blocks.DARK_OAK_LOG)
-			.id(Identifier.of(MOD_ID, "dark_oak"))
-			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, "dark_oak")))
+			.id(Identifier.parse("dark_oak"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.parse("dark_oak")))
 			.usesTablesaw()
 			.mapColor(MapColor.BROWN)
 			.build(),
 		
 		BlockGroup.GroupedBlock.builder(Blocks.MANGROVE_LOG)
-			.id(Identifier.of(MOD_ID, "mangrove"))
-			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.of(MOD_ID, "mangrove")))
+			.id(Identifier.parse("mangrove"))
+			.textures(TextureConfiguration.WOOD_WITH_LOG.apply(Identifier.parse("mangrove")))
 			.usesTablesaw()
 			.mapColor(MapColor.RED)
 			.build(),
@@ -80,15 +80,15 @@ public final class VanillaBlockGroups {
 			
 		
 		BlockGroup.GroupedBlock.builder(Blocks.CRIMSON_STEM)
-			.id(Identifier.of(MOD_ID, "crimson"))
-			.textures(TextureConfiguration.WOOD_WITH_STEM.apply(Identifier.of(MOD_ID, "crimson")))
+			.id(Identifier.parse("crimson"))
+			.textures(TextureConfiguration.WOOD_WITH_STEM.apply(Identifier.parse("crimson")))
 			.usesTablesaw()
 			.mapColor(MapColor.CRIMSON_STEM)
 			.build(),
 		
 		BlockGroup.GroupedBlock.builder(Blocks.WARPED_STEM)
-			.id(Identifier.of(MOD_ID, "warped"))
-			.textures(TextureConfiguration.WOOD_WITH_STEM.apply(Identifier.of(MOD_ID, "warped")))
+			.id(Identifier.parse("warped"))
+			.textures(TextureConfiguration.WOOD_WITH_STEM.apply(Identifier.parse("warped")))
 			.usesTablesaw()
 			.mapColor(MapColor.WARPED_STEM)
 			.build()
@@ -104,10 +104,10 @@ public final class VanillaBlockGroups {
 		new BlockGroup.GroupedBlock("dripstone", Blocks.DRIPSTONE_BLOCK, (type, textureId) -> "minecraft:block/dripstone_block", RecipeConfigurator.STONECUTTER, MapColor.BROWN_TERRACOTTA),
 		new BlockGroup.GroupedBlock("obsidian", Blocks.OBSIDIAN, (type, textureId) -> "minecraft:block/obsidian", RecipeConfigurator.STONECUTTER, MapColor.BLACK),
 		new BlockGroup.GroupedBlock("deepslate", Blocks.DEEPSLATE, (type, textureId) -> "minecraft:block/deepslate", RecipeConfigurator.STONECUTTER, MapColor.DEEPSLATE),
-		new BlockGroup.GroupedBlock("sandstone", Blocks.SANDSTONE, TextureConfiguration.TOP_BOTTOM.apply(Identifier.of(MOD_ID, "sandstone")), RecipeConfigurator.STONECUTTER, MapColor.SAND),
-		new BlockGroup.GroupedBlock("red_sandstone", Blocks.RED_SANDSTONE, TextureConfiguration.TOP_BOTTOM.apply(Identifier.of(MOD_ID, "red_sandstone")), RecipeConfigurator.STONECUTTER, MapColor.ORANGE),
+		new BlockGroup.GroupedBlock("sandstone", Blocks.SANDSTONE, TextureConfiguration.TOP_BOTTOM.apply(Identifier.parse("sandstone")), RecipeConfigurator.STONECUTTER, MapColor.SAND),
+		new BlockGroup.GroupedBlock("red_sandstone", Blocks.RED_SANDSTONE, TextureConfiguration.TOP_BOTTOM.apply(Identifier.parse("red_sandstone")), RecipeConfigurator.STONECUTTER, MapColor.ORANGE),
 		new BlockGroup.GroupedBlock("end_stone", Blocks.END_STONE, (type, textureId) -> "minecraft:block/end_stone", RecipeConfigurator.STONECUTTER, MapColor.BLACK),
-		new BlockGroup.GroupedBlock("blackstone", Blocks.BLACKSTONE, TextureConfiguration.TOP.apply(Identifier.of(MOD_ID, "blackstone")), RecipeConfigurator.STONECUTTER, MapColor.BLACK),
+		new BlockGroup.GroupedBlock("blackstone", Blocks.BLACKSTONE, TextureConfiguration.TOP.apply(Identifier.parse("blackstone")), RecipeConfigurator.STONECUTTER, MapColor.BLACK),
 		new BlockGroup.GroupedBlock("raw_iron", Blocks.RAW_IRON_BLOCK, (type, textureId) -> "minecraft:block/raw_iron_block", RecipeConfigurator.STONECUTTER, MapColor.RAW_IRON),
 		new BlockGroup.GroupedBlock("raw_copper", Blocks.RAW_COPPER_BLOCK, (type, textureId) -> "minecraft:block/raw_copper_block", RecipeConfigurator.STONECUTTER, MapColor.ORANGE),
 		new BlockGroup.GroupedBlock("raw_gold", Blocks.RAW_GOLD_BLOCK, (type, textureId) -> "minecraft:block/raw_gold_block", RecipeConfigurator.STONECUTTER, MapColor.GOLD)

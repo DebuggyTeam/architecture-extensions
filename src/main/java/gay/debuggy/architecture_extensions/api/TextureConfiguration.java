@@ -13,26 +13,26 @@ public interface TextureConfiguration extends BiFunction<BlockType, String, Stri
 	static final Function<Identifier, TextureConfiguration> WOOD_WITH_LOG = woodId -> create(
 		blockType -> {
 			return switch (blockType) {
-				case JOIST, OCTAGONAL_COLUMN -> Identifier.of(MOD_ID, (woodId.getNamespace()) + "block/" + "stripped_" + woodId.getPath() + "_log").toString();
-				default -> Identifier.of(MOD_ID, (woodId.getNamespace()) + "block/" + woodId.getPath() + "_planks").toString();
+				case JOIST, OCTAGONAL_COLUMN -> woodId.getNamespace() + ":block/stripped_" + woodId.getPath() + "_log";
+				default -> woodId.getNamespace() + ":block/" + woodId.getPath() + "_planks";
 			};
 		},
 		blockType -> {
 			return switch (blockType) {
-				case BEAM -> Identifier.of(MOD_ID, (woodId.getNamespace()) + "block/" + "stripped_" + woodId.getPath() + "_log").toString();
-				default -> Identifier.of(MOD_ID, (woodId.getNamespace()) + "block/" + woodId.getPath() + "_planks").toString();
+				case BEAM -> Identifier.of(woodId.getNamespace(), "block/" + "stripped_" + woodId.getPath() + "_log").toString();
+				default -> woodId.getNamespace() + ":block/" + woodId.getPath() + "_planks";
 			};
 		},
 		blockType -> {
 			return switch (blockType) {
-				case BEAM -> Identifier.of(MOD_ID, (woodId.getNamespace()) + "block/" + "stripped_" + woodId.getPath() + "_log_top").toString();
-				default -> Identifier.of(MOD_ID, (woodId.getNamespace()) + "block/" + woodId.getPath() + "_planks").toString();
+				case BEAM -> Identifier.of(woodId.getNamespace(), "block/" + "stripped_" + woodId.getPath() + "_log_top").toString();
+				default -> woodId.getNamespace() + ":block/" + woodId.getPath() + "_planks";
 			};
 		},
 		blockType -> {
 			return switch (blockType) {
-				case BEAM -> Identifier.of(MOD_ID, (woodId.getNamespace()) + "block/" + "stripped_" + woodId.getPath() + "_log_top").toString();
-				default -> Identifier.of(MOD_ID, (woodId.getNamespace()) + "block/" + woodId.getPath() + "_planks").toString();
+				case BEAM -> Identifier.of(woodId.getNamespace(), "block/" + "stripped_" + woodId.getPath() + "_log_top").toString();
+				default -> woodId.getNamespace() + ":block/" + woodId.getPath() + "_planks";
 			};
 		}
 	);
@@ -40,83 +40,83 @@ public interface TextureConfiguration extends BiFunction<BlockType, String, Stri
 	static final Function<Identifier, TextureConfiguration> WOOD_WITH_STEM = woodId -> create(
 		blockType -> {
 			return switch (blockType) {
-				case JOIST, OCTAGONAL_COLUMN -> Identifier.of(MOD_ID, (woodId.getNamespace()) + "block/" + "stripped_" + woodId.getPath() + "_stem").toString();
-				default -> Identifier.of(MOD_ID, (woodId.getNamespace()) + "block/" + woodId.getPath() + "_planks").toString();
+				case JOIST, OCTAGONAL_COLUMN -> woodId.getNamespace() + ":block/stripped_" + woodId.getPath() + "_stem";
+				default -> woodId.getNamespace() + ":block/" + woodId.getPath() + "_planks";
 			};
 		},
 		blockType -> {
 			return switch (blockType) {
-				case BEAM -> Identifier.of(MOD_ID, (woodId.getNamespace()) + "block/" + "stripped_" + woodId.getPath() + "_stem").toString();
-				default -> Identifier.of(MOD_ID, (woodId.getNamespace()) + "block/" + woodId.getPath() + "_planks").toString();
+				case BEAM -> Identifier.of(woodId.getNamespace(), "block/" + "stripped_" + woodId.getPath() + "_stem").toString();
+				default -> woodId.getNamespace() + ":block/" + woodId.getPath() + "_planks";
 			};
 		},
 		blockType -> {
 			return switch (blockType) {
-				case BEAM -> Identifier.of(MOD_ID, (woodId.getNamespace()) + "block/" + "stripped_" + woodId.getPath() + "_stem_top").toString();
-				default -> Identifier.of(MOD_ID, (woodId.getNamespace()) + "block/" + woodId.getPath() + "_planks").toString();
+				case BEAM -> Identifier.of(woodId.getNamespace(), "block/" + "stripped_" + woodId.getPath() + "_stem_top").toString();
+				default -> woodId.getNamespace() + ":block/" + woodId.getPath() + "_planks";
 			};
 		},
 		blockType -> {
 			return switch (blockType) {
-				case BEAM -> Identifier.of(MOD_ID, (woodId.getNamespace()) + "block/" + "stripped_" + woodId.getPath() + "_stem_top").toString();
-				default -> Identifier.of(MOD_ID, (woodId.getNamespace()) + "block/" + woodId.getPath() + "_planks").toString();
+				case BEAM -> Identifier.of(woodId.getNamespace(), "block/" + "stripped_" + woodId.getPath() + "_stem_top").toString();
+				default -> woodId.getNamespace() + ":block/" + woodId.getPath() + "_planks";
 			};
 		}
 	);
 
 	static final Function<Identifier, TextureConfiguration> SIDED = id -> create(
-		blockType -> Identifier.of(MOD_ID, (id.getNamespace()) + "block/" + id.getPath() + "_top").toString(),
+		blockType -> Identifier.of(MOD_ID, (id.getNamespace()) + "/block/" + id.getPath() + "_top").toString(),
 		blockType -> {
-			return Identifier.of(MOD_ID, (id.getNamespace()) + "block/" + id.getPath() + "_side").toString();
+			return Identifier.of(MOD_ID, (id.getNamespace()) + "/block/" + id.getPath() + "_side").toString();
 		},
 		blockType -> {
-			return Identifier.of(MOD_ID, (id.getNamespace()) + "block/" + id.getPath() + "_top").toString();
+			return Identifier.of(MOD_ID, (id.getNamespace()) + "/block/" + id.getPath() + "_top").toString();
 		},
 		blockType -> {
-			return Identifier.of(MOD_ID, (id.getNamespace()) + "block/" + id.getPath() + "_bottom").toString();
+			return Identifier.of(MOD_ID, (id.getNamespace()) + "/block/" + id.getPath() + "_bottom").toString();
 		}
 	);
 
 	static final Function<Identifier, TextureConfiguration> TOP = id -> create(
-		blockType -> Identifier.of(MOD_ID, (id.getNamespace()) + "block/" + id.getPath()).toString(),
+		blockType -> Identifier.parse("block/" + id.getPath()).toString(),
 		blockType -> {
-			return Identifier.of(MOD_ID, (id.getNamespace()) + "block/" + id.getPath()).toString();
+			return Identifier.parse("block/" + id.getPath()).toString();
 		},
 		blockType -> {
-			return Identifier.of(MOD_ID, (id.getNamespace()) + "block/" + id.getPath() + "_top").toString();
+			return Identifier.parse("block/" + id.getPath() + "_top").toString();
 		},
 		blockType -> {
-			return Identifier.of(MOD_ID, (id.getNamespace()) + "block/" + id.getPath()).toString();
+			return Identifier.parse("block/" + id.getPath()).toString();
 		}
 	);
 	
 	static final Function<Identifier, TextureConfiguration> END = id -> create(
-		blockType -> Identifier.of(MOD_ID, (id.getNamespace()) + "block/" + id.getPath()).toString(),
+		blockType -> Identifier.of(MOD_ID, (id.getNamespace()) + "/block/" + id.getPath()).toString(),
 		blockType -> {
-			return Identifier.of(MOD_ID, (id.getNamespace()) + "block/" + id.getPath()).toString();
+			return Identifier.of(MOD_ID, (id.getNamespace()) + "/block/" + id.getPath()).toString();
 		},
 		blockType -> {
-			return Identifier.of(MOD_ID, (id.getNamespace()) + "block/" + id.getPath() + "_end").toString();
+			return Identifier.of(MOD_ID, (id.getNamespace()) + "/block/" + id.getPath() + "_end").toString();
 		},
 		blockType -> {
-			return Identifier.of(MOD_ID, (id.getNamespace()) + "block/" + id.getPath()).toString();
+			return Identifier.of(MOD_ID, (id.getNamespace()) + "/block/" + id.getPath()).toString();
 		}
 	);
 
 	static final Function<Identifier, TextureConfiguration> TOP_BOTTOM = id -> create(
-		blockType -> Identifier.of(MOD_ID, (id.getNamespace()) + "block/" + id.getPath()).toString(),
+		blockType -> Identifier.parse("block/" + id.getPath()).toString(),
 		blockType -> {
-			return Identifier.of(MOD_ID, (id.getNamespace()) + "block/" + id.getPath()).toString();
+			return Identifier.parse("block/" + id.getPath()).toString();
 		},
 		blockType -> {
-			return Identifier.of(MOD_ID, (id.getNamespace()) + "block/" + id.getPath() + "_top").toString();
+			return Identifier.parse("block/" + id.getPath() + "_top").toString();
 		},
 		blockType -> {
-			return Identifier.of(MOD_ID, (id.getNamespace()) + "block/" + id.getPath() + "_bottom").toString();
+			return Identifier.parse("block/" + id.getPath() + "_bottom").toString();
 		}
 	);
 	
-	static final Function<Identifier, TextureConfiguration> ALL = it -> (type, textureId) -> Identifier.of(MOD_ID, (it.getNamespace()) + "block/" + it.getPath()).toString();
+	static final Function<Identifier, TextureConfiguration> ALL = it -> (type, textureId) -> Identifier.of(MOD_ID, (it.getNamespace()) + "/block/" + it.getPath()).toString();
 
 	static TextureConfiguration create(Function<BlockType, String> base,
 								 Function<BlockType, String> side,
