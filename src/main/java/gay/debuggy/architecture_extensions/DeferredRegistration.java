@@ -28,7 +28,6 @@ public class DeferredRegistration {
 	 */
 	public static void init() {
 
-		// TODO: figure out how to get this bit working with fabric's "RegistryEntryAddedCallback.event()"
 		var event = RegistryEntryAddedCallback.event(Registries.BLOCK);
 		event.register((intId, identifier, object) -> {
 			Collection<Entry> safeEntries = deferrals.get(identifier);
