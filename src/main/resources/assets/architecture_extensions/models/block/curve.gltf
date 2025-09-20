@@ -57,7 +57,8 @@
 		{
 			"bufferView":4,
 			"mimeType":"image/png",
-			"name":"bricks"
+			"name":"all",
+			"uri": "#all"
 		}
 	],
 	"accessors":[
