@@ -52,7 +52,6 @@ public class ReloadableResourceManagerMixin {
 		// TODO: figure out exactly what to reload in here when someone reloads resources. 
 		//  also figure out whether or not generating twice can work on a (headless) server
 		DataGeneration.generate(type);
-		System.out.println("did we actually generate anything?");
 
 		// might not be needed since we're not giving "temp" to any datageneration method
 		temp.close();
@@ -68,7 +67,6 @@ public class ReloadableResourceManagerMixin {
 	private List<ResourcePack> archEx$getPacks(List<ResourcePack> old) {
 		var packs = new ArrayList<>(old);
 		packs.add(ArchitectureExtensions.RESOURCE_PACK); // add arch-ex's virtual resource pack
-		System.out.println("did we actually generate anything too?");
 		return packs;
 	}
 }
