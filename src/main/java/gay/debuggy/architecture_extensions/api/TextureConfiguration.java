@@ -65,15 +65,15 @@ public interface TextureConfiguration extends BiFunction<BlockType, String, Stri
 	);
 
 	static final Function<Identifier, TextureConfiguration> SIDED = id -> create(
-		blockType -> Identifier.of(MOD_ID, (id.getNamespace()) + "/block/" + id.getPath() + "_top").toString(),
+		blockType -> Identifier.parse("block/" + id.getPath() + "_top").toString(),
 		blockType -> {
-			return Identifier.of(MOD_ID, (id.getNamespace()) + "/block/" + id.getPath() + "_side").toString();
+			return Identifier.parse("block/" + id.getPath() + "_side").toString();
 		},
 		blockType -> {
-			return Identifier.of(MOD_ID, (id.getNamespace()) + "/block/" + id.getPath() + "_top").toString();
+			return Identifier.parse("block/" + id.getPath() + "_top").toString();
 		},
 		blockType -> {
-			return Identifier.of(MOD_ID, (id.getNamespace()) + "/block/" + id.getPath() + "_bottom").toString();
+			return Identifier.parse("block/" + id.getPath() + "_bottom").toString();
 		}
 	);
 
