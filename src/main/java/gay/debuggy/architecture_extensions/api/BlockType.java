@@ -21,7 +21,7 @@ import gay.debuggy.architecture_extensions.blocks.RoundArchBlock;
 import gay.debuggy.architecture_extensions.blocks.RoundFencePostBlock;
 import gay.debuggy.architecture_extensions.blocks.TransomBlock;
 import gay.debuggy.architecture_extensions.blocks.TubeSteelBlock;
-import gay.debuggy.architecture_extensions.blocks.WallColumnBlock;
+import gay.debuggy.architecture_extensions.blocks.PilasterBlock;
 import gay.debuggy.architecture_extensions.blocks.WallPostBlock;
 import gay.debuggy.architecture_extensions.util.SafeRenderLayer;
 import net.fabricmc.fabric.api.registry.LandPathNodeTypesRegistry;
@@ -42,7 +42,7 @@ public enum BlockType {
 	BEAM         (BeamBlock::new,        1.5f),
 	CURVE   (CurveBlock::new,   1.5f),
 	H_BEAM       (BeamBlock::new,        8.0f),
-	WALL_COLUMN  (WallColumnBlock::new,  2.5f, variantsOf("", "cap"), SafeRenderLayer.SOLID),
+	PILASTER  (PilasterBlock::new,  2.5f, variantsOf("", "cap"), SafeRenderLayer.SOLID),
 	FENCE_POST   (FencePostBlock::new,   1.5f),
 	JOIST        (JoistBlock::new,       1.5f),
 	CROWN_MOLDING(CrownMoldingBlock::new,1.5f, variantsOf("", "inner", "outer"), SafeRenderLayer.SOLID),

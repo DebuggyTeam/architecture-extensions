@@ -21,7 +21,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 
-public class WallColumnBlock extends HorizontalFacingBlock implements TypedGrouped {
+public class PilasterBlock extends HorizontalFacingBlock implements TypedGrouped {
 	public static final BooleanProperty CAPPED = BooleanProperty.of("cap");
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
@@ -33,14 +33,14 @@ public class WallColumnBlock extends HorizontalFacingBlock implements TypedGroup
 	protected final TypedGroupedBlock typedGroupedBlock;
 	
 	// This is a super class of settings.
-	public WallColumnBlock(Settings settings, TypedGroupedBlock typedGroupedBlock) {
+	public PilasterBlock(Settings settings, TypedGroupedBlock typedGroupedBlock) {
 		super(settings);
 		setDefaultState(this.stateManager.getDefaultState().with(Properties.HORIZONTAL_FACING, Direction.NORTH).with(CAPPED, false));
 		this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false)); // Thanks LambdAurora!
 		this.typedGroupedBlock = typedGroupedBlock;
 	}
 	
-	public WallColumnBlock(Block baseBlock, Settings settings, TypedGroupedBlock typedGroupedBlock) {
+	public PilasterBlock(Block baseBlock, Settings settings, TypedGroupedBlock typedGroupedBlock) {
 		this(settings, typedGroupedBlock);
 	}
 
