@@ -57,9 +57,9 @@ public class IBeamBlock extends PillarBlock implements Waterloggable, TypedGroup
 	public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
 		Direction.Axis cardinalDir = state.get(AXIS);
 		return switch (cardinalDir) {
-			case X -> X_AXIS_BOX;
-			case Y -> Y_AXIS_BOX;
-			case Z -> Z_AXIS_BOX;
+			case X -> Block.createCuboidShape(0.0, 0.0, 4.0, 16.0, 16.0, 12.0); //X_AXIS_BOX;
+			case Y -> Block.createCuboidShape(4.0, 0.0, 0.0, 12.0, 16.0, 16.0); //Y_AXIS_BOX;
+			case Z -> Block.createCuboidShape(4.0, 0.0, 0.0, 12.0, 16.0, 16.0); //Z_AXIS_BOX;
 		};
 	}
 

@@ -87,7 +87,7 @@ public class PostLanternBlock extends Block implements TypedGrouped {
 			}
 		} else {
 			/*
-			 * This is more complicated because we kind of favor the non-hanging status. If we're not ahnging, but the
+			 * This is more complicated because we kind of favor the non-hanging status. If we're not hanging, but the
 			 * block below us is completely air, and we discover that there's something to hang from, go ahead and hang.
 			 */
 			if (world.getBlockState(pos.down()).isAir()) {

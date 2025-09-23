@@ -22,10 +22,10 @@ import net.minecraft.world.BlockView;
 public class TransomBlock extends HorizontalFacingBlock implements TypedGrouped {
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
-	protected static final VoxelShape NORTH_BOX = Block.createCuboidShape(2.0, 0.0, 0.0, 14.0, 16.0, 4.0);
-	protected static final VoxelShape SOUTH_BOX = Block.createCuboidShape(2.0, 0.0, 12.0, 14.0, 16.0, 16.0);
-	protected static final VoxelShape EAST_BOX = Block.createCuboidShape(12.0, 0.0, 2.0, 16.0, 16.0, 14.0);
-	protected static final VoxelShape WEST_BOX = Block.createCuboidShape(0.0, 0.0, 2.0, 4.0, 16.0, 14.0);
+	protected static final VoxelShape NORTH_BOX = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 4.0);
+	protected static final VoxelShape SOUTH_BOX = Block.createCuboidShape(0.0, 0.0, 12.0, 16.0, 16.0, 16.0);
+	protected static final VoxelShape EAST_BOX = Block.createCuboidShape(12.0, 0.0, 0.0, 16.0, 16.0, 16.0);
+	protected static final VoxelShape WEST_BOX = Block.createCuboidShape(0.0, 0.0, 0.0, 4.0, 16.0, 16.0);
 
 	protected final TypedGroupedBlock typedGroupedBlock;
 	

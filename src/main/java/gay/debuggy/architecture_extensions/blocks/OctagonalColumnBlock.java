@@ -27,9 +27,9 @@ public class OctagonalColumnBlock extends PillarBlock implements Waterloggable, 
 	public static final EnumProperty<Direction.Axis> AXIS = Properties.AXIS;
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 	
-	protected static final VoxelShape X_AXIS_BOX = Block.createCuboidShape(0.0, 4.0, 4.0, 16.0, 12.0, 12.0);
-	protected static final VoxelShape Y_AXIS_BOX = Block.createCuboidShape(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
-	protected static final VoxelShape Z_AXIS_BOX = Block.createCuboidShape(4.0, 4.0, 0.0, 12.0, 12.0, 16.0);
+	protected static final VoxelShape X_AXIS_BOX = Block.createCuboidShape(0.0, 3.0, 3.0, 16.0, 13.0, 13.0);
+	protected static final VoxelShape Y_AXIS_BOX = Block.createCuboidShape(3.0, 0.0, 3.0, 13.0, 16.0, 13.0);
+	protected static final VoxelShape Z_AXIS_BOX = Block.createCuboidShape(3.0, 3.0, 0.0, 13.0, 13.0, 16.0);
 	
 	protected final TypedGroupedBlock typedGroupedBlock;
 	
