@@ -19,8 +19,8 @@ import gay.debuggy.architecture_extensions.blocks.PostLanternBlock;
 import gay.debuggy.architecture_extensions.blocks.RoofBlock;
 import gay.debuggy.architecture_extensions.blocks.RoundArchBlock;
 import gay.debuggy.architecture_extensions.blocks.RoundFencePostBlock;
+import gay.debuggy.architecture_extensions.blocks.SquareTubeBlock;
 import gay.debuggy.architecture_extensions.blocks.TransomBlock;
-import gay.debuggy.architecture_extensions.blocks.TubeSteelBlock;
 import gay.debuggy.architecture_extensions.blocks.PilasterBlock;
 import gay.debuggy.architecture_extensions.blocks.WallPostBlock;
 import gay.debuggy.architecture_extensions.util.SafeRenderLayer;
@@ -53,7 +53,7 @@ public enum BlockType {
 	WALL_POST    (WallPostBlock::new,    2.5f),
 	LATTICE      (LatticeBlock::new,     1.5f),
 	FACADE       (FacadeBlock::new,      1.5f),
-	TUBE_METAL   (TubeSteelBlock::new,   8.0f),
+	SQUARE_TUBE   (SquareTubeBlock::new,   8.0f),
 	I_BEAM       (IBeamBlock::new,       8.0f),
 	TRANSOM      (TransomBlock::new,     1.5f, noVariants(), SafeRenderLayer.TRANSLUCENT),
 	OCTAGONAL_COLUMN(OctagonalColumnBlock::new, 1.5f, variantsOf("", "cap", "double_cap"), SafeRenderLayer.SOLID),

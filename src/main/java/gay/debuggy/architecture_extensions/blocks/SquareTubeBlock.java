@@ -13,7 +13,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
-public class TubeSteelBlock extends PillarBlock implements TypedGrouped {
+public class SquareTubeBlock extends PillarBlock implements TypedGrouped {
 	protected static final VoxelShape FIRST_SIDE = Block.createCuboidShape(0.0, 0.0, 0.0, 16.0, 16.0, 3.0);
 	protected static final VoxelShape SECOND_SIDE = Block.createCuboidShape(0.0, 0.0, 3.0, 3.0, 16.0, 13.0);
 	protected static final VoxelShape THIRD_SIDE = Block.createCuboidShape(13.0, 0.0, 3.0, 16.0, 16.0, 13.0);
@@ -23,7 +23,7 @@ public class TubeSteelBlock extends PillarBlock implements TypedGrouped {
 
 	protected final TypedGroupedBlock typedGroupedBlock;
 	
-	public TubeSteelBlock(Block baseBlock, Settings settings, TypedGroupedBlock typedGroupedBlock) {
+	public SquareTubeBlock(Block baseBlock, Settings settings, TypedGroupedBlock typedGroupedBlock) {
 		super(settings);
 		this.typedGroupedBlock = typedGroupedBlock;
 	}

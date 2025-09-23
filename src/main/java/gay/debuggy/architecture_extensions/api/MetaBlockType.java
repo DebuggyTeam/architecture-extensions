@@ -33,7 +33,7 @@ public enum MetaBlockType {
 	TERRACOTTA(BlockType.FACADE),
 	CONCRETE(BlockType.FACADE),
 	METAL(
-			BlockType.ROD, BlockType.FACADE, BlockType.I_BEAM, BlockType.TUBE_METAL
+			BlockType.ROD, BlockType.FACADE, BlockType.I_BEAM, BlockType.SQUARE_TUBE
 			)
 	;
 	
