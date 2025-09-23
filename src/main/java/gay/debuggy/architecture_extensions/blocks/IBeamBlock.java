@@ -25,9 +25,9 @@ public class IBeamBlock extends PillarBlock implements Waterloggable, TypedGroup
 	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 	public static final EnumProperty<Direction.Axis> AXIS = Properties.AXIS;
 
-	protected static final VoxelShape X_AXIS_BOX = Block.createCuboidShape(0.0, 2.0, 2.0, 16.0, 14.0, 14.0);
-	protected static final VoxelShape Y_AXIS_BOX = Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 16.0, 14.0);
-	protected static final VoxelShape Z_AXIS_BOX = Block.createCuboidShape(2.0, 2.0, 0.0, 14.0, 14.0, 16.0);
+	protected static final VoxelShape X_AXIS_BOX = Block.createCuboidShape(0.0, 0.0, 4.0, 16.0, 16.0, 12.0);
+	protected static final VoxelShape Y_AXIS_BOX = Block.createCuboidShape(4.0, 0.0, 0.0, 12.0, 16.0, 16.0);
+	protected static final VoxelShape Z_AXIS_BOX = Block.createCuboidShape(4.0, 0.0, 0.0, 12.0, 16.0, 16.0);
 
 	protected final TypedGroupedBlock typedGroupedBlock;
 	
@@ -57,9 +57,9 @@ public class IBeamBlock extends PillarBlock implements Waterloggable, TypedGroup
 	public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
 		Direction.Axis cardinalDir = state.get(AXIS);
 		return switch (cardinalDir) {
-			case X -> Block.createCuboidShape(0.0, 0.0, 4.0, 16.0, 16.0, 12.0); //X_AXIS_BOX;
-			case Y -> Block.createCuboidShape(4.0, 0.0, 0.0, 12.0, 16.0, 16.0); //Y_AXIS_BOX;
-			case Z -> Block.createCuboidShape(4.0, 0.0, 0.0, 12.0, 16.0, 16.0); //Z_AXIS_BOX;
+			case X -> X_AXIS_BOX;
+			case Y -> Y_AXIS_BOX;
+			case Z -> Z_AXIS_BOX;
 		};
 	}
 
