@@ -21,7 +21,7 @@ jobs:
       - name: Build and publish with Gradle
         run: ./gradlew assemble
 
-      - uses: Kir-Antipov/mc-publish@995edadc13559a8b28d0b7e6571229f067ec7659
+      - uses: Kira-NT/mc-publish@995edadc13559a8b28d0b7e6571229f067ec7659
         with:
           modrinth-id: dBOB3VZD
           modrinth-token: ${{ secrets.MODRINTH }}
