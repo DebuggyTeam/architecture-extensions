@@ -24,6 +24,9 @@
 	"entrypoints": {
 		"main": [
 			"gay.debuggy.architecture_extensions.ArchitectureExtensions"
+		],
+		"client": [
+			"gay.debuggy.architecture_extensions.client.ArchitectureExtensionsClient"
 		]
 	},
 	"mixins": [
