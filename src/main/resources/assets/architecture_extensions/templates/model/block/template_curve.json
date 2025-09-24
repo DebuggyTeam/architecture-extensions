@@ -1,6 +1,6 @@
 {
 	"parent": "architecture_extensions:block/curve.gltf",
-	"loader": "suspicious_shapes:gltf",
+	"suspicious_shapes:loader": "suspicious_shapes:gltf",
 	"textures": {
 		"particle": "#texture",
 		"all": "#texture"
