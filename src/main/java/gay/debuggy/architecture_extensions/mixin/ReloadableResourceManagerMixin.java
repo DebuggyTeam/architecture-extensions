@@ -51,7 +51,11 @@ public class ReloadableResourceManagerMixin {
 		var temp = new MultiPackResourceManager(type, packs);
 		// TODO: figure out exactly what to reload in here when someone reloads resources. 
 		//  also figure out whether or not generating twice can work on a (headless) server
-		DataGeneration.generate(type);
+		
+		ArchitectureExtensions.LOGGER.info("our multipack manager: " + temp.toString());
+		//ArchitectureExtensions.RESOURCE_PACK.clear(ResourceType.CLIENT_RESOURCES);
+		DataGeneration.generate(ResourceType.CLIENT_RESOURCES);
+		ArchitectureExtensions.LOGGER.info("pack type: " + type.toString());
 
 		// might not be needed since we're not giving "temp" to any datageneration method
 		temp.close();

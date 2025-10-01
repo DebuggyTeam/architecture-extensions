@@ -109,26 +109,30 @@ public final class DataGeneration {
 		var tag = TagTemplate.DEFAULT.get();
 		
 		BLOCKS.forEach(block -> { if (!IsLog.isLog(block.id())) tag.addValue(block.id().toString()); });
-		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.parse("tags/blocks/mineable/pickaxe.json"), tag.serialize().toString());
+		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.parse("tags/block/mineable/pickaxe.json"), tag.serialize().toString());
+		//ArchitectureExtensions.LOGGER.info("our pickaxe mineable tag: {}", tag.serialize());
 	}
 
 	private static void generateMineableByAxeTag() {
 		var tag = TagTemplate.DEFAULT.get();
 		BLOCKS.forEach(block -> { if (IsLog.isLog(block.id())) tag.addValue(block.id().toString()); });
-		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.parse("tags/blocks/mineable/axe.json"), tag.serialize().toString());
+		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.parse("tags/block/mineable/axe.json"), tag.serialize().toString());
+		//ArchitectureExtensions.LOGGER.info("our axe mineable tag: {}", tag.serialize());
 	}
 
 	private static void generateNeedsStoneToolTag() {
 		var tag = TagTemplate.DEFAULT.get();
 		BLOCKS.forEach(block -> tag.addValue(block.id().toString()));
-		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.parse("tags/blocks/needs_stone_tool.json"), tag.serialize().toString());
+		ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.parse("tags/block/needs_stone_tool.json"), tag.serialize().toString());
+		//ArchitectureExtensions.LOGGER.info("our stone tool tag: {}", tag.serialize());
 	}
 
 	private static void generateLootTables() {
 		for (TypedGroupedBlock block : BLOCKS) {
 			var lootTable = LootTableTemplate.BLOCK_BREAK.get();
 			lootTable.addPool(JPool.ofItems(block.id()).addCondition(JCondition.SURVIVES_EXPLOSION.get()));
-			ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.of(block.id().getNamespace(), "loot_tables/blocks/" + block.id().getPath() + ".json"), lootTable.serialize().toString());
+			ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.of(block.id().getNamespace(), "loot_table/blocks/" + block.id().getPath() + ".json"), lootTable.serialize().toString());
+			//ArchitectureExtensions.LOGGER.info("loot table: {}", lootTable.serialize());
 		}
 	}
 
@@ -145,9 +149,11 @@ public final class DataGeneration {
 				recipe.addConstant(BASE_PLACEHOLDER, Registries.BLOCK.getId(block.groupedBlock().baseBlock().get()).toString());
 				recipe.addConstant(RESULT_PLACEHOLDER, block.id().toString());
 
-				final var path = template.tablesaw() ? "custom_recipes/tablesaw/" : "recipes/";
+				final var path = template.tablesaw() ? "custom_recipes/tablesaw/" : "recipe/";
 				final var prefix = template.simple() ? "" : block.id().getPath() + "_";
 				ArchitectureExtensions.RESOURCE_PACK.put(ResourceType.SERVER_DATA, Identifier.of(block.id().getNamespace(), path + prefix + template.id() + ".json"), recipe.serialize().toString());
+				//ArchitectureExtensions.LOGGER.info("{} recipe path: {}", template.id(), Identifier.of(block.id().getNamespace(), path + prefix + template.id() + ".json"));
+				//ArchitectureExtensions.LOGGER.info("{} recipe contents: {}", template.id(), recipe.serialize());
 			}
 			templates.clear();
 		}
@@ -155,11 +161,11 @@ public final class DataGeneration {
 
 	public static void generate(ResourceType resourceType) {
 		if (resourceType == ResourceType.SERVER_DATA) {
-			// needs to be a count since for some reason server data tries to get generated 4 TIMES??!??!!?!
+			 //needs to be a count since for some reason server data tries to get generated 4 TIMES??!??!!?!
 			++serverLoadCount;
 			if (serverLoadCount % 4 == 1) return;
 			if (serverLoadCount > 4) ResourceUtils.refreshCaches(ResourceType.SERVER_DATA);
-
+	
 			generateMineableByPickaxeTag();
 			generateMineableByAxeTag();
 			generateNeedsStoneToolTag();
