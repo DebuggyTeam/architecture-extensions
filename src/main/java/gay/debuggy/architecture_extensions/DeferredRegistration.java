@@ -13,7 +13,7 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.MultimapBuilder;
 
 import gay.debuggy.architecture_extensions.api.BlockGroup;
-import gay.debuggy.architecture_extensions.api.BlockType;
+import gay.debuggy.architecture_extensions.api.BlockShape;
 import gay.debuggy.architecture_extensions.resource.DataGeneration;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -52,7 +52,7 @@ public class DeferredRegistration {
 	 * @param groupedBlock
 	 * @param blockTypes
 	 */
-	public static void register(String modId, BlockGroup group, BlockGroup.GroupedBlock groupedBlock, Collection<BlockType> blockTypes, @Nullable BlockCreationCallback callback) {
+	public static void register(String modId, BlockGroup group, BlockGroup.GroupedBlock groupedBlock, Collection<BlockShape> blockTypes, @Nullable BlockCreationCallback callback) {
 		Entry deferral = new Entry(modId, group, groupedBlock, Set.copyOf(blockTypes), callback);
 		
 		if (!deferral.register()) {
@@ -74,13 +74,13 @@ public class DeferredRegistration {
 		}
 	}
 	
-	private static record Entry(String modId, BlockGroup group, BlockGroup.GroupedBlock groupedBlock, Set<BlockType> blockTypes, BlockCreationCallback callback) {
+	private static record Entry(String modId, BlockGroup group, BlockGroup.GroupedBlock groupedBlock, Set<BlockShape> blockTypes, BlockCreationCallback callback) {
 		public boolean register() {
 			Block baseBlock = groupedBlock.baseBlock().get();
 			if (baseBlock == Blocks.AIR || baseBlock == null) return false;
 			
-			for(BlockType blockType : blockTypes) {
-				BlockType.TypedGroupedBlock created = blockType.register(group, groupedBlock, callback, modId);
+			for(BlockShape blockType : blockTypes) {
+				BlockShape.TypedGroupedBlock created = blockType.register(group, groupedBlock, callback, modId);
 				DataGeneration.collect(created);
 			}
 			
@@ -92,7 +92,7 @@ public class DeferredRegistration {
 			if (modId.equals("file")) modId = ArchitectureExtensions.MOD_ID; // If it's a staticdata resource, use our own id
 			
 			HashSet<String> result = new HashSet<>();
-			for(BlockType bt : blockTypes) {
+			for(BlockShape bt : blockTypes) {
 				Identifier id = Identifier.of(modId, groupedBlock.id().getPath() + "_" + bt);
 				result.add(id.toString());
 			}

@@ -3,7 +3,7 @@ package gay.debuggy.architecture_extensions.staticdata;
 import com.google.gson.GsonBuilder;
 import gay.debuggy.architecture_extensions.ArchitectureExtensions;
 import gay.debuggy.architecture_extensions.api.BlockGroup;
-import gay.debuggy.architecture_extensions.api.BlockType;
+import gay.debuggy.architecture_extensions.api.BlockShape;
 import gay.debuggy.architecture_extensions.api.MetaBlockType;
 import gay.debuggy.architecture_extensions.api.RecipeConfigurator;
 import gay.debuggy.architecture_extensions.api.TextureConfiguration;
@@ -72,22 +72,22 @@ public class BlockGroupSchema {
 				);
 	}
 	
-	public Set<BlockType> getBlockTypes() {
-		Set<BlockType> result = new HashSet<>();
+	public Set<BlockShape> getBlockTypes() {
+		Set<BlockShape> result = new HashSet<>();
 		
 		for(String typeToGenerate : types_to_generate) {
 			if (typeToGenerate.startsWith("#")) {
 				typeToGenerate = typeToGenerate.substring(1);
 				Optional<MetaBlockType> metaType = BlockGroupSchema.<MetaBlockType>reflectField(MetaBlockType.class, typeToGenerate.toUpperCase(Locale.ROOT));
 				if (metaType.isPresent()) {
-					for(BlockType t : metaType.get().blockTypes()) result.add(t);
+					for(BlockShape t : metaType.get().blockTypes()) result.add(t);
 				} else {
 					ArchitectureExtensions.LOGGER.warn("A file requested a nonexistent meta-type '#" + typeToGenerate + "'.");
 				}
 				continue;
 			}
 			
-			BlockType blockType = BlockGroupSchema.<BlockType>reflectField(BlockType.class, typeToGenerate.toUpperCase(Locale.ROOT)).orElse(null);
+			BlockShape blockType = BlockGroupSchema.<BlockShape>reflectField(BlockShape.class, typeToGenerate.toUpperCase(Locale.ROOT)).orElse(null);
 			if (blockType != null) {
 				result.add(blockType);
 			} else {

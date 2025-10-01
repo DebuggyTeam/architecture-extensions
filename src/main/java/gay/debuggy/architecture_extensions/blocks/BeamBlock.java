@@ -1,6 +1,6 @@
 package gay.debuggy.architecture_extensions.blocks;
 
-import gay.debuggy.architecture_extensions.api.BlockType.TypedGroupedBlock;
+import gay.debuggy.architecture_extensions.api.BlockShape.TypedGroupedBlock;
 import net.minecraft.block.*;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;

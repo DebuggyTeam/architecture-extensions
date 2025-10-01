@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import gay.debuggy.architecture_extensions.api.ArchExIntegration;
 import gay.debuggy.architecture_extensions.api.BlockGroup;
-import gay.debuggy.architecture_extensions.api.BlockType;
+import gay.debuggy.architecture_extensions.api.BlockShape;
 import gay.debuggy.architecture_extensions.resource.MapBackedPack;
 import gay.debuggy.architecture_extensions.staticdata.BlockGroupSchema;
 import gay.debuggy.staticdata.api.StaticData;
@@ -78,7 +78,7 @@ public class ArchitectureExtensions implements ModInitializer {
 				}
 				
 				BlockGroup group = data.createBlockGroup();
-				Set<BlockType> blockTypes = data.getBlockTypes();
+				Set<BlockShape> blockTypes = data.getBlockTypes();
 				for(BlockGroup.GroupedBlock groupedBlock : group) {
 					DeferredRegistration.register(item.getModId(), group, groupedBlock, blockTypes, CALLBACK_ADD_TO_ITEM_GROUP);
 				}

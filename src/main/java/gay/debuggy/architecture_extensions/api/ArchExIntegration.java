@@ -21,7 +21,7 @@ public interface ArchExIntegration {
 	 * @param base      The "base" block defining the material that the new block was made from
 	 * @param created   The block that was created
 	 */
-	void onBlockCreated(BlockGroup group, BlockType blockType, Block base, Block created);
+	void onBlockCreated(BlockGroup group, BlockShape blockType, Block base, Block created);
 
 	/**
 	 * Holds commands that Architecture Extensions makes available to mods for integration. At this point only block
@@ -30,10 +30,10 @@ public interface ArchExIntegration {
 	@ApiStatus.NonExtendable
 	interface Context {
 		/**
-		 * Creates blocks of a particular BlockType and one or more BlockGroups
-		 * @param type   the type of block, for example BlockType.FENCE_POST
+		 * Creates blocks of a particular BlockShape and one or more BlockGroups
+		 * @param type   the type of block, for example BlockShape.FENCE_POST
 		 * @param groups one or more BlockGroups to create blocks for.
 		 */
-		void makeArchExBlocks(BlockType type, BlockGroup... groups);
+		void makeArchExBlocks(BlockShape type, BlockGroup... groups);
 	}
 }

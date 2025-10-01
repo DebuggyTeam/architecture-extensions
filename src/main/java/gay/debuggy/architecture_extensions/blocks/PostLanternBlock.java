@@ -1,6 +1,6 @@
 package gay.debuggy.architecture_extensions.blocks;
 
-import gay.debuggy.architecture_extensions.api.BlockType.TypedGroupedBlock;
+import gay.debuggy.architecture_extensions.api.BlockShape.TypedGroupedBlock;
 import gay.debuggy.architecture_extensions.util.VoxelHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

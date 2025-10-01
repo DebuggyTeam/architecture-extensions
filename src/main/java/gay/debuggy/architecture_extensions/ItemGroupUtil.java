@@ -9,7 +9,7 @@ import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Sets;
 
-import gay.debuggy.architecture_extensions.api.BlockType;
+import gay.debuggy.architecture_extensions.api.BlockShape;
 import it.unimi.dsi.fastutil.Pair;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.Block;
@@ -22,7 +22,7 @@ public final class ItemGroupUtil {
 
 	private static final Multimap<RegistryKey<ItemGroup>, TypedGroupedItem> ITEM_GROUP_ITEMS = LinkedHashMultimap.create();
 
-	public static void pull(RegistryKey<ItemGroup> itemGroup, @Nullable BlockType type, @Nullable Block baseBlock, Item item) {
+	public static void pull(RegistryKey<ItemGroup> itemGroup, @Nullable BlockShape type, @Nullable Block baseBlock, Item item) {
 		ITEM_GROUP_ITEMS.put(itemGroup, new TypedGroupedItem(type, baseBlock, item));
 	}
 
@@ -30,10 +30,10 @@ public final class ItemGroupUtil {
 	private static Collection<Item> typedGroupingSort(Collection<TypedGroupedItem> unsorted) {
 		final LinkedHashSet<Item> sorted = Sets.newLinkedHashSetWithExpectedSize(unsorted.size());
 
-		final Multimap<Block, Pair<BlockType, Item>> transit = LinkedHashMultimap.create();
+		final Multimap<Block, Pair<BlockShape, Item>> transit = LinkedHashMultimap.create();
 		for (TypedGroupedItem typedGroupedItem : unsorted) { transit.put(typedGroupedItem.baseBlock, Pair.of(typedGroupedItem.type, typedGroupedItem.item)); }
 		for (Block block : transit.keySet()) {
-			for (Pair<BlockType, Item> entry : transit.get(block)) {
+			for (Pair<BlockShape, Item> entry : transit.get(block)) {
 				sorted.add(entry.value());
 			}
 		}
@@ -49,5 +49,5 @@ public final class ItemGroupUtil {
 		ITEM_GROUP_ITEMS.keySet().forEach(ItemGroupUtil::pushInto);
 	}
 
-	private static record TypedGroupedItem(@Nullable BlockType type, @Nullable Block baseBlock, Item item) { }
+	private static record TypedGroupedItem(@Nullable BlockShape type, @Nullable Block baseBlock, Item item) { }
 }

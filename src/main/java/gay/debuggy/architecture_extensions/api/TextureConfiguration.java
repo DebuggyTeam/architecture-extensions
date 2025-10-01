@@ -7,7 +7,7 @@ import net.minecraft.util.Identifier;
 
 import static gay.debuggy.architecture_extensions.ArchitectureExtensions.MOD_ID;
 
-public interface TextureConfiguration extends BiFunction<BlockType, String, String> {
+public interface TextureConfiguration extends BiFunction<BlockShape, String, String> {
 	public static final String[] TEXTURE_IDS = new String[]{"texture", "texture_side", "texture_up", "texture_down"};
 
 	static final Function<Identifier, TextureConfiguration> WOOD_WITH_LOG = woodId -> create(
@@ -118,9 +118,9 @@ public interface TextureConfiguration extends BiFunction<BlockType, String, Stri
 	
 	static final Function<Identifier, TextureConfiguration> ALL = it -> (type, textureId) -> Identifier.of(MOD_ID, (it.getNamespace()) + "/block/" + it.getPath()).toString();
 
-	static TextureConfiguration create(Function<BlockType, String> base,
-								 Function<BlockType, String> side,
-								 Function<BlockType, String> up, Function<BlockType, String> down) {
+	static TextureConfiguration create(Function<BlockShape, String> base,
+								 Function<BlockShape, String> side,
+								 Function<BlockShape, String> up, Function<BlockShape, String> down) {
 		return (type, textureId) -> {
 			return switch (textureId) {
 				case "texture_side" -> side.apply(type);

@@ -9,10 +9,10 @@ import org.jetbrains.annotations.Nullable;
 import com.google.common.collect.Sets;
 
 import gay.debuggy.architecture_extensions.ArchitectureExtensions;
-import gay.debuggy.architecture_extensions.api.BlockType;
+import gay.debuggy.architecture_extensions.api.BlockShape;
 import gay.debuggy.architecture_extensions.api.RecipeConfigurator;
 import gay.debuggy.architecture_extensions.api.TextureConfiguration;
-import gay.debuggy.architecture_extensions.api.BlockType.TypedGroupedBlock;
+import gay.debuggy.architecture_extensions.api.BlockShape.TypedGroupedBlock;
 import gay.debuggy.architecture_extensions.resource.json.BlockStateTemplate;
 import gay.debuggy.architecture_extensions.resource.json.LootTableTemplate;
 import gay.debuggy.architecture_extensions.resource.json.ModelTemplate;
@@ -25,7 +25,7 @@ import net.minecraft.resource.ResourceType;
 import net.minecraft.util.Identifier;
 
 public final class DataGeneration {
-	public static final Set<BlockType.TypedGroupedBlock> BLOCKS = Sets.newHashSet();
+	public static final Set<BlockShape.TypedGroupedBlock> BLOCKS = Sets.newHashSet();
 
 	private static final String GROUP_PLACEHOLDER = "group";
 	private static final String BASE_PLACEHOLDER = "base";
@@ -35,7 +35,7 @@ public final class DataGeneration {
 	private static final String MODEL_PLACEHOLDER = "model";
 	private static int clientLoadCount = -1;
 
-	private static @Nullable String getModelTemplate(BlockType type, String variant) {
+	private static @Nullable String getModelTemplate(BlockShape type, String variant) {
 		try {
 			return ResourceUtils.getResourceAsString(ArchitectureExtensions.MOD_CONTAINER, ResourceType.CLIENT_RESOURCES,
 				"assets/architecture_extensions/templates/model/block/" + "template_" + type.toString() + variant + ".json");
@@ -48,7 +48,7 @@ public final class DataGeneration {
 		}
 	}
 
-	private static @Nullable String getBlockStateTemplate(BlockType type) {
+	private static @Nullable String getBlockStateTemplate(BlockShape type) {
 		try {
 			return ResourceUtils.getResourceAsString(ArchitectureExtensions.MOD_CONTAINER, ResourceType.CLIENT_RESOURCES,
 				"assets/architecture_extensions/templates/blockstate/" + "template_" + type.toString() + ".json");

@@ -2,7 +2,7 @@ package gay.debuggy.architecture_extensions;
 
 import gay.debuggy.architecture_extensions.api.ArchExIntegration;
 import gay.debuggy.architecture_extensions.api.BlockGroup;
-import gay.debuggy.architecture_extensions.api.BlockType;
+import gay.debuggy.architecture_extensions.api.BlockShape;
 import gay.debuggy.architecture_extensions.api.RecipeConfigurator;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -34,33 +34,33 @@ public class VanillaIntegration implements ArchExIntegration {
 
 	@Override
 	public void integrate(Context ctx) {
-		ctx.makeArchExBlocks(BlockType.ARCH, 
+		ctx.makeArchExBlocks(BlockShape.ARCH, 
 			VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE, 
 			VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL
 		);
 
-		ctx.makeArchExBlocks(BlockType.CURVE,
+		ctx.makeArchExBlocks(BlockShape.CURVE,
 			VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
 			VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
 			VanillaBlockGroups.CRYSTAL
 		);
 
-		ctx.makeArchExBlocks(BlockType.PILASTER, 
+		ctx.makeArchExBlocks(BlockShape.PILASTER, 
 			VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE, 
 			VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL
 		);
 
-		ctx.makeArchExBlocks(BlockType.ROOF, 
+		ctx.makeArchExBlocks(BlockShape.ROOF, 
 			VanillaBlockGroups.STONE, VanillaBlockGroups.PROCESSED_STONE,
 			VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL
 		);
 
-		ctx.makeArchExBlocks(BlockType.WALL_POST, 
+		ctx.makeArchExBlocks(BlockShape.WALL_POST, 
 			VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE, 
 			VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL
 		);
 
-		ctx.makeArchExBlocks(BlockType.FACADE,
+		ctx.makeArchExBlocks(BlockShape.FACADE,
 			VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE,
 			VanillaBlockGroups.AQUATIC_STONE, VanillaBlockGroups.PROCESSED_STONE,
 			VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE, VanillaBlockGroups.CRYSTAL,
@@ -68,41 +68,41 @@ public class VanillaIntegration implements ArchExIntegration {
 			VanillaBlockGroups.POWDER
 		);
 		
-		ctx.makeArchExBlocks(BlockType.ROUND_FENCE_POST,
+		ctx.makeArchExBlocks(BlockShape.ROUND_FENCE_POST,
 			VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
 			VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
 			VanillaBlockGroups.CRYSTAL
 		);
 		
-		ctx.makeArchExBlocks(BlockType.ROUND_ARCH,
+		ctx.makeArchExBlocks(BlockShape.ROUND_ARCH,
 			VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
 			VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
 			VanillaBlockGroups.CRYSTAL
 		);
 		
-		ctx.makeArchExBlocks(BlockType.OCTAGONAL_COLUMN,
+		ctx.makeArchExBlocks(BlockShape.OCTAGONAL_COLUMN,
 			VanillaBlockGroups.WOOD, VanillaBlockGroups.STONE, VanillaBlockGroups.AQUATIC_STONE,
 			VanillaBlockGroups.PROCESSED_STONE, VanillaBlockGroups.BRICK, VanillaBlockGroups.TILE,
 			VanillaBlockGroups.CRYSTAL
 		);
 
-		ctx.makeArchExBlocks(BlockType.BEAM, VanillaBlockGroups.WOOD);
-		ctx.makeArchExBlocks(BlockType.FENCE_POST, VanillaBlockGroups.WOOD);
-		ctx.makeArchExBlocks(BlockType.JOIST, VanillaBlockGroups.WOOD);
-		ctx.makeArchExBlocks(BlockType.CROWN_MOLDING, VanillaBlockGroups.WOOD);
-		ctx.makeArchExBlocks(BlockType.POST_CAP, VanillaBlockGroups.WOOD);
-		ctx.makeArchExBlocks(BlockType.POST_LANTERN, VanillaBlockGroups.WOOD);
-		ctx.makeArchExBlocks(BlockType.ROD, BAMBOO_ROD, COPPER_ROD, IRON_ROD);
-		ctx.makeArchExBlocks(BlockType.LATTICE, VanillaBlockGroups.WOOD);
-		ctx.makeArchExBlocks(BlockType.TRANSOM, VanillaBlockGroups.WOOD);
+		ctx.makeArchExBlocks(BlockShape.BEAM, VanillaBlockGroups.WOOD);
+		ctx.makeArchExBlocks(BlockShape.FENCE_POST, VanillaBlockGroups.WOOD);
+		ctx.makeArchExBlocks(BlockShape.JOIST, VanillaBlockGroups.WOOD);
+		ctx.makeArchExBlocks(BlockShape.CROWN_MOLDING, VanillaBlockGroups.WOOD);
+		ctx.makeArchExBlocks(BlockShape.POST_CAP, VanillaBlockGroups.WOOD);
+		ctx.makeArchExBlocks(BlockShape.POST_LANTERN, VanillaBlockGroups.WOOD);
+		ctx.makeArchExBlocks(BlockShape.ROD, BAMBOO_ROD, COPPER_ROD, IRON_ROD);
+		ctx.makeArchExBlocks(BlockShape.LATTICE, VanillaBlockGroups.WOOD);
+		ctx.makeArchExBlocks(BlockShape.TRANSOM, VanillaBlockGroups.WOOD);
 		
-		ctx.makeArchExBlocks(BlockType.SQUARE_TUBE, SQUARE_TUBE);
-		ctx.makeArchExBlocks(BlockType.I_BEAM, SQUARE_TUBE);
-		ctx.makeArchExBlocks(BlockType.H_BEAM, IRON_H_BEAM);
+		ctx.makeArchExBlocks(BlockShape.SQUARE_TUBE, SQUARE_TUBE);
+		ctx.makeArchExBlocks(BlockShape.I_BEAM, SQUARE_TUBE);
+		ctx.makeArchExBlocks(BlockShape.H_BEAM, IRON_H_BEAM);
 	}
 
 	@Override
-	public void onBlockCreated(BlockGroup group, BlockType blockType, Block baseBlock, Block block) {
+	public void onBlockCreated(BlockGroup group, BlockShape blockType, Block baseBlock, Block block) {
 		ItemGroupUtil.pull(ArchitectureExtensions.ITEM_GROUP, blockType, baseBlock, block.asItem());
 	}
 }

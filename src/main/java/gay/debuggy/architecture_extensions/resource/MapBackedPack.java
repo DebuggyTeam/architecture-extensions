@@ -98,11 +98,6 @@ public class MapBackedPack implements ResourcePack {
 		return new PackLocationInfo(ArchitectureExtensions.MOD_ID, Text.empty(), PackSource.PACK_SOURCE_BUILTIN, Optional.empty());
 	}
 
-	@Nullable
-	public <T> T getMetadataSection(ResourceMetadataSectionReader<T> metaReader) throws IOException {
-		return null;
-	}
-
 	public String packId() {
 		return "Arch-Ex Resources";
 	}

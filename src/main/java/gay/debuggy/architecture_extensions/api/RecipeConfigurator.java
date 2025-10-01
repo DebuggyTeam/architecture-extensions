@@ -5,7 +5,7 @@ import net.fabricmc.loader.api.FabricLoader;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
-public interface RecipeConfigurator extends BiConsumer<BlockType, Consumer<RecipeConfigurator.RecipeTemplate>> {
+public interface RecipeConfigurator extends BiConsumer<BlockShape, Consumer<RecipeConfigurator.RecipeTemplate>> {
 	static RecipeConfigurator simple(String id) {
 		return (type, templateConsumer) -> templateConsumer.accept(new RecipeTemplate(id, true, false));
 	}

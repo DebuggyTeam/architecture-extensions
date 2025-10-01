@@ -4,7 +4,7 @@ import java.util.Set;
 
 import gay.debuggy.architecture_extensions.api.ArchExIntegration;
 import gay.debuggy.architecture_extensions.api.BlockGroup;
-import gay.debuggy.architecture_extensions.api.BlockType;
+import gay.debuggy.architecture_extensions.api.BlockShape;
 
 public class ArchExIntegrationContextImpl implements ArchExIntegration.Context {
 	private final ArchExIntegration integration;
@@ -16,7 +16,7 @@ public class ArchExIntegrationContextImpl implements ArchExIntegration.Context {
 	}
 
 	@Override
-	public void makeArchExBlocks(BlockType type, BlockGroup... groups) {
+	public void makeArchExBlocks(BlockShape type, BlockGroup... groups) {
 		for (BlockGroup group : groups) {
 			
 			

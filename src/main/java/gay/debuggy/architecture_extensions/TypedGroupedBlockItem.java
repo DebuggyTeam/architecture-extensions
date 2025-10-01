@@ -1,6 +1,6 @@
 package gay.debuggy.architecture_extensions;
 
-import gay.debuggy.architecture_extensions.api.BlockType.TypedGroupedBlock;
+import gay.debuggy.architecture_extensions.api.BlockShape.TypedGroupedBlock;
 import gay.debuggy.architecture_extensions.blocks.TypedGrouped;
 import net.minecraft.block.Block;
 import net.minecraft.client.resource.language.I18n;

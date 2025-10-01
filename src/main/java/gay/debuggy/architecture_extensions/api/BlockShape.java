@@ -25,7 +25,6 @@ import gay.debuggy.architecture_extensions.blocks.PilasterBlock;
 import gay.debuggy.architecture_extensions.blocks.WallPostBlock;
 import gay.debuggy.architecture_extensions.util.SafeRenderLayer;
 import net.fabricmc.fabric.api.registry.LandPathNodeTypesRegistry;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.entity.ai.pathing.PathNodeType;
@@ -37,12 +36,12 @@ import org.apache.commons.lang3.function.TriFunction;
 
 import java.util.Locale;
 
-public enum BlockType {
+public enum BlockShape {
 	ARCH         (ArchBlock::new,        2.5f, variantsOf("", "inner", "outer"), SafeRenderLayer.SOLID),
 	BEAM         (BeamBlock::new,        1.5f),
-	CURVE   (CurveBlock::new,   1.5f),
+	CURVE   	 (CurveBlock::new,   	 1.5f),
 	H_BEAM       (BeamBlock::new,        8.0f),
-	PILASTER  (PilasterBlock::new,  2.5f, variantsOf("", "cap"), SafeRenderLayer.SOLID),
+	PILASTER  	 (PilasterBlock::new, 	 2.5f, variantsOf("", "cap"), SafeRenderLayer.SOLID),
 	FENCE_POST   (FencePostBlock::new,   1.5f),
 	JOIST        (JoistBlock::new,       1.5f),
 	CROWN_MOLDING(CrownMoldingBlock::new,1.5f, variantsOf("", "inner", "outer"), SafeRenderLayer.SOLID),
@@ -53,7 +52,7 @@ public enum BlockType {
 	WALL_POST    (WallPostBlock::new,    2.5f),
 	LATTICE      (LatticeBlock::new,     1.5f),
 	FACADE       (FacadeBlock::new,      1.5f),
-	SQUARE_TUBE   (SquareTubeBlock::new,   8.0f),
+	SQUARE_TUBE  (SquareTubeBlock::new,  8.0f),
 	I_BEAM       (IBeamBlock::new,       8.0f),
 	TRANSOM      (TransomBlock::new,     1.5f, noVariants(), SafeRenderLayer.TRANSLUCENT),
 	OCTAGONAL_COLUMN(OctagonalColumnBlock::new, 1.5f, variantsOf("", "cap", "double_cap"), SafeRenderLayer.SOLID),
@@ -65,7 +64,7 @@ public enum BlockType {
 	private final String[] variants;
 	private final SafeRenderLayer renderLayer;
 
-	BlockType(TriFunction<Block, AbstractBlock.Settings, TypedGroupedBlock, Block> creator, float strength, String[] variants, SafeRenderLayer renderLayer) {
+	BlockShape(TriFunction<Block, AbstractBlock.Settings, TypedGroupedBlock, Block> creator, float strength, String[] variants, SafeRenderLayer renderLayer) {
 		this.creator = creator;
 		this.strength = strength;
 		this.variants = variants;
@@ -73,10 +72,10 @@ public enum BlockType {
 	}
 	
 	/**
-	 * Makes a BlockType with no variants and solid RenderLayer
-	 * @see #BlockType(TriFunction, float, String[], SafeRenderLayer)
+	 * Makes a BlockShape with no variants and solid RenderLayer
+	 * @see #BlockShape(TriFunction, float, String[], SafeRenderLayer)
 	 */
-	BlockType(TriFunction<Block, AbstractBlock.Settings, TypedGroupedBlock, Block> creator, float strength) {
+	BlockShape(TriFunction<Block, AbstractBlock.Settings, TypedGroupedBlock, Block> creator, float strength) {
 		this(creator, strength, noVariants(), SafeRenderLayer.SOLID);
 	}
 
@@ -93,6 +92,7 @@ public enum BlockType {
 		return name().toLowerCase(Locale.ROOT);
 	}
 
+	// TODO: Come up with a better name for "TypedGroupedBlock"
 	public TypedGroupedBlock register(BlockGroup group, BlockGroup.GroupedBlock groupedBlock, BlockCreationCallback callback, String modId) {
 		// Note: the mod id parameter isn't used here by purpose, that parameter is there so we can easily debug where registration is coming from.
 		Identifier id = Identifier.of(ArchitectureExtensions.MOD_ID, String.format("%s/%s", groupedBlock.id().getNamespace(), groupedBlock.id().getPath() + "_" + this));
@@ -121,5 +121,5 @@ public enum BlockType {
 		return variants;
 	}
 
-	public static record TypedGroupedBlock(BlockType type, BlockGroup.GroupedBlock groupedBlock, Identifier id) {}
+	public static record TypedGroupedBlock(BlockShape type, BlockGroup.GroupedBlock groupedBlock, Identifier id) {}
 }

@@ -2,48 +2,48 @@ package gay.debuggy.architecture_extensions.api;
 
 public enum MetaBlockType {
 	WOOD(
-			BlockType.FACADE, BlockType.ROUND_FENCE_POST, BlockType.ROUND_ARCH, BlockType.CURVE, BlockType.OCTAGONAL_COLUMN,
-			BlockType.BEAM, BlockType.FENCE_POST, BlockType.JOIST, BlockType.CROWN_MOLDING, BlockType.POST_CAP,
-			BlockType.POST_LANTERN, BlockType.LATTICE, BlockType.TRANSOM
+			BlockShape.FACADE, BlockShape.ROUND_FENCE_POST, BlockShape.ROUND_ARCH, BlockShape.CURVE, BlockShape.OCTAGONAL_COLUMN,
+			BlockShape.BEAM, BlockShape.FENCE_POST, BlockShape.JOIST, BlockShape.CROWN_MOLDING, BlockShape.POST_CAP,
+			BlockShape.POST_LANTERN, BlockShape.LATTICE, BlockShape.TRANSOM
 			),
 	STONE(
-			BlockType.ARCH, BlockType.PILASTER, BlockType.ROOF, BlockType.WALL_POST, BlockType.FACADE,
-			BlockType.ROUND_FENCE_POST, BlockType.ROUND_ARCH, BlockType.CURVE, BlockType.OCTAGONAL_COLUMN
+			BlockShape.ARCH, BlockShape.PILASTER, BlockShape.ROOF, BlockShape.WALL_POST, BlockShape.FACADE,
+			BlockShape.ROUND_FENCE_POST, BlockShape.ROUND_ARCH, BlockShape.CURVE, BlockShape.OCTAGONAL_COLUMN
 			),
 	AQUATIC_STONE(
-			BlockType.ARCH, BlockType.PILASTER, BlockType.WALL_POST, BlockType.FACADE, BlockType.ROUND_FENCE_POST,
-			BlockType.ROUND_ARCH, BlockType.CURVE, BlockType.OCTAGONAL_COLUMN
+			BlockShape.ARCH, BlockShape.PILASTER, BlockShape.WALL_POST, BlockShape.FACADE, BlockShape.ROUND_FENCE_POST,
+			BlockShape.ROUND_ARCH, BlockShape.CURVE, BlockShape.OCTAGONAL_COLUMN
 			),
 	PROCESSED_STONE(
-			BlockType.ARCH, BlockType.PILASTER, BlockType.ROOF, BlockType.WALL_POST, BlockType.FACADE,
-			BlockType.ROUND_FENCE_POST, BlockType.ROUND_ARCH, BlockType.CURVE, BlockType.OCTAGONAL_COLUMN
+			BlockShape.ARCH, BlockShape.PILASTER, BlockShape.ROOF, BlockShape.WALL_POST, BlockShape.FACADE,
+			BlockShape.ROUND_FENCE_POST, BlockShape.ROUND_ARCH, BlockShape.CURVE, BlockShape.OCTAGONAL_COLUMN
 			),
 	BRICK(
-			BlockType.ARCH, BlockType.PILASTER, BlockType.ROOF, BlockType.WALL_POST, BlockType.FACADE,
-			BlockType.ROUND_FENCE_POST, BlockType.ROUND_ARCH, BlockType.CURVE, BlockType.OCTAGONAL_COLUMN
+			BlockShape.ARCH, BlockShape.PILASTER, BlockShape.ROOF, BlockShape.WALL_POST, BlockShape.FACADE,
+			BlockShape.ROUND_FENCE_POST, BlockShape.ROUND_ARCH, BlockShape.CURVE, BlockShape.OCTAGONAL_COLUMN
 			),
 	TILE(
-			BlockType.ARCH, BlockType.PILASTER, BlockType.ROOF, BlockType.WALL_POST, BlockType.FACADE,
-			BlockType.ROUND_FENCE_POST, BlockType.ROUND_ARCH, BlockType.CURVE, BlockType.OCTAGONAL_COLUMN
+			BlockShape.ARCH, BlockShape.PILASTER, BlockShape.ROOF, BlockShape.WALL_POST, BlockShape.FACADE,
+			BlockShape.ROUND_FENCE_POST, BlockShape.ROUND_ARCH, BlockShape.CURVE, BlockShape.OCTAGONAL_COLUMN
 			),
 	CRYSTAL(
-			BlockType.ARCH, BlockType.PILASTER, BlockType.ROOF, BlockType.WALL_POST, BlockType.FACADE,
-			BlockType.ROUND_FENCE_POST, BlockType.ROUND_ARCH, BlockType.CURVE, BlockType.OCTAGONAL_COLUMN
+			BlockShape.ARCH, BlockShape.PILASTER, BlockShape.ROOF, BlockShape.WALL_POST, BlockShape.FACADE,
+			BlockShape.ROUND_FENCE_POST, BlockShape.ROUND_ARCH, BlockShape.CURVE, BlockShape.OCTAGONAL_COLUMN
 			),
-	TERRACOTTA(BlockType.FACADE),
-	CONCRETE(BlockType.FACADE),
+	TERRACOTTA(BlockShape.FACADE),
+	CONCRETE(BlockShape.FACADE),
 	METAL(
-			BlockType.ROD, BlockType.FACADE, BlockType.I_BEAM, BlockType.SQUARE_TUBE
+			BlockShape.ROD, BlockShape.FACADE, BlockShape.I_BEAM, BlockShape.SQUARE_TUBE
 			)
 	;
 	
-	private final BlockType[] blockTypes;
+	private final BlockShape[] blockTypes;
 	
-	MetaBlockType(BlockType...blockTypes) {
+	MetaBlockType(BlockShape...blockTypes) {
 		this.blockTypes = blockTypes;
 	}
 	
-	public BlockType[] blockTypes() {
+	public BlockShape[] blockTypes() {
 		return this.blockTypes;
 	}
 }

@@ -1,7 +1,7 @@
 package gay.debuggy.architecture_extensions.blocks;
 
 import com.mojang.serialization.MapCodec;
-import gay.debuggy.architecture_extensions.api.BlockType.TypedGroupedBlock;
+import gay.debuggy.architecture_extensions.api.BlockShape.TypedGroupedBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.HorizontalFacingBlock;
