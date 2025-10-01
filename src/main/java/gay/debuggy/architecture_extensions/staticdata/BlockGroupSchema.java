@@ -4,7 +4,7 @@ import com.google.gson.GsonBuilder;
 import gay.debuggy.architecture_extensions.ArchitectureExtensions;
 import gay.debuggy.architecture_extensions.api.BlockGroup;
 import gay.debuggy.architecture_extensions.api.BlockShape;
-import gay.debuggy.architecture_extensions.api.MetaBlockType;
+import gay.debuggy.architecture_extensions.api.MaterialShapeCategory;
 import gay.debuggy.architecture_extensions.api.RecipeConfigurator;
 import gay.debuggy.architecture_extensions.api.TextureConfiguration;
 import gay.debuggy.architecture_extensions.util.MapColors;
@@ -78,7 +78,7 @@ public class BlockGroupSchema {
 		for(String typeToGenerate : types_to_generate) {
 			if (typeToGenerate.startsWith("#")) {
 				typeToGenerate = typeToGenerate.substring(1);
-				Optional<MetaBlockType> metaType = BlockGroupSchema.<MetaBlockType>reflectField(MetaBlockType.class, typeToGenerate.toUpperCase(Locale.ROOT));
+				Optional<MaterialShapeCategory> metaType = BlockGroupSchema.<MaterialShapeCategory>reflectField(MaterialShapeCategory.class, typeToGenerate.toUpperCase(Locale.ROOT));
 				if (metaType.isPresent()) {
 					for(BlockShape t : metaType.get().blockTypes()) result.add(t);
 				} else {

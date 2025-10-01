@@ -1,6 +1,6 @@
 package gay.debuggy.architecture_extensions.api;
 
-public enum MetaBlockType {
+public enum MaterialShapeCategory {
 	WOOD(
 			BlockShape.FACADE, BlockShape.ROUND_FENCE_POST, BlockShape.ROUND_ARCH, BlockShape.CURVE, BlockShape.OCTAGONAL_COLUMN,
 			BlockShape.BEAM, BlockShape.FENCE_POST, BlockShape.JOIST, BlockShape.CROWN_MOLDING, BlockShape.POST_CAP,
@@ -39,7 +39,7 @@ public enum MetaBlockType {
 	
 	private final BlockShape[] blockTypes;
 	
-	MetaBlockType(BlockShape...blockTypes) {
+	MaterialShapeCategory(BlockShape...blockTypes) {
 		this.blockTypes = blockTypes;
 	}
 	
