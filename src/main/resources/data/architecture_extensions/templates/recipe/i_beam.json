@@ -11,6 +11,7 @@
 		}
 	},
 	"result": {
-		"item": "{result}"
+		"item": "{result}",
+		"id": "{group}"
 	}
 }

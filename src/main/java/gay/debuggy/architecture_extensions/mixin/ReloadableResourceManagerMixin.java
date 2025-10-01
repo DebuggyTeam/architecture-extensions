@@ -53,8 +53,9 @@ public class ReloadableResourceManagerMixin {
 		//  also figure out whether or not generating twice can work on a (headless) server
 		
 		ArchitectureExtensions.LOGGER.info("our multipack manager: " + temp.toString());
-		//ArchitectureExtensions.RESOURCE_PACK.clear(ResourceType.CLIENT_RESOURCES);
+		ArchitectureExtensions.RESOURCE_PACK.clear(ResourceType.CLIENT_RESOURCES);
 		DataGeneration.generate(ResourceType.CLIENT_RESOURCES);
+		DataGeneration.generate(ResourceType.SERVER_DATA);
 		ArchitectureExtensions.LOGGER.info("pack type: " + type.toString());
 
 		// might not be needed since we're not giving "temp" to any datageneration method

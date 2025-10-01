@@ -15,6 +15,7 @@
 	],
 	"result": {
 		"item": "{group}_wall",
+		"id": "{group}",
 		"count": 1
 	}
 }

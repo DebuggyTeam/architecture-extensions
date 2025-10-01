@@ -15,6 +15,7 @@
 	],
 	"result": {
 		"item": "{result}",
+		"id": "{group}",
 		"count": 1
 	}
 }

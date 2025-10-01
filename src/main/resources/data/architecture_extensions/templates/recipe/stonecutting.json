@@ -4,5 +4,6 @@
 		"item": "{base}"
 	},
 	"result": "{result}",
+	"id": "{group}",
 	"count": 1
 }

@@ -15,6 +15,7 @@
 	],
 	"result": {
 		"item": "{group}_fence",
+		"id": "{group}",
 		"count": 1
 	}
 }
