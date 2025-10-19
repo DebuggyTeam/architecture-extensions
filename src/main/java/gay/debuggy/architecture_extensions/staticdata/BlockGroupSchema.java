@@ -47,6 +47,8 @@ public class BlockGroupSchema {
 		}
 	}
 	
+	// i have no idea why or how reflection even works here
+	// this should probably be redone or at least cleaned up
 	public BlockGroup createBlockGroup() {
 		// TODO: more "Identifier.of()" wanting two arguments
 		Identifier baseBlockId = Identifier.parse(base_block);

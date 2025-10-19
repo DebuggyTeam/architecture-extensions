@@ -53,7 +53,7 @@ public enum BlockType {
 	WALL_POST    (WallPostBlock::new,    2.5f),
 	LATTICE      (LatticeBlock::new,     1.5f),
 	FACADE       (FacadeBlock::new,      1.5f),
-	SQUARE_TUBE   (SquareTubeBlock::new,   8.0f),
+	SQUARE_TUBE  (SquareTubeBlock::new,   8.0f),
 	I_BEAM       (IBeamBlock::new,       8.0f),
 	TRANSOM      (TransomBlock::new,     1.5f, noVariants(), SafeRenderLayer.TRANSLUCENT),
 	OCTAGONAL_COLUMN(OctagonalColumnBlock::new, 1.5f, variantsOf("", "cap", "double_cap"), SafeRenderLayer.SOLID),

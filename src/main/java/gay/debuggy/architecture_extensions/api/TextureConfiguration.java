@@ -10,6 +10,7 @@ import static gay.debuggy.architecture_extensions.ArchitectureExtensions.MOD_ID;
 public interface TextureConfiguration extends BiFunction<BlockType, String, String> {
 	public static final String[] TEXTURE_IDS = new String[]{"texture", "texture_side", "texture_up", "texture_down"};
 
+	// this is one giant freaking mess that'll take eons to clean up
 	static final Function<Identifier, TextureConfiguration> WOOD_WITH_LOG = woodId -> create(
 		blockType -> {
 			return switch (blockType) {

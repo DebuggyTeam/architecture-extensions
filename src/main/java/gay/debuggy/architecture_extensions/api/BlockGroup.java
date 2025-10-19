@@ -38,6 +38,8 @@ public final class BlockGroup implements Iterable<BlockGroup.GroupedBlock> {
 		return groupedBlocks.iterator();
 	}
 
+	// why on earth do we have so many freaking overloads?
+	// and why is this not adequately documented?
 	public record GroupedBlock(Identifier id, Identifier baseBlockId, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, Optional<MapColor> mapColor, SafeRenderLayer renderLayer) {
 		public GroupedBlock(Identifier id, Identifier baseBlockId, Supplier<Block> baseBlock, TextureConfiguration textureConfiguration, RecipeConfigurator recipeConfigurator, Optional<MapColor> mapColor) {
 			this(id, baseBlockId, baseBlock, textureConfiguration, recipeConfigurator, mapColor, SafeRenderLayer.SOLID);

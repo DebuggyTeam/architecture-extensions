@@ -10,6 +10,7 @@ public interface RecipeConfigurator extends BiConsumer<BlockType, Consumer<Recip
 		return (type, templateConsumer) -> templateConsumer.accept(new RecipeTemplate(id, true, false));
 	}
 
+	// removing fence and wallposts would simplify a lot of this by a wide margin
 	static final RecipeConfigurator STONECUTTER = (type, templateConsumer) -> {
 		switch (type) {
 			case FENCE_POST:
@@ -32,6 +33,7 @@ public interface RecipeConfigurator extends BiConsumer<BlockType, Consumer<Recip
 			return;
 		}
 
+		// why a switch statement?
 		switch (type) {
 			case FENCE_POST:
 				RecipeConfigurator.CRAFTING.accept(type, templateConsumer);
@@ -51,7 +53,7 @@ public interface RecipeConfigurator extends BiConsumer<BlockType, Consumer<Recip
 				templateConsumer.accept(new RecipeTemplate("wall_to_post", false));
 				templateConsumer.accept(new RecipeTemplate("post_to_wall", false));
 				break;
-			case H_BEAM:
+			case H_BEAM: // who EVEN uses h-beams??
 				templateConsumer.accept(new RecipeTemplate("h_beam", false));
 				break;
 			case I_BEAM:
