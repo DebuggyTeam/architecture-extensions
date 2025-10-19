@@ -161,11 +161,7 @@ public final class DataGeneration {
 
 	public static void generate(ResourceType resourceType) {
 		if (resourceType == ResourceType.SERVER_DATA) {
-			 //needs to be a count since for some reason server data tries to get generated 4 TIMES??!??!!?!
 			ArchitectureExtensions.LOGGER.info("are we going to actually load this stuff?");
-			//++serverLoadCount;
-			//if (serverLoadCount % 4 == 1) return;
-			//if (serverLoadCount > 4) ResourceUtils.refreshCaches(ResourceType.SERVER_DATA);
 			generateMineableByPickaxeTag();
 			generateMineableByAxeTag();
 			generateNeedsStoneToolTag();
@@ -178,11 +174,6 @@ public final class DataGeneration {
 		}
 
 		if (resourceType == ResourceType.CLIENT_RESOURCES) {
-			// needs to be a count since for some reason client resources try to get generated 2 times!
-			//++clientLoadCount;
-			//if (clientLoadCount % 2 == 1) return;
-			//if (clientLoadCount > 1) ResourceUtils.refreshCaches(ResourceType.CLIENT_RESOURCES);
-
 			for (TypedGroupedBlock block : BLOCKS) {
 				generateModels(block);
 				generateBlockState(block);
