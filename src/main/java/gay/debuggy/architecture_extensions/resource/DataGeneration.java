@@ -30,10 +30,7 @@ public final class DataGeneration {
 	private static final String GROUP_PLACEHOLDER = "group";
 	private static final String BASE_PLACEHOLDER = "base";
 	private static final String RESULT_PLACEHOLDER = "result";
-	private static int serverLoadCount = -1;
-
 	private static final String MODEL_PLACEHOLDER = "model";
-	private static int clientLoadCount = -1;
 
 	private static @Nullable String getModelTemplate(BlockType type, String variant) {
 		try {
